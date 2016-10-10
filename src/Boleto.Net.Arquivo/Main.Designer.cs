@@ -65,6 +65,7 @@ namespace BoletoNet.Arquivo
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButtonCNAB240 = new System.Windows.Forms.RadioButton();
             this.radioButtonCNAB400 = new System.Windows.Forms.RadioButton();
+            this.radioButtonSico = new System.Windows.Forms.RadioButton();
             this.menuStrip.SuspendLayout();
             this.groupBoxBancos.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -96,7 +97,7 @@ namespace BoletoNet.Arquivo
             this.lstReturnFields.Location = new System.Drawing.Point(165, 32);
             this.lstReturnFields.MultiSelect = false;
             this.lstReturnFields.Name = "lstReturnFields";
-            this.lstReturnFields.Size = new System.Drawing.Size(834, 402);
+            this.lstReturnFields.Size = new System.Drawing.Size(834, 423);
             this.lstReturnFields.TabIndex = 2;
             this.lstReturnFields.UseCompatibleStateImageBehavior = false;
             this.lstReturnFields.View = System.Windows.Forms.View.Details;
@@ -179,7 +180,7 @@ namespace BoletoNet.Arquivo
             // cNABToolStripMenuItem
             // 
             this.cNABToolStripMenuItem.Name = "cNABToolStripMenuItem";
-            this.cNABToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.cNABToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cNABToolStripMenuItem.Text = "&Remessa";
             this.cNABToolStripMenuItem.Click += new System.EventHandler(this.cNABToolStripMenuItem_Click);
             // 
@@ -189,7 +190,7 @@ namespace BoletoNet.Arquivo
             this.lerToolStripMenuItem1,
             this.gerarToolStripMenuItem1});
             this.retornoToolStripMenuItem1.Name = "retornoToolStripMenuItem1";
-            this.retornoToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
+            this.retornoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.retornoToolStripMenuItem1.Text = "R&etorno";
             // 
             // lerToolStripMenuItem1
@@ -217,6 +218,7 @@ namespace BoletoNet.Arquivo
             // 
             this.groupBoxBancos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBoxBancos.Controls.Add(this.radioButtonSico);
             this.groupBoxBancos.Controls.Add(this.radioButtonBNB);
             this.groupBoxBancos.Controls.Add(this.radioButtonBanrisul);
             this.groupBoxBancos.Controls.Add(this.radioButtonSicredi);
@@ -233,7 +235,7 @@ namespace BoletoNet.Arquivo
             this.groupBoxBancos.Location = new System.Drawing.Point(12, 110);
             this.groupBoxBancos.Name = "groupBoxBancos";
             this.groupBoxBancos.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.groupBoxBancos.Size = new System.Drawing.Size(147, 324);
+            this.groupBoxBancos.Size = new System.Drawing.Size(147, 345);
             this.groupBoxBancos.TabIndex = 5;
             this.groupBoxBancos.TabStop = false;
             this.groupBoxBancos.Text = "Bancos";
@@ -423,11 +425,22 @@ namespace BoletoNet.Arquivo
             this.radioButtonCNAB400.Text = "CNAB 400";
             this.radioButtonCNAB400.UseVisualStyleBackColor = true;
             // 
+            // radioButtonSico
+            // 
+            this.radioButtonSico.AutoSize = true;
+            this.radioButtonSico.Location = new System.Drawing.Point(13, 317);
+            this.radioButtonSico.Name = "radioButtonSico";
+            this.radioButtonSico.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonSico.TabIndex = 32;
+            this.radioButtonSico.Tag = "4";
+            this.radioButtonSico.Text = "Sicoob";
+            this.radioButtonSico.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 446);
+            this.ClientSize = new System.Drawing.Size(1011, 467);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxBancos);
             this.Controls.Add(this.lstReturnFields);
@@ -487,6 +500,7 @@ namespace BoletoNet.Arquivo
         private System.Windows.Forms.RadioButton radioButtonBanrisul;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.RadioButton radioButtonBNB;
+        private System.Windows.Forms.RadioButton radioButtonSico;
     }
 }
 

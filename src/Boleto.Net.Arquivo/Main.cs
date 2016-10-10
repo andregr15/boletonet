@@ -373,6 +373,56 @@ namespace BoletoNet.Arquivo
 
             GeraArquivoCNAB400(b.Banco, c, boletos);
         }
+
+
+        public void GeraDadosBancoSicoob()
+        {
+            Boletos boletos = new Boletos();
+            for (var i = 0; i < 2; i++)
+            {
+                ContaBancaria conta = new ContaBancaria();
+                conta.Agencia = "21";
+                conta.DigitoAgencia = "0";
+                conta.Conta = "12717";
+                conta.DigitoConta = "8";
+
+                Cedente c = new Cedente();
+                c.ContaBancaria = conta;
+                c.CPFCNPJ = "00.000.000/0000-00";
+                c.Nome = "Empresa de Atacado";
+
+                Boleto b = new Boleto();
+                b.Cedente = c;
+                //
+                b.DataProcessamento = DateTime.Now;
+                b.DataVencimento = DateTime.Now.AddDays(15);
+                b.ValorBoleto = Convert.ToDecimal(1);
+                b.Carteira = "4";
+                b.NossoNumero = "7777777";
+                b.NumeroDocumento = "2525";
+                //
+                b.Sacado = new Sacado("000.000.000-00", "Fulano de Silva");
+                b.Sacado.Endereco.End = "SSS 154 Bloco J Casa 23";
+                b.Sacado.Endereco.Bairro = "Testando";
+                b.Sacado.Endereco.Cidade = "Testelândia";
+                b.Sacado.Endereco.CEP = "70000000";
+                b.Sacado.Endereco.UF = "RS";
+
+                b.Banco = new Banco(004);
+
+                EspecieDocumento especiedocumento = new EspecieDocumento(004, "1");//Duplicata Mercantil
+                b.EspecieDocumento = especiedocumento;
+
+                #region Dados para Remessa:
+                b.Remessa = new Remessa();
+                b.Remessa.TipoDocumento = "A";
+                #endregion
+               
+                boletos.Add(b);
+            }
+
+            GeraArquivoCNAB400(boletos[0].Banco, boletos[0].Cedente, boletos);
+        }
         #endregion Remessa
 
         #region Retorno
@@ -602,6 +652,8 @@ namespace BoletoNet.Arquivo
                     GeraDadosSicredi();
                 else if (radioButtonBNB.Checked)
                     GeraDadosBancoDoNordeste();
+                else if (radioButtonSico.Checked)
+                    GeraDadosBancoSicoob();
             }
             else if (radioButtonCNAB240.Checked)
             {

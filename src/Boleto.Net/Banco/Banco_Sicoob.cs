@@ -429,7 +429,7 @@ namespace BoletoNet
                 _detalhe.Append(Utils.FitStringLength(boleto.Cedente.ContaBancaria.Conta, 8, 8, '0', 0, true, true, true)); //Posição 023 a 030
                 _detalhe.Append(Utils.FitStringLength(boleto.Cedente.ContaBancaria.DigitoConta, 1, 1, '0', 0, true, true, true)); //Posição 031
                 _detalhe.Append(new string('0', 6)); //Posição 032 a 037
-                _detalhe.Append(Utils.FitStringLength(boleto.NumeroDocumento, 25, 25, ' ', 0, true, true, false)); //Posição 038 a 62
+                _detalhe.Append(Utils.FitStringLength(string.Empty, 25, 25, ' ', 0, true, true, false)); //Posição 038 a 62
                 _detalhe.Append(Utils.FitStringLength(FormataNumeroTitulo(boleto), 12, 12, '0', 0, true, true, true)); //Posição 063 a 074
                 _detalhe.Append(Utils.FitStringLength(boleto.NumeroParcela.ToString(), 2, 2, '0', 0, true, true, true)); //Posição 075 a 076
                 _detalhe.Append("00"); //Posição 077 a 078
