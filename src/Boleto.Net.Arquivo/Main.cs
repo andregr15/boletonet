@@ -508,7 +508,7 @@ namespace BoletoNet.Arquivo
                             lstReturnFields.Items.Add(li);
                         }
                     }
-                    MessageBox.Show("Arquivo aberto com sucesso!");
+                    //MessageBox.Show("Arquivo aberto com sucesso!");
                 }
             }
             catch (Exception ex)

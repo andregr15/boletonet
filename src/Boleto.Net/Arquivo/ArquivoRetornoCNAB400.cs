@@ -54,7 +54,7 @@ namespace BoletoNet
                 {
                     DetalheRetorno detalhe = banco.LerDetalheRetornoCNAB400(linha);
                     ListaDetalhe.Add(detalhe);
-                    OnLinhaLida(detalhe, linha);
+                    //OnLinhaLida(detalhe, linha);
                     linha = stream.ReadLine();
                 }
 
