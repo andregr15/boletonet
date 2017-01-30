@@ -454,7 +454,7 @@ namespace BoletoNet
 
                 _detalhe.Append(boleto.Aceite == "N" ? "0" : "1"); //Posição 150
                 _detalhe.Append(boleto.DataProcessamento.ToString("ddMMyy")); //Posição 151 a 156
-                _detalhe.Append("07"); //Posição 157 a 158 - NÂO PROTESTAR
+                _detalhe.Append(boleto.Instrucoes[0].Codigo.ToString().PadLeft(2,'0')); //Posição 157 a 158 - NÂO PROTESTAR
                 _detalhe.Append("22"); //Posição 159 a 160 - PERMITIR DESCONTO SOMENTE ATE DATA ESTIPULADA
                 _detalhe.Append(Utils.FitStringLength(Convert.ToInt32(boleto.PercJurosMora * 10000).ToString(), 6, 6, '0', 1, true, true, true)); //Posição 161 a 166
                 _detalhe.Append(Utils.FitStringLength(Convert.ToInt32(boleto.PercMulta * 10000).ToString(), 6, 6, '0', 1, true, true, true)); //Posição 167 a 172
