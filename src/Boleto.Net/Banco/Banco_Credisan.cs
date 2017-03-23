@@ -46,7 +46,7 @@ namespace BoletoNet
             String constante = "319731973197319731973";
             String cooperativa = boleto.Cedente.ContaBancaria.Agencia;
             String codigo = boleto.Cedente.Codigo + boleto.Cedente.DigitoCedente.ToString();
-            String nossoNumero = boleto.NossoNumero;
+            String nossoNumero = boleto.NossoNumero.Contains("-") ? boleto.NossoNumero.Substring(0, boleto.NossoNumero.IndexOf("-") - 1) : boleto.NossoNumero;
             StringBuilder seqValidacao = new StringBuilder();
 
             /*
