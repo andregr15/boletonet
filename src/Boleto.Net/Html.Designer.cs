@@ -390,7 +390,7 @@ namespace BoletoNet {
         /// <summary>
         ///   Looks up a localized string similar to &lt;table class=&quot;w666 ctN&quot;&gt;
         ///				&lt;tr&gt;
-        ///						&lt;td class=&quot;pL6  w409&quot;&gt;Sacador / Avalista&lt;/td&gt;
+        ///						&lt;td class=&quot;pL6  w409&quot;&gt;Sacador / Avalista: @AVALISTA&lt;/td&gt;
         ///						&lt;td class=&quot;w250 Ar&quot;&gt;Autenticação mecânica - &lt;b class=&quot;cpN&quot;&gt;Ficha de Compensação&lt;/b&gt;&lt;/td&gt;
         ///				&lt;/tr&gt;
         ///				&lt;tr class=&quot;h13&quot;&gt;&lt;td colspan=&quot;3&quot; /&gt;&lt;/tr&gt;
@@ -506,12 +506,12 @@ namespace BoletoNet {
         ///						&lt;td class=&quot;w180&quot;&gt;(=) Valor documento&lt;/td&gt;
         ///				&lt;/tr&gt;
         ///				&lt;tr class=&quot;cp h12 rBb&quot;&gt;
-        ///						&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        ///						&lt;td&gt;@USODOBANCO&lt;/td&gt;
         ///						&lt;td class=&quot;Al&quot;&gt;@CARTEIRA&lt;/td&gt;
         ///						&lt;td class=&quot;Al&quot;&gt;@ESPECIE&lt;/td&gt;
         ///						&lt;td&gt;@QUANTIDADE&lt;/td&gt;
         ///						&lt;td&gt;@VALORDOCUMENTO&lt;/td&gt;
-        ///						&lt;td class=&quot;Ar&quot;&gt;@=VALO [rest of string was truncated]&quot;;.
+        ///						&lt;td class=&quot;Ar&quot;&gt;@ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReciboCedenteParte5 {
             get {
@@ -623,7 +623,7 @@ namespace BoletoNet {
         /// <summary>
         ///   Looks up a localized string similar to &lt;table class=&quot;w666&quot;&gt;
         ///				&lt;tr class=&quot;ct h13&quot;&gt;
-        ///						&lt;td class=&quot;w659&quot;&gt;Beneficiário Endereço / Sacador Avalista&lt;/td&gt;
+        ///						&lt;td class=&quot;w659&quot;&gt;Beneficiário Endereço / Sacador Avalista: @AVALISTA&lt;/td&gt; 
         ///				&lt;/tr&gt;
         ///				&lt;tr class=&quot;cp h12 rBb&quot;&gt;
         ///						&lt;td class=&quot;At&quot;&gt;@ENDERECOCEDENTE&lt;/td&gt;

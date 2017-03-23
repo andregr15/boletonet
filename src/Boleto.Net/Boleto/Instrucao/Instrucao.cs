@@ -104,6 +104,10 @@ namespace BoletoNet
                     case 748:
                         _IInstrucao = new Instrucao_Sicredi();
                         break;
+                    //089 - Credisan
+                    case 89:
+                        _IInstrucao = new Instrucao_Credisan();
+                        break;
                     default:
                         throw new Exception("Código do banco não implementando: " + codigoBanco);
                 }

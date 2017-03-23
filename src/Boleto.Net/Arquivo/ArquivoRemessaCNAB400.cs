@@ -27,9 +27,10 @@ namespace BoletoNet
             {
                 bool vRetorno = true;
                 string vMsg = string.Empty;
-                //
-                foreach (Boleto boleto in boletos)
+                if (boletos != null && boletos.Count > 0)
                 {
+                    Boleto boleto = boletos[0];
+
                     string vMsgBol = string.Empty;
                     bool vRetBol = boleto.Banco.ValidarRemessa(this.TipoArquivo, numeroConvenio, banco, cedente, boletos, numeroArquivoRemessa, out vMsgBol);
                     if (!vRetBol && !String.IsNullOrEmpty(vMsgBol))
@@ -38,7 +39,6 @@ namespace BoletoNet
                         vRetorno = vRetBol;
                     }
                 }
-                //
                 mensagem = vMsg;
                 return vRetorno;
             }
@@ -68,12 +68,6 @@ namespace BoletoNet
                     vltitulostotal += boleto.ValorBoleto;   //Uso apenas no registro TRAILER do banco Santander - jsoda em 09/05/2012 - Add no registro TRAILER do banco Banrisul - sidneiklein em 08/08/2013
                     numeroRegistro++;
 
-                    if ((boleto.Instrucoes != null && boleto.Instrucoes.Count > 0) || (boleto.Sacado.Instrucoes != null && boleto.Sacado.Instrucoes.Count > 0))
-                    {
-                        strline = boleto.Banco.GerarMensagemVariavelRemessa(boleto, ref numeroRegistro, TipoArquivo.CNAB400);
-                        incluiLinha.WriteLine(strline);
-                    }
-
                     // 85 - CECRED
                     if (banco.Codigo == 85) {
                         if (boleto.PercMulta > 0 || boleto.ValorMulta > 0) {
@@ -83,11 +77,26 @@ namespace BoletoNet
                             numeroRegistro++;
                         }
                     }
+
+                    // 341 - Banco Itau
+                    if (banco.Codigo == 341)
+                    {
+                        if (boleto.PercMulta > 0 || boleto.ValorMulta > 0)
+                        {
+                            Banco_Itau _banco = new Banco_Itau();
+                            strline = _banco.GerarRegistroDetalhe5(boleto, numeroRegistro);
+                            incluiLinha.WriteLine(strline);
+                            numeroRegistro++;
+                        }
+                    }
                     if ((boleto.Instrucoes != null && boleto.Instrucoes.Count > 0) || (boleto.Sacado.Instrucoes != null && boleto.Sacado.Instrucoes.Count > 0))
                     {
                         strline = boleto.Banco.GerarMensagemVariavelRemessa(boleto, ref numeroRegistro, TipoArquivo.CNAB400);
                         if (!string.IsNullOrEmpty(strline) && !string.IsNullOrWhiteSpace(strline))
+                        { 
                             incluiLinha.WriteLine(strline);
+                            numeroRegistro++;
+                        }
                     }
                 }
 

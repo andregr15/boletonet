@@ -73,7 +73,7 @@ namespace BoletoNet.Arquivo
             }
         }
         //
-        public void GeraDadosItau()
+        public void GeraDadosItau(TipoArquivo tipoArquivo)
         {
             DateTime vencimento = new DateTime(2007, 9, 10);
 
@@ -128,7 +128,18 @@ namespace BoletoNet.Arquivo
 
             boletos.Add(b2);
 
-            GeraArquivoCNAB400(b2.Banco, c, boletos);
+            switch (tipoArquivo)
+            {
+                case TipoArquivo.CNAB240:
+                    GeraArquivoCNAB240(b2.Banco, c, boletos);
+                    break;
+                case TipoArquivo.CNAB400:
+                    GeraArquivoCNAB400(b2.Banco, c, boletos);
+                    break;             
+                default:
+                    break;
+            }            
+                
         }
         public void GeraDadosBanrisul()
         {
@@ -643,7 +654,7 @@ namespace BoletoNet.Arquivo
             if (radioButtonCNAB400.Checked)
             {
                 if (radioButtonItau.Checked)
-                    GeraDadosItau();
+                    GeraDadosItau(TipoArquivo.CNAB400);
                 else if (radioButtonBanrisul.Checked)
                     GeraDadosBanrisul();
                 else if (radioButtonCaixa.Checked)
@@ -657,7 +668,9 @@ namespace BoletoNet.Arquivo
             }
             else if (radioButtonCNAB240.Checked)
             {
-                if (radioButtonSantander.Checked)
+                if (radioButtonItau.Checked)
+                    GeraDadosItau(TipoArquivo.CNAB240);
+                else if (radioButtonSantander.Checked)
                     GeraDadosSantander();
                 else if (radioButtonBanrisul.Checked)
                     MessageBox.Show("Não Implementado!");
@@ -684,6 +697,10 @@ namespace BoletoNet.Arquivo
                 LerRetorno(748);
             else if (radioButtonBanrisul.Checked)
                 LerRetorno(041);
+            else if (radioButtonBNB.Checked)
+                LerRetorno(4);
+            else if (radioButtonBancoBrasil.Checked)
+                LerRetorno(1);
         }
 
         private void gerarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -700,6 +717,7 @@ namespace BoletoNet.Arquivo
                 {
                     //if (radioButtonSantander.Checked)
                     //    GeraArquivoCNAB240Santander(saveFileDialog.OpenFile());
+
                 }
 
                 MessageBox.Show("Arquivo gerado com sucesso!", "Teste", MessageBoxButtons.OK, MessageBoxIcon.Information);
