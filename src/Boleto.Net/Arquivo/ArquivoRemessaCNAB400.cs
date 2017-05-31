@@ -64,7 +64,8 @@ namespace BoletoNet
                 {
                     boleto.Banco = banco;
                     strline = boleto.Banco.GerarDetalheRemessa(boleto, numeroRegistro, TipoArquivo.CNAB400);
-                    incluiLinha.Write(strline);
+                    //incluiLinha.WriteLine();
+                    incluiLinha.WriteLine(strline);
                     vltitulostotal += boleto.ValorBoleto;   //Uso apenas no registro TRAILER do banco Santander - jsoda em 09/05/2012 - Add no registro TRAILER do banco Banrisul - sidneiklein em 08/08/2013
                     numeroRegistro++;
 
@@ -101,7 +102,6 @@ namespace BoletoNet
                 }
 
                 strline = banco.GerarTrailerRemessa(numeroRegistro, TipoArquivo.CNAB400, cedente, vltitulostotal);
-
                 incluiLinha.WriteLine(strline);
 
                 incluiLinha.Close();
