@@ -72,7 +72,7 @@ namespace BoletoNet
         {
             try
             {
-                this.Banco = new Banco_Sicoob();
+                this.Banco = new Banco_Credisan();
 
                 switch (getEnumEspecieByCodigo(idCodigo))
                 {

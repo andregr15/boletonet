@@ -558,7 +558,7 @@ namespace BoletoNet
                 _detalhe.Append(Utils.FitStringLength(boleto.NumeroDocumento, 10, 10, '0', 0, true, true, true)); //Posição 111 a 120
                 _detalhe.Append(boleto.DataVencimento.ToString("ddMMyy")); //Posição 121 a 126
                 _detalhe.Append(Utils.FitStringLength(boleto.ValorBoleto.ApenasNumeros(), 13, 13, '0', 0, true, true, true)); //Posição 127 a 139 
-                _detalhe.Append(boleto.Banco.Codigo); //Posição 140 a 142
+                _detalhe.Append(Utils.FitStringLength(boleto.Banco.Codigo.ToString(), 3, 3, '0', 0, true, true, true)); //Posição 140 a 142
                 _detalhe.Append(Utils.FitStringLength(boleto.Cedente.ContaBancaria.Agencia, 4, 4, '0', 0, true, true, true)); //Posição 143 a 146
                 _detalhe.Append(Utils.FitStringLength(boleto.Cedente.ContaBancaria.DigitoAgencia, 1, 1, '0', 0, true, true, true)); //Posição 147
                 _detalhe.Append(Utils.FitStringLength(boleto.EspecieDocumento.Codigo.ToString(), 2, 2, '0', 0, true, true, true)); //Posição 148 a 149
