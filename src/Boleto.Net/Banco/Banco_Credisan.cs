@@ -45,7 +45,7 @@ namespace BoletoNet
             int resto = 0;
             String constante = "319731973197319731973";
             String cooperativa = boleto.Cedente.ContaBancaria.Agencia;
-            String codigo = boleto.Cedente.Codigo + boleto.Cedente.DigitoCedente.ToString();
+            String codigo = boleto.Cedente.Codigo + boleto.Cedente.DigitoCedente;
             String nossoNumero = boleto.NossoNumero.Contains("-") ? boleto.NossoNumero.Substring(0, boleto.NossoNumero.IndexOf("-") - 1) : boleto.NossoNumero;
             StringBuilder seqValidacao = new StringBuilder();
 
@@ -122,7 +122,8 @@ namespace BoletoNet
         public String FormataNumeroTitulo(Boleto boleto)
         {
             var novoTitulo = new StringBuilder();
-            novoTitulo.Append(boleto.NossoNumero.Replace("-", "").PadLeft(8, '0'));
+            //novoTitulo.Append(boleto.NossoNumero.Replace("-", "").PadLeft(8, '0'));
+            novoTitulo.Append(boleto.NossoNumero.Substring(0, boleto.NossoNumero.IndexOf('-')).PadLeft(8, '0'));
             return novoTitulo.ToString();
         }
 
@@ -132,8 +133,8 @@ namespace BoletoNet
          */
         public String FormataNumeroParcela(Boleto boleto)
         {
-            if (boleto.NumeroParcela <= 0)
-                boleto.NumeroParcela = 1;
+            //if (boleto.NumeroParcela <= 0)
+            boleto.NumeroParcela = 0;
 
             //Variaveis
             StringBuilder novoNumero = new StringBuilder();
@@ -171,9 +172,9 @@ namespace BoletoNet
             int soma = 0;
             int resultado = 0;
             int dv = 0;
-            String codigoValidacao = boleto.Banco.Codigo.ToString().PadLeft(3, '0') + boleto.Moeda.ToString() + FatorVencimento(boleto).ToString() +
+            String codigoValidacao = boleto.Banco.Codigo.ToString().PadLeft(3, '0') + boleto.Moeda + FatorVencimento(boleto) +
                 Utils.FormatCode(boleto.ValorBoleto.ToString("f").Replace(",", "").Replace(".", ""), 10) + boleto.Carteira +
-                boleto.Cedente.ContaBancaria.Agencia + boleto.TipoModalidade + boleto.Cedente.Codigo + boleto.Cedente.DigitoCedente +
+                boleto.Cedente.ContaBancaria.Agencia + boleto.TipoModalidade + boleto.Cedente.ContaBancaria.Conta.PadLeft(7, '0') +
                 this.FormataNumeroTitulo(boleto) + this.FormataNumeroParcela(boleto);
 
             //Calculando
@@ -217,7 +218,7 @@ namespace BoletoNet
             int temp = 0;
 
             //Formatando o campo 1
-            campo1 = boleto.Banco.Codigo.ToString().PadLeft(3, '0') + boleto.Moeda.ToString() + boleto.Carteira + boleto.Cedente.ContaBancaria.Agencia;
+            campo1 = boleto.Banco.Codigo.ToString().PadLeft(3, '0') + boleto.Moeda + boleto.Carteira + boleto.Cedente.ContaBancaria.Agencia;
             //Calculando CAMPO 1
             for (int i = 0; i < campo1.Length; i++)
             {
@@ -433,9 +434,9 @@ namespace BoletoNet
                 _header.Append(new string(' ', 7)); //Posição 020 a 026
                 _header.Append(Utils.FitStringLength(cedente.ContaBancaria.Agencia, 4, 4, '0', 0, true, true, true)); //Posição 027 a 030
                 _header.Append(Utils.FitStringLength(cedente.ContaBancaria.DigitoAgencia, 1, 1, '0', 0, true, true, true)); //Posição 031
-                _header.Append(Utils.FitStringLength(cedente.Codigo, 8, 8, '0', 0, true, true, true)); //Posição 032 a 039
-                _header.Append(Utils.FitStringLength(Convert.ToString(cedente.DigitoCedente), 1, 1, '0', 0, true, true, true)); //Posição 40
-                _header.Append(new string(' ', 6)); //Posição 041 a 046
+                _header.Append((cedente.ContaBancaria.Conta).PadLeft(8, '0')); //Posição 032 a 039
+                _header.Append(Utils.FitStringLength(cedente.ContaBancaria.DigitoConta, 1, 1, '0', 0, true, true, true)); //Posição 40
+                _header.Append(cedente.Codigo.PadLeft(6, '0')); //Posição 041 a 046
                 _header.Append(Utils.FitStringLength(cedente.Nome, 30, 30, ' ', 0, true, true, false)); //Posição 047 a 076
                 _header.Append(Utils.FitStringLength("089CREDISANCED", 18, 18, ' ', 0, true, true, false)); //Posição 077 a 094
                 _header.Append(DateTime.Now.ToString("ddMMyy")); //Posição 095 a 100
@@ -539,14 +540,14 @@ namespace BoletoNet
                 _detalhe.Append(Utils.FitStringLength(boleto.Cedente.ContaBancaria.DigitoAgencia, 1, 1, '0', 0, true, true, true)); //Posição 022
                 _detalhe.Append(Utils.FitStringLength(boleto.Cedente.ContaBancaria.Conta, 8, 8, '0', 0, true, true, true)); //Posição 023 a 030
                 _detalhe.Append(Utils.FitStringLength(boleto.Cedente.ContaBancaria.DigitoConta, 1, 1, '0', 0, true, true, true)); //Posição 031
-                _detalhe.Append(new string('0', 6)); //Posição 032 a 037
+                _detalhe.Append(boleto.Cedente.Codigo.PadLeft(6, '6')); //Posição 032 a 037
                 _detalhe.Append(Utils.FitStringLength(string.Empty, 25, 25, ' ', 0, true, true, false)); //Posição 038 a 62
                 _detalhe.Append(Utils.FitStringLength(FormataNumeroTitulo(boleto), 12, 12, '0', 0, true, true, true)); //Posição 063 a 074
-                _detalhe.Append(Utils.FitStringLength(boleto.NumeroParcela.ToString(), 2, 2, '0', 0, true, true, true)); //Posição 075 a 076
+                _detalhe.Append("00"); //Posição 075 a 076
                 _detalhe.Append("00"); //Posição 077 a 078
                 _detalhe.Append("   "); //Posição 079 a 081
                 _detalhe.Append(" "); //Posição 082
-                _detalhe.Append("   "); //Posição 083 a 085
+                _detalhe.Append("109"); //Posição 083 a 085
                 _detalhe.Append("000"); //Posição 086 a 088
                 _detalhe.Append("0"); //Posição 089
                 _detalhe.Append("00000"); //Posição 090 a 094
