@@ -433,7 +433,7 @@ namespace BoletoNet
                 _header.Append("COBRANÇA"); //Posição 012 a 019
                 _header.Append(new string(' ', 7)); //Posição 020 a 026
                 _header.Append(Utils.FitStringLength(cedente.ContaBancaria.Agencia, 4, 4, '0', 0, true, true, true)); //Posição 027 a 030
-                _header.Append(Utils.FitStringLength(cedente.ContaBancaria.DigitoAgencia, 1, 1, '0', 0, true, true, true)); //Posição 031
+                _header.Append("0"); //Posição 031
                 _header.Append((cedente.ContaBancaria.Conta).PadLeft(8, '0')); //Posição 032 a 039
                 _header.Append(Utils.FitStringLength(cedente.ContaBancaria.DigitoConta, 1, 1, '0', 0, true, true, true)); //Posição 40
                 _header.Append(cedente.Codigo.PadLeft(6, '0')); //Posição 041 a 046
@@ -542,7 +542,8 @@ namespace BoletoNet
                 _detalhe.Append(Utils.FitStringLength(boleto.Cedente.ContaBancaria.DigitoConta, 1, 1, '0', 0, true, true, true)); //Posição 031
                 _detalhe.Append(boleto.Cedente.Codigo.PadLeft(6, '6')); //Posição 032 a 037
                 _detalhe.Append(Utils.FitStringLength(string.Empty, 25, 25, ' ', 0, true, true, false)); //Posição 038 a 62
-                _detalhe.Append(Utils.FitStringLength(FormataNumeroTitulo(boleto), 12, 12, '0', 0, true, true, true)); //Posição 063 a 074
+                _detalhe.Append(Utils.FitStringLength(FormataNumeroTitulo(boleto), 11, 11, '0', 0, true, true, true)); //Posição 063 a 073
+                _detalhe.Append(boleto.NossoNumero.Substring(boleto.NossoNumero.IndexOf('-') + 1, 1)); //Posição 74
                 _detalhe.Append("00"); //Posição 075 a 076
                 _detalhe.Append("00"); //Posição 077 a 078
                 _detalhe.Append("   "); //Posição 079 a 081
