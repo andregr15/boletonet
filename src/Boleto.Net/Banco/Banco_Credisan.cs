@@ -543,7 +543,7 @@ namespace BoletoNet
                 _detalhe.Append(boleto.Cedente.Codigo.PadLeft(6, '6')); //Posição 032 a 037
                 _detalhe.Append(Utils.FitStringLength(string.Empty, 25, 25, ' ', 0, true, true, false)); //Posição 038 a 62
                 _detalhe.Append(Utils.FitStringLength(FormataNumeroTitulo(boleto), 11, 11, '0', 0, true, true, true)); //Posição 063 a 073
-                _detalhe.Append(boleto.NossoNumero.Substring(boleto.NossoNumero.IndexOf('-') + 1, 1)); //Posição 74
+                _detalhe.Append(Utils.FitStringLength(boleto.NossoNumero.Substring(boleto.NossoNumero.IndexOf('-') + 1, 1), 1, 1, '0', 0, true, true, true)); //Posição 74
                 _detalhe.Append("00"); //Posição 075 a 076
                 _detalhe.Append("00"); //Posição 077 a 078
                 _detalhe.Append("   "); //Posição 079 a 081
@@ -569,8 +569,8 @@ namespace BoletoNet
                 _detalhe.Append(boleto.DataProcessamento.ToString("ddMMyy")); //Posição 151 a 156
                 _detalhe.Append(boleto.Instrucoes[0].Codigo.ToString().PadLeft(2,'0')); //Posição 157 a 158 - NÂO PROTESTAR
                 _detalhe.Append("22"); //Posição 159 a 160 - PERMITIR DESCONTO SOMENTE ATE DATA ESTIPULADA
-                _detalhe.Append(Utils.FitStringLength(Convert.ToInt32(boleto.PercJurosMora * 10000).ToString(), 6, 6, '0', 1, true, true, true)); //Posição 161 a 166
-                _detalhe.Append(Utils.FitStringLength(Convert.ToInt32(boleto.PercMulta * 10000).ToString(), 6, 6, '0', 1, true, true, true)); //Posição 167 a 172
+                _detalhe.Append(Utils.FitStringLength(Convert.ToInt32(boleto.PercJurosMora * 100).ToString(), 6, 6, '0', 1, true, true, true)); //Posição 161 a 166
+                _detalhe.Append(Utils.FitStringLength(Convert.ToInt32(boleto.PercMulta * 100).ToString(), 6, 6, '0', 1, true, true, true)); //Posição 167 a 172
                 _detalhe.Append(" "); //Posição 173
                 _detalhe.Append(Utils.FitStringLength((boleto.DataDesconto == DateTime.MinValue ? "0" : boleto.DataDesconto.ToString("ddMMyy")), 6, 6, '0', 0, true, true, true)); //Posição 174 a 179
                 _detalhe.Append(Utils.FitStringLength(boleto.ValorDesconto.ApenasNumeros(), 13, 13, '0', 0, true, true, true)); //Posição 180 a 192

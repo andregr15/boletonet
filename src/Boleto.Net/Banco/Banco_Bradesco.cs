@@ -270,8 +270,8 @@ namespace BoletoNet
             boleto.QuantidadeMoeda = 0;
 
             // Atribui o nome do banco ao local de pagamento
-            if (string.IsNullOrEmpty(boleto.LocalPagamento))
-                boleto.LocalPagamento = "PAGÁVEL PREFERENCIALMENTE NAS AGÊNCIAS DO BRADESCO";
+            //if (string.IsNullOrEmpty(boleto.LocalPagamento))
+            boleto.LocalPagamento = "Pagável preferencialmente na Rede Bradesco ou Bradesco Expresso";
 
 
             // Calcula o DAC do Nosso Número
@@ -1019,39 +1019,74 @@ namespace BoletoNet
                 string vInstrucao1 = "00"; //1ª instrução (2, N) Caso Queira colocar um cod de uma instrução. ver no Manual caso nao coloca 00
                 string vInstrucao2 = "00"; //2ª instrução (2, N) Caso Queira colocar um cod de uma instrução. ver no Manual caso nao coloca 00
 
-                foreach (Instrucao_Bradesco instrucao in boleto.Instrucoes)
+                foreach (var instrucao in boleto.Instrucoes)
                 {
-                    switch ((EnumInstrucoes_Bradesco)instrucao.Codigo)
+                    //switch ((EnumInstrucoes_Bradesco)instrucao.Codigo)
+                    //{
+                    //    case EnumInstrucoes_Bradesco.Protestar:
+                    //        vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                    //        vInstrucao2 = "00";
+                    //        break;
+                    //    case EnumInstrucoes_Bradesco.NaoProtestar:
+                    //        vInstrucao1 = "00";
+                    //        vInstrucao2 = "00";
+                    //        break;
+                    //    case EnumInstrucoes_Bradesco.ProtestoFinsFalimentares:
+                    //        vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                    //        vInstrucao2 = "00";
+                    //        break;
+                    //    case EnumInstrucoes_Bradesco.ProtestarAposNDiasCorridos:
+                    //        vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                    //        vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
+                    //        break;
+                    //    case EnumInstrucoes_Bradesco.ProtestarAposNDiasUteis:
+                    //        vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                    //        vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
+                    //        break;
+                    //    case EnumInstrucoes_Bradesco.NaoReceberAposNDias:
+                    //        vInstrucao1 = "00";
+                    //        vInstrucao2 = "00";
+                    //        break;
+                    //    case EnumInstrucoes_Bradesco.DevolverAposNDias:
+                    //        vInstrucao1 = "00";
+                    //        vInstrucao2 = "00";
+                    //        break;
+                    //}
+
+                    switch (instrucao.Codigo)
                     {
-                        case EnumInstrucoes_Bradesco.Protestar:
-                            vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                        case 7: // Não Protestar
+                            vInstrucao1 = "00"; //Indicar o código “06” - (Protesto)
                             vInstrucao2 = "00";
                             break;
-                        case EnumInstrucoes_Bradesco.NaoProtestar:
-                            vInstrucao1 = "00";
-                            vInstrucao2 = "00";
-                            break;
-                        case EnumInstrucoes_Bradesco.ProtestoFinsFalimentares:
-                            vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
-                            vInstrucao2 = "00";
-                            break;
-                        case EnumInstrucoes_Bradesco.ProtestarAposNDiasCorridos:
-                            vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                        case 15:
+                            vInstrucao1 = "06";
                             vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
                             break;
-                        case EnumInstrucoes_Bradesco.ProtestarAposNDiasUteis:
-                            vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
-                            vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
-                            break;
-                        case EnumInstrucoes_Bradesco.NaoReceberAposNDias:
-                            vInstrucao1 = "00";
-                            vInstrucao2 = "00";
-                            break;
-                        case EnumInstrucoes_Bradesco.DevolverAposNDias:
-                            vInstrucao1 = "00";
-                            vInstrucao2 = "00";
-                            break;
+                        //case EnumInstrucoes_Bradesco.ProtestoFinsFalimentares:
+                        //    vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                        //    vInstrucao2 = "00";
+                        //    break;
+                        //case EnumInstrucoes_Bradesco.ProtestarAposNDiasCorridos:
+                        //    vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                        //    vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
+                        //    break;
+                        //case EnumInstrucoes_Bradesco.ProtestarAposNDiasUteis:
+                        //    vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                        //    vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
+                        //    break;
+                        //case EnumInstrucoes_Bradesco.NaoReceberAposNDias:
+                        //    vInstrucao1 = "00";
+                        //    vInstrucao2 = "00";
+                        //    break;
+                        //case EnumInstrucoes_Bradesco.DevolverAposNDias:
+                        //    vInstrucao1 = "00";
+                        //    vInstrucao2 = "00";
+                        //    break;
                     }
+                    instrucao.Descricao = string.IsNullOrEmpty(instrucao.Descricao)
+                        ? string.Empty
+                        : instrucao.Descricao;
                 }
                 _detalhe += vInstrucao1; //posições: 157 a 158 do leiaute
                 _detalhe += vInstrucao2; //posições: 159 a 160 do leiaute

@@ -48,7 +48,7 @@ namespace BoletoNet
             try
             {
                 //Carteiras válidas
-                int[] cv = new int[] { 175, 176, 178, 109, 198, 107, 122, 142, 143, 196, 126, 131, 146, 150, 169, 121, 112 };//MarcielTorres - adicionado a carteira 112
+                int[] cv = new int[] { 175, 176, 178, 109, 198, 107, 122, 142, 143, 196, 126, 131, 146, 150, 169, 121, 112 }; //MarcielTorres - adicionado a carteira 112
                 bool valida = false;
 
                 foreach (int c in cv)
@@ -88,8 +88,14 @@ namespace BoletoNet
                 }
 
                 //Formato o número do documento 
+                boleto.NumeroDocumento = boleto.NumeroDocumento.Replace("/", string.Empty);
                 if (Utils.ToInt32(boleto.NumeroDocumento) > 0)
+                {
+                    boleto.NumeroDocumento = Utils.ToInt32(boleto.NumeroDocumento).ToString();
                     boleto.NumeroDocumento = Utils.FormatCode(boleto.NumeroDocumento, 7);
+                    
+                }
+                    
 
 
                 // Calcula o DAC da Conta Corrente
