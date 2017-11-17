@@ -944,7 +944,8 @@ namespace BoletoNet
                 // 1 = Banco emite e Processa o registro
                 // 2 = Cliente emite e o Banco somente processa
                 //Condição para Emissão da Papeleta de Cobrança(1, N)
-                _detalhe += boleto.ApenasRegistrar ? "2" : "1";
+                //_detalhe += boleto.ApenasRegistrar ? "2" : "1";
+                _detalhe += "2";
                 //Ident. se emite papeleta para Débito Automático (1, A)
                 _detalhe += "N";
                 //Identificação da Operação do Banco (10, A) Em Branco
@@ -1301,7 +1302,7 @@ namespace BoletoNet
                 _detalhe += Utils.FitStringLength(numeroRegistro.ToString(), 6, 6, '0', 0, true, true, true);
 
                 _detalhe = Utils.SubstituiCaracteresEspeciais(_detalhe);
-                numeroRegistro++;
+                //numeroRegistro++;
                 return _detalhe;
             }
             catch (Exception ex)
