@@ -552,7 +552,8 @@ namespace BoletoNet
                 _detalhe.Append("00000"); //Posição 090 a 094
                 _detalhe.Append("0"); //Posição 095
                 _detalhe.Append(Utils.FitStringLength(boleto.Cedente.NumeroBordero.ToString(), 6, 6, '0', 0, true, true, true)); //Posição 096 a 101
-                _detalhe.Append(new string(' ', 5)); //Posição 102 a 106
+                _detalhe.Append(new string(' ', 4)); //Posição 102 a 105
+				_detalhe.Append("2"); //Posição 106 a 106 Tipo de Emissão: 1 - Cooperativa 2 - Cliente
                 _detalhe.Append(Utils.FitStringLength(boleto.TipoModalidade, 2, 2, '0', 0, true, true, true));  //Posição 107 a 108
                 _detalhe.Append(Utils.FitStringLength(boleto.Remessa.CodigoOcorrencia, 2, 2, '0', 0, true, true, true)); //Posição 109 a 110 - (1)REGISTRO DE TITULOS (2)Solicitação de Baixa
                 _detalhe.Append(Utils.FitStringLength(boleto.NumeroDocumento, 10, 10, '0', 0, true, true, true)); //Posição 111 a 120
