@@ -1492,7 +1492,7 @@ namespace BoletoNet
 
                 foreach (var _instrucao in boleto.Instrucoes.Where(x=> !string.IsNullOrEmpty(x.Descricao)))
                 {
-                    if (!string.IsNullOrEmpty(_instrucao.Descricao.Replace("\n", string.Empty).Trim())) continue;
+                    if (string.IsNullOrEmpty(_instrucao.Descricao.Replace("\n", string.Empty).Trim())) continue;
 
                     if (!string.IsNullOrEmpty(_detalhe))
                         _detalhe += Environment.NewLine;
