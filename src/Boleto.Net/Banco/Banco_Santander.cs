@@ -1443,8 +1443,8 @@ namespace BoletoNet
                 //UF Estado do sacado ==> 350 - 351
                 _detalhe += Utils.FitStringLength(boleto.Sacado.Endereco.UF, 2, 2, ' ', 0, true, true, false).ToUpper();
 
-                //Nome do Sacador ou coobrigado ==> 352 - 381
-                _detalhe += sacador_aval;
+                //Brancos ==> 352 - 381
+                _detalhe += "                             ";
 
                 //Brancos ==> 382 - 382
                 _detalhe += " ";
