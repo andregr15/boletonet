@@ -1279,7 +1279,7 @@ namespace BoletoNet
                 //Unidade de valor moeda corrente ==> 083 - 084
                 _detalhe += "00";
 
-                //Valor do título em outra unidade ==> 082 - 097
+                //Valor do título em outra unidade ==> 085 - 097
                 _detalhe += "0000000000000";
 
                 //Brancos ==> 098 - 101
@@ -1444,7 +1444,7 @@ namespace BoletoNet
                 _detalhe += Utils.FitStringLength(boleto.Sacado.Endereco.UF, 2, 2, ' ', 0, true, true, false).ToUpper();
 
                 //Brancos ==> 352 - 381
-                _detalhe += "                             ";
+                _detalhe += "                              ";
 
                 //Brancos ==> 382 - 382
                 _detalhe += " ";
@@ -1453,7 +1453,7 @@ namespace BoletoNet
                 _detalhe += "I";
 
                 //Complemento da conta ==> 384 - 385
-                _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 1, 1) + boleto.Cedente.ContaBancaria.DigitoConta;
+                _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 2, 2) + boleto.Cedente.ContaBancaria.DigitoConta;
 
                 //Brancos ==> 386 - 391
                 _detalhe += "      "; //brancos X(06)
@@ -1490,7 +1490,7 @@ namespace BoletoNet
 
                 string _detalhe = "";
 
-                foreach (var _instrucao in boleto.Instrucoes)
+                foreach (var _instrucao in boleto.Instrucoes.Where(x=> !string.IsNullOrEmpty(x.Descricao.Trim()) && !string.IsNullOrEmpty(x.Descricao.Replace("\n", string.Empty).Trim())))
                 {
 
                     if (!string.IsNullOrEmpty(_detalhe))
