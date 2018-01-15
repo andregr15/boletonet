@@ -1530,14 +1530,15 @@ namespace BoletoNet
                     //Identificador do Complemento ==> 383 - 383
                     _detalhe += "I";
 
-                    //Complemento ==> 385 - 384
-                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 1, 1) + boleto.Cedente.ContaBancaria.DigitoConta;
+                    //Complemento ==> 384 - 385
+                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 2, 2) + boleto.Cedente.ContaBancaria.DigitoConta;
 
                     //Brancos ==> 386 - 394
                     _detalhe += new string(' ', 9);
 
                     //Número sequêncial do registro no arquivo ==> 395 - 400
                     _detalhe += Utils.FitStringLength(numeroRegistro.ToString(), 6, 6, '0', 0, true, true, true);
+                    _detalhe += "\n";
                     numeroRegistro++;
 
                 }
@@ -1589,7 +1590,7 @@ namespace BoletoNet
                     _detalhe += "I";
 
                     //Complemento ==> 385 - 384
-                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 1, 1) + boleto.Cedente.ContaBancaria.DigitoConta;
+                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 2, 2) + boleto.Cedente.ContaBancaria.DigitoConta;
 
                     //Brancos ==> 386 - 394
                     _detalhe += new string(' ', 9);
