@@ -852,5 +852,6 @@ namespace BoletoNet
 
 
         #endregion
+
     }
 }

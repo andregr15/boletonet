@@ -769,5 +769,17 @@ namespace BoletoNet
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Método responsável por gerar o nome do arquivo de remessa, deve ser sobreescrito em cada banco para nomes diferentes
+        /// </summary>
+        /// <param name="cedente">Dados do emissor do cupom</param>
+        /// <param name="cidadeBanco">Cidade do banco</param>
+        /// <param name="remessa">Número da remessa</param>
+        /// <returns>Retorna o nome do arquivo de remessa</returns>
+        public virtual string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

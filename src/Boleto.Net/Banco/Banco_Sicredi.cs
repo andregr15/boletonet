@@ -5,6 +5,7 @@ using System.Text;
 using BoletoNet.EDI.Banco;
 using BoletoNet.Excecoes;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using BoletoNet.Enums;
 
@@ -1072,6 +1073,11 @@ namespace BoletoNet
                 return num;
             }
             throw new BoletoNetException("Nosso número é inválido!");
+        }
+
+        public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+        {
+            return $"REM_{cedente.ContaBancaria.Agencia}{cidadeBanco}_TER_{cedente.Codigo}{cedente.DigitoCedente}_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}_C400.txt";
         }
     }
 }

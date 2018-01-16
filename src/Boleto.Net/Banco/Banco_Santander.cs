@@ -1538,9 +1538,7 @@ namespace BoletoNet
 
                     //Número sequêncial do registro no arquivo ==> 395 - 400
                     _detalhe += Utils.FitStringLength(numeroRegistro.ToString(), 6, 6, '0', 0, true, true, true);
-                    _detalhe += "\n";
                     numeroRegistro++;
-
                 }
 
                 int CodigoRegistroSacado = 5;
@@ -2015,6 +2013,11 @@ namespace BoletoNet
             if (long.TryParse(nossoNumeroSemDV, out numero))
                 return numero;
             throw new NossoNumeroInvalidoException();
+        }
+
+        public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+        {
+            return $"REM_{cedente.ContaBancaria.Agencia}{cidadeBanco}_TER_{cedente.Codigo}{cedente.DigitoCedente}_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}_C400.txt";
         }
     }
 }

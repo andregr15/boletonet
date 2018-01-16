@@ -92,15 +92,15 @@ namespace BoletoNet
                         }
                     }
 
-                    if (boleto.Instrucoes != null && boleto.Instrucoes.Count > 0 && boleto.Instrucoes.Any(x => !string.IsNullOrEmpty(x.Descricao)) || boleto.Sacado.Instrucoes != null && boleto.Sacado.Instrucoes.Count > 0)
-                    {
-                        strline = boleto.Banco.GerarMensagemVariavelRemessa(boleto, ref numeroRegistro, TipoArquivo.CNAB400);
-                        if (!string.IsNullOrEmpty(strline) && !string.IsNullOrWhiteSpace(strline))
-                        { 
-                            incluiLinha.WriteLine(strline);
-                            numeroRegistro++;
-                        }
-                    }
+                    //if (boleto.Instrucoes != null && boleto.Instrucoes.Count > 0 && boleto.Instrucoes.Any(x => !string.IsNullOrEmpty(x.Descricao)) || boleto.Sacado.Instrucoes != null && boleto.Sacado.Instrucoes.Count > 0)
+                    //{
+                    //    strline = boleto.Banco.GerarMensagemVariavelRemessa(boleto, ref numeroRegistro, TipoArquivo.CNAB400);
+                    //    if (!string.IsNullOrEmpty(strline) && !string.IsNullOrWhiteSpace(strline))
+                    //    { 
+                    //        incluiLinha.WriteLine(strline);
+                    //        numeroRegistro++;
+                    //    }
+                    //}
                 }
 
                 strline = banco.GerarTrailerRemessa(numeroRegistro, TipoArquivo.CNAB400, cedente, vltitulostotal);
