@@ -1453,7 +1453,10 @@ namespace BoletoNet
                 _detalhe += "I";
 
                 //Complemento da conta ==> 384 - 385
-                _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 2, 2) + boleto.Cedente.ContaBancaria.DigitoConta;
+                if (!string.IsNullOrEmpty(boleto.Cedente.ContaBancaria.DigitoConta)) 
+                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 1, 1) + boleto.Cedente.ContaBancaria.DigitoConta;
+                else
+                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 2, 2);
 
                 //Brancos ==> 386 - 391
                 _detalhe += "      "; //brancos X(06)
