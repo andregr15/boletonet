@@ -140,5 +140,7 @@ namespace BoletoNet
         /// </summary>
         /// <returns></returns>
         long ObterNossoNumeroSemConvenioOuDigitoVerificador(long convenio, string nossoNumero);
+
+        string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa);
     }
 }

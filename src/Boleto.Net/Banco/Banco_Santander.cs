@@ -1279,7 +1279,7 @@ namespace BoletoNet
                 //Unidade de valor moeda corrente ==> 083 - 084
                 _detalhe += "00";
 
-                //Valor do título em outra unidade ==> 082 - 097
+                //Valor do título em outra unidade ==> 085 - 097
                 _detalhe += "0000000000000";
 
                 //Brancos ==> 098 - 101
@@ -1443,8 +1443,8 @@ namespace BoletoNet
                 //UF Estado do sacado ==> 350 - 351
                 _detalhe += Utils.FitStringLength(boleto.Sacado.Endereco.UF, 2, 2, ' ', 0, true, true, false).ToUpper();
 
-                //Nome do Sacador ou coobrigado ==> 352 - 381
-                _detalhe += sacador_aval;
+                //Brancos ==> 352 - 381
+                _detalhe += "                              ";
 
                 //Brancos ==> 382 - 382
                 _detalhe += " ";
@@ -1453,7 +1453,10 @@ namespace BoletoNet
                 _detalhe += "I";
 
                 //Complemento da conta ==> 384 - 385
-                _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 1, 1) + boleto.Cedente.ContaBancaria.DigitoConta;
+                if (!string.IsNullOrEmpty(boleto.Cedente.ContaBancaria.DigitoConta)) 
+                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 1, 1) + boleto.Cedente.ContaBancaria.DigitoConta;
+                else
+                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 2, 2);
 
                 //Brancos ==> 386 - 391
                 _detalhe += "      "; //brancos X(06)
@@ -1490,8 +1493,9 @@ namespace BoletoNet
 
                 string _detalhe = "";
 
-                foreach (var _instrucao in boleto.Instrucoes)
+                foreach (var _instrucao in boleto.Instrucoes.Where(x=> !string.IsNullOrEmpty(x.Descricao)))
                 {
+                    if (string.IsNullOrEmpty(_instrucao.Descricao.Replace("\n", string.Empty).Trim())) continue;
 
                     if (!string.IsNullOrEmpty(_detalhe))
                         _detalhe += Environment.NewLine;
@@ -1529,8 +1533,8 @@ namespace BoletoNet
                     //Identificador do Complemento ==> 383 - 383
                     _detalhe += "I";
 
-                    //Complemento ==> 385 - 384
-                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 1, 1) + boleto.Cedente.ContaBancaria.DigitoConta;
+                    //Complemento ==> 384 - 385
+                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 2, 2) + boleto.Cedente.ContaBancaria.DigitoConta;
 
                     //Brancos ==> 386 - 394
                     _detalhe += new string(' ', 9);
@@ -1538,7 +1542,6 @@ namespace BoletoNet
                     //Número sequêncial do registro no arquivo ==> 395 - 400
                     _detalhe += Utils.FitStringLength(numeroRegistro.ToString(), 6, 6, '0', 0, true, true, true);
                     numeroRegistro++;
-
                 }
 
                 int CodigoRegistroSacado = 5;
@@ -1588,7 +1591,7 @@ namespace BoletoNet
                     _detalhe += "I";
 
                     //Complemento ==> 385 - 384
-                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 1, 1) + boleto.Cedente.ContaBancaria.DigitoConta;
+                    _detalhe += boleto.Cedente.ContaBancaria.Conta.Substring(boleto.Cedente.ContaBancaria.Conta.Length - 2, 2) + boleto.Cedente.ContaBancaria.DigitoConta;
 
                     //Brancos ==> 386 - 394
                     _detalhe += new string(' ', 9);
@@ -2013,6 +2016,11 @@ namespace BoletoNet
             if (long.TryParse(nossoNumeroSemDV, out numero))
                 return numero;
             throw new NossoNumeroInvalidoException();
+        }
+
+        public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+        {
+            return $"REM_{cedente.ContaBancaria.Agencia}{cidadeBanco}_TER_{cedente.Codigo}{cedente.DigitoCedente}_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}_C400.txt";
         }
     }
 }

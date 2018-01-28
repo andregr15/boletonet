@@ -10,7 +10,7 @@ namespace BoletoNet
 
 		private IBanco _IBanco;
 
-		#endregion Variaveis
+	    #endregion Variaveis
 
 		#region Construtores
 
@@ -22,7 +22,7 @@ namespace BoletoNet
 		{
 			try
 			{
-				InstanciaBanco(CodigoBanco);
+			    InstanciaBanco(CodigoBanco);
 			}
 			catch (Exception ex)
 			{
@@ -541,5 +541,17 @@ namespace BoletoNet
         }
 
         #endregion Métodos de Leitura do arquivo de Retorno
+
+	    /// <summary>
+	    /// Método responsável por gerar o nome do arquivo de remessa, deve ser sobreescrito em cada banco para nomes diferentes
+	    /// </summary>
+	    /// <param name="cedente">Dados do emissor do cupom</param>
+	    /// <param name="cidadeBanco">Cidade do banco</param>
+	    /// <param name="remessa">Número da remessa</param>
+	    /// <returns>Retorna o nome do arquivo de remessa</returns>
+	    public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+	    {
+	        return _IBanco.GerarNomeRemessa(cedente, cidadeBanco, remessa);
+	    }
     }
 }

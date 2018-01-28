@@ -388,6 +388,5 @@ namespace BoletoNet
             mensagem = vMsg;
             return vRetorno;
         }
-
     }
 }

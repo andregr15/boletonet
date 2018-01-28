@@ -1091,5 +1091,10 @@ namespace BoletoNet
             return vRetorno;
         }
 
+        public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+        {
+            return $"{(cedente.ContaBancaria.Conta + cedente.ContaBancaria.DigitoConta).PadLeft(10, '0')}{DateTime.Now:ddMMyyyy}.REM";
+        }
+
     }
 }

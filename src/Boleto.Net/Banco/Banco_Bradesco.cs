@@ -1310,6 +1310,5 @@ namespace BoletoNet
                 throw new Exception("Erro ao gerar DETALHE do arquivo CNAB400.", ex);
             }
         }
-
     }
 }

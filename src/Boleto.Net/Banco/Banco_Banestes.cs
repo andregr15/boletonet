@@ -1,5 +1,6 @@
 using System;
 using System.Web.UI;
+using System.Windows.Forms.Design;
 
 [assembly: WebResource("BoletoNet.Imagens.021.jpg", "image/jpg")]
 namespace BoletoNet
