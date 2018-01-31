@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 using System.Web.UI;
 using BoletoNet.Util;
@@ -1091,9 +1092,14 @@ namespace BoletoNet
             return vRetorno;
         }
 
+        //public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+        //{
+        //    return $"{(cedente.ContaBancaria.Conta + cedente.ContaBancaria.DigitoConta).PadLeft(10, '0')}{DateTime.Now:ddMMyyyy}.REM";
+        //}
+
         public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
         {
-            return $"{(cedente.ContaBancaria.Conta + cedente.ContaBancaria.DigitoConta).PadLeft(10, '0')}{DateTime.Now:ddMMyyyy}.REM";
+            return $"REM_{cedente.ContaBancaria.Agencia}{cidadeBanco}_TER_{cedente.Codigo}{cedente.DigitoCedente}_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}_C400.txt";
         }
 
     }
