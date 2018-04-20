@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 using System.Web.UI;
 using BoletoNet.Util;
@@ -1090,6 +1091,11 @@ namespace BoletoNet
             ////IMPLEMENTACAO PENDENTE...
             mensagem = vMsg;
             return vRetorno;
+        }
+
+        public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+        {
+            return $"REM_{cedente.ContaBancaria.Agencia}{cidadeBanco}_TER_{cedente.Codigo}{cedente.DigitoCedente}_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}_C400.txt";
         }
 
     }
