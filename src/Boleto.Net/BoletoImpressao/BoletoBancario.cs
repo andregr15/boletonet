@@ -623,27 +623,31 @@ namespace BoletoNet
             if (!Cedente.DigitoCedente.Equals(-1))
             {
                 if (!String.IsNullOrEmpty(Cedente.ContaBancaria.OperacaConta))
-                    agenciaCodigoCedente = string.Format("{0}/{1}.{2}-{3}", Cedente.ContaBancaria.Agencia, Cedente.ContaBancaria.OperacaConta, Utils.FormatCode(Cedente.Codigo.ToString(), 6), Cedente.DigitoCedente.ToString());
+                    agenciaCodigoCedente =
+                        $"{Cedente.ContaBancaria.Agencia}/{Cedente.ContaBancaria.OperacaConta}.{Utils.FormatCode(Cedente.Codigo, 6)}-{Cedente.DigitoCedente}";
 
                 switch (Boleto.Banco.Codigo)
                 {
                     case 748:
-                        agenciaCodigoCedente = string.Format("{0}.{1}.{2}", Cedente.ContaBancaria.Agencia, Cedente.ContaBancaria.OperacaConta, Utils.FormatCode(Cedente.ContaBancaria.Conta, 5));
+                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}.{Cedente.ContaBancaria.OperacaConta}.{Utils.FormatCode(Cedente.ContaBancaria.Conta, 5)}";
                         break;
                     case 41:
-                        agenciaCodigoCedente = string.Format("{0}.{1}/{2}.{3}.{4}", Cedente.ContaBancaria.Agencia, Cedente.ContaBancaria.DigitoAgencia, Cedente.Codigo.Substring(4, 6), Cedente.Codigo.Substring(10, 1), Cedente.DigitoCedente);
+                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}.{Cedente.ContaBancaria.DigitoAgencia}/{Cedente.Codigo.Substring(4, 6)}.{Cedente.Codigo.Substring(10, 1)}.{Cedente.DigitoCedente}";
                         break;
                     case 1:
-                        agenciaCodigoCedente = string.Format("{0}-{1}/{2}-{3}", Cedente.ContaBancaria.Agencia, Cedente.ContaBancaria.DigitoAgencia, Utils.FormatCode(Cedente.ContaBancaria.Conta, 6), Cedente.ContaBancaria.DigitoConta);
+                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}-{Cedente.ContaBancaria.DigitoAgencia}/{Utils.FormatCode(Cedente.ContaBancaria.Conta, 6)}-{Cedente.ContaBancaria.DigitoConta}";
                         break;
                     case 399:
-                        agenciaCodigoCedente = string.Format("{0}/{1}", Cedente.ContaBancaria.Agencia, Utils.FormatCode(Cedente.Codigo.ToString() + Cedente.DigitoCedente.ToString(), 7));
+                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}/{Utils.FormatCode(Cedente.Codigo + Cedente.DigitoCedente, 7)}";
                         break;
                     case 33:
-                        agenciaCodigoCedente = string.Format("{0}-{1}/{2}", Cedente.ContaBancaria.Agencia, Cedente.ContaBancaria.DigitoAgencia, Cedente.Codigo.PadLeft(7, '0'));
+                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}-{Cedente.ContaBancaria.DigitoAgencia}/{Cedente.Codigo.PadLeft(7, '0')}";
+                        break;
+                    case 89:
+                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}/{(Cedente.ContaBancaria.Conta + Cedente.ContaBancaria.DigitoConta).PadLeft(10, '0')}";
                         break;
                     default:
-                        agenciaCodigoCedente = string.Format("{0}/{1}-{2}", Cedente.ContaBancaria.Agencia, Utils.FormatCode(Cedente.Codigo.ToString(), 6), Cedente.DigitoCedente.ToString());
+                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}/{Utils.FormatCode(Cedente.Codigo, 6)}-{Cedente.DigitoCedente}";
                         break;
                 }
             }
@@ -652,15 +656,16 @@ namespace BoletoNet
                 //Para banco SANTANDER, a formatação do campo "Agencia/Identif.Cedente" - por jsoda em 07/05/2012
                 if (Boleto.Banco.Codigo == 33)
                 {
-                    agenciaCodigoCedente = string.Format("{0}-{1}/{2}", Cedente.ContaBancaria.Agencia, Cedente.ContaBancaria.DigitoAgencia, Utils.FormatCode(Cedente.Codigo.ToString(), 6));
+                    agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}-{Cedente.ContaBancaria.DigitoAgencia}/{Utils.FormatCode(Cedente.Codigo, 6)}";
                     if (String.IsNullOrEmpty(Cedente.ContaBancaria.DigitoAgencia))
-                        agenciaCodigoCedente = String.Format("{0}/{1}", Cedente.ContaBancaria.Agencia, Utils.FormatCode(Cedente.Codigo.ToString(), 6));
+                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}/{Utils.FormatCode(Cedente.Codigo, 6)}";
                 }
                 else if (Boleto.Banco.Codigo == 399)
                     //agenciaCodigoCedente = Utils.FormatCode(Cedente.Codigo.ToString(), 7); -> para Banco HSBC mostra apenas código Cedente - por Ponce em 08/06/2012
-                    agenciaCodigoCedente = String.Format("{0}/{1}", Cedente.ContaBancaria.Agencia, Utils.FormatCode(Cedente.Codigo.ToString(), 7)); //Solicitação do HSBC que mostrasse agencia/Conta - por Transis em 24/02/15
+                    agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}/{Utils.FormatCode(Cedente.Codigo, 7)}"; //Solicitação do HSBC que mostrasse agencia/Conta - por Transis em 24/02/15
                 else if (Boleto.Banco.Codigo == 748)
-                    agenciaCodigoCedente = string.Format("{0}.{1}.{2}", Cedente.ContaBancaria.Agencia, Cedente.ContaBancaria.OperacaConta, Utils.FormatCode(Cedente.ContaBancaria.Conta, 5));
+                    agenciaCodigoCedente =
+                        $"{Cedente.ContaBancaria.Agencia}.{Cedente.ContaBancaria.OperacaConta}.{Utils.FormatCode(Cedente.ContaBancaria.Conta, 5)}";
                 else
                     agenciaCodigoCedente = agenciaConta;
             }
@@ -719,7 +724,7 @@ namespace BoletoNet
                         : string.Empty)
             #endregion Implementação para o Banco do Brasil
 
-                .Replace("@NOSSONUMERO", Boleto.NossoNumero)
+                .Replace("@NOSSONUMERO", Boleto.Banco.Codigo == 89 ? Boleto.NossoNumero.PadLeft(13, '0') : Boleto.NossoNumero)
                 .Replace("@CARTEIRA", FormataDescricaoCarteira())
                 .Replace("@ESPECIE", Boleto.Especie)
                 .Replace("@QUANTIDADE", (Boleto.QuantidadeMoeda == 0 ? "" : Boleto.QuantidadeMoeda.ToString()))

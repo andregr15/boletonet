@@ -32,7 +32,7 @@ namespace BoletoNet
         {
             this.Nome = "Credisan";
             this.Codigo = 089;
-            this.Digito = "0";
+            this.Digito = "2";
         }
         #endregion CONSTRUTOR
 
