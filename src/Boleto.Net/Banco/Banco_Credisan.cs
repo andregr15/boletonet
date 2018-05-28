@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 using System.Web.UI;
 using BoletoNet.Util;
@@ -31,7 +32,7 @@ namespace BoletoNet
         {
             this.Nome = "Credisan";
             this.Codigo = 089;
-            this.Digito = "0";
+            this.Digito = "2";
         }
         #endregion CONSTRUTOR
 
@@ -1090,6 +1091,11 @@ namespace BoletoNet
             ////IMPLEMENTACAO PENDENTE...
             mensagem = vMsg;
             return vRetorno;
+        }
+
+        public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+        {
+            return $"{(cedente.ContaBancaria.Conta + cedente.ContaBancaria.DigitoConta).PadLeft(10, '0')}{DateTime.Now:ddMMyyyy}.REM";
         }
 
     }
