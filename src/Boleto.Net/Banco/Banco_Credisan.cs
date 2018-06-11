@@ -873,7 +873,7 @@ namespace BoletoNet
                 detalhe.NossoNumero = registro.Substring(62, 11);
                 detalhe.DACNossoNumero = registro.Substring(73, 1);
 
-                switch (registro.Substring(106, 2)) // Carteira
+            switch (registro.Substring(106, 2)) // Carteira
 	        {
 	          case "01":
 	            detalhe.Carteira = "1";
@@ -900,22 +900,22 @@ namespace BoletoNet
                 detalhe.CodigoBanco = Utils.ToInt32(registro.Substring(165, 3)); //Banco Cobrador
                 detalhe.AgenciaCobradora = Utils.ToInt32(registro.Substring(168, 4)); //Agência Cobradora
                 detalhe.DACAgenciaCobradora = Utils.ToInt32(registro.Substring(172, 1)); // DV Agencia Cobradora
-                detalhe.Especie = Utils.ToInt32(registro.Substring(173, 2)); //Espécie do Título
+                detalhe.Especie = Utils.ToInt32(!string.IsNullOrEmpty(registro.Substring(173, 2)) ? registro.Substring(173, 2) : "0"); //Espécie do Título
 
                 //Data de Crédito - Só vem preenchido quando liquidação
-                if (registro.Substring(175, 6) != "000000")
+                if (!string.IsNullOrEmpty(registro.Substring(175, 6).Trim()) && registro.Substring(175, 6) != "000000")
                     detalhe.DataCredito = Utils.ToDateTime(Utils.ToInt32(registro.Substring(175, 6)).ToString("##-##-##"));
                 else
                     detalhe.DataCredito = detalhe.DataOcorrencia;
 
                 detalhe.ValorDespesa = ((decimal)Convert.ToUInt64(registro.Substring(181, 7))) / 100; //Valor das Tarifas
-                detalhe.ValorOutrasDespesas = ((decimal)Convert.ToUInt64(registro.Substring(188, 13))) / 100; //Valor das Outras Despesas
-                detalhe.ValorAbatimento = ((decimal)Convert.ToUInt64(registro.Substring(227, 13))) / 100; //Valor do abatimento
-                detalhe.Descontos = ((decimal)Convert.ToUInt64(registro.Substring(240, 13))) / 100; //Valor do desconto
-                detalhe.ValorPago = ((decimal)Convert.ToUInt64(registro.Substring(253, 13))) / 100; //Valor do Recebimento
-                detalhe.JurosMora = ((decimal)Convert.ToUInt64(registro.Substring(266, 13))) / 100; //Valor de Juros
+                detalhe.ValorOutrasDespesas = ((decimal)Convert.ToUInt64(!string.IsNullOrEmpty(registro.Substring(188, 13).Trim()) ? registro.Substring(188, 13) : "0")) / 100; //Valor das Outras Despesas
+                detalhe.ValorAbatimento = ((decimal)Convert.ToUInt64(!string.IsNullOrEmpty(registro.Substring(227, 13).Trim()) ? registro.Substring(227, 13) : "0")) / 100; //Valor do abatimento
+                detalhe.Descontos = ((decimal)Convert.ToUInt64(!string.IsNullOrEmpty(registro.Substring(240, 13).Trim()) ? registro.Substring(240, 13) : "0")) / 100; //Valor do desconto
+                detalhe.ValorPago = ((decimal)Convert.ToUInt64(!string.IsNullOrEmpty(registro.Substring(253, 13).Trim()) ? registro.Substring(253, 13) : "0")) / 100; //Valor do Recebimento
+                detalhe.JurosMora = ((decimal)Convert.ToUInt64(!string.IsNullOrEmpty(registro.Substring(266, 13).Trim()) ? registro.Substring(266, 13) : "0")) / 100; //Valor de Juros
                 detalhe.IdentificacaoTitulo = detalhe.NumeroDocumento; //Identificação do Título no Banco
-                detalhe.OutrosCreditos = ((decimal)Convert.ToUInt64(registro.Substring(279, 13))) / 100; //Outros recebimentos
+                detalhe.OutrosCreditos = ((decimal)Convert.ToUInt64(!string.IsNullOrEmpty(registro.Substring(279, 13).Trim()) ? registro.Substring(279, 13) : "0")) / 100; //Outros recebimentos
 
                 detalhe.NumeroSequencial = Utils.ToInt32(registro.Substring(394, 6));
 
