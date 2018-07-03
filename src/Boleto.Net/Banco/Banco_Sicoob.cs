@@ -670,7 +670,8 @@ namespace BoletoNet
                 detalhe += Utils.FormatCode("0", 1);     //Posição 224  - Código para Baixa/Devolução: "0"
                 detalhe += Utils.FormatCode("0", 3);     //Posição 225 A 227  - Número de Dias para Baixa/Devolução: Brancos
                 detalhe += Utils.FormatCode(boleto.Moeda.ToString(), "0", 2, true); //Posição 228 A 229  - Código da Moeda
-                detalhe += Utils.FormatCode("", "0", 10, true); //Posição 230 A 239    -  Nº do Contrato da Operação de Créd.: "0000000000"
+                detalhe += Utils.FormatCode("", "0", 9, true); //Posição 230 A 239    -  Nº do Contrato da Operação de Créd.: "0000000000"
+                detalhe += " ";
                 detalhe = Utils.SubstituiCaracteresEspeciais(detalhe);
                 return detalhe;
             }
@@ -757,7 +758,7 @@ namespace BoletoNet
                 detalhe += " "; //Posição 229  Verificador da Conta: Brancos
                 detalhe += " "; //Posição 230  Verificador Ag/Conta: Brancos
                 detalhe += "0"; //Posição 231  Aviso para Débito Automático: "0"
-                detalhe += Utils.FormatCode("", 8); //Posição 232 - 240 Uso Exclusivo FEBRABAN/CNAB: Brancos
+                detalhe += " ".PadLeft(8, ' '); //Posição 232 - 240 Uso Exclusivo FEBRABAN/CNAB: Brancos
                 detalhe = Utils.SubstituiCaracteresEspeciais(detalhe);
                 return detalhe;
             }
