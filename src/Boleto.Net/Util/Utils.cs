@@ -118,11 +118,13 @@ namespace BoletoNet
 
         internal static string FormatCode(string text, string with, int length)
         {
+            text = text.Length > length ? text.Substring(0, length) : text;
             return FormatCode(text, with, length, false);
         }
 
         internal static string FormatCode(string text, int length)
         {
+            text = text.Length > length ? text.Substring(0, length) : text;
             return text.PadLeft(length, '0'); 
         }
 
