@@ -92,11 +92,12 @@ namespace BoletoNet
         /// </summary>
         /// <param name="text">O valor recebe os zeros ou espaços em branco</param>
         /// <param name="with">caractere a ser inserido</param>
-        /// <param name="size">Tamanho do campo</param>
+        /// <param name="length">Tamanho do campo</param>
         /// <param name="left">Indica se caracteres serão inseridos à esquerda ou à direita, o valor default é inicializar pela esquerda (left)</param>
         /// <returns></returns>
         internal static string FormatCode(string text, string with, int length, bool left)
         {
+            text = text.Length > length ? text.Substring(0, length) : text;
             //Esse método já existe, é PadLeft e PadRight da string
             length -= text.Length;
             if (left)
@@ -118,7 +119,6 @@ namespace BoletoNet
 
         internal static string FormatCode(string text, string with, int length)
         {
-            text = text.Length > length ? text.Substring(0, length) : text;
             return FormatCode(text, with, length, false);
         }
 
