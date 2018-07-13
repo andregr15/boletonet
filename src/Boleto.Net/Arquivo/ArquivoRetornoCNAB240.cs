@@ -120,6 +120,54 @@ namespace BoletoNet
             }
         }
 
+        public List<DetalheRetorno> RetornoModeloGenerico()
+        {
+            var retornos = new List<DetalheRetorno>();
+
+            foreach (var det in ListaDetalhes)
+            {
+                retornos.Add(SetDetalheRetorno(det));
+            }
+
+            return retornos;
+        }
+
+        private DetalheRetorno SetDetalheRetorno(DetalheRetornoCNAB240 det)
+        {
+            return new DetalheRetorno
+            {
+
+                CodigoInscricao = det.SegmentoT.TipoInscricao,
+                NumeroInscricao = det.SegmentoT.NumeroInscricao,
+
+                Agencia = det.SegmentoT.Agencia,
+                Conta = det.SegmentoT.Conta,
+                DACConta = Int32.Parse(det.SegmentoT.DigitoConta),
+                NossoNumero = det.SegmentoT.NossoNumero,
+
+                Carteira = det.SegmentoT.CodigoCarteira.ToString(),
+                CodigoOcorrencia = Int32.Parse(det.SegmentoU.CodigoOcorrenciaSacado),
+                
+                DataOcorrencia = det.SegmentoU.DataOcorrencia,
+                DataLiquidacao = det.SegmentoU.DataOcorrencia,
+                NumeroDocumento = det.SegmentoT.NumeroDocumento,
+                DataVencimento = det.SegmentoT.DataVencimento,
+                
+                ValorTitulo = det.SegmentoT.ValorTitulo,
+                
+                DataCredito = det.SegmentoU.DataCredito,
+
+                ValorDespesa = det.SegmentoT.ValorTarifas,
+                OutrasDespesas = det.SegmentoU.ValorOutrasDespesas,
+                Abatimentos = det.SegmentoU.ValorAbatimentoConcedido,
+                Descontos = det.SegmentoU.ValorDescontoConcedido,
+                ValorPago = det.SegmentoU.ValorPagoPeloSacado,
+                JurosMora = det.SegmentoU.JurosMultaEncargos,
+                IdentificacaoTitulo = det.SegmentoT.NumeroDocumento,
+                OutrosCreditos = det.SegmentoU.ValorOutrosCreditos
+            };
+        }
+
         #endregion
     }
 }

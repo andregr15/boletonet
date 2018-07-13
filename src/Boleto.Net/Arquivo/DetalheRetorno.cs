@@ -9,7 +9,7 @@ namespace BoletoNet
 
         private int _codigoInscricao = 0;
         private string _numeroInscricao = string.Empty;
-        private int _conta = 0;
+        private long _conta = 0;
         private int _codigoBanco = 0;
         private int _dacConta = 0;
         private string _usoEmpresa = string.Empty;
@@ -112,7 +112,7 @@ namespace BoletoNet
             set { _agencia = value; }
         }
 
-        public int Conta
+        public long Conta
         {
             get { return _conta; }
             set { _conta = value; }

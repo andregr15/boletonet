@@ -1089,15 +1089,22 @@ namespace BoletoNet
                     throw new Exception("Registro inválido. O detalhe não possuí as características do segmento U.");
 
                 detalhe.CodigoOcorrenciaSacado = registro.Substring(15, 2);
-                int DataCredito = Convert.ToInt32(registro.Substring(145, 8));
-                detalhe.DataCredito = Convert.ToDateTime(DataCredito.ToString("##-##-####"));
+
                 int DataOcorrencia = Convert.ToInt32(registro.Substring(137, 8));
-                detalhe.DataOcorrencia = Convert.ToDateTime(DataOcorrencia.ToString("##-##-####"));
+                if (DataOcorrencia > 0)
+                    detalhe.DataOcorrencia = Convert.ToDateTime(DataOcorrencia.ToString("##-##-####"));
+
                 int DataOcorrenciaSacado = Convert.ToInt32(registro.Substring(157, 8));
                 if (DataOcorrenciaSacado > 0)
                     detalhe.DataOcorrenciaSacado = Convert.ToDateTime(DataOcorrenciaSacado.ToString("##-##-####"));
                 else
                     detalhe.DataOcorrenciaSacado = DateTime.Now;
+
+                int DataCredito = Convert.ToInt32(registro.Substring(145, 8));
+                if (DataCredito > 0)
+                    detalhe.DataCredito = Convert.ToDateTime(DataCredito.ToString("##-##-####"));
+                else
+                    detalhe.DataCredito = detalhe.DataOcorrencia;
 
                 decimal JurosMultaEncargos = Convert.ToUInt64(registro.Substring(17, 15));
                 detalhe.JurosMultaEncargos = JurosMultaEncargos / 100;
