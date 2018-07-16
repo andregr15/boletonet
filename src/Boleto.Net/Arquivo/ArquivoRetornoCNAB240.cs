@@ -61,6 +61,7 @@ namespace BoletoNet
              {
                 StreamReader stream = new StreamReader(arquivo, System.Text.Encoding.UTF8);
                 string linha = "";
+                var cnpjEmpresa = "";
 
                 while ((linha = stream.ReadLine()) != null)
                 {
@@ -72,6 +73,7 @@ namespace BoletoNet
                         switch (linha.Substring(7, 1))
                         {
                             case "0": //Header de arquivo
+                                cnpjEmpresa = linha.Substring(18, 14);
                                 OnLinhaLida(null, linha, EnumTipodeLinhaLida.HeaderDeArquivo);
                                 break;
                             case "1": //Header de lote
@@ -93,6 +95,7 @@ namespace BoletoNet
                                 {
                                     //Irá ler o Segmento T e em sequencia o Segmento U
                                     detalheRetorno.SegmentoT = banco.LerDetalheSegmentoTRetornoCNAB240(linha);
+                                    detalheRetorno.SegmentoT.NumeroInscricao = cnpjEmpresa;
                                     linha = stream.ReadLine();
                                     detalheRetorno.SegmentoU = banco.LerDetalheSegmentoURetornoCNAB240(linha);
 
@@ -143,7 +146,8 @@ namespace BoletoNet
                 Agencia = det.SegmentoT.Agencia,
                 Conta = det.SegmentoT.Conta,
                 DACConta = Int32.Parse(det.SegmentoT.DigitoConta),
-                NossoNumero = det.SegmentoT.NossoNumero,
+                NossoNumero = det.SegmentoT.NossoNumero.Substring(0, 9),
+                DACNossoNumero = det.SegmentoT.NossoNumero.Substring(9, 1),
 
                 Carteira = det.SegmentoT.CodigoCarteira.ToString(),
                 CodigoOcorrencia = Int32.Parse(det.SegmentoU.CodigoOcorrenciaSacado),

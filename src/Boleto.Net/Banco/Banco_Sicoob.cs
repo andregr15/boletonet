@@ -1055,7 +1055,8 @@ namespace BoletoNet
                 detalhe.DigitoAgencia = registro.Substring(22, 1);
                 detalhe.Conta = Convert.ToInt32(registro.Substring(23, 12));
                 detalhe.DigitoConta = registro.Substring(35, 1);
-                detalhe.NossoNumero = registro.Substring(37, 20);
+                detalhe.NossoNumero = registro.Substring(37, 10);
+                
                 detalhe.CodigoCarteira = Convert.ToInt32(registro.Substring(57, 1));
                 detalhe.NumeroDocumento = registro.Substring(58, 15);
                 int dataVencimento = Convert.ToInt32(registro.Substring(73, 8));
