@@ -686,20 +686,13 @@ namespace BoletoNet
                 detalhe += Utils.FormatCode(boleto.IOF.ToString(), 15);//Posição 166 a 180   -  Valor do IOF a ser Recolhido
                 detalhe += Utils.FormatCode(boleto.Abatimento.ToString(), 15);//Posição 181 a 195   - Valor do Abatimento
                 detalhe += Utils.FormatCode(boleto.NumeroDocumento, 25); //Posição 196 a 220  - Identificação do título
+
                 detalhe += "1"; //Posição 221  - Código do protesto
                 #region Instruções
-                string vInstrucao1 = "00"; //2ª instrução (2, N) Caso Queira colocar um cod de uma instrução. ver no Manual caso nao coloca 00
-                foreach (IInstrucao instrucao in boleto.Instrucoes)
-                {
-                    switch ((EnumInstrucoes_Sicoob)instrucao.Codigo)
-                    {
-                        case EnumInstrucoes_Sicoob.CobrarJuros:
-                            vInstrucao1 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
-                            break;
-                    }
-                }
+                string vInstrucao1 = boleto.Instrucoes[0].Codigo.ToString();//"00"; //2ª instrução (2, N) Caso Queira colocar um cod de uma instrução. ver no Manual caso nao coloca 00
+
                 #endregion
-                detalhe += Utils.FormatCode(vInstrucao1, 2);  //Posição 222 a 223  - Número de Dias Corridos para Protesto
+                detalhe += Utils.FormatCode(boleto.Instrucoes[0].QuantidadeDias.ToString(), 2);  //Posição 222 a 223  - Número de Dias Corridos para Protesto
                 detalhe += Utils.FormatCode("0", 1);     //Posição 224  - Código para Baixa/Devolução: "0"
                 detalhe += Utils.FormatCode("0", 3);     //Posição 225 A 227  - Número de Dias para Baixa/Devolução: Brancos
                 detalhe += Utils.FormatCode(boleto.Moeda.ToString(), "0", 2, true); //Posição 228 A 229  - Código da Moeda
