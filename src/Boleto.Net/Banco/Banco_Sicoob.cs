@@ -458,7 +458,7 @@ namespace BoletoNet
             try
             {
                 string header = "756"; //Posição 001 a 003   Código do Sicoob na Compensação: "756"
-                header += "0001"; //Posição 004 a 007  Tipo de Registro: "1"
+                header += Utils.FormatCode(numeroArquivoRemessa.ToString(), "0", 4, true);//"0001"; //Posição 004 a 007  Tipo de Registro: "1"
                 header += "1";    //Posição 008        Tipo de Operação: "R"
                 header += "R";    //Posição 009        Tipo de Serviço: "01"
                 header += "01";   //Posição 010 a 011  Uso Exclusivo FEBRABAN/CNAB: Brancos
