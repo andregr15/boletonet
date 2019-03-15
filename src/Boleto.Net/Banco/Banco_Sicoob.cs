@@ -458,7 +458,7 @@ namespace BoletoNet
             try
             {
                 string header = "756"; //Posição 001 a 003   Código do Sicoob na Compensação: "756"
-                header += Utils.FormatCode(numeroArquivoRemessa.ToString(), "0", 4, true);//"0001"; //Posição 004 a 007  Tipo de Registro: "1"
+                header += "0001"; //Posição 004 a 007  Tipo de Registro: "1"
                 header += "1";    //Posição 008        Tipo de Operação: "R"
                 header += "R";    //Posição 009        Tipo de Serviço: "01"
                 header += "01";   //Posição 010 a 011  Uso Exclusivo FEBRABAN/CNAB: Brancos
@@ -608,7 +608,7 @@ namespace BoletoNet
             try
             {
                 string detalhe = Utils.FormatCode(Codigo.ToString(), 3); //Posição 001 a 003   Código do Sicoob na Compensação: "756"
-                detalhe += Utils.FormatCode(boleto.Cedente.NumeroSequencial.ToString(), "0", 4, true); //Posição 004 a 007   Número Sequencial
+                detalhe += "0001"; //Utils.FormatCode(boleto.Cedente.NumeroSequencial.ToString(), "0", 4, true); //Posição 004 a 007   Número Sequencial
                 detalhe += "3"; //Posição 008   Tipo de Registro: "3"
                 detalhe += Utils.FormatCode(numeroRegistro.ToString(), "0", 5, true); //Posição 009 a 013   Número Sequencial
                 detalhe += "P"; //Posição 014 Cód. Segmento do Registro Detalhe: "P"
@@ -712,7 +712,7 @@ namespace BoletoNet
             try
             {
                 string detalhe = Utils.FormatCode(Codigo.ToString(), "0", 3, true); //Posição 001 a 003   Código do Sicoob na Compensação: "756"
-                detalhe += Utils.FormatCode(boleto.Cedente.NumeroSequencial.ToString(), "0", 4, true); //Posição 004 a 007   Número Sequencial
+                detalhe += "0001"; //Utils.FormatCode(boleto.Cedente.NumeroSequencial.ToString(), "0", 4, true); //Posição 004 a 007   Número Sequencial
                 detalhe += "3"; //Posição 008   Tipo de Registro: "3"
                 detalhe += Utils.FormatCode(numeroRegistro.ToString(), "0", 5, true); //Posição 009 a 013   Número Sequencial
                 detalhe += "Q"; //Posição 014 Cód. Segmento do Registro Detalhe: "P"
@@ -746,7 +746,7 @@ namespace BoletoNet
             try
             {
                 string detalhe = Utils.FormatCode(Codigo.ToString(), 3); //Posição 001 a 003   Código do Sicoob na Compensação: "756"
-                detalhe += Utils.FormatCode(boleto.Cedente.NumeroSequencial.ToString(), "0", 4, true); //Posição 004 a 007   Número Sequencial
+                detalhe += "0001"; //Utils.FormatCode(boleto.Cedente.NumeroSequencial.ToString(), "0", 4, true); //Posição 004 a 007   Número Sequencial
                 detalhe += "3"; //Posição 008   Tipo de Registro: "3"
                 detalhe += Utils.FormatCode(numeroRegistro.ToString(), "0", 5, true); //Posição 009 a 013   Número Sequencial
                 detalhe += "R"; //Posição 014 Cód. Segmento do Registro Detalhe: "R"
@@ -799,7 +799,7 @@ namespace BoletoNet
             try
             {
                 string trailer = Utils.FormatCode(Codigo.ToString(), "0", 3, true); //Código do banco
-                trailer += Utils.FormatCode("1", "0", 4, true); //Posição Uso 4 a 7  -  Número Lote - Sequencial
+                trailer += "0001"; //Utils.FormatCode("1", "0", 4, true); //Posição Uso 4 a 7  -  Número Lote - Sequencial
                 trailer += "5";
                 trailer += Utils.FormatCode("", " ", 9);  //Posição Uso 9 a 19    Exclusivo FEBRABAN/CNAB: Brancos
                 trailer += Utils.FormatCode(numeroRegistro.ToString(), "0", 6, true);
