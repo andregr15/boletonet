@@ -6,23 +6,32 @@ namespace BoletoNet
 
     public enum EnumEspecieDocumento_Sicoob
     {
-        DuplicataMercantil = 1,
-        NotaPromissoria = 2,
-        NotaSeguro = 3,
-        Recibo = 5,
+        Cheque = 1,
+        DuplicataMercantil = 2,
+        DuplicataMercantilIndicacao = 3,
+        DuplicataServico = 4,
+        DuplicataServicoIndicacao = 5,
         DuplicataRural = 6,
-        LetraCambio = 8,
-        Warrant = 9,
-        Cheque = 10,
-        DuplicataServico = 12,
-        NotaDebito = 13,
+        LetraCambio = 7,
+        NotaCreditoComercial = 8,
+        NotaCreditoExportacao = 9, 
+        NotaCreditoIndustrial = 10,
+        NotaCreditoRural = 11,
+        NotaPromissoria = 12,
+        NotaPromissoriaRural = 13,
         TriplicataMercantil = 14,
         TriplicataServico = 15,
+        NotaSeguro = 16,
+        Recibo = 17,
         Fatura = 18,
+        NotaDebito = 19,
         ApoliceSeguro = 20,
-        MensalidadeEscolar = 21,
+        MensalidadeEscolar = 21, 
         ParcelaConsorcio = 22,
-        Outros = 99,
+        NotaFiscal = 23,
+        DocumentoDivida = 24,
+        CedulaProdutoRural = 25,  
+        Outros = 99
     }
 
     #endregion
@@ -76,95 +85,176 @@ namespace BoletoNet
 
                 switch (getEnumEspecieByCodigo(idCodigo))
                 {
-                    case EnumEspecieDocumento_Sicoob.DuplicataMercantil:
+                    //case EnumEspecieDocumento_Sicoob.Cheque:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Cheque);
+                    //    this.Especie = "Cheque";
+                    //    this.Sigla = "CH";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.DuplicataMercantil:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataMercantil);
+                    //    this.Especie = "Duplicata mercantil";
+                    //    this.Sigla = "DM";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.DuplicataMercantilIndicacao:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataMercantilIndicacao);
+                    //    this.Especie = "Duplicata mercantil indicacao";
+                    //    this.Sigla = "DMI";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.DuplicataServico:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataServico);
+                    //    this.Especie = "Duplicata de serviço";
+                    //    this.Sigla = "DS";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.DuplicataServicoIndicacao:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataServicoIndicacao);
+                    //    this.Especie = "Duplicata de serviço indicacao";
+                    //    this.Sigla = "DSI";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.DuplicataRural:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataRural);
+                    //    this.Especie = "Duplicata Rural";
+                    //    this.Sigla = "DR";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.LetraCambio:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.LetraCambio);
+                    //    this.Especie = "Letra de Cambio";
+                    //    this.Sigla = "LC";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.NotaCreditoComercial:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaCreditoComercial);
+                    //    this.Especie = "Nota de Credito Comercial";
+                    //    this.Sigla = "NCC";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.NotaCreditoExportacao:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaCreditoExportacao);
+                    //    this.Especie = "Nota de Credito a Exportacao";
+                    //    this.Sigla = "NCE";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.NotaCreditoIndustrial:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaCreditoIndustrial);
+                    //    this.Especie = "Nota de Credito Industrical";
+                    //    this.Sigla = "NCI";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.NotaCreditoRural:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaCreditoRural);
+                    //    this.Especie = "Nota de Credito Rural";
+                    //    this.Sigla = "NCR";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.NotaPromissoria:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaPromissoria);
+                    //    this.Especie = "Nota promissoria";
+                    //    this.Sigla = "NP";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.NotaPromissoriaRural:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaPromissoriaRural);
+                    //    this.Especie = "Nota promissoria rural";
+                    //    this.Sigla = "NPR";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.TriplicataMercantil:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.TriplicataMercantil);
+                    //    this.Especie = "Triplicata Mercantil";
+                    //    this.Sigla = "TP";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.TriplicataServico:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.TriplicataServico);
+                    //    this.Especie = "Triplicata de Serviço";
+                    //    this.Sigla = "TS";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.NotaSeguro:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaSeguro);
+                    //    this.Especie = "Nota de seguro";
+                    //    this.Sigla = "NS";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.Recibo:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Recibo);
+                    //    this.Especie = "Recibo";
+                    //    this.Sigla = "RC";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.Fatura:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Fatura);
+                    //    this.Especie = "Fatura";
+                    //    this.Sigla = "FT";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.NotaDebito:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaDebito);
+                    //    this.Especie = "Nota de débito";
+                    //    this.Sigla = "ND";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.ApoliceSeguro:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.ApoliceSeguro);
+                    //    this.Especie = "Apólice de Seguro";
+                    //    this.Sigla = "AP";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.MensalidadeEscolar:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.MensalidadeEscolar);
+                    //    this.Especie = "Mensalidade Escolar";
+                    //    this.Sigla = "ME";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.ParcelaConsorcio:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.ParcelaConsorcio);
+                    //    this.Especie = "Parcela de Consórcio";
+                    //    this.Sigla = "PC";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.NotaFiscal:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaFiscal);
+                    //    this.Especie = "Nota fiscal";
+                    //    this.Sigla = "NF";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.DocumentoDivida:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DocumentoDivida);
+                    //    this.Especie = "Documento de divida";
+                    //    this.Sigla = "DD";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.CedulaProdutoRural:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.CedulaProdutoRural);
+                    //    this.Especie = "Cedula de produto rural";
+                    //    this.Sigla = "CDR";
+                    //    break;
+
+                    //case EnumEspecieDocumento_Sicoob.Outros:
+                    //    this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Outros);
+                    //    this.Especie = "Outros";
+                    //    this.Sigla = "OU";
+                    //    break;
+
+                    //default:
+                    //    this.Codigo = "0";
+                    //    this.Especie = "( Selecione )";
+                    //    this.Sigla = "";
+                    //    break;
+
+                    // ajustado e comentado o resto para o protesto funcionar já que a especie do documento 1
+                    // foi alterado para cheque
+                    // analisar depois se é necessário deixar o usuário selecionar a espécie de documento no
+                    // contas a receber
+                    default:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataMercantil);
                         this.Especie = "Duplicata mercantil";
                         this.Sigla = "DM";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.NotaPromissoria:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaPromissoria);
-                        this.Especie = "Nota promissória";
-                        this.Sigla = "NP";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.NotaSeguro:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaSeguro);
-                        this.Especie = "Nota de seguro";
-                        this.Sigla = "NS";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.Recibo:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Recibo);
-                        this.Especie = "Recibo";
-                        this.Sigla = "RC";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.DuplicataRural:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataRural);
-                        this.Especie = "Duplicata Rural";
-                        this.Sigla = "DR";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.LetraCambio:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.LetraCambio);
-                        this.Sigla = "LC";
-                        this.Especie = "Letra de Câmbio";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.Warrant:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Warrant);
-                        this.Sigla = "WR";
-                        this.Especie = "Warrant";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.Cheque:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Cheque);
-                        this.Sigla = "CH";
-                        this.Especie = "Cheque";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.DuplicataServico:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataServico);
-                        this.Sigla = "DS";
-                        this.Especie = "Duplicata de serviço";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.NotaDebito:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaDebito);
-                        this.Sigla = "ND";
-                        this.Especie = "Nota de débito";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.TriplicataMercantil:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.TriplicataMercantil);
-                        this.Sigla = "TP";
-                        this.Especie = "Triplicata Mercantil";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.TriplicataServico:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.TriplicataServico);
-                        this.Sigla = "TS";
-                        this.Especie = "Triplicata de Serviço";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.Fatura:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Fatura);
-                        this.Sigla = "FT";
-                        this.Especie = "Fatura";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.ApoliceSeguro:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.ApoliceSeguro);
-                        this.Sigla = "AP";
-                        this.Especie = "Apólice de Seguro";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.MensalidadeEscolar:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.MensalidadeEscolar);
-                        this.Sigla = "ME";
-                        this.Especie = "Mensalidade Escolar";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.ParcelaConsorcio:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.ParcelaConsorcio);
-                        this.Sigla = "PC";
-                        this.Especie = "Parcela de Consórcio";
-                        break;
-                    case EnumEspecieDocumento_Sicoob.Outros:
-                        this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Outros);
-                        this.Especie = "Outros";
-                        this.Sigla = "OU";
-                        break;
-                    default:
-                        this.Codigo = "0";
-                        this.Especie = "( Selecione )";
-                        this.Sigla = "";
                         break;
                 }
             }
