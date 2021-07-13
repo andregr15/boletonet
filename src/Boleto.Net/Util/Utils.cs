@@ -78,27 +78,27 @@ namespace BoletoNet
             return (lngDateDiffValue);
         }
 
-        // uislcs: Acho que a função FormatCode() deveria ser renomeada para Completar().
+        // uislcs: Acho que a funï¿½ï¿½o FormatCode() deveria ser renomeada para Completar().
         /*
-         * "Para os registros tipo A (Alfanumérico) preencher com caracteres caixa alta e com espaços à direita
-         * preenchendo todo o espaço do campo. Para os registros tipo N (Numérico) preencher com zeros à
+         * "Para os registros tipo A (Alfanumï¿½rico) preencher com caracteres caixa alta e com espaï¿½os ï¿½ direita
+         * preenchendo todo o espaï¿½o do campo. Para os registros tipo N (Numï¿½rico) preencher com zeros ï¿½
          * esquerda preenchendo todo o campo." (p.9)
          * 
-         * Disponível em: http://www.sicoobpr.com.br/download/manualcobranca/Manual_Cedentes_Sistema_Proprio.doc
+         * Disponï¿½vel em: http://www.sicoobpr.com.br/download/manualcobranca/Manual_Cedentes_Sistema_Proprio.doc
          */
 
         /// <summary>
-        /// Função para completar um string com zeros ou espacos em branco. Pode servir para criar a remessa.
+        /// Funï¿½ï¿½o para completar um string com zeros ou espacos em branco. Pode servir para criar a remessa.
         /// </summary>
-        /// <param name="text">O valor recebe os zeros ou espaços em branco</param>
+        /// <param name="text">O valor recebe os zeros ou espaï¿½os em branco</param>
         /// <param name="with">caractere a ser inserido</param>
         /// <param name="length">Tamanho do campo</param>
-        /// <param name="left">Indica se caracteres serão inseridos à esquerda ou à direita, o valor default é inicializar pela esquerda (left)</param>
+        /// <param name="left">Indica se caracteres serï¿½o inseridos ï¿½ esquerda ou ï¿½ direita, o valor default ï¿½ inicializar pela esquerda (left)</param>
         /// <returns></returns>
         internal static string FormatCode(string text, string with, int length, bool left)
         {
             text = text.Length > length ? text.Substring(0, length) : text;
-            //Esse método já existe, é PadLeft e PadRight da string
+            //Esse mï¿½todo jï¿½ existe, ï¿½ PadLeft e PadRight da string
             length -= text.Length;
             if (left)
             {
@@ -129,25 +129,25 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// retorna um array de strings de tamanho variável com os dados da linha (pode ser usado para qualquer leitura de arquivos de retorno || remessa)
-        /// os dados no string pattern correspondem a intervalos fechados na matemática ex: [2-19] (fechado de 2 a 19)
+        /// retorna um array de strings de tamanho variï¿½vel com os dados da linha (pode ser usado para qualquer leitura de arquivos de retorno || remessa)
+        /// os dados no string pattern correspondem a intervalos fechados na matemï¿½tica ex: [2-19] (fechado de 2 a 19)
         /// </summary>
-        /// <param name="linha">string de onde os dados serão extraídos. por exemplo, uma linha de um arquivo de retorno</param>
-        /// <param name="pattern">obrigatóriamente é necessário numero PAR de valores NUMÉRICOS no string pattern. ex: 1-1,2-19</param>
-        /// <returns>um array de strings de tamanho variável contendo os dados lidos na linha: string[]</returns>
+        /// <param name="linha">string de onde os dados serï¿½o extraï¿½dos. por exemplo, uma linha de um arquivo de retorno</param>
+        /// <param name="pattern">obrigatï¿½riamente ï¿½ necessï¿½rio numero PAR de valores NUMï¿½RICOS no string pattern. ex: 1-1,2-19</param>
+        /// <returns>um array de strings de tamanho variï¿½vel contendo os dados lidos na linha: string[]</returns>
         /// <example>
         /// string[] dados = getDados(sLine, "1-1,2-394,395-400");
         /// </example>
         internal static string[] GetDados(string linha, string pattern)
         {
-            // separa os números
+            // separa os nï¿½meros
             pattern = pattern.Replace('-', ',');
             string[] coord = pattern.Split(',');
 
-            //cria objeto para armazenágem, buffer.
+            //cria objeto para armazenï¿½gem, buffer.
             string[] dados = new string[coord.Length / 2];
 
-            //pega os números de 2 em 2 e preenche o array
+            //pega os nï¿½meros de 2 em 2 e preenche o array
             int x = 0;
             for (int i = 0; i < coord.Length; i += 2)
             {
@@ -172,7 +172,7 @@ namespace BoletoNet
                 if (sLine != null){
                     dados = getDados(sLine, "1-1,2-394,395-400");
                     // adicionar os dados a um string
-                    textBox1.Text += " posição:<" + dados[2] + ">";
+                    textBox1.Text += " posiï¿½ï¿½o:<" + dados[2] + ">";
                     // poderia ser
                     //new boleto_dados(dados[0],dados[1],dados[2]);
                 }
@@ -232,10 +232,14 @@ namespace BoletoNet
             }
         }
 
-        internal static decimal ToDecimal(string value) {
-            try {
+        internal static decimal ToDecimal(string value)
+        {
+            try
+            {
                 return Convert.ToDecimal(value);
-            } catch {
+            }
+            catch
+            {
                 return 0;
             }
         }
@@ -277,13 +281,13 @@ namespace BoletoNet
             else if (value.Trim().Length == 14)
                 return FormataCNPJ(value);
 
-            throw new Exception(string.Format("O CPF ou CNPJ: {0} é inválido.", value));
+            throw new Exception(string.Format("O CPF ou CNPJ: {0} ï¿½ invï¿½lido.", value));
         }
 
         /// <summary>
-        /// Formata o número do CPF 92074286520 para 920.742.865-20
+        /// Formata o nï¿½mero do CPF 92074286520 para 920.742.865-20
         /// </summary>
-        /// <param name="cpf">Sequencia numérica de 11 dígitos. Exemplo: 00000000000</param>
+        /// <param name="cpf">Sequencia numï¿½rica de 11 dï¿½gitos. Exemplo: 00000000000</param>
         /// <returns>CPF formatado</returns>
         internal static string FormataCPF(string cpf)
         {
@@ -300,7 +304,7 @@ namespace BoletoNet
         /// <summary>
         /// Formata o CNPJ. Exemplo 00.316.449/0001-63
         /// </summary>
-        /// <param name="cnpj">Sequencia numérica de 14 dígitos. Exemplo: 00000000000000</param>
+        /// <param name="cnpj">Sequencia numï¿½rica de 14 dï¿½gitos. Exemplo: 00000000000000</param>
         /// <returns>CNPJ formatado</returns>
         internal static string FormataCNPJ(string cnpj)
         {
@@ -317,7 +321,7 @@ namespace BoletoNet
         /// <summary>
         /// Formato o CEP em 00.000-000
         /// </summary>
-        /// <param name="cep">Sequencia numérica de 8 dígitos. Exemplo: 00000000</param>
+        /// <param name="cep">Sequencia numï¿½rica de 8 dï¿½gitos. Exemplo: 00000000</param>
         /// <returns>CEP formatado</returns>
         internal static string FormataCEP(string cep)
         {
@@ -332,13 +336,13 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Formata agência e conta
+        /// Formata agï¿½ncia e conta
         /// </summary>
-        /// <param name="agencia">Código da agência</param>
-        /// <param name="digitoAgencia">Dígito verificador da agência. Pode ser vazio.</param>
-        /// <param name="conta">Código da conta</param>
-        /// <param name="digitoConta">dígito verificador da conta. Pode ser vazio.</param>
-        /// <returns>Agência e conta formatadas</returns>
+        /// <param name="agencia">Cï¿½digo da agï¿½ncia</param>
+        /// <param name="digitoAgencia">Dï¿½gito verificador da agï¿½ncia. Pode ser vazio.</param>
+        /// <param name="conta">Cï¿½digo da conta</param>
+        /// <param name="digitoConta">dï¿½gito verificador da conta. Pode ser vazio.</param>
+        /// <returns>Agï¿½ncia e conta formatadas</returns>
         internal static string FormataAgenciaConta(string agencia, string digitoAgencia, string conta, string digitoConta)
         {
             string agenciaConta = string.Empty;
@@ -441,14 +445,14 @@ namespace BoletoNet
                     if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
                         sb.Append(c);
                 }
-                return Regex.Replace(sb.ToString(), @"[^0-9a-zA-Z°ºª&¹²³.,\\@\- ]+", " ")
-                    .Replace("ª", "a")
-                    .Replace("º", "o")
-                    .Replace("°", "o")
+                return Regex.Replace(sb.ToString(), @"[^0-9a-zA-Zï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½.,\\@\- ]+", x => new string(' ', x.Length))
+                    .Replace("ï¿½", "a")
+                    .Replace("ï¿½", "o")
+                    .Replace("ï¿½", "o")
                     .Replace("&", "e")
-                    .Replace("¹", "1")
-                    .Replace("²", "2")
-                    .Replace("³", "3");
+                    .Replace("ï¿½", "1")
+                    .Replace("ï¿½", "2")
+                    .Replace("ï¿½", "3");
             }
             return string.Empty;
         }
@@ -490,7 +494,7 @@ namespace BoletoNet
         /// <summary>
         /// Retorna uma String com a qtde de casas pedidas da direita para a esquerda.
         /// <param name="seq">Sequencia de Dados</param>
-        /// <param name="qtde">Quantidade de Char's à retornar</param>
+        /// <param name="qtde">Quantidade de Char's ï¿½ retornar</param>
         /// <param name="ch">Caracter que deseja usar para completar</param>
         /// <param name="completaPelaEsquerda">True: completa pela esquerda; False: completa pela direita</param>
         /// </summary>        
@@ -502,14 +506,18 @@ namespace BoletoNet
             ;
         }
 
-        public static string Transform(string text, string mask, char charMask = 'X') {
+        public static string Transform(string text, string mask, char charMask = 'X')
+        {
             string retorno = text;
 
-            if (!string.IsNullOrEmpty(mask)) {
+            if (!string.IsNullOrEmpty(mask))
+            {
 
                 int idx = 0;
-                foreach (var m in mask) {
-                    if (m != charMask) {
+                foreach (var m in mask)
+                {
+                    if (m != charMask)
+                    {
                         retorno = retorno.Insert(idx, m.ToString());
                     }
                     idx++;

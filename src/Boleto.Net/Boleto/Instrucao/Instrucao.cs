@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BoletoNet
 {
-    public class Instrucao : AbstractInstrucao, IInstrucao
+    public class Instrucao : IInstrucao
     {
 
         #region Variaveis
@@ -33,7 +33,7 @@ namespace BoletoNet
 
         #endregion
 
-        # region Métodos Privados
+        # region Mï¿½todos Privados
 
         private void InstanciaInstrucao(int codigoBanco)
         {
@@ -49,7 +49,7 @@ namespace BoletoNet
                     case 104:
                         _IInstrucao = new Instrucao_Caixa();
                         break;
-                    //341 - Itaú
+                    //341 - Itaï¿½
                     case 341:
                         _IInstrucao = new Instrucao_Itau();
                         break;
@@ -66,7 +66,9 @@ namespace BoletoNet
                         _IInstrucao = new Instrucao_Safra();
                         break;
                     //237 - Bradesco
+                    //707 - Daycoval
                     case 237:
+                    case 707:
                         _IInstrucao = new Instrucao_Bradesco();
                         break;
                     //347 - Sudameris
@@ -96,6 +98,10 @@ namespace BoletoNet
                     case 756:
                         _IInstrucao = new Instrucao_Sicoob();
                         break;
+                    //97 - CredSis
+                    case 97:
+                        _IInstrucao = new Instrucao_CrediSIS();
+                        break;
                     //85 - CECRED
                     case 85:
                         _IInstrucao = new Instrucao_Cecred();
@@ -108,13 +114,26 @@ namespace BoletoNet
                     case 89:
                         _IInstrucao = new Instrucao_Credisan();
                         break;
+                    //655 - Votorantim
+                    case 655:
+                        _IInstrucao = new Instrucao_Votorantim();
+                        break;
+                    case 21:
+                        _IInstrucao = new Instrucao_Banestes();
+                        break;
+                    case 4:
+                        _IInstrucao = new Instrucao_BancoNordeste();
+                        break;
+                    case 84: 
+                        _IInstrucao = new Instrucao_Uniprime();
+                        break;
                     default:
-                        throw new Exception("Código do banco não implementando: " + codigoBanco);
+                        throw new Exception("Cï¿½digo do banco nï¿½o implementando: " + codigoBanco);
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a execução da transação.", ex);
+                throw new Exception("Erro durante a execuï¿½ï¿½o da transaï¿½ï¿½o.", ex);
             }
         }
 
@@ -122,25 +141,25 @@ namespace BoletoNet
 
         #region Propriedades da interface
 
-        public override IBanco Banco
+        public IBanco Banco
         {
             get { return _IInstrucao.Banco; }
             set { _IInstrucao.Banco = value; }
         }
 
-        public override int Codigo
+        public int Codigo
         {
             get { return _IInstrucao.Codigo; }
             set { _IInstrucao.Codigo = value; }
         }
 
-        public override string Descricao
+        public string Descricao
         {
             get { return _IInstrucao.Descricao; }
             set { _IInstrucao.Descricao = value; }
         }
 
-        public override int QuantidadeDias
+        public int QuantidadeDias
         {
             get { return _IInstrucao.QuantidadeDias; }
             set { _IInstrucao.QuantidadeDias = value; }
@@ -148,9 +167,9 @@ namespace BoletoNet
 
         #endregion
 
-        #region Métodos de interface
+        #region Mï¿½todos de interface
 
-        public override void Valida()
+        public void Valida()
         {
             try
             {
@@ -158,7 +177,7 @@ namespace BoletoNet
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a validação dos campos.", ex);
+                throw new Exception("Erro durante a validaï¿½ï¿½o dos campos.", ex);
             }
         }
 

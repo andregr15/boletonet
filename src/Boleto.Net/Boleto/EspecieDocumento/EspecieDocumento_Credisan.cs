@@ -58,6 +58,30 @@ namespace BoletoNet
 
         #region Metodos Privados
 
+        public override string getCodigoEspecieBySigla(string sigla)
+        {
+            switch (sigla)
+            {
+                case "CH": return "1";
+                case "DM": return "2";
+                case "DS": return "4";
+                case "DR": return "6";
+                case "LC": return "7";
+                case "NP": return "12";
+                case "TP": return "14";
+                case "TS": return "15";
+                case "NS": return "16";
+                case "RC": return "17";
+                case "FT": return "18";
+                case "ND": return "19";
+                case "AP": return "20";
+                case "ME": return "21";
+                case "PC": return "22";
+                case "OU": return "23";              
+                default: return "2";
+            }
+        }
+        
         public string getCodigoEspecieByEnum(EnumEspecieDocumento_Credisan especie)
         {
             return Convert.ToInt32(especie).ToString("00");

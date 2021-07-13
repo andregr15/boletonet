@@ -157,13 +157,18 @@ namespace BoletoNet
 			detalheRetorno.CodigoInscricao = Utils.ToInt32(registro.Substring(1, 2));
 			detalheRetorno.NumeroInscricao = registro.Substring(3, 14);
 			detalheRetorno.UsoEmpresa = registro.Substring(37, 25);
-			detalheRetorno.NossoNumero = registro.Substring(94, 12);
-			detalheRetorno.NossoNumeroComDV = registro.Substring(94, 13);
+
+            var nossoNumeroLido = registro.Substring(94, 13).Trim();
+            detalheRetorno.NossoNumero = nossoNumeroLido.Substring(0, nossoNumeroLido.Length - 1);
+			detalheRetorno.NossoNumeroComDV = detalheRetorno.NossoNumero + nossoNumeroLido.Substring(nossoNumeroLido.Length - 1, 1);
 			detalheRetorno.Carteira = registro.Substring(107, 1);
 			detalheRetorno.CodigoOcorrencia = int.Parse(registro.Substring(108, 2));
 
 			var dataOcorrencia = Utils.ToInt32(registro.Substring(110, 6));
 			detalheRetorno.DataOcorrencia = Utils.ToDateTime(dataOcorrencia.ToString("##-##-##"));
+
+			var dataCredito = Utils.ToInt32(registro.Substring(385, 6));
+			detalheRetorno.DataCredito = Utils.ToDateTime(dataCredito.ToString("##-##-##"));
 
 			detalheRetorno.SeuNumero = registro.Substring(116, 10);
 
@@ -183,10 +188,10 @@ namespace BoletoNet
 			decimal valorIof = Convert.ToUInt64(registro.Substring(214, 11));
 			detalheRetorno.IOF = valorIof / 100;
 
-			decimal valorAbatimento = Convert.ToUInt64(registro.Substring(227, 11));
+			decimal valorAbatimento = Convert.ToUInt64(registro.Substring(227, 13));
 			detalheRetorno.ValorAbatimento = valorAbatimento / 100;
 
-			decimal valorDesconto = Convert.ToUInt64(registro.Substring(240, 11));
+			decimal valorDesconto = Convert.ToUInt64(registro.Substring(240, 13));
 			detalheRetorno.Descontos = valorDesconto / 100;
 
 			decimal valorPago = Convert.ToUInt64(registro.Substring(253, 13));
@@ -240,19 +245,16 @@ namespace BoletoNet
 				// Código da empresea, fornecido pelo banco
 			detalhe.Append(Utils.FitStringLength(boleto.NumeroDocumento, 25, 25, ' ', 0, true, true, true));
 
-				// Número do documento interno
-			detalhe.Append(Utils.FitStringLength("0", 8, 8, '0', 0, true, true, true)); // Nosso número
-			detalhe.Append(Utils.FitStringLength(boleto.NossoNumero, 12, 12, '0', 0, true, true, true));
+            detalhe.Append(Utils.FitStringLength(boleto.NossoNumero, 8, 8, '0', 0, true, true, true)); // Nosso número
+            detalhe.Append(Utils.FitStringLength(boleto.NossoNumero, 13, 13, '0', 0, true, true, true)); 
 
-				// Nosso número do correspondente, mesmo do boleto
-			if (this._banco == null)
+            // Nosso número do correspondente, mesmo do boleto
+            if (this._banco == null)
 			{
 				this._banco = boleto.Banco;
 			}
 
 			this._banco.ValidaBoleto(boleto);
-
-			detalhe.Append(boleto.DigitoNossoNumero);
 
 			detalhe.Append(Utils.FitStringLength(string.Empty, 24, 24, ' ', 0, true, true, false)); // Uso do banco
 			detalhe.Append("4"); // TODO: Código de remessa
@@ -267,8 +269,9 @@ namespace BoletoNet
 			detalhe.Append("N"); // Indicação de aceite do título, sempre N
 			detalhe.Append(boleto.DataDocumento.ToString("ddMMyy"));
 			detalhe.Append(Utils.FitStringLength(string.Empty, 4, 4, '0', 0, true, true, true)); // Zeros
-			detalhe.Append(Utils.FitStringLength(boleto.JurosMora.ApenasNumeros(), 13, 13, '0', 0, true, true, true));
-			detalhe.Append(boleto.DataDesconto == DateTime.MinValue ? "000000" : boleto.DataDesconto.ToString("ddMMyy"));
+            // detalhe.Append(Utils.FitStringLength(boleto.JurosMora.ApenasNumeros(), 13, 13, '0', 0, true, true, true));
+            detalhe.Append(Utils.FitStringLength("0", 13, 13, '0', 0, true, true, true));
+            detalhe.Append(boleto.DataDesconto == DateTime.MinValue ? "000000" : boleto.DataDesconto.ToString("ddMMyy"));
 			detalhe.Append(Utils.FitStringLength(boleto.ValorDesconto.ApenasNumeros(), 13, 13, '0', 0, true, true, true));
 			detalhe.Append(Utils.FitStringLength(boleto.IOF.ApenasNumeros(), 26, 26, '0', 0, true, true, true));
 			detalhe.Append(boleto.Sacado.CPFCNPJ.Length == 11 ? "01" : "02");
@@ -278,7 +281,7 @@ namespace BoletoNet
 			detalhe.Append(Utils.FitStringLength(string.Empty, 10, 10, ' ', 0, true, true, false));
 			detalhe.Append(
 				Utils.SubstituiCaracteresEspeciais(
-					Utils.FitStringLength(boleto.Sacado.Endereco.Logradouro, 40, 40, ' ', 0, true, true, false)));
+					Utils.FitStringLength(boleto.Sacado.Endereco.EndComNumeroEComplemento, 40, 40, ' ', 0, true, true, false)));
 			detalhe.Append(
 				Utils.SubstituiCaracteresEspeciais(
 					Utils.FitStringLength(boleto.Sacado.Endereco.Bairro, 12, 12, ' ', 0, true, true, false)));

@@ -1,7 +1,7 @@
+using BoletoNet.Enums;
 using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Text;
+using System.IO;
 
 namespace BoletoNet
 {
@@ -26,55 +26,60 @@ namespace BoletoNet
         #region Construtores
 
         public ArquivoRetornoCNAB400()
-		{
+        {
             this.TipoArquivo = TipoArquivo.CNAB400;
         }
 
         #endregion
 
-        #region Métodos de instância
+        #region Mï¿½todos de instï¿½ncia
 
         public override void LerArquivoRetorno(IBanco banco, Stream arquivo)
         {
             try
             {
                 StreamReader stream = new StreamReader(arquivo, System.Text.Encoding.UTF8);
-                string linha = "";
-                // Identificação do registro detalhe
+                // Identificaï¿½ï¿½o do registro detalhe
                 List<string> IdsRegistroDetalhe = new List<string>();
 
                 // Lendo o arquivo
-                linha = stream.ReadLine();
+                string linha = stream.ReadLine();
                 this.HeaderRetorno = banco.LerHeaderRetornoCNAB400(linha);
 
-                // Próxima linha (DETALHE)
+                // Prï¿½xima linha (DETALHE)
                 linha = stream.ReadLine();
 
-                // 85 - CECRED - Código de registro detalhe 7 para CECRED
-                // 1 - Banco do Brasil- Código de registro detalhe 7 para convênios com 7 posições, e detalhe 1 para convênios com 6 posições(colocado as duas, pois não interferem em cada tipo de arquivo)
-                if (banco.Codigo == 85)
+                //tem arquivo de retorno que possui somente cabeï¿½alho
+                if (linha != null)
                 {
-                    IdsRegistroDetalhe.Add("7");
-                }
-                else if (banco.Codigo == 1)
-                {
-                    IdsRegistroDetalhe.Add("1");//Para convênios de 6 posições
-                    IdsRegistroDetalhe.Add("7");//Para convênios de 7 posições
-                }
-                else
-                {
-                    IdsRegistroDetalhe.Add("1");
-                }
+                    switch (banco.Codigo)
+                    {
+                        // 85 - CECRED - Cï¿½digo de registro detalhe 7 para CECRED
+                        case (int)Bancos.CECRED:
+                            IdsRegistroDetalhe.Add("7");
+                            break;
+                        // 1 - Banco do Brasil- Cï¿½digo de registro detalhe 7 para convï¿½nios com 7 posiï¿½ï¿½es, e detalhe 1 para convï¿½nios com 6 posiï¿½ï¿½es(colocado as duas, pois nï¿½o interferem em cada tipo de arquivo)
+                        case (int)Bancos.BancoBrasil:
+                            IdsRegistroDetalhe.Add("1");//Para convï¿½nios de 6 posiï¿½ï¿½es
+                            IdsRegistroDetalhe.Add("7");//Para convï¿½nios de 7 posiï¿½ï¿½es
+                            break;
+                        default:
+                            IdsRegistroDetalhe.Add("1");
+                            break;
+                    }
 
-                while (IdsRegistroDetalhe.Contains(DetalheRetorno.PrimeiroCaracter(linha)))
-                {
-                    DetalheRetorno detalhe = banco.LerDetalheRetornoCNAB400(linha);
-                    ListaDetalhe.Add(detalhe);
-                    //OnLinhaLida(detalhe, linha);
-                    linha = stream.ReadLine();
-                }
+                    while (IdsRegistroDetalhe.Contains(DetalheRetorno.PrimeiroCaracter(linha)))
+                    {
+                        DetalheRetorno detalhe = banco.LerDetalheRetornoCNAB400(linha);
+                        ListaDetalhe.Add(detalhe);
+                        //OnLinhaLida(detalhe, linha);
+                        linha = stream.ReadLine();
+                    }
 
-                stream.Close();
+                    //TODO: Tratar Triller.
+
+                    stream.Close();
+                }
             }
             catch (Exception ex)
             {

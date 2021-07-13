@@ -31,6 +31,7 @@ namespace BoletoNet
         NotaFiscal = 23,
         DocumentoDivida = 24,
         CedulaProdutoRural = 25,  
+        BoletoProposta = 32,
         Outros = 99
     }
 
@@ -75,6 +76,30 @@ namespace BoletoNet
         public EnumEspecieDocumento_Sicoob getEnumEspecieByCodigo(string codigo)
         {
             return (EnumEspecieDocumento_Sicoob) Convert.ToInt32(codigo);
+        }
+
+        public override string getCodigoEspecieBySigla(string sigla)
+        {
+            switch (sigla)
+            {
+                case "CH": return "1";
+                case "DM": return "2";
+                case "DS": return "4";
+                case "DR": return "6";
+                case "LC": return "7";
+                case "NP": return "12";
+                case "TP": return "14";
+                case "TS": return "15";
+                case "NS": return "16";
+                case "RC": return "17";
+                case "FT": return "18";
+                case "ND": return "19";
+                case "AP": return "20";
+                case "ME": return "21";
+                case "PC": return "22";
+                case "OU": return "23";              
+                default: return "2";
+            }
         }
 
         private void carregar(string idCodigo)
@@ -256,6 +281,88 @@ namespace BoletoNet
                         this.Especie = "Duplicata mercantil";
                         this.Sigla = "DM";
                         break;
+                        
+                    //TODO verify code
+                    // case EnumEspecieDocumento_Sicoob.NotaPromissoria:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaPromissoria);
+                    //     this.Especie = "Nota promissória";
+                    //     this.Sigla = "NP";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.NotaSeguro:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaSeguro);
+                    //     this.Especie = "Nota de seguro";
+                    //     this.Sigla = "NS";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.Recibo:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Recibo);
+                    //     this.Especie = "Recibo";
+                    //     this.Sigla = "RC";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.DuplicataRural:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataRural);
+                    //     this.Especie = "Duplicata Rural";
+                    //     this.Sigla = "DR";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.LetraCambio:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.LetraCambio);
+                    //     this.Sigla = "LC";
+                    //     this.Especie = "Letra de Câmbio";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.Cheque:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Cheque);
+                    //     this.Sigla = "CH";
+                    //     this.Especie = "Cheque";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.DuplicataServico:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.DuplicataServico);
+                    //     this.Sigla = "DS";
+                    //     this.Especie = "Duplicata de serviço";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.NotaDebito:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.NotaDebito);
+                    //     this.Sigla = "ND";
+                    //     this.Especie = "Nota de débito";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.TriplicataMercantil:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.TriplicataMercantil);
+                    //     this.Sigla = "TP";
+                    //     this.Especie = "Triplicata Mercantil";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.TriplicataServico:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.TriplicataServico);
+                    //     this.Sigla = "TS";
+                    //     this.Especie = "Triplicata de Serviço";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.Fatura:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Fatura);
+                    //     this.Sigla = "FT";
+                    //     this.Especie = "Fatura";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.ApoliceSeguro:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.ApoliceSeguro);
+                    //     this.Sigla = "AP";
+                    //     this.Especie = "Apólice de Seguro";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.MensalidadeEscolar:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.MensalidadeEscolar);
+                    //     this.Sigla = "ME";
+                    //     this.Especie = "Mensalidade Escolar";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.ParcelaConsorcio:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.ParcelaConsorcio);
+                    //     this.Sigla = "PC";
+                    //     this.Especie = "Parcela de Consórcio";
+                    //     break;
+                    // case EnumEspecieDocumento_Sicoob.Outros:
+                    //     this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Sicoob.Outros);
+                    //     this.Especie = "Outros";
+                    //     this.Sigla = "OU";
+                    //     break;
+                    // default:
+                    //     this.Codigo = "0";
+                    //     this.Especie = "( Selecione )";
+                    //     this.Sigla = "";
+                    //     break;
                 }
             }
             catch (Exception ex)

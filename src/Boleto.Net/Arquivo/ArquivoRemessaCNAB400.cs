@@ -18,9 +18,9 @@ namespace BoletoNet
 
         #endregion
 
-        #region Métodos de instância
+        #region Mï¿½todos de instï¿½ncia
         /// <summary>
-        /// Método que fará a verificação se a classe está devidamente implementada para a geração da Remessa
+        /// Mï¿½todo que farï¿½ a verificaï¿½ï¿½o se a classe estï¿½ devidamente implementada para a geraï¿½ï¿½o da Remessa
         /// </summary>
         public override bool ValidarArquivoRemessa(string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
         {
@@ -70,6 +70,18 @@ namespace BoletoNet
                     vltitulostotal += boleto.ValorBoleto;   //Uso apenas no registro TRAILER do banco Santander - jsoda em 09/05/2012 - Add no registro TRAILER do banco Banrisul - sidneiklein em 08/08/2013
                     numeroRegistro++;
 
+                    // Banco CrediSis - 97
+                    if (banco.Codigo == 97)
+                    {
+                        if (boleto.ValorDesconto > 0 || boleto.PercMulta > 0 || boleto.ValorMulta > 0)
+                        {
+                            Banco_CrediSis _banco = new Banco_CrediSis();
+                            strline = _banco.GerarRegistroDetalhe2(boleto, numeroRegistro);
+                            incluiLinha.WriteLine(strline);
+                            numeroRegistro++;
+                        }
+                    }
+
                     // 85 - CECRED
                     if (banco.Codigo == 85) {
                         if (boleto.PercMulta > 0 || boleto.ValorMulta > 0) {
@@ -86,7 +98,7 @@ namespace BoletoNet
                         if (boleto.PercMulta > 0 || boleto.ValorMulta > 0)
                         {
                             Banco_Itau _banco = new Banco_Itau();
-                            strline = _banco.GerarRegistroDetalhe5(boleto, numeroRegistro);
+                            strline = _banco.GerarRegistroDetalhe2(boleto, numeroRegistro);
                             incluiLinha.WriteLine(strline);
                             numeroRegistro++;
                         }
@@ -101,6 +113,27 @@ namespace BoletoNet
                     //        numeroRegistro++;
                     //    }
                     //}
+                    // Banco Bradesco - 237
+                    if (banco.Codigo == 237)
+                    {
+                        if (boleto.OutrosDescontos > 0)
+                        {
+                            Banco_Bradesco _banco = new Banco_Bradesco();
+                            strline = _banco.GerarRegistroDetalhe2(boleto, numeroRegistro);
+                            incluiLinha.WriteLine(strline);
+                            numeroRegistro++;
+                        }
+                    }
+
+                    if ((boleto.Instrucoes != null && boleto.Instrucoes.Count > 0) || (boleto.Sacado.Instrucoes != null && boleto.Sacado.Instrucoes.Count > 0))
+                    {
+                        strline = boleto.Banco.GerarMensagemVariavelRemessa(boleto, ref numeroRegistro, TipoArquivo.CNAB400);
+                        if (!string.IsNullOrEmpty(strline) && !string.IsNullOrWhiteSpace(strline))
+                        { 
+                            incluiLinha.WriteLine(strline);
+                            numeroRegistro++;
+                        }
+                    }
                 }
 
                 strline = banco.GerarTrailerRemessa(numeroRegistro, TipoArquivo.CNAB400, cedente, vltitulostotal);

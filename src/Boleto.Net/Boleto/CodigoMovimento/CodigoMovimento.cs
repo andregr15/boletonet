@@ -58,7 +58,10 @@ namespace BoletoNet
             {
                 switch (codigoBanco)
                 {
-
+                    //004 - Banco do Nordeste
+                    case 4:
+                        _ICodigoMovimento = new CodigoMovimento_Nordeste(codigoMovimento);
+                        break;
                     // Caixa
                     case 104:
                         _ICodigoMovimento = new CodigoMovimento_Caixa(codigoMovimento);
@@ -105,6 +108,10 @@ namespace BoletoNet
                         break;
                     case 748:
                         _ICodigoMovimento = new CodigoMovimento_Sicredi(codigoMovimento);
+                        break;
+                    //756 - Sicoob
+                    case 756:
+                        _ICodigoMovimento = new CodigoMovimento_Sicoob(codigoMovimento);
                         break;
                     default:
                         throw new Exception("Código do banco não implementando: " + codigoBanco);
