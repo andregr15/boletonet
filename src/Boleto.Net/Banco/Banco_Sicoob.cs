@@ -687,7 +687,7 @@ namespace BoletoNet
                 detalhe += Utils.FormatCode(boleto.Abatimento.ToString(), 15);//Posição 181 a 195   - Valor do Abatimento
                 detalhe += Utils.FormatCode(boleto.NumeroDocumento, 25); //Posição 196 a 220  - Identificação do título
 
-                detalhe += "1"; //Posição 221  - Código do protesto
+                detalhe += boleto.Instrucoes[0].Codigo.ToString() == "7" ? "3" : "1"; //Posição 221  - Código do protesto
                 #region Instruções
                 string vInstrucao1 = boleto.Instrucoes[0].Codigo.ToString();//"00"; //2ª instrução (2, N) Caso Queira colocar um cod de uma instrução. ver no Manual caso nao coloca 00
 
