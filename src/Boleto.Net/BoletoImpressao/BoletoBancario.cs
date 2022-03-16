@@ -799,7 +799,8 @@ namespace BoletoNet
                         break;
 
                     case (int)Bancos.Itau:
-                        agenciaCodigoCedente = string.Format("{0}/{1}-{2}", Cedente.ContaBancaria.Agencia, Utils.FormatCode(Cedente.ContaBancaria.Conta, 7), Cedente.ContaBancaria.DigitoConta);
+                        //agenciaCodigoCedente = string.Format("{0}/{1}-{2}", Cedente.ContaBancaria.Agencia, Utils.FormatCode(Cedente.ContaBancaria.Conta, 7), Cedente.ContaBancaria.DigitoConta);
+                        agenciaCodigoCedente = string.Format("{0}/{1}-{2}", Cedente.ContaBancaria.Agencia, Cedente.ContaBancaria.Conta, Cedente.ContaBancaria.DigitoConta);
                         break;
 
                     default:
