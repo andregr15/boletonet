@@ -50,7 +50,7 @@ namespace BoletoNet.Arquivo
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Montando os boletos para impressão...";
+            this.label1.Text = "Montando os boletos para impressao...";
             // 
             // Progresso
             // 

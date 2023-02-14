@@ -6,18 +6,18 @@ using System.IO;
 namespace BoletoNet
 {
     /// <summary>
-    /// Classe básica de um arquivo EDI
+    /// Classe bÃ¡sica de um arquivo EDI
     /// </summary>
     public class TEDIFile
     {
-        #region Variáveis Privadas e Protegidas
+        #region Variaveis Privadas e Protegidas
         #endregion
 
         #region Propriedades
         public List<TRegistroEDI> Lines = new List<TRegistroEDI>();
         #endregion
 
-        #region Métodos Privados e Protegidos
+        #region Metodos Privados e Protegidos
         /// <summary>
         /// Decodifica a linha do registro EDI para os campos; O tipo de campo/registro EDI depende
         /// do layout da entidade.
@@ -29,7 +29,7 @@ namespace BoletoNet
         }
         #endregion
 
-        #region Métodos Públicos
+        #region Metodos PÃºblicos
         /// <summary>
         /// Carrega um arquivo EDI
         /// </summary>

@@ -7,7 +7,7 @@ namespace BoletoNet
     public interface IInstrucao
     {
         /// <summary>
-        /// Valida os dados referentes à instrução
+        /// Valida os dados referentes Ã  instruÃ§Ã£o
         /// </summary>
         void Valida();
 

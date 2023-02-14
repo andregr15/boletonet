@@ -127,7 +127,7 @@ namespace BoletoNet
                  
                     case EnumEspecieDocumento_Safra.DuplicataServico:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Safra.DuplicataServico);
-                        this.Especie = "DUPLICATA DE SERVIÇO";
+                        this.Especie = "DUPLICATA DE SERVIÃ‡O";
                         this.Sigla = "DS";
                         break;
             

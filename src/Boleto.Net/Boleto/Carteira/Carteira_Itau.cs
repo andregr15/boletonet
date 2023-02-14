@@ -84,151 +84,151 @@ namespace BoletoNet
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.EscritualEletronicaSimples;
                         this.Codigo = "I";
                         this.Tipo = "E";
-                        this.Descricao = "Escritural eletrônica simples";
+                        this.Descricao = "Escritural eletrÃ´nica simples";
                         break;
                     case EnumCarteiras_Itau.EscritualEletronicaSimplesNossoNumeroLivre:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.EscritualEletronicaSimplesNossoNumeroLivre;
                         this.Codigo = "I";
                         this.Tipo = "E";
-                        this.Descricao = "Escritural eletrônica simples - Faixa nosso número livre";
+                        this.Descricao = "Escritural eletrÃ´nica simples - Faixa nosso numero livre";
                         break;
                     case EnumCarteiras_Itau.EscritualEletronicaCarne:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.EscritualEletronicaCarne;
                         this.Codigo = "I";
                         this.Tipo = "E";
-                        this.Descricao = "Escritural eletrônica - Carnê";
+                        this.Descricao = "Escritural eletrÃ´nica - CarnÃª";
                         break;
                     case EnumCarteiras_Itau.EscritualEletronicaDolar:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.EscritualEletronicaDolar;
                         this.Codigo = "E";
                         this.Tipo = "E";
-                        this.Descricao = "Escritural eletrônica - Dólar";
+                        this.Descricao = "Escritural eletrÃ´nica - DÃ³lar";
                         break;
                     case EnumCarteiras_Itau.EscritualEletronicaCobrancaInteligente:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.EscritualEletronicaCobrancaInteligente;
                         this.Codigo = "I";
                         this.Tipo = "E";
-                        this.Descricao = "Escritural eletrônica - Cobrança inteligente";
+                        this.Descricao = "Escritural eletrÃ´nica - Cobranca inteligente";
                         break;
                     case EnumCarteiras_Itau.DiretaEletronicaEmissaoIntegralCarne:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.DiretaEletronicaEmissaoIntegralCarne;
                         this.Codigo = "I";
                         this.Tipo = "D";
-                        this.Descricao = "Direta eletrônica emissão integral - Carnê";
+                        this.Descricao = "Direta eletrÃ´nica emissao integral - CarnÃª";
                         break;
                     case EnumCarteiras_Itau.DiretaEletronicaSemEmissaoSimples:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.DiretaEletronicaSemEmissaoSimples;
                         this.Codigo = "I";
                         this.Tipo = "D";
-                        this.Descricao = "Direta eletrônica sem emissão - Simples";
+                        this.Descricao = "Direta eletrÃ´nica sem emissao - Simples";
                         break;
                     case EnumCarteiras_Itau.DiretaEletronicaSemEmissaoDolar:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.DiretaEletronicaSemEmissaoDolar;
                         this.Codigo = "U";
                         this.Tipo = "D";
-                        this.Descricao = "Direta eletrônica sem emissão - Dólar";
+                        this.Descricao = "Direta eletrÃ´nica sem emissao - DÃ³lar";
                         break;
                     case EnumCarteiras_Itau.DiretaEletronicaEmissaoParcialSimples:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.DiretaEletronicaEmissaoParcialSimples;
                         this.Codigo = "I";
                         this.Tipo = "D";
-                        this.Descricao = "Direta eletrônica emissão parcial - Simples";
+                        this.Descricao = "Direta eletrÃ´nica emissao parcial - Simples";
                         break;
                     case EnumCarteiras_Itau.DiretaEletronicaEmissaoInegralSimples:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.DiretaEletronicaEmissaoInegralSimples;
                         this.Codigo = "I";
                         this.Tipo = "D";
-                        this.Descricao = "Direta eletrônica emissão integral - Simples";
+                        this.Descricao = "Direta eletrÃ´nica emissao integral - Simples";
                         break;
                     case EnumCarteiras_Itau.SemRegistroSemEmissaoComProtestoEletronico:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroSemEmissaoComProtestoEletronico;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, sem emissão e com protesto eletrônico";
+                        this.Descricao = "Sem registro, sem emissao e com protesto eletrÃ´nico";
                         break;
                     case EnumCarteiras_Itau.SemRegistroSemEmissao15Digitos:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroSemEmissao15Digitos;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro e sem emissão - 15 dígitos";
+                        this.Descricao = "Sem registro e sem emissao - 15 Digitos";
                         break;
                     case EnumCarteiras_Itau.SemRegistroSemEmissao15DigitosIOF4:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroSemEmissao15DigitosIOF4;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro e sem emissão - 15 dígitos IOF 4%";
+                        this.Descricao = "Sem registro e sem emissao - 15 Digitos IOF 4%";
                         break;
                     case EnumCarteiras_Itau.SemRegistroSemEmissao15DigitosIOF7:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroSemEmissao15DigitosIOF7;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro e sem emissão - 15 dígitos IOF 7%";
+                        this.Descricao = "Sem registro e sem emissao - 15 Digitos IOF 7%";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoParcialComProtestoBordero:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoParcialComProtestoBordero;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, emissão parcial com protesto borderô";
+                        this.Descricao = "Sem registro, emissao parcial com protesto borderÃ´";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoParcialComProtestoEletronico:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoParcialComProtestoEletronico;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, emissão parcial com protesto eletrônico";
+                        this.Descricao = "Sem registro, emissao parcial com protesto eletrÃ´nico";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoParcialSegurosIOF2:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoParcialSegurosIOF2;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, emissão parcial, seguros com IOF 2%";
+                        this.Descricao = "Sem registro, emissao parcial, seguros com IOF 2%";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoParcialSegurosIOF4:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoParcialSegurosIOF4;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, emissão parcial, seguros com IOF 4%";
+                        this.Descricao = "Sem registro, emissao parcial, seguros com IOF 4%";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoParcialSegurosIOF7:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoParcialSegurosIOF7;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, emissão parcial, seguros com IOF 7%";
+                        this.Descricao = "Sem registro, emissao parcial, seguros com IOF 7%";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoIntegral:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoIntegral;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, emissão integral";
+                        this.Descricao = "Sem registro, emissao integral";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoIntegralCarne:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoIntegralCarne;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, emissão integral - Carnê";
+                        this.Descricao = "Sem registro, emissao integral - CarnÃª";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoIntegral15PosicoesCarne:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoIntegral15PosicoesCarne;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, emissão integral - 15 poições - Carnê";
+                        this.Descricao = "Sem registro, emissao integral - 15 poiÃ§Ãµes - CarnÃª";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoEntrega:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoEntrega;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, com emissão e entrega";
+                        this.Descricao = "Sem registro, com emissao e entrega";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoEntregaCarne:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoEntregaCarne;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, com emissão e entrega - Carnê";
+                        this.Descricao = "Sem registro, com emissao e entrega - CarnÃª";
                         break;
                     case EnumCarteiras_Itau.SemRegistroEmissaoEntrega15Posicoes:
                         this.NumeroCarteira = (int)EnumCarteiras_Itau.SemRegistroEmissaoEntrega15Posicoes;
                         this.Codigo = "I";
                         this.Tipo = "S";
-                        this.Descricao = "Sem registro, com emissão e entrega - 15 posições";
+                        this.Descricao = "Sem registro, com emissao e entrega - 15 posicoes";
                         break;
                     default:
                         this.NumeroCarteira = 0;

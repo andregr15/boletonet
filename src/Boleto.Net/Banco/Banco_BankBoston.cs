@@ -6,12 +6,12 @@ using BoletoNet.Util;
 namespace BoletoNet
 {
     /// <summary>
-    /// Classe referente ao banco Itaú
+    /// Classe referente ao banco Itau
     /// </summary>
     internal class Banco_BankBoston : AbstractBanco, IBanco
     {
 
-        #region Variáveis
+        #region Variaveis
 
         #endregion
 
@@ -33,16 +33,16 @@ namespace BoletoNet
 
         #endregion
 
-        #region Métodos de Instância
+        #region Metodos de instancia
 
         /// <summary>
-        /// Validações particulares do BankBoston
+        /// Validacoes particulares do BankBoston
         /// </summary>
         public override void ValidaBoleto(Boleto boleto)
         {
             try
             {
-                throw new NotImplementedException("Função não implementada!");
+                throw new NotImplementedException("FunÃ§Ã£o nao implementada!");
             }
             catch
             {
@@ -52,17 +52,17 @@ namespace BoletoNet
 
         # endregion
 
-        # region Métodos de formatação do boleto
+        # region Metodos de formataÃ§Ã£o do boleto
 
         public override void FormataCodigoBarra(Boleto boleto)
         {
             try
             {
-                throw new NotImplementedException("Função não implementada!");
+                throw new NotImplementedException("FunÃ§Ã£o nao implementada!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao formatar código de barras.", ex);
+                throw new Exception("Erro ao formatar codigo de barras.", ex);
             }
         }
 
@@ -70,11 +70,11 @@ namespace BoletoNet
         {
             try
             {
-                throw new NotImplementedException("Função não implementada!");
+                throw new NotImplementedException("FunÃ§Ã£o nao implementada!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao formatar linha digitável.", ex);
+                throw new Exception("Erro ao formatar linha digitavel.", ex);
             }
         }
 
@@ -82,11 +82,11 @@ namespace BoletoNet
         {
             try
             {
-                throw new NotImplementedException("Função não implementada!");
+                throw new NotImplementedException("FunÃ§Ã£o nao implementada!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao formatar nosso número", ex);
+                throw new Exception("Erro ao formatar nosso numero", ex);
             }
         }
 
@@ -94,17 +94,17 @@ namespace BoletoNet
         {
             try
             {
-                throw new NotImplementedException("Função não implementada!");
+                throw new NotImplementedException("FunÃ§Ã£o nao implementada!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao formatar número do documento.", ex);
+                throw new Exception("Erro ao formatar numero do documento.", ex);
             }
         }
 
         # endregion
 
-        # region Métodos de geração do arquivo CNAB400
+        # region Metodos de geracao do arquivo CNAB400
 
         # region HEADER
 
@@ -138,16 +138,16 @@ namespace BoletoNet
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a geração do HEADER do arquivo de REMESSA.", ex);
+                throw new Exception("Erro durante a geracao do HEADER do arquivo de REMESSA.", ex);
             }
         }
         public override string GerarHeaderRemessa(string numeroConvenio, Cedente cedente, TipoArquivo tipoArquivo, int numeroArquivoRemessa, Boleto boletos)
         {
-            throw new NotImplementedException("Função não implementada!");
+            throw new NotImplementedException("FunÃ§Ã£o nao implementada!");
         }
         public string GerarHeaderRemessaCNAB240()
         {
-            throw new NotImplementedException("Função não implementada!");
+            throw new NotImplementedException("FunÃ§Ã£o nao implementada!");
         }       
         public string GerarHeaderRemessaCNAB400(string numeroConvenio, Cedente cedente, int numeroArquivoRemessa)
         {
@@ -213,13 +213,13 @@ namespace BoletoNet
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a geração do DETALHE arquivo de REMESSA.", ex);
+                throw new Exception("Erro durante a geracao do DETALHE arquivo de REMESSA.", ex);
             }
         }
 
         public string GerarDetalheRemessaCNAB240()
         {
-            throw new NotImplementedException("Função não implementada.");
+            throw new NotImplementedException("FunÃ§Ã£o nao implementada.");
         }
 
         public string GerarDetalheRemessaCNAB400(Boleto boleto, int numeroRegistro, TipoArquivo tipoArquivo)
@@ -231,7 +231,7 @@ namespace BoletoNet
 
                 string _brancos1 = new string(' ', 20);
 
-                // USO DO BANCO - Identificação da operação no Banco (posição 87 a 107)
+                // USO DO BANCO - Identificacao da operacao no Banco (posicao 87 a 107)
                 string identificaOperacaoBanco = new string(' ', 21);
                 string usoBanco = new string(' ', 10);
                 string _brancos = new string(' ', 40);
@@ -239,7 +239,7 @@ namespace BoletoNet
 
                 _detalhe = "1";
 
-                // Tipo de inscrição da empresa
+                // Tipo de inscricao da empresa
                 // 01 - CPF DO CEDENTE
                 // 02 - CNPJ DO CEDENTE
 
@@ -252,7 +252,7 @@ namespace BoletoNet
                 _detalhe += _brancos1;
                 _detalhe += _brancos1 + "     ";
                 _detalhe += "000000000";
-                _detalhe += "00000000000 "; // Valor por dia de antecipação
+                _detalhe += "00000000000 "; // Valor por dia de antecipacao
                 _detalhe += "R$  ";
                 _detalhe += _brancos1;               
                 Carteira_BankBoston  _carteira = new Carteira_BankBoston(Convert.ToInt32(boleto.Carteira));
@@ -344,7 +344,7 @@ namespace BoletoNet
 
         public string GerarTrailerRemessa240()
         {
-            throw new NotImplementedException("Função não implementada.");
+            throw new NotImplementedException("FunÃ§Ã£o nao implementada.");
         }
 
         public string GerarTrailerRemessa400(int numeroRegistro)
@@ -356,7 +356,7 @@ namespace BoletoNet
 
                 _trailer = "9";
                 _trailer += _complemento;
-                _trailer += Utils.FitStringLength(numeroRegistro.ToString(), 6, 6, '0', 0, true, true, true); // Número sequencial do registro no arquivo.
+                _trailer += Utils.FitStringLength(numeroRegistro.ToString(), 6, 6, '0', 0, true, true, true); // numero sequencial do registro no arquivo.
 
                 _trailer = Utils.SubstituiCaracteresEspeciais(_trailer);
 
@@ -364,7 +364,7 @@ namespace BoletoNet
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a geração do registro TRAILER do arquivo de REMESSA.", ex);
+                throw new Exception("Erro durante a geracao do registro TRAILER do arquivo de REMESSA.", ex);
             }
         }
 
@@ -372,13 +372,13 @@ namespace BoletoNet
 
         #endregion
 
-        #region Métodos de processamento do arquivo CNAB400
+        #region Metodos de processamento do arquivo CNAB400
 
 
         #endregion
 
         /// <summary>
-        /// Efetua as Validações dentro da classe Boleto, para garantir a geração da remessa
+        /// Efetua as Validacoes dentro da classe Boleto, para garantir a geracao da remessa
         /// </summary>
         public override bool ValidarRemessa(TipoArquivo tipoArquivo, string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
         {

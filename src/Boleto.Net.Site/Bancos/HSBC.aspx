@@ -4,7 +4,7 @@
 <boletonet:BoletoBancario ID="boletoBancario" runat="server" CodigoBanco="399">
         </boletonet:BoletoBancario>        
         <p>
-* Código referente ao HSBC cedido e testado por Leonardo Cooper (leonardo@ecod.com.br)
+* Codigo referente ao HSBC cedido e testado por Leonardo Cooper (leonardo@ecod.com.br)
 </p>
 </asp:Content>
 

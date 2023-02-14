@@ -70,32 +70,32 @@ namespace BoletoNet
                     case  EnumCodigoLiquidacao_Itau.CaixaEletronicoBancoItau:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.CaixaEletronicoBancoItau;
                         this.Codigo = "AA";
-                        this.Descricao = "Caixa eletrônico do Banco Itaú.";
-                        this.Recurso = "Disponível";
+                        this.Descricao = "Caixa eletrÃ´nico do Banco Itau.";
+                        this.Recurso = "Disponivel";
                         break;
                     case EnumCodigoLiquidacao_Itau.PagamentoCartorioAutomatizado:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.PagamentoCartorioAutomatizado;
                         this.Codigo = "AC";
-                        this.Descricao = "Pagamento em cartório automatizado.";
+                        this.Descricao = "Pagamento em cartÃ³rio automatizado.";
                         this.Recurso = "A compensar";
                         break;
                     case EnumCodigoLiquidacao_Itau.BancosCorrespondentes:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.BancosCorrespondentes;
                         this.Codigo = "BC";
                         this.Descricao = "Bancos correspondentes.";
-                        this.Recurso = "Disponível";
+                        this.Recurso = "Disponivel";
                         break;
                     case EnumCodigoLiquidacao_Itau.ItauBankFone:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.ItauBankFone;
                         this.Codigo = "BF";
-                        this.Descricao = "Itaú BankFone.";
-                        this.Recurso = "Disponível";
+                        this.Descricao = "Itau BankFone.";
+                        this.Recurso = "Disponivel";
                         break;
                     case EnumCodigoLiquidacao_Itau.ItauBankLine:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.ItauBankLine;
                         this.Codigo = "BL";
-                        this.Descricao = "Itaú BankLine.";
-                        this.Recurso = "Disponível";
+                        this.Descricao = "Itau BankLine.";
+                        this.Recurso = "Disponivel";
                         break;
                     case EnumCodigoLiquidacao_Itau.OB_RecebimentoOffline:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.OB_RecebimentoOffline;
@@ -106,13 +106,13 @@ namespace BoletoNet
                     case EnumCodigoLiquidacao_Itau.OB_PeloCodigoBarras:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.OB_PeloCodigoBarras;
                         this.Codigo = "B1";
-                        this.Descricao = "Outros bancos - Pelo código de barras.";
+                        this.Descricao = "Outros bancos - Pelo codigo de barras.";
                         this.Recurso = "A compensar";
                         break;
                     case EnumCodigoLiquidacao_Itau.OB_PelaLinhaDigitavel:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.OB_PelaLinhaDigitavel;
                         this.Codigo = "B2";
-                        this.Descricao = "Outros bancos - Pelo linha digitável.";
+                        this.Descricao = "Outros bancos - Pelo linha digitavel.";
                         this.Recurso = "A compensar";
                         break;
                     case EnumCodigoLiquidacao_Itau.OB_PeloAutoAtendimento:
@@ -124,44 +124,44 @@ namespace BoletoNet
                     case EnumCodigoLiquidacao_Itau.OB_RecebimentoCasaLoterica:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.OB_RecebimentoCasaLoterica;
                         this.Codigo = "B4";
-                        this.Descricao = "Outros bancos - Recebimento em casa lotérica.";
+                        this.Descricao = "Outros bancos - Recebimento em casa lotÃ©rica.";
                         this.Recurso = "A compensar";
                         break;
                     case EnumCodigoLiquidacao_Itau.ComChequeOutroBanco:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.ComChequeOutroBanco;
                         this.Codigo = "CC";
-                        this.Descricao = "Agência Itaú - Com cheque de outro banco.";
+                        this.Descricao = "Agencia Itau - Com cheque de outro banco.";
                         this.Recurso = "A compensar";
                         break;
                     case EnumCodigoLiquidacao_Itau.Sispag:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.Sispag;
                         this.Codigo = "CK";
-                        this.Descricao = "SISPAG - Sistema de contas a pagar Itaú.";
-                        this.Recurso = "Disponível";
+                        this.Descricao = "SISPAG - Sistema de contas a pagar Itau.";
+                        this.Recurso = "Disponivel";
                         break;
                     case EnumCodigoLiquidacao_Itau.DebitoContaCorrente:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.DebitoContaCorrente;
                         this.Codigo = "CP";
-                        this.Descricao = "Agência Itaú - Por débito em conta corrente, cheque ou dinheiro.";
-                        this.Recurso = "Disponível";
+                        this.Descricao = "Agencia Itau - Por debito em conta corrente, cheque ou dinheiro.";
+                        this.Recurso = "Disponivel";
                         break;
                     case EnumCodigoLiquidacao_Itau.CapturadoOffline:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.CapturadoOffline;
                         this.Codigo = "DG";
-                        this.Descricao = "Agência Itaú - Capturado offline.";
-                        this.Recurso = "Disponível";
+                        this.Descricao = "Agencia Itau - Capturado offline.";
+                        this.Recurso = "Disponivel";
                         break;
                     case EnumCodigoLiquidacao_Itau.PagamentoCartorioProtestoComCheque:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.PagamentoCartorioProtestoComCheque;
                         this.Codigo = "LC";
-                        this.Descricao = "Pagamento em cartório de protesto com cheque.";
+                        this.Descricao = "Pagamento em cartÃ³rio de protesto com cheque.";
                         this.Recurso = "A Compensar";
                         break;
                     case EnumCodigoLiquidacao_Itau.PagamentoAgendadoViaBankLine:
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.PagamentoAgendadoViaBankLine;
                         this.Codigo = "Q0";
-                        this.Descricao = "Agendamento - Pagamento agendado via BankLine ou outro canal eletrônico.";
-                        this.Recurso = "Disponível";
+                        this.Descricao = "Agendamento - Pagamento agendado via BankLine ou outro canal eletrÃ´nico.";
+                        this.Recurso = "Disponivel";
                         break;
                     default:
                         this.Enumerado = 0;
@@ -186,13 +186,13 @@ namespace BoletoNet
                 {
                     case "AA":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.CaixaEletronicoBancoItau;
-                        this.Descricao = "Caixa eletrônico do banco Itaú";
+                        this.Descricao = "Caixa eletrÃ´nico do banco Itau";
                         this.Codigo = "AA";
-                        this.Recurso = "Disponível";
+                        this.Recurso = "Disponivel";
                         break;
                     case "AC":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.PagamentoCartorioAutomatizado;
-                        this.Descricao = "Pagamento em cartório automatizado";
+                        this.Descricao = "Pagamento em cartÃ³rio automatizado";
                         this.Codigo = "AC";
                         this.Recurso = "A compensar";
                         break;
@@ -200,19 +200,19 @@ namespace BoletoNet
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.BancosCorrespondentes;
                         this.Descricao = "Bancos correspondentes";
                         this.Codigo = "BC";
-                        this.Recurso = "Disponível";
+                        this.Recurso = "Disponivel";
                         break;
                     case "BF":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.ItauBankFone;
-                        this.Descricao = "Itaú Bankfone";
+                        this.Descricao = "Itau Bankfone";
                         this.Codigo = "BF";
-                        this.Recurso = "Disponível";
+                        this.Recurso = "Disponivel";
                         break;
                     case "BL":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.ItauBankLine;
-                        this.Descricao = "Itaú Bankline";
+                        this.Descricao = "Itau Bankline";
                         this.Codigo = "BL";
-                        this.Recurso = "Disponível";
+                        this.Recurso = "Disponivel";
                         break;
                     case "B0":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.OB_RecebimentoOffline;
@@ -222,13 +222,13 @@ namespace BoletoNet
                         break;
                     case "B1":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.OB_PeloCodigoBarras;
-                        this.Descricao = "Outros bancos - pelo código de barras";
+                        this.Descricao = "Outros bancos - pelo codigo de barras";
                         this.Codigo = "B1";
                         this.Recurso = "A compensar";
                         break;
                     case "B2":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.OB_PelaLinhaDigitavel;
-                        this.Descricao = "Outros bancos - pelo linha digitável";
+                        this.Descricao = "Outros bancos - pelo linha digitavel";
                         this.Codigo = "B2";
                         this.Recurso = "A compensar";
                         break;
@@ -240,45 +240,45 @@ namespace BoletoNet
                         break;
                     case "B4":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.OB_RecebimentoCasaLoterica;
-                        this.Descricao = "Outros bancos - recebimento em casa lotérica";
+                        this.Descricao = "Outros bancos - recebimento em casa lotÃ©rica";
                         this.Codigo = "B4";
                         this.Recurso = "A compensar";
                         break;
                     case "CC":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.ComChequeOutroBanco;
-                        this.Descricao = "Agêcnia Itaú - com cheque de outro banco";
+                        this.Descricao = "AgÃªcnia Itau - com cheque de outro banco";
                         this.Codigo = "CC";
                         this.Recurso = "A compensar";
                         break;
                     case "CK":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.Sispag;
-                        this.Descricao = "SISPAG - Sistema de contas a pagar Itaú";
+                        this.Descricao = "SISPAG - Sistema de contas a pagar Itau";
                         this.Codigo = "CK";
-                        this.Recurso = "Disponível";
+                        this.Recurso = "Disponivel";
                         break;
                     case "CP":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.DebitoContaCorrente;
-                        this.Descricao = "Agência Itaú - por débito em conta-corrente, cheque ou dinheiro";
+                        this.Descricao = "Agencia Itau - por debito em conta-corrente, cheque ou dinheiro";
                         this.Codigo = "CP";
-                        this.Recurso = "Disponível";
+                        this.Recurso = "Disponivel";
                         break;
                     case "DG":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.CapturadoOffline;
-                        this.Descricao = "Agência Itaú - capturado em offline";
+                        this.Descricao = "Agencia Itau - capturado em offline";
                         this.Codigo = "DG";
-                        this.Recurso = "Disponível";
+                        this.Recurso = "Disponivel";
                         break;
                     case "LC":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.PagamentoCartorioProtestoComCheque;
-                        this.Descricao = "Pagamento em cartório de protesto com cheque";
+                        this.Descricao = "Pagamento em cartÃ³rio de protesto com cheque";
                         this.Codigo = "LC";
                         this.Recurso = "A compensar";
                         break;
                     case "Q0":
                         this.Enumerado = (int)EnumCodigoLiquidacao_Itau.PagamentoAgendadoViaBankLine;
-                        this.Descricao = "Agendamento - Pagamento agendado via BankLine ou outro canal eletrônico.";
+                        this.Descricao = "Agendamento - Pagamento agendado via BankLine ou outro canal eletrÃ´nico.";
                         this.Codigo = "Q0";
-                        this.Recurso = "Disponível";
+                        this.Recurso = "Disponivel";
                         break;
                     default:
                         this.Enumerado = 0;

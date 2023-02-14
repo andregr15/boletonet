@@ -55,7 +55,7 @@ namespace BoletoNet
         {
             switch (especie)
             {
-                case EnumEspecieDocumento_Sicredi.DuplicataMercantilIndicacao: return "A";
+                case EnumEspecieDocumento_Sicredi.DuplicataMercantilIndicacao: return "03";
                 case EnumEspecieDocumento_Sicredi.DuplicataRural:return "B";
                 case EnumEspecieDocumento_Sicredi.NotaPromissoria: return "C";
                 case EnumEspecieDocumento_Sicredi.NotaPromissoriaRural: return "D";
@@ -74,7 +74,7 @@ namespace BoletoNet
         {
             switch (codigo)
             {
-                case "A": return  EnumEspecieDocumento_Sicredi.DuplicataMercantilIndicacao;
+                case "1": return  EnumEspecieDocumento_Sicredi.DuplicataMercantilIndicacao;
                 case "B": return  EnumEspecieDocumento_Sicredi.DuplicataRural;
                 case "C": return  EnumEspecieDocumento_Sicredi.NotaPromissoria;
                 case "D": return EnumEspecieDocumento_Sicredi.NotaPromissoriaRural;

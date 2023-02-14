@@ -79,7 +79,7 @@ namespace BoletoNet
                         this.NumeroCarteira = (int)EnumCarteiras_BankBoston.Caucao;
                         this.Codigo = "4";
                         this.Tipo = "4";
-                        this.Descricao = "Caução";
+                        this.Descricao = "Caucao";
                         break;
                     default:
                         this.NumeroCarteira = 0;

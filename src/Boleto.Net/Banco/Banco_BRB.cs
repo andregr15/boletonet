@@ -31,7 +31,7 @@ namespace BoletoNet
 
         public override void FormataCodigoBarra(Boleto boleto)
         {
-            // Código de Barras
+            // Codigo de Barras
             //banco & moeda & fator & valor & carteira & nossonumero & dac_nossonumero & agencia & conta & dac_conta & "000"
 
             string banco = Utils.FormatCode(Codigo.ToString(), 3);
@@ -93,28 +93,28 @@ namespace BoletoNet
 
         public override void ValidaBoleto(Boleto boleto)
         {
-            //Verifica se o nosso número é válido
+            //Verifica se o nosso numero e valido
             if (Utils.ToInt64(boleto.NossoNumero) == 0)
-                throw new NotImplementedException("Nosso número inválido");
+                throw new NotImplementedException("Nosso numero invÃ¡lido");
 
-            //Verifica se o tamanho para o NossoNumero são 12 dígitos
+            //Verifica se o tamanho para o NossoNumero sao 12 Digitos
             if (Convert.ToInt32(boleto.NossoNumero).ToString().Length > 6)
-                throw new NotImplementedException("A quantidade de dígitos do nosso número para a carteira " + boleto.Carteira + ", são 6 números.");
+                throw new NotImplementedException("A quantidade de Digitos do nosso numero para a carteira " + boleto.Carteira + ", sao 6 numeros.");
             else if (Convert.ToInt32(boleto.NossoNumero).ToString().Length < 6)
                 boleto.NossoNumero = Utils.FormatCode(boleto.NossoNumero, 6);
 
             if (boleto.Carteira != "COB")
-                throw new NotImplementedException("Carteira não implementada. Utilize a carteira COB.");
+                throw new NotImplementedException("Carteira nao implementada. Utilize a carteira COB.");
 
             //Atribui o nome do banco ao local de pagamento
             boleto.LocalPagamento += Nome + "";
 
-            //Verifica se data do processamento é valida
+            //Verifica se data do processamento e valida
 			//if (boleto.DataProcessamento.ToString("dd/MM/yyyy") == "01/01/0001")
 			if (boleto.DataProcessamento == DateTime.MinValue) // diegomodolo (diego.ribeiro@nectarnet.com.br)
                 boleto.DataProcessamento = DateTime.Now;
 
-            //Verifica se data do documento é valida
+            //Verifica se data do documento e valida
 			//if (boleto.DataDocumento.ToString("dd/MM/yyyy") == "01/01/0001")
 			if (boleto.DataDocumento == DateTime.MinValue) // diegomodolo (diego.ribeiro@nectarnet.com.br)
                 boleto.DataDocumento = DateTime.Now;
@@ -128,7 +128,7 @@ namespace BoletoNet
 
         public override string GerarHeaderRemessa(string numeroConvenio, Cedente cedente, TipoArquivo tipoArquivo, int numeroArquivoRemessa, Boleto boletos)
         {
-            throw new NotImplementedException("Função não implementada.");
+            throw new NotImplementedException("FunÃ§Ã£o nao implementada.");
         }
         #endregion
 
@@ -247,7 +247,7 @@ namespace BoletoNet
 
         public override string GerarHeaderRemessa(string numeroConvenio, Cedente cedente, TipoArquivo tipoArquivo, int numeroArquivoRemessa)
         {
-            throw new Exception("Função não implementada.");
+            throw new Exception("FunÃ§Ã£o nao implementada.");
         }
 
         public override DetalheRetorno LerDetalheRetornoCNAB400(string registro)
@@ -256,10 +256,10 @@ namespace BoletoNet
             {
                 DetalheRetorno detalhe = new DetalheRetorno(registro);
 
-                //Tipo de Identificação do registro
+                //Tipo de Identificacao do registro
                 detalhe.IdentificacaoDoRegistro = Utils.ToInt32(registro.Substring(0, 1));
 
-                //Tipo de inscrição
+                //Tipo de inscricao
                 detalhe.TipoInscricao = Utils.ToInt32(registro.Substring(1, 2));
 
                 //CGC ou CPF
@@ -268,44 +268,44 @@ namespace BoletoNet
                 //Conta Corrente
                 detalhe.ContaCorrente = Utils.ToInt32(registro.Substring(20, 17));
 
-                //Nosso Número
+                //Nosso numero
                 detalhe.NossoNumeroComDV = registro.Substring(70, 12);
                 detalhe.NossoNumero = registro.Substring(70, 11); //Sem o DV
                 detalhe.DACNossoNumero = registro.Substring(82, 1); //DV 
-                //Seu Número
+                //Seu numero
                 detalhe.SeuNumero = registro.Substring(92, 13);
 
-                //Instrução
+                //Instrucao
                 detalhe.Instrucao = Utils.ToInt32(registro.Substring(108, 2));
 
-                //Número do documento
+                //numero do documento
                 detalhe.NumeroDocumento = registro.Substring(128, 12);
 
-                //Código do Raterio
+                //Codigo do Raterio
                 detalhe.CodigoRateio = Utils.ToInt32(registro.Substring(140, 4));
 
-                //Data Ocorrência no Banco
+                //Data Ocorrencia no Banco
                 int dataOcorrencia = Utils.ToInt32(registro.Substring(110, 8));
                 detalhe.DataOcorrencia = Utils.ToDateTime(dataOcorrencia.ToString("##-##-####"));
 
-                //Data Vencimento do Título
+                //Data Vencimento do Titulo
                 int dataVencimento = Utils.ToInt32(registro.Substring(148, 8));
                 detalhe.DataVencimento = Utils.ToDateTime(dataVencimento.ToString("##-##-####"));
 
-                //Valor do Título
+                //Valor do Titulo
                 decimal valorTitulo = Convert.ToInt64(registro.Substring(156, 13));
                 detalhe.ValorTitulo = valorTitulo / 100;
 
                 //Banco Cobrador
                 detalhe.BancoCobrador = Utils.ToInt32(registro.Substring(163, 3));
 
-                //Agência Cobradora
+                //Agencia Cobradora
                 detalhe.AgenciaCobradora = Utils.ToInt32(registro.Substring(172, 5));
 
-                //Espécie Título
+                //Especie Titulo
                 detalhe.EspecieTitulo = registro.Substring(177, 2);
 
-                //Despesas de cobrança para os Códigos de Ocorrência (Valor Despesa)
+                //Despesas de Cobranca para os Codigos de Ocorrencia (Valor Despesa)
                 decimal despeasaDeCobranca = Convert.ToUInt64(registro.Substring(179, 13));
                 detalhe.DespeasaDeCobranca = despeasaDeCobranca / 100;
 
@@ -321,7 +321,7 @@ namespace BoletoNet
                 decimal iof = Convert.ToUInt64(registro.Substring(218, 13));
                 detalhe.IOF = iof / 100;
 
-                //Abatimento Concedido sobre o Título (Valor Abatimento Concedido)
+                //Abatimento Concedido sobre o Titulo (Valor Abatimento Concedido)
                 decimal abatimento = Convert.ToUInt64(registro.Substring(231, 13));
                 detalhe.Abatimentos = abatimento / 100;
 
@@ -333,22 +333,22 @@ namespace BoletoNet
                 decimal valorPago = Convert.ToUInt64(registro.Substring(257, 13));
                 detalhe.ValorPago = valorPago / 100;
 
-                //Outros Débitos
+                //Outros Debitos
                 decimal outrosDebitos = Convert.ToUInt64(registro.Substring(270, 13));
                 detalhe.OutrosDebitos = outrosDebitos / 100;
 
-                //Outros Créditos
+                //Outros Creditos
                 decimal outrosCreditos = Convert.ToUInt64(registro.Substring(283, 13));
                 detalhe.OutrosCreditos = outrosCreditos / 100;
 
-                // Data de Liquidação
+                // Data de Liquidacao
                 int dataLiquidacao = Utils.ToInt32(registro.Substring(299, 8));
                 detalhe.DataLiquidacao = Utils.ToDateTime(dataLiquidacao.ToString("##-##-####"));
 
-                //Motivo de Rejeição
+                //Motivo de Rejeicao
                 detalhe.MotivosRejeicao = registro.Substring(364, 30);
 
-                //Motivo de Rejeição
+                //Motivo de Rejeicao
                 detalhe.Sequencial = Utils.ToInt32(registro.Substring(394, 6));
 
                 return detalhe;
@@ -361,7 +361,7 @@ namespace BoletoNet
 
 
         /// <summary>
-        /// Efetua as Validações dentro da classe Boleto, para garantir a geração da remessa
+        /// Efetua as Validacoes dentro da classe Boleto, para garantir a geracao da remessa
         /// </summary>
         public override bool ValidarRemessa(TipoArquivo tipoArquivo, string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
         {

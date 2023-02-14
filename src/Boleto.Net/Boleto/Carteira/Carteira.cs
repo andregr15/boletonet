@@ -79,7 +79,7 @@ namespace BoletoNet
 
         #endregion
 
-        # region Métodos Privados
+        # region Metodos Privados
 
         private void InstanciaCarteira(int codigoBanco, int codigoCarteira)
         {
@@ -87,7 +87,7 @@ namespace BoletoNet
             {
                 switch (codigoBanco)
                 {
-                    //341 - Itaú
+                    //341 - Itau
                     case 341:
                         _ICarteira = new Carteira_Itau(0);
                         break;
@@ -100,12 +100,12 @@ namespace BoletoNet
                         _ICarteira = new Carteira_BancoBrasil(codigoCarteira);
                         break;
                     default:
-                        throw new Exception("Código do banco não implementando: " + codigoBanco);
+                        throw new Exception("Codigo do banco nao implementando: " + codigoBanco);
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a execução da transação.", ex);
+                throw new Exception("Erro durante a execuÃ§Ã£o da transaÃ§Ã£o.", ex);
             }
         }
 
@@ -133,12 +133,12 @@ namespace BoletoNet
                         obj = new Carteira_BancoBrasil((int)EnumCarteiras_BancoBrasil.CobrancaDescontada);
                         alCarteiras.Add(obj);
 
-                        obj = new Carteira_BancoBrasil((int)EnumCarteiras_BancoBrasil.CobrançaDiretaEspecialCarteira17);
+                        obj = new Carteira_BancoBrasil((int)EnumCarteiras_BancoBrasil.CobrancaDiretaEspecialCarteira17);
                         alCarteiras.Add(obj);
 
                         return alCarteiras;
                     default:
-                        throw new Exception("Código do banco não implementando: " + codigoBanco);
+                        throw new Exception("Codigo do banco nao implementando: " + codigoBanco);
                 }
 
             }

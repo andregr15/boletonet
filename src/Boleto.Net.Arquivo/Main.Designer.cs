@@ -46,7 +46,7 @@ namespace BoletoNet.Arquivo
             this.retornoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gerarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.impressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impressaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxBancos = new System.Windows.Forms.GroupBox();
             this.radioButtonBNB = new System.Windows.Forms.RadioButton();
             this.radioButtonBanrisul = new System.Windows.Forms.RadioButton();
@@ -115,13 +115,13 @@ namespace BoletoNet.Arquivo
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Data do Crédito";
+            this.columnHeader3.Text = "Data do Credito";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader3.Width = 110;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Valor do Título";
+            this.columnHeader4.Text = "Valor do Titulo";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader4.Width = 85;
             // 
@@ -133,17 +133,17 @@ namespace BoletoNet.Arquivo
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Cód. de Retorno";
+            this.columnHeader6.Text = "CÃ³d. de Retorno";
             this.columnHeader6.Width = 100;
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Situação";
+            this.columnHeader7.Text = "SituaÃ§Ã£o";
             this.columnHeader7.Width = 100;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "Nosso Número";
+            this.columnHeader8.Text = "Nosso numero";
             this.columnHeader8.Width = 80;
             // 
             // columnHeader9
@@ -160,7 +160,7 @@ namespace BoletoNet.Arquivo
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
-            this.impressãoToolStripMenuItem});
+            this.impressaoToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.menuStrip.Name = "menuStrip";
@@ -207,12 +207,12 @@ namespace BoletoNet.Arquivo
             this.gerarToolStripMenuItem1.Text = "&Gerar";
             this.gerarToolStripMenuItem1.Click += new System.EventHandler(this.gerarToolStripMenuItem1_Click);
             // 
-            // impressãoToolStripMenuItem
+            // impressaoToolStripMenuItem
             // 
-            this.impressãoToolStripMenuItem.Name = "impressãoToolStripMenuItem";
-            this.impressãoToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.impressãoToolStripMenuItem.Text = "&Impressão";
-            this.impressãoToolStripMenuItem.Click += new System.EventHandler(this.impressãoToolStripMenuItem_Click);
+            this.impressaoToolStripMenuItem.Name = "impressaoToolStripMenuItem";
+            this.impressaoToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.impressaoToolStripMenuItem.Text = "&Impressao";
+            this.impressaoToolStripMenuItem.Click += new System.EventHandler(this.impressaoToolStripMenuItem_Click);
             // 
             // groupBoxBancos
             // 
@@ -382,7 +382,7 @@ namespace BoletoNet.Arquivo
             this.radioButtonItau.TabIndex = 0;
             this.radioButtonItau.TabStop = true;
             this.radioButtonItau.Tag = "341";
-            this.radioButtonItau.Text = "Itaú";
+            this.radioButtonItau.Text = "Itau";
             this.radioButtonItau.UseVisualStyleBackColor = true;
             // 
             // backgroundWorker
@@ -398,7 +398,7 @@ namespace BoletoNet.Arquivo
             this.groupBox1.Size = new System.Drawing.Size(147, 72);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Padrão";
+            this.groupBox1.Text = "PadrÃ£o";
             // 
             // radioButtonCNAB240
             // 
@@ -448,7 +448,7 @@ namespace BoletoNet.Arquivo
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Geração do Arquivo Remessa";
+            this.Text = "Geracao do Arquivo Remessa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -477,7 +477,7 @@ namespace BoletoNet.Arquivo
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBoxBancos;
         private System.Windows.Forms.RadioButton radioButtonItau;
-        private System.Windows.Forms.ToolStripMenuItem impressãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem impressaoToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.RadioButton radioButtonUnibanco;
         private System.Windows.Forms.RadioButton radioButtonSudameris;

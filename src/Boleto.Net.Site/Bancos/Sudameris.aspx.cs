@@ -11,25 +11,25 @@ public partial class Bancos_Sudameris : System.Web.UI.Page
 
         c.Codigo = "13000";
 
-        //Nosso número com 7 dígitos
+        //Nosso numero com 7 Digitos
         string nn = "0003020";
-        //Nosso número com 13 dígitos
+        //Nosso numero com 13 Digitos
         //nn = "0000000003025";
 
         Boleto b = new Boleto(vencimento, 1642, "198", nn, c);// EnumEspecieDocumento_Sudameris.DuplicataMercantil);
         b.NumeroDocumento = "1008073";
 
         b.Sacado = new Sacado("000.000.000-00", "Nome do seu Cliente ");
-        b.Sacado.Endereco.End = "Endereço do seu Cliente ";
+        b.Sacado.Endereco.End = "EndereÃ§o do seu Cliente ";
         b.Sacado.Endereco.Bairro = "Bairro";
         b.Sacado.Endereco.Cidade = "Cidade";
         b.Sacado.Endereco.CEP = "00000000";
         b.Sacado.Endereco.UF = "UF";
 
-        //b.Instrucoes.Add("Não Receber após o vencimento");
-        //b.Instrucoes.Add("Após o Vencimento pague somente no Sudameris");
-        //b.Instrucoes.Add("Instrução 2");
-        //b.Instrucoes.Add("Instrução 3");
+        //b.Instrucoes.Add("nao Receber apÃ³s o vencimento");
+        //b.Instrucoes.Add("ApÃ³s o Vencimento pague somente no Sudameris");
+        //b.Instrucoes.Add("Instrucao 2");
+        //b.Instrucoes.Add("Instrucao 3");
 
         boletoBancario.Boleto = b;
         boletoBancario.Boleto.Valida();

@@ -20,7 +20,7 @@ public partial class Bancos_Basa : System.Web.UI.Page
         Boleto b = new Boleto(vencimento, 45.50m, "CNR", "125478", c);
 
         b.Sacado = new Sacado("000.000.000-00", "Nome do seu Cliente ");
-        b.Sacado.Endereco.End = "Endereço do seu Cliente ";
+        b.Sacado.Endereco.End = "EndereÃ§o do seu Cliente ";
         b.Sacado.Endereco.Bairro = "Bairro";
         b.Sacado.Endereco.Cidade = "Cidade";
         b.Sacado.Endereco.CEP = "00000000";

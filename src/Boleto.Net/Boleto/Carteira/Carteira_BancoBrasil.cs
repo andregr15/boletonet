@@ -12,7 +12,7 @@ namespace BoletoNet
         CobrancaVinculada = 2,
         CobrancaCaucionada = 3,
         CobrancaDescontada = 4,
-        CobrançaDiretaEspecialCarteira17 = 7,
+        CobrancaDiretaEspecialCarteira17 = 7,
     }
 
     #endregion 
@@ -62,31 +62,31 @@ namespace BoletoNet
                         this.NumeroCarteira = (int)EnumCarteiras_BancoBrasil.CobrancaSimples;
                         this.Codigo = "S";
                         this.Tipo = "S";
-                        this.Descricao = "Cobrança simples";
+                        this.Descricao = "Cobranca simples";
                         break;
                     case EnumCarteiras_BancoBrasil.CobrancaVinculada:
                         this.NumeroCarteira = (int)EnumCarteiras_BancoBrasil.CobrancaVinculada;
                         this.Codigo = "S";
                         this.Tipo = "S";
-                        this.Descricao = "Cobrança vincluada";
+                        this.Descricao = "Cobranca vincluada";
                         break;
                     case EnumCarteiras_BancoBrasil.CobrancaCaucionada:
                         this.NumeroCarteira = (int)EnumCarteiras_BancoBrasil.CobrancaCaucionada;
                         this.Codigo = "S";
                         this.Tipo = "S";
-                        this.Descricao = "Cobrança caucionada";
+                        this.Descricao = "Cobranca caucionada";
                         break;
                     case EnumCarteiras_BancoBrasil.CobrancaDescontada:
                         this.NumeroCarteira = (int)EnumCarteiras_BancoBrasil.CobrancaDescontada;
                         this.Codigo = "S";
                         this.Tipo = "S";
-                        this.Descricao = "Cobrança descontada";
+                        this.Descricao = "Cobranca descontada";
                         break;
-                    case EnumCarteiras_BancoBrasil.CobrançaDiretaEspecialCarteira17:
-                        this.NumeroCarteira = (int)EnumCarteiras_BancoBrasil.CobrançaDiretaEspecialCarteira17;
+                    case EnumCarteiras_BancoBrasil.CobrancaDiretaEspecialCarteira17:
+                        this.NumeroCarteira = (int)EnumCarteiras_BancoBrasil.CobrancaDiretaEspecialCarteira17;
                         this.Codigo = "S";
                         this.Tipo = "S";
-                        this.Descricao = "Cobrança direta especial - Carteira 17";
+                        this.Descricao = "Cobranca direta especial - Carteira 17";
                         break;                    
                     default:
                         this.NumeroCarteira = 0;
@@ -122,7 +122,7 @@ namespace BoletoNet
                 obj = new Carteira_BancoBrasil((int)EnumCarteiras_BancoBrasil.CobrancaDescontada);
                 alCarteiras.Add(obj);
 
-                obj = new Carteira_BancoBrasil((int)EnumCarteiras_BancoBrasil.CobrançaDiretaEspecialCarteira17);
+                obj = new Carteira_BancoBrasil((int)EnumCarteiras_BancoBrasil.CobrancaDiretaEspecialCarteira17);
                 alCarteiras.Add(obj);
 
                return alCarteiras;

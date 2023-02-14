@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BoletoNet
 {
-    // Códigos de rejeicoes de 1 a 64 associados ao código de movimento 3, 26 e 30
+    // Codigos de rejeicoes de 1 a 64 associados ao codigo de movimento 3, 26 e 30
 
     #region Enumerado
 
@@ -124,75 +124,75 @@ namespace BoletoNet
                 {
                     case  EnumCodigoRejeicao_BancoBrasil.CodigoBancoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoBancoInvalido;
-                        this.Descricao = "Código do banco inválido";
+                        this.Descricao = "Codigo do banco invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CodigoRegistroDetalheInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoRegistroDetalheInvalido;
-                        this.Descricao = "Código do registro detalhe inválido";
+                        this.Descricao = "Codigo do registro detalhe invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CodigoSegmentoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoSegmentoInvalido;
-                        this.Descricao = "Código do segmento inválido";
+                        this.Descricao = "Codigo do segmento invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CodigoMovimentoNaoPermitidoParaCarteira:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoMovimentoNaoPermitidoParaCarteira;
-                        this.Descricao = "Código do movimento não permitido para a carteira";
+                        this.Descricao = "Codigo do movimento nao permitido para a carteira";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CodigoMovimentoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoMovimentoInvalido;
-                        this.Descricao = "Código do movimento inválido";
+                        this.Descricao = "Codigo do movimento invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.TipoNumeroInscricaoCedenteInvalidos:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TipoNumeroInscricaoCedenteInvalidos;
-                        this.Descricao = "Tipo/Número de inscrição do cendente inválidos";
+                        this.Descricao = "Tipo/numero de inscricao do cendente invÃ¡lidos";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.AgenciaContaDVInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AgenciaContaDVInvalido;
-                        this.Descricao = "Agência/Conta/DV inválido";
+                        this.Descricao = "Agencia/Conta/DV invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.NossoNumeroInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NossoNumeroInvalido;
-                        this.Descricao = "Nosso número inválido";
+                        this.Descricao = "Nosso numero invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.NossoNumeroDuplicado:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NossoNumeroDuplicado;
-                        this.Descricao = "Nosso número duplicado";
+                        this.Descricao = "Nosso numero duplicado";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CarteiraInvalida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CarteiraInvalida;
-                        this.Descricao = "Carteira inválida";
+                        this.Descricao = "Carteira invÃ¡lida";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.FormaCadastramentoTituloInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.FormaCadastramentoTituloInvalido;
-                        this.Descricao = "Forma de cadastramento do título inválido";
+                        this.Descricao = "Forma de cadastramento do titulo invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.TipoDocumentoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TipoDocumentoInvalido;
-                        this.Descricao = "Tipo de documento inválido";
+                        this.Descricao = "Tipo de documento invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.IdentificacaoEmissaoBloquetoInvalida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.IdentificacaoEmissaoBloquetoInvalida;
-                        this.Descricao = "Identificação da emissão do bloqueto inválida";
+                        this.Descricao = "Identificacao da emissao do bloqueto invÃ¡lida";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.IdentificacaoDistribuicaoBloquetoInvalida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.IdentificacaoDistribuicaoBloquetoInvalida;
-                        this.Descricao = "Identificação da distribuição do bloqueto inválida";
+                        this.Descricao = "Identificacao da distribuiÃ§Ã£o do bloqueto invÃ¡lida";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CaracteristicasCobrancaIncompativeis:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CaracteristicasCobrancaIncompativeis;
-                        this.Descricao = "Características da cobrança incompatíveis";
+                        this.Descricao = "Caracterasticas da Cobranca incompatÃ­veis";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.DataVencimentoInvalida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataVencimentoInvalida;
-                        this.Descricao = "Data de vencimento inválida";
+                        this.Descricao = "Data de vencimento invÃ¡lida";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.DataVencimentoAnteriorDataEmissao:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataVencimentoAnteriorDataEmissao;
-                        this.Descricao = "Data de vencimento anterior a data de emissão";
+                        this.Descricao = "Data de vencimento anterior a data de emissao";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.VencimentoForadoPrazodeOperacao:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.VencimentoForadoPrazodeOperacao;
-                        this.Descricao = "Vencimento fora do prazo de emissão";
+                        this.Descricao = "Vencimento fora do prazo de emissao";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.TituloCargoBancosCorrespondentesVencimentoInferiorXXDias:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TituloCargoBancosCorrespondentesVencimentoInferiorXXDias;
@@ -200,123 +200,123 @@ namespace BoletoNet
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.ValorTituloInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorTituloInvalido;
-                        this.Descricao = "Valor do título inválido";
+                        this.Descricao = "Valor do titulo invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.EspecieTituloInvalida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.EspecieTituloInvalida;
-                        this.Descricao = "Espécie do título inválida";
+                        this.Descricao = "Especie do titulo invÃ¡lida";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.EspecieNaoPermitidaParaCarteira:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.EspecieNaoPermitidaParaCarteira;
-                        this.Descricao = "Espécie não permitida para a carteira";
+                        this.Descricao = "Especie nao permitida para a carteira";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.AceiteInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AceiteInvalido;
-                        this.Descricao = "Aceite inválido";
+                        this.Descricao = "Aceite invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.DataEmissaoInvalida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataEmissaoInvalida;
-                        this.Descricao = "Data de emissão inválida";
+                        this.Descricao = "Data de emissao invÃ¡lida";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.DataEmissaoPosteriorData:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataEmissaoPosteriorData;
-                        this.Descricao = "Data de emissão posterior a data";
+                        this.Descricao = "Data de emissao posterior a data";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CodigoJurosMoraInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoJurosMoraInvalido;
-                        this.Descricao = "Código de juros de mora inválido";
+                        this.Descricao = "Codigo de juros de mora invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.ValorJurosMoraInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorJurosMoraInvalido;
-                        this.Descricao = "Valor/Taxa de juros de mora inválido";
+                        this.Descricao = "Valor/Taxa de juros de mora invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CodigoDescontoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoDescontoInvalido;
-                        this.Descricao = "Código do desconto inválido";
+                        this.Descricao = "Codigo do desconto invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.ValorDescontoMaiorIgualValorTitulo:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorDescontoMaiorIgualValorTitulo;
-                        this.Descricao = "Valor do desconto maior ou igual ao valor do título";
+                        this.Descricao = "Valor do desconto maior ou igual ao valor do titulo";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.DescontoConcederNaoConfere:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DescontoConcederNaoConfere;
-                        this.Descricao = "Desconto a conceder não confere";
+                        this.Descricao = "Desconto a conceder nao confere";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.ConcessaoDescontoJaExiste:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ConcessaoDescontoJaExiste;
-                        this.Descricao = "Concessão de desconto - já existe desconto anterior";
+                        this.Descricao = "Concessao de desconto - ja existe desconto anterior";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.ValorIOFInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorIOFInvalido;
-                        this.Descricao = "Valor do IOF inválido";
+                        this.Descricao = "Valor do IOF invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.ValorAbatimentoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorAbatimentoInvalido;
-                        this.Descricao = "Valor do abatimento inválido";
+                        this.Descricao = "Valor do abatimento invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.ValorAbatimentoMaiorIgualValorTitulo:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorAbatimentoMaiorIgualValorTitulo;
-                        this.Descricao = "Valor do abatimento maior ou igual ao valor do título";
+                        this.Descricao = "Valor do abatimento maior ou igual ao valor do titulo";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.AbatimentoConcederNaoConfere:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AbatimentoConcederNaoConfere;
-                        this.Descricao = "Abatimento a conceder não confere";
+                        this.Descricao = "Abatimento a conceder nao confere";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.ConcessaoAbatimentoJaExiste:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ConcessaoAbatimentoJaExiste;
-                        this.Descricao = "Concessão de abatimento - já existe abatimendo anterior";
+                        this.Descricao = "Concessao de abatimento - ja existe abatimendo anterior";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CodigoProtestoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoProtestoInvalido;
-                        this.Descricao = "Código para protesto inválido";
+                        this.Descricao = "Codigo para protesto invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.PrazoProtestoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.PrazoProtestoInvalido;
-                        this.Descricao = "Prazo para protesto inválido";
+                        this.Descricao = "Prazo para protesto invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.PedidoProtestoNaoPermitidoParaTitulo:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.PedidoProtestoNaoPermitidoParaTitulo;
-                        this.Descricao = "Pedido de protesto não permitido para o título";
+                        this.Descricao = "Pedido de protesto nao permitido para o titulo";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.TituloComOrdemProtestoEmitida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TituloComOrdemProtestoEmitida;
-                        this.Descricao = "Título com ordem de protesto emitida";
+                        this.Descricao = "Titulo com ordem de protesto emitida";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.PedidoCancelamentoParaTitulosSemInstrucaoProtesto:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.PedidoCancelamentoParaTitulosSemInstrucaoProtesto;
-                        this.Descricao = "Pedido de cancelamento para títulos sem instrução de protesto";
+                        this.Descricao = "Pedido de cancelamento para titulos sem instruÃ§Ã£o de protesto";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CodigoParaBaixaDevolucaoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoParaBaixaDevolucaoInvalido;
-                        this.Descricao = "Código para baixa/devolução inválido";
+                        this.Descricao = "Codigo para baixa/devoluÃ§Ã£o invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.PrazoParaBaixaDevolucaoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.PrazoParaBaixaDevolucaoInvalido;
-                        this.Descricao = "Prazo para baixa/devolução inválido";
+                        this.Descricao = "Prazo para baixa/devoluÃ§Ã£o invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CodigoMoedaInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoMoedaInvalido;
-                        this.Descricao = "Código da moeda inválido";
+                        this.Descricao = "Codigo da moeda invÃ¡lido";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.NomeSacadoNaoInformado:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NomeSacadoNaoInformado;
-                        this.Descricao = "Nome do sacado não informado";
+                        this.Descricao = "Nome do sacado nao informado";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.TipoNumeroInscricaoSacadoInvalidos:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TipoNumeroInscricaoSacadoInvalidos;
-                        this.Descricao = "Tipo/Número de inscrição do sacado inválidos";
+                        this.Descricao = "Tipo/numero de inscricao do sacado invÃ¡lidos";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.EnderecoSacadoNaoInformado:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.EnderecoSacadoNaoInformado;
-                        this.Descricao = "Endereço do sacado não informado";
+                        this.Descricao = "EndereÃ§o do sacado nao informado";
                         break;
                     case EnumCodigoRejeicao_BancoBrasil.CEPInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CEPInvalido;
-                        this.Descricao = "CEP inválido";
+                        this.Descricao = "CEP invÃ¡lido";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.CEPSemPracaCobranca:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CEPSemPracaCobranca;
-                        this.Descricao = "CEP sem praça de cobrança";
+                        this.Descricao = "CEP sem praÃ§a de Cobranca";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.CEPReferenteBancoCorrespondente:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CEPReferenteBancoCorrespondente;
@@ -324,71 +324,71 @@ namespace BoletoNet
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.CEPIncompativelComUnidadeFederacao:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CEPIncompativelComUnidadeFederacao;
-                        this.Descricao = "CEP incompatível com a UF";
+                        this.Descricao = "CEP incompatÃ­vel com a UF";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.UnidadeFederacaoInvalida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.UnidadeFederacaoInvalida;
-                        this.Descricao = "UF inválida";
+                        this.Descricao = "UF invÃ¡lida";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.TipoNumeroInscricaoSacadorAvalistaInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TipoNumeroInscricaoSacadorAvalistaInvalido;
-                        this.Descricao = "Tipo/Número de inscrição do sacador/avalista inválido";
+                        this.Descricao = "Tipo/numero de inscricao do sacador/avalista invÃ¡lido";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.SacadorAvalistaNaoInformado:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.SacadorAvalistaNaoInformado;
-                        this.Descricao = "Sacador/Avalista não informado";
+                        this.Descricao = "Sacador/Avalista nao informado";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.NossoNumeroBancoCorrespondenteNaoInformado:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NossoNumeroBancoCorrespondenteNaoInformado;
-                        this.Descricao = "Nosso número no banco correspondente não informado";
+                        this.Descricao = "Nosso numero no banco correspondente nao informado";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.CodigoBancoCorrespondenteNaoInformado:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoBancoCorrespondenteNaoInformado;
-                        this.Descricao = "Código do banco correspondente não informado";
+                        this.Descricao = "Codigo do banco correspondente nao informado";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.CodigoMultaInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoMultaInvalido;
-                        this.Descricao = "Código da multa inválido";
+                        this.Descricao = "Codigo da multa invÃ¡lido";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.DataMultaInvalida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataMultaInvalida;
-                        this.Descricao = "Data da multa inválida";
+                        this.Descricao = "Data da multa invÃ¡lida";
                         break;                        
                         case EnumCodigoRejeicao_BancoBrasil.ValorPercentualMultaInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorPercentualMultaInvalido;
-                        this.Descricao = "Valor/Percentual da multa inválida";
+                        this.Descricao = "Valor/Percentual da multa invÃ¡lida";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.MovimentoParaTituloNaoCadastrado:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.MovimentoParaTituloNaoCadastrado;
-                        this.Descricao = "Movimento para título não cadastrado";
+                        this.Descricao = "Movimento para titulo nao cadastrado";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.AlteracaoAgenciaCobradoraInvalida:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AlteracaoAgenciaCobradoraInvalida;
-                        this.Descricao = "Alteração da agência cobradora/dv inválida";
+                        this.Descricao = "alteracao da Agencia cobradora/dv invÃ¡lida";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.TipoImpressaoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TipoImpressaoInvalido;
-                        this.Descricao = "Tipo de impressão inválido";
+                        this.Descricao = "Tipo de impressao invÃ¡lido";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.EntradaParaTituloJaCadastrado:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.EntradaParaTituloJaCadastrado;
-                        this.Descricao = "Entrada para título já cadastrado";
+                        this.Descricao = "Entrada para titulo ja cadastrado";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.NumeroLinhaInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NumeroLinhaInvalido;
-                        this.Descricao = "Número da linha inválido";
+                        this.Descricao = "numero da linha invÃ¡lido";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.CodigoBancoDebitoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoBancoDebitoInvalido;
-                        this.Descricao = "Código do banco para débito inválido";
+                        this.Descricao = "Codigo do banco para debito invÃ¡lido";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.AgenciaContaDVParaDebitoInvalido:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AgenciaContaDVParaDebitoInvalido;
-                        this.Descricao = "Agência/Conta/DV para débito inválido";
+                        this.Descricao = "Agencia/Conta/DV para debito invÃ¡lido";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.DadosParaDebitoIncompativel:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DadosParaDebitoIncompativel;
-                        this.Descricao = "Dados para débito incompatível com a identificação da emissão do boleto";
+                        this.Descricao = "Dados para debito incompatÃ­vel com a identificacao da emissao do boleto";
                         break;
                         case EnumCodigoRejeicao_BancoBrasil.ArquivoEmDuplicidade:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ArquivoEmDuplicidade;
@@ -419,75 +419,75 @@ namespace BoletoNet
                 {
                     case 1:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoBancoInvalido;
-                        this.Descricao = "Código do banco inválido";
+                        this.Descricao = "Codigo do banco invÃ¡lido";
                         break;
                     case 2:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoRegistroDetalheInvalido;
-                        this.Descricao = "Código do registro detalhe inválido";
+                        this.Descricao = "Codigo do registro detalhe invÃ¡lido";
                         break;
                     case 3:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoSegmentoInvalido;
-                        this.Descricao = "Código do segmento inválido";
+                        this.Descricao = "Codigo do segmento invÃ¡lido";
                         break;
                     case 4:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoMovimentoNaoPermitidoParaCarteira;
-                        this.Descricao = "Código do movimento não permitido para a carteira";
+                        this.Descricao = "Codigo do movimento nao permitido para a carteira";
                         break;
                     case 5:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoMovimentoInvalido;
-                        this.Descricao = "Código do movimento inválido";
+                        this.Descricao = "Codigo do movimento invÃ¡lido";
                         break;
                     case 6:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TipoNumeroInscricaoCedenteInvalidos;
-                        this.Descricao = "Tipo/Número de inscrição do cendente inválidos";
+                        this.Descricao = "Tipo/numero de inscricao do cendente invÃ¡lidos";
                         break;
                     case 7:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AgenciaContaDVInvalido;
-                        this.Descricao = "Agência/Conta/DV inválido";
+                        this.Descricao = "Agencia/Conta/DV invÃ¡lido";
                         break;
                     case 8:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NossoNumeroInvalido;
-                        this.Descricao = "Nosso número inválido";
+                        this.Descricao = "Nosso numero invÃ¡lido";
                         break;
                     case 9:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NossoNumeroDuplicado;
-                        this.Descricao = "Nosso número duplicado";
+                        this.Descricao = "Nosso numero duplicado";
                         break;
                     case 10:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CarteiraInvalida;
-                        this.Descricao = "Carteira inválida";
+                        this.Descricao = "Carteira invÃ¡lida";
                         break;
                     case 11:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.FormaCadastramentoTituloInvalido;
-                        this.Descricao = "Forma de cadastramento do título inválido";
+                        this.Descricao = "Forma de cadastramento do titulo invÃ¡lido";
                         break;
                     case 12:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TipoDocumentoInvalido;
-                        this.Descricao = "Tipo de documento inválido";
+                        this.Descricao = "Tipo de documento invÃ¡lido";
                         break;
                     case 13:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.IdentificacaoEmissaoBloquetoInvalida;
-                        this.Descricao = "Identificação da emissão do bloqueto inválida";
+                        this.Descricao = "Identificacao da emissao do bloqueto invÃ¡lida";
                         break;
                     case 14:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.IdentificacaoDistribuicaoBloquetoInvalida;
-                        this.Descricao = "Identificação da distribuição do bloqueto inválida";
+                        this.Descricao = "Identificacao da distribuiÃ§Ã£o do bloqueto invÃ¡lida";
                         break;
                     case 15:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CaracteristicasCobrancaIncompativeis;
-                        this.Descricao = "Características da cobrança incompatíveis";
+                        this.Descricao = "Caracterasticas da Cobranca incompatÃ­veis";
                         break;
                     case 16:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataVencimentoInvalida;
-                        this.Descricao = "Data de vencimento inválida";
+                        this.Descricao = "Data de vencimento invÃ¡lida";
                         break;
                     case 17:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataVencimentoAnteriorDataEmissao;
-                        this.Descricao = "Data de vencimento anterior a data de emissão";
+                        this.Descricao = "Data de vencimento anterior a data de emissao";
                         break;
                     case 18:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.VencimentoForadoPrazodeOperacao;
-                        this.Descricao = "Vencimento fora do prazo de emissão";
+                        this.Descricao = "Vencimento fora do prazo de emissao";
                         break;
                     case 19:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TituloCargoBancosCorrespondentesVencimentoInferiorXXDias;
@@ -495,123 +495,123 @@ namespace BoletoNet
                         break;
                     case 20:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorTituloInvalido;
-                        this.Descricao = "Valor do título inválido";
+                        this.Descricao = "Valor do titulo invÃ¡lido";
                         break;
                     case 21:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.EspecieTituloInvalida;
-                        this.Descricao = "Espécie do título inválida";
+                        this.Descricao = "Especie do titulo invÃ¡lida";
                         break;
                     case 22:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.EspecieNaoPermitidaParaCarteira;
-                        this.Descricao = "Espécie não permitida para a carteira";
+                        this.Descricao = "Especie nao permitida para a carteira";
                         break;
                     case 23:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AceiteInvalido;
-                        this.Descricao = "Aceite inválido";
+                        this.Descricao = "Aceite invÃ¡lido";
                         break;
                     case 24:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataEmissaoInvalida;
-                        this.Descricao = "Data de emissão inválida";
+                        this.Descricao = "Data de emissao invÃ¡lida";
                         break;
                     case 25:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataEmissaoPosteriorData;
-                        this.Descricao = "Data de emissão posterior a data";
+                        this.Descricao = "Data de emissao posterior a data";
                         break;
                     case 26:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoJurosMoraInvalido;
-                        this.Descricao = "Código de juros de mora inválido";
+                        this.Descricao = "Codigo de juros de mora invÃ¡lido";
                         break;
                     case 27:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorJurosMoraInvalido;
-                        this.Descricao = "Valor/Taxa de juros de mora inválido";
+                        this.Descricao = "Valor/Taxa de juros de mora invÃ¡lido";
                         break;
                     case 28:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoDescontoInvalido;
-                        this.Descricao = "Código do desconto inválido";
+                        this.Descricao = "Codigo do desconto invÃ¡lido";
                         break;
                     case 29:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorDescontoMaiorIgualValorTitulo;
-                        this.Descricao = "Valor do desconto maior ou igual ao valor do título";
+                        this.Descricao = "Valor do desconto maior ou igual ao valor do titulo";
                         break;
                     case 30:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DescontoConcederNaoConfere;
-                        this.Descricao = "Desconto a conceder não confere";
+                        this.Descricao = "Desconto a conceder nao confere";
                         break;
                     case 31:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ConcessaoDescontoJaExiste;
-                        this.Descricao = "Concessão de desconto - já existe desconto anterior";
+                        this.Descricao = "Concessao de desconto - ja existe desconto anterior";
                         break;
                     case 32:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorIOFInvalido;
-                        this.Descricao = "Valor do IOF inválido";
+                        this.Descricao = "Valor do IOF invÃ¡lido";
                         break;
                     case 33:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorAbatimentoInvalido;
-                        this.Descricao = "Valor do abatimento inválido";
+                        this.Descricao = "Valor do abatimento invÃ¡lido";
                         break;
                     case 34:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorAbatimentoMaiorIgualValorTitulo;
-                        this.Descricao = "Valor do abatimento maior ou igual ao valor do título";
+                        this.Descricao = "Valor do abatimento maior ou igual ao valor do titulo";
                         break;
                     case 35:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AbatimentoConcederNaoConfere;
-                        this.Descricao = "Abatimento a conceder não confere";
+                        this.Descricao = "Abatimento a conceder nao confere";
                         break;
                     case 36:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ConcessaoAbatimentoJaExiste;
-                        this.Descricao = "Concessão de abatimento - já existe abatimendo anterior";
+                        this.Descricao = "Concessao de abatimento - ja existe abatimendo anterior";
                         break;
                     case 37:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoProtestoInvalido;
-                        this.Descricao = "Código para protesto inválido";
+                        this.Descricao = "Codigo para protesto invÃ¡lido";
                         break;
                     case 38:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.PrazoProtestoInvalido;
-                        this.Descricao = "Prazo para protesto inválido";
+                        this.Descricao = "Prazo para protesto invÃ¡lido";
                         break;
                     case 39:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.PedidoProtestoNaoPermitidoParaTitulo;
-                        this.Descricao = "Pedido de protesto não permitido para o título";
+                        this.Descricao = "Pedido de protesto nao permitido para o titulo";
                         break;
                     case 40:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TituloComOrdemProtestoEmitida;
-                        this.Descricao = "Título com ordem de protesto emitida";
+                        this.Descricao = "Titulo com ordem de protesto emitida";
                         break;
                     case 41:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.PedidoCancelamentoParaTitulosSemInstrucaoProtesto;
-                        this.Descricao = "Pedido de cancelamento para títulos sem instrução de protesto";
+                        this.Descricao = "Pedido de cancelamento para titulos sem instruÃ§Ã£o de protesto";
                         break;
                     case 42:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoParaBaixaDevolucaoInvalido;
-                        this.Descricao = "Código para baixa/devolução inválido";
+                        this.Descricao = "Codigo para baixa/devoluÃ§Ã£o invÃ¡lido";
                         break;
                     case 43:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.PrazoParaBaixaDevolucaoInvalido;
-                        this.Descricao = "Prazo para baixa/devolução inválido";
+                        this.Descricao = "Prazo para baixa/devoluÃ§Ã£o invÃ¡lido";
                         break;
                     case 44:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoMoedaInvalido;
-                        this.Descricao = "Código da moeda inválido";
+                        this.Descricao = "Codigo da moeda invÃ¡lido";
                         break;
                     case 45:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NomeSacadoNaoInformado;
-                        this.Descricao = "Nome do sacado não informado";
+                        this.Descricao = "Nome do sacado nao informado";
                         break;
                     case 46:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AbatimentoConcederNaoConfere;
-                        this.Descricao = "Tipo/Número de inscrição do sacado inválidos";
+                        this.Descricao = "Tipo/numero de inscricao do sacado invÃ¡lidos";
                         break;
                     case 47:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.EnderecoSacadoNaoInformado;
-                        this.Descricao = "Endereço do sacado não informado";
+                        this.Descricao = "EndereÃ§o do sacado nao informado";
                         break;
                     case 48:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CEPInvalido;
-                        this.Descricao = "CEP inválido";
+                        this.Descricao = "CEP invÃ¡lido";
                         break;
                         case 49:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CEPSemPracaCobranca;
-                        this.Descricao = "CEP sem praça de cobrança";
+                        this.Descricao = "CEP sem praÃ§a de Cobranca";
                         break;
                         case 50:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CEPReferenteBancoCorrespondente;
@@ -619,71 +619,71 @@ namespace BoletoNet
                         break;
                         case 51:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CEPIncompativelComUnidadeFederacao;
-                        this.Descricao = "CEP incompatível com a UF";
+                        this.Descricao = "CEP incompatÃ­vel com a UF";
                         break;
                         case 52:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.UnidadeFederacaoInvalida;
-                        this.Descricao = "UF inválida";
+                        this.Descricao = "UF invÃ¡lida";
                         break;
                         case 53:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TipoNumeroInscricaoSacadorAvalistaInvalido;
-                        this.Descricao = "Tipo/Número de inscrição do sacador/avalista inválido";
+                        this.Descricao = "Tipo/numero de inscricao do sacador/avalista invÃ¡lido";
                         break;
                         case 54:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.SacadorAvalistaNaoInformado;
-                        this.Descricao = "Sacador/Avalista não informado";
+                        this.Descricao = "Sacador/Avalista nao informado";
                         break;
                         case 55:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NossoNumeroBancoCorrespondenteNaoInformado;
-                        this.Descricao = "Nosso número no banco correspondente não informado";
+                        this.Descricao = "Nosso numero no banco correspondente nao informado";
                         break;
                         case 56:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoBancoCorrespondenteNaoInformado;
-                        this.Descricao = "Código do banco correspondente não informado";
+                        this.Descricao = "Codigo do banco correspondente nao informado";
                         break;
                         case 57:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoMultaInvalido;
-                        this.Descricao = "Código da multa inválido";
+                        this.Descricao = "Codigo da multa invÃ¡lido";
                         break;
                         case 58:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DataMultaInvalida;
-                        this.Descricao = "Data da multa inválida";
+                        this.Descricao = "Data da multa invÃ¡lida";
                         break;                        
                         case 59:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ValorPercentualMultaInvalido;
-                        this.Descricao = "Valor/Percentual da multa inválida";
+                        this.Descricao = "Valor/Percentual da multa invÃ¡lida";
                         break;
                         case 60:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.MovimentoParaTituloNaoCadastrado;
-                        this.Descricao = "Movimento para título não cadastrado";
+                        this.Descricao = "Movimento para titulo nao cadastrado";
                         break;
                         case 61:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AlteracaoAgenciaCobradoraInvalida;
-                        this.Descricao = "Alteração da agência cobradora/dv inválida";
+                        this.Descricao = "alteracao da Agencia cobradora/dv invÃ¡lida";
                         break;
                         case 62:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.TipoImpressaoInvalido;
-                        this.Descricao = "Tipo de impressão inválido";
+                        this.Descricao = "Tipo de impressao invÃ¡lido";
                         break;
                         case 63:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.EntradaParaTituloJaCadastrado;
-                        this.Descricao = "Entrada para título já cadastrado";
+                        this.Descricao = "Entrada para titulo ja cadastrado";
                         break;
                         case 64:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.NumeroLinhaInvalido;
-                        this.Descricao = "Número da linha inválido";
+                        this.Descricao = "numero da linha invÃ¡lido";
                         break;
                         case 65:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.CodigoBancoDebitoInvalido;
-                        this.Descricao = "Código do banco para débito inválido";
+                        this.Descricao = "Codigo do banco para debito invÃ¡lido";
                         break;
                         case 66:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.AgenciaContaDVParaDebitoInvalido;
-                        this.Descricao = "Agência/Conta/DV para débito inválido";
+                        this.Descricao = "Agencia/Conta/DV para debito invÃ¡lido";
                         break;
                         case 67:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.DadosParaDebitoIncompativel;
-                        this.Descricao = "Dados para débito incompatível com a identificação da emissão do boleto";
+                        this.Descricao = "Dados para debito incompatÃ­vel com a identificacao da emissao do boleto";
                         break;
                         case 88:
                         this.Codigo = (int)EnumCodigoRejeicao_BancoBrasil.ArquivoEmDuplicidade;

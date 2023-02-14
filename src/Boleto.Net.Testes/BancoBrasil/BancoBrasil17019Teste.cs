@@ -39,7 +39,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string nossoNumeroValido = "17/23790018204";
 
-            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso número inválido para 4 posições");
+            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso numero invÃ¡lido para 4 posicoes");
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string nossoNumeroValido = "17/23796618204";
 
-            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso número inválido para 6 posições");
+            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso numero invÃ¡lido para 6 posicoes");
         }
 
         [TestMethod]
@@ -67,7 +67,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string nossoNumeroValido = "17/23796610000018204";
 
-            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso número inválido para 7 posições");
+            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso numero invÃ¡lido para 7 posicoes");
         }
 
         [TestMethod]
@@ -81,7 +81,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string linhaDigitavelValida = "00190.00009 02379.661008 00018.204172 3 82860000170000";
 
-            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.LinhaDigitavel, linhaDigitavelValida, "Linha digitável inválida");
+            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.LinhaDigitavel, linhaDigitavelValida, "Linha digitavel invÃ¡lida");
         }
 
         [TestMethod]
@@ -95,7 +95,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string codigoBarraValida = "00193828600001700000000002379661000001820417";
 
-            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.Codigo, codigoBarraValida, "Código de Barra inválido");
+            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.Codigo, codigoBarraValida, "Codigo de Barra invÃ¡lido");
         }
 
         #endregion  Carteira 17-019

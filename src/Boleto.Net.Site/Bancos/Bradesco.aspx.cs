@@ -18,22 +18,22 @@ public partial class Bancos_Bradesco : System.Web.UI.Page
         b.NumeroDocumento = "01000000001";
 
         b.Sacado = new Sacado("000.000.000-00", "Nome do seu Cliente ");
-        b.Sacado.Endereco.End = "Endereço do seu Cliente ";
+        b.Sacado.Endereco.End = "EndereÃ§o do seu Cliente ";
         b.Sacado.Endereco.Bairro = "Bairro";
         b.Sacado.Endereco.Cidade = "Cidade";
         b.Sacado.Endereco.CEP = "00000000";
         b.Sacado.Endereco.UF = "UF";     
 
-        item.Descricao += " após " + item.QuantidadeDias.ToString() + " dias corridos do vencimento.";
-        b.Instrucoes.Add(item); //"Não Receber após o vencimento");
+        item.Descricao += " apÃ³s " + item.QuantidadeDias.ToString() + " dias corridos do vencimento.";
+        b.Instrucoes.Add(item); //"nao Receber apÃ³s o vencimento");
 
         Instrucao i = new Instrucao(237);
-        i.Descricao = "Nova Instrução";
+        i.Descricao = "Nova Instrucao";
         b.Instrucoes.Add(i);
 
         /* 
-         * A data de vencimento não é usada
-         * Usado para mostrar no lugar da data de vencimento o termo "Contra Apresentação";
+         * A data de vencimento nao Ã© usada
+         * Usado para mostrar no lugar da data de vencimento o termo "Contra Apresentacao";
          * Usado na carteira 06
          */
         boletoBancario.MostrarContraApresentacaoNaDataVencimento = true;

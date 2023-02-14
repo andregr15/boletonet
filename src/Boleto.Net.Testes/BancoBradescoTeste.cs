@@ -171,21 +171,21 @@ namespace BoletoNet.Testes
             objCEDENTE.Codigo = "123456";
             objCEDENTE.Convenio = 9;
 
-            //Inst�ncia de Boleto
+            //instancia de Boleto
             Boleto objBOLETO = new Boleto();
-            //O nosso-numero deve ser de 11 posi��es
+            //O nosso-numero deve ser de 11 posicoes
             objBOLETO.EspecieDocumento = new EspecieDocumento(237,"12");
             objBOLETO.DataVencimento = DateTime.Now.AddDays(10);
             objBOLETO.ValorBoleto = 90;
             objBOLETO.Carteira ="09";
             objBOLETO.NossoNumero = ("00000012345");
             objBOLETO.Cedente = objCEDENTE;
-            //O n� do documento deve ser de 10 posi��es
+            //O No do documento deve ser de 10 posicoes
             objBOLETO.NumeroDocumento = "1234567890";
             objBOLETO.NumeroControle = "100";
-            //A data do documento � a data de emiss�o do boleto
+            //A data do documento é a data de emissao do boleto
             objBOLETO.DataDocumento = DateTime.Now;
-            //A data de processamento � a data em que foi processado o documento, portanto � da data de emiss�o do boleto
+            //A data de processamento é a data em que foi processado o documento, portanto é a data de emissao do boleto
             objBOLETO.DataProcessamento = DateTime.Now;
             objBOLETO.Sacado = new Sacado("12345678000255", "TESTE SACADO");
             objBOLETO.Sacado.Endereco.End = "END SACADO";

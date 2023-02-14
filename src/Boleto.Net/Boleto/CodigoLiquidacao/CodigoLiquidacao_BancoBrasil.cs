@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BoletoNet
 {
-    // C骴igos de liquida玢o de 1 a 13 associados aos c骴igos de movimento 06, 09 e 17
+    // Codigos de liquidacao de 1 a 13 associados aos codigos de movimento 06, 09 e 17
 
     #region Enumerado
 
@@ -81,37 +81,37 @@ namespace BoletoNet
                     case EnumCodigoLiquidacao_BancoBrasil.NoProprioBanco:
                         this.Enumerado = (int)EnumCodigoLiquidacao_BancoBrasil.NoProprioBanco;
                         this.Codigo = "";
-                        this.Descricao = "No pr髉rio banco";
+                        this.Descricao = "No preprio banco";
                         this.Recurso = "";
                         break;
                     case EnumCodigoLiquidacao_BancoBrasil.CompensacaoEletronica:
                         this.Enumerado = (int)EnumCodigoLiquidacao_BancoBrasil.CompensacaoEletronica;
                         this.Codigo = "";
-                        this.Descricao = "Compensa玢o eletr鬾ica";
+                        this.Descricao = "Compensacao eletr么nica";
                         this.Recurso = "";
                         break;
                     case EnumCodigoLiquidacao_BancoBrasil.CompensacaoConvencional:
                         this.Enumerado = (int)EnumCodigoLiquidacao_BancoBrasil.CompensacaoConvencional;
                         this.Codigo = "";
-                        this.Descricao = "Compensa玢o convencional";
+                        this.Descricao = "Compensacao convencional";
                         this.Recurso = "";
                         break;
                     case EnumCodigoLiquidacao_BancoBrasil.PorMeioEletronico:
                         this.Enumerado = (int)EnumCodigoLiquidacao_BancoBrasil.PorMeioEletronico;
                         this.Codigo = "";
-                        this.Descricao = "Por meio eletr鬾ico";
+                        this.Descricao = "Por meio eletr么nico";
                         this.Recurso = "";
                         break;
                     case EnumCodigoLiquidacao_BancoBrasil.AposFeriadoLocal:
                         this.Enumerado = (int)EnumCodigoLiquidacao_BancoBrasil.AposFeriadoLocal;
                         this.Codigo = "";
-                        this.Descricao = "Ap髎 feriado nacional";
+                        this.Descricao = "Ap贸s feriado nacional";
                         this.Recurso = "";
                         break;
                     case EnumCodigoLiquidacao_BancoBrasil.EmCartorio:
                         this.Enumerado = (int)EnumCodigoLiquidacao_BancoBrasil.EmCartorio;
                         this.Codigo = "";
-                        this.Descricao = "Em cart髍io";
+                        this.Descricao = "Em cart贸rio";
                         this.Recurso = "";
                         break;
                     case EnumCodigoLiquidacao_BancoBrasil.ComandadaBanco:

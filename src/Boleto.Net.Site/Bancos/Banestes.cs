@@ -20,7 +20,7 @@ public partial class Bancos_Banestes : System.Web.UI.Page
         b.Sacado = new Sacado("000.000.000-00", "Fulano de Silva");
         b.Sacado.Endereco.End = "SSS 154 Bloco J Casa 23";
         b.Sacado.Endereco.Bairro = "Testando";
-        b.Sacado.Endereco.Cidade = "Testelândia";
+        b.Sacado.Endereco.Cidade = "TestelÃ¢ndia";
         b.Sacado.Endereco.CEP = "70000000";
         b.Sacado.Endereco.UF = "DF";
 
@@ -31,16 +31,16 @@ public partial class Bancos_Banestes : System.Web.UI.Page
 
         b.Instrucoes = new Instrucoes();
 
-        #region Instrução Taxa Bancária
+        #region Instrucao Taxa Bancaria
         
         IInstrucao instrucao1 = new Instrucao_Banestes();
 
-        instrucao1.Descricao = "Taxa bancária R$ 2,95";
+        instrucao1.Descricao = "Taxa bancÃ¡ria R$ 2,95";
 
         b.Instrucoes.Add(instrucao1);
         #endregion
 
-        #region Instrução Chave ASBACE
+        #region Instrucao Chave ASBACE
         IInstrucao instrucao2 = new Instrucao_Banestes();
 
         instrucao2.Descricao = string.Concat("CHAVE ASBACE: ", string.Format("{0} {1} {2} {3} {4}",

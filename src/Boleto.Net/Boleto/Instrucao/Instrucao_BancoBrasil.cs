@@ -8,8 +8,8 @@ namespace BoletoNet
 
     public enum EnumInstrucoes_BancoBrasil
     {
-        Protestar = 9,                      // Emite aviso ao sacado após N dias do vencto, e envia ao cartório após 5 dias úteis
-        NaoProtestar = 7,                  // Inibe protesto, quando houver instrução permanente na conta corrente
+        Protestar = 9,                      // Emite aviso ao sacado apÃ³s N dias do vencto, e envia ao cartÃ³rio apÃ³s 5 dias Ãºteis
+        NaoProtestar = 7,                  // Inibe protesto, quando houver instruÃ§Ã£o permanente na conta corrente
         ImportanciaporDiaDesconto = 30,
         Multa = 35,
         ProtestoFinsFalimentares = 42,
@@ -75,13 +75,13 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_BancoBrasil.Multa:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.Multa;
-                        this.Descricao = String.Format("Após vencimento cobrar multa de {0} {1}",
+                        this.Descricao = String.Format("ApÃ³s vencimento cobrar multa de {0} {1}",
                             (tipoValor.Equals(EnumTipoValor.Reais) ? "R$ " : valor.ToString("F2")),
                             (tipoValor.Equals(EnumTipoValor.Percentual) ? "%" : valor.ToString("F2")));
                         break;
                     case EnumInstrucoes_BancoBrasil.JurosdeMora:
                         this.Codigo = 0;
-                        this.Descricao = String.Format("Após vencimento cobrar juros de {0} {1} por dia de atraso",
+                        this.Descricao = String.Format("ApÃ³s vencimento cobrar juros de {0} {1} por dia de atraso",
                             (tipoValor.Equals(EnumTipoValor.Reais) ? "R$ " : valor.ToString("F2")),
                             (tipoValor.Equals(EnumTipoValor.Percentual) ? "%" : valor.ToString("F2")));
                         break;
@@ -109,15 +109,15 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_BancoBrasil.Protestar:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.Protestar;
-                        this.Descricao = "Protestar após " + nrDias + " dias úteis.";
+                        this.Descricao = "Protestar apÃ³s " + nrDias + " dias Ãºteis.";
                         break;
                     case EnumInstrucoes_BancoBrasil.NaoProtestar:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.NaoProtestar;
-                        this.Descricao = "Não protestar";
+                        this.Descricao = "nao protestar";
                         break;
                     case EnumInstrucoes_BancoBrasil.ImportanciaporDiaDesconto:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.ImportanciaporDiaDesconto;
-                        this.Descricao = "Importância por dia de desconto.";
+                        this.Descricao = "ImportÃ¢ncia por dia de desconto.";
                         break;
                     case EnumInstrucoes_BancoBrasil.ProtestoFinsFalimentares:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.ProtestoFinsFalimentares;
@@ -125,27 +125,27 @@ namespace BoletoNet
                         break;
                     case EnumInstrucoes_BancoBrasil.ProtestarAposNDiasCorridos:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.ProtestarAposNDiasCorridos;
-                        this.Descricao = "Protestar no " + nrDias + "º dia corrido após vencimento";
+                        this.Descricao = "Protestar no " + nrDias + "o dia corrido apÃ³s vencimento";
                         break;
                     case EnumInstrucoes_BancoBrasil.ProtestarAposNDiasUteis:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.ProtestarAposNDiasUteis;
-                        this.Descricao = "Protestar no " + nrDias + "º dia útil após vencimento";/*Jéferson (jefhtavares) em 02/12/2013 a pedido do setor de homologação do BB*/
+                        this.Descricao = "Protestar no " + nrDias + "o dia Ãºtil apÃ³s vencimento";/*jaferson (jefhtavares) em 02/12/2013 a pedido do setor de homologaÃ§Ã£o do BB*/
                         break;
                     case EnumInstrucoes_BancoBrasil.NaoReceberAposNDias:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.NaoReceberAposNDias;
-                        this.Descricao = "Não receber após " + nrDias + " dias do vencimento";
+                        this.Descricao = "nao receber apÃ³s " + nrDias + " dias do vencimento";
                         break;
                     case EnumInstrucoes_BancoBrasil.DevolverAposNDias:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.DevolverAposNDias;
-                        this.Descricao = "Devolver após " + nrDias + " dias do vencimento";
+                        this.Descricao = "Devolver apÃ³s " + nrDias + " dias do vencimento";
                         break;
                     case EnumInstrucoes_BancoBrasil.JurosdeMora:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.JurosdeMora;
-                        this.Descricao = "Após vencimento cobrar R$ "; // por dia de atraso
+                        this.Descricao = "ApÃ³s vencimento cobrar R$ "; // por dia de atraso
                         break;
                     case EnumInstrucoes_BancoBrasil.DescontoporDia:
                         this.Codigo = (int)EnumInstrucoes_BancoBrasil.DescontoporDia;
-                        this.Descricao = "Conceder desconto de R$ "; // por dia de antecipação
+                        this.Descricao = "Conceder desconto de R$ "; // por dia de antecipacao
                         break;
                     default:
                         this.Codigo = 0;

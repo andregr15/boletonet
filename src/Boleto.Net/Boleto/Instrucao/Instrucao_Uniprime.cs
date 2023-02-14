@@ -80,13 +80,13 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_Uniprime.OutrasInstrucoes_ExibeMensagem_MoraDiaria:
                         this.Codigo = 0;
-                        this.Descricao = String.Format("Após vencimento cobrar juros de {0} {1} por dia de atraso",
+                        this.Descricao = String.Format("ApÃ³s vencimento cobrar juros de {0} {1} por dia de atraso",
                             (tipoValor.Equals(EnumTipoValor.Reais) ? "R$ " : valor.ToString("F2")),
                             (tipoValor.Equals(EnumTipoValor.Percentual) ? "%" : valor.ToString("F2")));
                         break;
                     case EnumInstrucoes_Uniprime.OutrasInstrucoes_ExibeMensagem_MultaVencimento:
                         this.Codigo = 0;
-                        this.Descricao = String.Format("Após vencimento cobrar multa de {0} {1}",
+                        this.Descricao = String.Format("ApÃ³s vencimento cobrar multa de {0} {1}",
                             (tipoValor.Equals(EnumTipoValor.Reais) ? "R$ " : valor.ToString("F2")),
                             (tipoValor.Equals(EnumTipoValor.Percentual) ? "%" : valor.ToString("F2")));
                         break;
@@ -117,7 +117,7 @@ namespace BoletoNet
                         break;
                     case EnumInstrucoes_Uniprime.NaoProtestar:
                         this.Codigo = (int)EnumInstrucoes_Uniprime.NaoProtestar;
-                        this.Descricao = "Não protestar";
+                        this.Descricao = "nao protestar";
                         break;
                     case EnumInstrucoes_Uniprime.ProtestoFinsFalimentares:
                         this.Codigo = (int)EnumInstrucoes_Uniprime.ProtestoFinsFalimentares;
@@ -125,19 +125,19 @@ namespace BoletoNet
                         break;
                     case EnumInstrucoes_Uniprime.ProtestarAposNDiasCorridos:
                         this.Codigo = (int)EnumInstrucoes_Uniprime.ProtestarAposNDiasCorridos;
-                        this.Descricao = "Protestar após " + nrDias + " dias corridos do vencimento";
+                        this.Descricao = "Protestar apÃ³s " + nrDias + " dias corridos do vencimento";
                         break;
                     case EnumInstrucoes_Uniprime.ProtestarAposNDiasUteis:
                         this.Codigo = (int)EnumInstrucoes_Uniprime.ProtestarAposNDiasUteis;
-                        this.Descricao = "Protestar após " + nrDias + " dias úteis do vencimento";
+                        this.Descricao = "Protestar apÃ³s " + nrDias + " dias Ãºteis do vencimento";
                         break;
                     case EnumInstrucoes_Uniprime.NaoReceberAposNDias:
                         this.Codigo = (int)EnumInstrucoes_Uniprime.NaoReceberAposNDias;
-                        this.Descricao = "Não receber após " + nrDias + " dias do vencimento";
+                        this.Descricao = "nao receber apÃ³s " + nrDias + " dias do vencimento";
                         break;
                     case EnumInstrucoes_Uniprime.DevolverAposNDias:
                         this.Codigo = (int)EnumInstrucoes_Uniprime.DevolverAposNDias;
-                        this.Descricao = "Devolver após " + nrDias + " dias do vencimento";
+                        this.Descricao = "Devolver apÃ³s " + nrDias + " dias do vencimento";
                         break;
                     default:
                         this.Codigo = 0;
@@ -164,7 +164,7 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_Uniprime.ComDesconto:
                         this.Codigo = (int)EnumInstrucoes_Uniprime.ComDesconto;
-                        this.Descricao = String.Format("Desconto de pontualidade no valor de {0} {1} se pago até " + data.ToShortDateString(),
+                        this.Descricao = String.Format("Desconto de pontualidade no valor de {0} {1} se pago atÃ© " + data.ToShortDateString(),
                             (tipoValor.Equals(EnumTipoValor.Reais) ? "R$ " : valor.ToString("C")),
                             (tipoValor.Equals(EnumTipoValor.Percentual) ? "%" : valor.ToString("F2")));
                         break;

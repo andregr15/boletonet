@@ -38,7 +38,7 @@ namespace Boleto.Net.Testes.Remessa
 
             var sacado =new Sacado("11300946008", "", endereco);
 
-            //Inst�ncia de Boleto
+            //instancia de Boleto
             var boleto = new BoletoNet.Boleto(
                 DateTime.Today,
                 5,

@@ -62,11 +62,11 @@ namespace BoletoNet
 
                     //case EnumInstrucoes_CrediSIS.Percentual_Multa:
                     //    this.Codigo = (int)EnumInstrucoes_CrediSIS.Percentual_Multa;
-                    //    this.Descricao = "Após vencimento cobrar multa de " + valor + " %";
+                    //    this.Descricao = "ApÃ³s vencimento cobrar multa de " + valor + " %";
                     //    break;
                     //case EnumInstrucoes_CrediSIS.JurosdeMora:
                     //    this.Codigo = (int)EnumInstrucoes_CrediSIS.JurosdeMora;
-                    //    this.Descricao = "Após vencimento cobrar R$ " + valor + " por dia de atraso";
+                    //    this.Descricao = "ApÃ³s vencimento cobrar R$ " + valor + " por dia de atraso";
                     //    break;
                     default:
                         this.Codigo = 0;
@@ -92,11 +92,11 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_CrediSIS.ProtestarAposNDiasCorridos:
                         this.Codigo = (int)EnumInstrucoes_CrediSIS.ProtestarAposNDiasCorridos;
-                        this.Descricao = "Protestar no " + nrDias + "º dia corrido após vencimento";
+                        this.Descricao = "Protestar no " + nrDias + "o dia corrido apÃ³s vencimento";
                         break;
                     case EnumInstrucoes_CrediSIS.ProtestarAposNDiasUteis:
                         this.Codigo = (int)EnumInstrucoes_CrediSIS.ProtestarAposNDiasUteis;
-                        this.Descricao = "Protestar no " + nrDias + "º dia útil após vencimento";/*Jéferson (jefhtavares) em 02/12/2013 a pedido do setor de homologação do BB*/
+                        this.Descricao = "Protestar no " + nrDias + "o dia Ãºtil apÃ³s vencimento";/*jaferson (jefhtavares) em 02/12/2013 a pedido do setor de homologaÃ§Ã£o do BB*/
                         break;
                     default:
                         this.Codigo = 0;

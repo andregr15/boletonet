@@ -29,15 +29,15 @@ public partial class Bancos_Unibanco : System.Web.UI.Page
 
         // ----------------------------------------------------------------------------------------
 
-        //b.Instrucoes.Add("N„o receber apÛs o vencimento");
-        //b.Instrucoes.Add("ApÛs o vencimento pague somente no Unibanco");
-        //b.Instrucoes.Add("Taxa banc·ria - R$ 2,95");
+        //b.Instrucoes.Add("nao receber ap√≥s o vencimento");
+        //b.Instrucoes.Add("Ap√≥s o vencimento pague somente no Unibanco");
+        //b.Instrucoes.Add("Taxa banc√°ria - R$ 2,95");
         //b.Instrucoes.Add("Emitido pelo componente Boleto.NET");
 
         // ----------------------------------------------------------------------------------------
 
         b.Sacado = new Sacado("000.000.000-00", "Nome do seu Cliente ");
-        b.Sacado.Endereco.End = "EndereÁo do seu Cliente ";
+        b.Sacado.Endereco.End = "Endere√ßo do seu Cliente ";
         b.Sacado.Endereco.Bairro = "Bairro";
         b.Sacado.Endereco.Cidade = "Cidade";
         b.Sacado.Endereco.CEP = "00000000";

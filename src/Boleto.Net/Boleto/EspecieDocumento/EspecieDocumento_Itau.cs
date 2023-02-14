@@ -134,7 +134,7 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Itau.NotaPromissoria:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Itau.NotaPromissoria);
-                        this.Especie = "Nota promissória";
+                        this.Especie = "Nota promissÃ³ria";
                         this.Sigla = "NP";
                         break;
                     case EnumEspecieDocumento_Itau.NotaSeguro:
@@ -165,22 +165,22 @@ namespace BoletoNet
                     case EnumEspecieDocumento_Itau.DuplicataServico:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Itau.DuplicataServico);
                         this.Sigla = "DS";
-                        this.Especie = "Duplicata de serviço";
+                        this.Especie = "Duplicata de servico";
                         break;
                     case EnumEspecieDocumento_Itau.LetraCambio:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Itau.LetraCambio);
                         this.Sigla = "LC";
-                        this.Especie = "Letra de câmbio";
+                        this.Especie = "Letra de cÃ¢mbio";
                         break;
                     case EnumEspecieDocumento_Itau.NotaDebito:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Itau.NotaDebito);
                         this.Sigla = "ND";
-                        this.Especie = "Nota de débito";
+                        this.Especie = "Nota de debito";
                         break;
                     case EnumEspecieDocumento_Itau.DocumentoDivida:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Itau.DocumentoDivida);
                         this.Sigla = "DD";
-                        this.Especie = "Documento de dívida";
+                        this.Especie = "Documento de dÃ­vida";
                         break;
                     case EnumEspecieDocumento_Itau.EncargosCondominais:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Itau.EncargosCondominais);

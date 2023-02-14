@@ -26,7 +26,7 @@ namespace BoletoNet
         RetiradaCartorioManutencaoCarteira = 24,
         ProtestadoBaixado = 25,
         InstrucaoRejeitada = 26,
-        ConfirmaçãoPedidoAlteracaoOutrosDados = 27,
+        ConfirmacaoPedidoAlteracaoOutrosDados = 27,
         DebitoTarifas = 28,
         OcorrenciaSacado = 29,
         AlteracaoDadosRejeitada = 30,
@@ -83,15 +83,15 @@ namespace BoletoNet
                         break;
                     case EnumCodigoMovimento_BancoBrasil.TransferenciaCarteiraEntrada:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.TransferenciaCarteiraEntrada;
-                        this.Descricao = "Transferência de carteira/entrada";
+                        this.Descricao = "Transferencia de carteira/entrada";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.TransferenciaCarteiraBaixa:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.TransferenciaCarteiraBaixa;
-                        this.Descricao = "Transferência de carteira/baixa";
+                        this.Descricao = "Transferencia de carteira/baixa";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.Liquidacao:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.Liquidacao;
-                        this.Descricao = "Liquidação normal";
+                        this.Descricao = "Liquidacao normal";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.Baixa:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.Baixa;
@@ -99,19 +99,19 @@ namespace BoletoNet
                         break;
                     case EnumCodigoMovimento_BancoBrasil.TitulosCarteiraEmSer:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.TitulosCarteiraEmSer;
-                        this.Descricao = "Títulos em carteira em ser";
+                        this.Descricao = "titulos em carteira em ser";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoAbatimento:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoAbatimento;
-                        this.Descricao = "Confirmação recebimento instrução de abatimento";
+                        this.Descricao = "ConfirmaÃ§Ã£o recebimento instruÃ§Ã£o de abatimento";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoCancelamentoAbatimento:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoCancelamentoAbatimento;
-                        this.Descricao = "Confirmação recebimento instrução de cancelamento de abatimento";
+                        this.Descricao = "ConfirmaÃ§Ã£o recebimento instruÃ§Ã£o de cancelamento de abatimento";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoAlteracaoVencimento:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoAlteracaoVencimento;
-                        this.Descricao = "Confirmação recebimento instrução alteração de vencimento";
+                        this.Descricao = "ConfirmaÃ§Ã£o recebimento instruÃ§Ã£o alteracao de vencimento";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.FrancoPagamento:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.FrancoPagamento;
@@ -119,23 +119,23 @@ namespace BoletoNet
                         break;
                     case EnumCodigoMovimento_BancoBrasil.LiquidacaoAposBaixa:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.LiquidacaoAposBaixa;
-                        this.Descricao = "Liquidação após baixa";
+                        this.Descricao = "Liquidacao apÃ³s baixa";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoProtesto:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoProtesto;
-                        this.Descricao = "Confirmação de recebimento de instrução de protesto";
+                        this.Descricao = "ConfirmaÃ§Ã£o de recebimento de instruÃ§Ã£o de protesto";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoSustacaoProtesto:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoSustacaoProtesto;
-                        this.Descricao = "Confirmação de recebimento de instrução de sustação de protesto";
+                        this.Descricao = "ConfirmaÃ§Ã£o de recebimento de instruÃ§Ã£o de sustaÃ§Ã£o de protesto";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.RemessaCartorio:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.RemessaCartorio;
-                        this.Descricao = "Remessa a cartório/aponte em cartório";
+                        this.Descricao = "Remessa a cartÃ³rio/aponte em cartÃ³rio";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.RetiradaCartorioManutencaoCarteira:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.RetiradaCartorioManutencaoCarteira;
-                        this.Descricao = "Retirada de cartório e manutenção em carteira";
+                        this.Descricao = "Retirada de cartÃ³rio e manuteÃ§Ã£o em carteira";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.ProtestadoBaixado:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ProtestadoBaixado;
@@ -143,11 +143,11 @@ namespace BoletoNet
                         break;
                     case EnumCodigoMovimento_BancoBrasil.InstrucaoRejeitada:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.InstrucaoRejeitada;
-                        this.Descricao = "Instrução rejeitada";
+                        this.Descricao = "Instrucao rejeitada";
                         break;
-                    case EnumCodigoMovimento_BancoBrasil.ConfirmaçãoPedidoAlteracaoOutrosDados:
-                        this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmaçãoPedidoAlteracaoOutrosDados;
-                        this.Descricao = "Confirmação do pedido de alteração de outros dados";
+                    case EnumCodigoMovimento_BancoBrasil.ConfirmacaoPedidoAlteracaoOutrosDados:
+                        this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoPedidoAlteracaoOutrosDados;
+                        this.Descricao = "ConfirmaÃ§Ã£o do pedido de alteracao de outros dados";
                         break;
                     case EnumCodigoMovimento_BancoBrasil.DebitoTarifas:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.DebitoTarifas;
@@ -159,7 +159,7 @@ namespace BoletoNet
                         break;
                     case EnumCodigoMovimento_BancoBrasil.AlteracaoDadosRejeitada:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.AlteracaoDadosRejeitada;
-                        this.Descricao = "Alteração de dados rejeitada";
+                        this.Descricao = "alteracao de dados rejeitada";
                         break;
                     default:
                         this.Codigo = 0;
@@ -190,15 +190,15 @@ namespace BoletoNet
                         break;
                     case 4:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.TransferenciaCarteiraEntrada;
-                        this.Descricao = "Transferência de carteira/entrada";
+                        this.Descricao = "Transferencia de carteira/entrada";
                         break;
                     case 5:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.TransferenciaCarteiraBaixa;
-                        this.Descricao = "Transferência de carteira/baixa";
+                        this.Descricao = "Transferencia de carteira/baixa";
                         break;
                     case 6:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.Liquidacao;
-                        this.Descricao = "Liquidação";
+                        this.Descricao = "Liquidacao";
                         break;
                     case 9:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.Baixa;
@@ -206,19 +206,19 @@ namespace BoletoNet
                         break;
                     case 11:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.TitulosCarteiraEmSer;
-                        this.Descricao = "Títulos em carteira em ser";
+                        this.Descricao = "titulos em carteira em ser";
                         break;
                     case 12:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoAbatimento;
-                        this.Descricao = "Confirmação recebimento instrução de abatimento";
+                        this.Descricao = "ConfirmaÃ§Ã£o recebimento instruÃ§Ã£o de abatimento";
                         break;
                     case 13:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoCancelamentoAbatimento;
-                        this.Descricao = "Confirmação recebimento instrução de cancelamento de abatimento";
+                        this.Descricao = "ConfirmaÃ§Ã£o recebimento instruÃ§Ã£o de cancelamento de abatimento";
                         break;
                     case 14:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoAlteracaoVencimento;
-                        this.Descricao = "Confirmação recebimento instrução alteração de vencimento";
+                        this.Descricao = "ConfirmaÃ§Ã£o recebimento instruÃ§Ã£o alteracao de vencimento";
                         break;
                     case 15:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.FrancoPagamento;
@@ -226,23 +226,23 @@ namespace BoletoNet
                         break;
                     case 17:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.LiquidacaoAposBaixa;
-                        this.Descricao = "Liquidação após baixa";
+                        this.Descricao = "Liquidacao apÃ³s baixa";
                         break;
                     case 19:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoProtesto;
-                        this.Descricao = "Confirmação de recebimento de instrução de protesto";
+                        this.Descricao = "ConfirmaÃ§Ã£o de recebimento de instruÃ§Ã£o de protesto";
                         break;
                     case 20:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoRecebimentoInstrucaoSustacaoProtesto;
-                        this.Descricao = "Confirmação de recebimento de instrução de sustação de protesto";
+                        this.Descricao = "ConfirmaÃ§Ã£o de recebimento de instruÃ§Ã£o de sustaÃ§Ã£o de protesto";
                         break;
                     case 23:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.RemessaCartorio;
-                        this.Descricao = "Remessa a cartório/aponte em cartório";
+                        this.Descricao = "Remessa a cartÃ³rio/aponte em cartÃ³rio";
                         break;
                     case 24:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.RetiradaCartorioManutencaoCarteira;
-                        this.Descricao = "Retirada de cartório e manutenção em carteira";
+                        this.Descricao = "Retirada de cartÃ³rio e manuteÃ§Ã£o em carteira";
                         break;
                     case 25:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ProtestadoBaixado;
@@ -250,11 +250,11 @@ namespace BoletoNet
                         break;
                     case 26:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.InstrucaoRejeitada;
-                        this.Descricao = "Instrução rejeitada";
+                        this.Descricao = "Instrucao rejeitada";
                         break;
                     case 27:
-                        this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmaçãoPedidoAlteracaoOutrosDados;
-                        this.Descricao = "Confirmação do pedido de alteração de outros dados";
+                        this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.ConfirmacaoPedidoAlteracaoOutrosDados;
+                        this.Descricao = "ConfirmaÃ§Ã£o do pedido de alteracao de outros dados";
                         break;
                     case 28:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.DebitoTarifas;
@@ -266,7 +266,7 @@ namespace BoletoNet
                         break;
                     case 30:
                         this.Codigo = (int)EnumCodigoMovimento_BancoBrasil.AlteracaoDadosRejeitada;
-                        this.Descricao = "Alteração de dados rejeitada";
+                        this.Descricao = "alteracao de dados rejeitada";
                         break;
                     default:
                         this.Codigo = 0;
@@ -305,7 +305,7 @@ namespace BoletoNet
             { EnumCodigoMovimento_BancoBrasil.RetiradaCartorioManutencaoCarteira                   , TipoOcorrenciaRetorno.RetiradaDeCartorioEManutencaoEmCarteira                     },
             { EnumCodigoMovimento_BancoBrasil.ProtestadoBaixado                                    , TipoOcorrenciaRetorno.ProtestadoEBaixado                                      },
             { EnumCodigoMovimento_BancoBrasil.InstrucaoRejeitada                                   , TipoOcorrenciaRetorno.InstrucaoRejeitada                                     },
-            { EnumCodigoMovimento_BancoBrasil.ConfirmaçãoPedidoAlteracaoOutrosDados                , TipoOcorrenciaRetorno.ConfirmacaoDoPedidoDeAlteracaoDeOutrosDados                  },
+            { EnumCodigoMovimento_BancoBrasil.ConfirmacaoPedidoAlteracaoOutrosDados                , TipoOcorrenciaRetorno.ConfirmacaoDoPedidoDeAlteracaoDeOutrosDados                  },
             { EnumCodigoMovimento_BancoBrasil.DebitoTarifas                                        , TipoOcorrenciaRetorno.DebitoDeTarifasCustas                                          },
             { EnumCodigoMovimento_BancoBrasil.OcorrenciaSacado                                     , TipoOcorrenciaRetorno.OcorrenciasDoPagador                                       },
             { EnumCodigoMovimento_BancoBrasil.AlteracaoDadosRejeitada                              , TipoOcorrenciaRetorno.AlteracaoDeDadosRejeitada }

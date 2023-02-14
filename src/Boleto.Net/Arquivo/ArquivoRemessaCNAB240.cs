@@ -8,7 +8,7 @@ namespace BoletoNet
     internal class ArquivoRemessaCNAB240 : AbstractArquivoRemessa, IArquivoRemessa
     {
         /// <summary>
-        /// Para transmissão de arquivo remessa de testes, favor incluir a informação 'TS' na posição 51-52 do header de arquivo e na posição 52-53 do header de lote do arquivo. 
+        /// Para transmissao de arquivo remessa de testes, favor incluir a informacao 'TS' na posicao 51-52 do header de arquivo e na posicao 52-53 do header de lote do arquivo. 
         /// </summary>
         public virtual bool ModoTeste { get; internal set; }
 
@@ -21,7 +21,7 @@ namespace BoletoNet
 
         #endregion
 
-        #region Métodos de instância
+        #region Metodos de instancia
         public override bool ValidarArquivoRemessa(string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
         {
             try
@@ -59,7 +59,7 @@ namespace BoletoNet
                 int numeroRegistroDetalhe = 1;
                 string strline;
                 StreamWriter incluiLinha = new StreamWriter(arquivo);
-                if (banco.Codigo == 104)//quando é caixa verifica o modelo de leiatue que é está em boletos.remssa.tipodocumento
+                if (banco.Codigo == 104)//quando e caixa verifica o modelo de leiatue que esta em boletos.remssa.tipodocumento
                     strline = banco.GerarHeaderRemessa(numeroConvenio, cedente, TipoArquivo.CNAB240, numeroArquivoRemessa, boletos[0]);
                 else
                     strline = banco.GerarHeaderRemessa(numeroConvenio, cedente, TipoArquivo.CNAB240, numeroArquivoRemessa);
@@ -70,7 +70,7 @@ namespace BoletoNet
                     strline = strline.Remove(50, 2).Insert(50, "TS");
                 incluiLinha.WriteLine(strline);
                 OnLinhaGerada(null, strline, EnumTipodeLinha.HeaderDeArquivo);
-                if (banco.Codigo == 104)//quando é caixa verifica o modelo de leiatue que é está em boletos.remssa.tipodocumento
+                if (banco.Codigo == 104)//quando e caixa verifica o modelo de leiatue que esta em boletos.remssa.tipodocumento
                     strline = banco.GerarHeaderLoteRemessa(numeroConvenio, cedente, numeroArquivoRemessa, TipoArquivo.CNAB240, boletos[0]);
                 else
                     strline = banco.GerarHeaderLoteRemessa(numeroConvenio, cedente, numeroArquivoRemessa, TipoArquivo.CNAB240);
@@ -95,14 +95,14 @@ namespace BoletoNet
                         //suelton@gmail.com - 03 / 01 / 2017
                         //strline = boleto.Banco.GerarDetalheRemessa(boleto, numeroRegistroDetalhe, TipoArquivo.CNAB240);
 
-                        //Segmento P - Obrigatório - suelton@gmail.com - 03/01/2017
+                        //Segmento P - Obrigatorio - suelton@gmail.com - 03/01/2017
                         strline = boleto.Banco.GerarDetalheSegmentoPRemessa(boleto, numeroRegistroDetalhe, numeroConvenio);
                         incluiLinha.WriteLine(strline);
                         OnLinhaGerada(boleto, strline, EnumTipodeLinha.DetalheSegmentoP);
                         numeroRegistro++;
                         numeroRegistroDetalhe++;
 
-                        //Seqgmento Q - Obrigatório - suelton@gmail.com - 03/01/2017
+                        //Seqgmento Q - Obrigatorio - suelton@gmail.com - 03/01/2017
                         strline = boleto.Banco.GerarDetalheSegmentoQRemessa(boleto, numeroRegistroDetalhe, TipoArquivo.CNAB240);
                         incluiLinha.WriteLine(strline);
                         OnLinhaGerada(boleto, strline, EnumTipodeLinha.DetalheSegmentoQ);
@@ -126,7 +126,7 @@ namespace BoletoNet
                     OnLinhaGerada(null, strline, EnumTipodeLinha.TraillerDeLote);
 
                     ++numeroRegistro;
-                    ++numeroRegistro; //Iniciou do 0 então tem que somar +1 para totoalizar a quantidade de linhas
+                    ++numeroRegistro; //Iniciou do 0 entao tem que somar +1 para totoalizar a quantidade de linhas
 
                     strline = banco.GerarTrailerArquivoRemessa(numeroRegistro);
                     incluiLinha.WriteLine(strline);
@@ -135,7 +135,7 @@ namespace BoletoNet
                     incluiLinha.Close();
                     #endregion
                 }
-                else if (banco.Codigo == 104) // Só validar boleto.Remessa quando o banco for Caixa porque quando o banco for diferente de 104 a propriedade "Remessa" fica null
+                else if (banco.Codigo == 104) // So validar boleto.Remessa quando o banco for Caixa porque quando o banco for diferente de 104 a propriedade "Remessa" fica null
                 {                    
                     #region se Banco Caixa - 104 e tipo de arquivo da remessa SIGCB
                     if ((boletos[0].Remessa.TipoDocumento.Equals("2")) || boletos[0].Remessa.TipoDocumento.Equals("1"))

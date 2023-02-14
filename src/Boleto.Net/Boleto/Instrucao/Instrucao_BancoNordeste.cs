@@ -63,23 +63,23 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_BancoNordeste.AcatarInstrucoesContidasNoTitulo:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.AcatarInstrucoesContidasNoTitulo;
-                        this.Descricao = "Acatar instruções contidas no título";
+                        this.Descricao = "Acatar instruÃ§Ãµes contidas no titulo";
                         break;
                     case EnumInstrucoes_BancoNordeste.AposVencimentoCobrarComissaoPermanenciaDoBNB:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.AposVencimentoCobrarComissaoPermanenciaDoBNB;
-                        this.Descricao = "Após vencimento, cobrar comissão de permanência do BANCO DO NORDESTE";
+                        this.Descricao = "ApÃ³s vencimento, cobrar comissao de permaNoncia do BANCO DO NORDESTE";
                         break;
                     case EnumInstrucoes_BancoNordeste.NaoCobrarEncargosMoratarios:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.NaoCobrarEncargosMoratarios;
-                        this.Descricao = "Não cobrar encargos moratórios";
+                        this.Descricao = "nao cobrar encargos moratÃ³rios";
                         break;
                     case EnumInstrucoes_BancoNordeste.NaoReceberAposVencimento:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.NaoReceberAposVencimento;
-                        this.Descricao = "Não receber após vencimento";
+                        this.Descricao = "nao receber apÃ³s vencimento";
                         break;
                         case EnumInstrucoes_BancoNordeste.SemInstrucoes:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.SemInstrucoes;
-                        this.Descricao = "Sem Instruções – Acata as instruções da Carteira do Cedente";
+                        this.Descricao = "Sem Instrucoes - Acata as instruÃ§Ãµes da Carteira do Cedente";
                         break;
                     default:
                         this.Codigo = 0;
@@ -105,23 +105,23 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_BancoNordeste.AcatarInstrucoesContidasNoTitulo:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.AcatarInstrucoesContidasNoTitulo;
-                        this.Descricao = "Acatar instruções contidas no título";
+                        this.Descricao = "Acatar instruÃ§Ãµes contidas no titulo";
                         break;
                     case EnumInstrucoes_BancoNordeste.AposVencimentoCobrarComissaoPermanenciaDoBNB:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.AposVencimentoCobrarComissaoPermanenciaDoBNB;
-                        this.Descricao = "Após vencimento, cobrar comissão de permanência do BANCO DO NORDESTE";
+                        this.Descricao = "ApÃ³s vencimento, cobrar comissao de permaNoncia do BANCO DO NORDESTE";
                         break;
                     case EnumInstrucoes_BancoNordeste.NaoCobrarEncargosMoratarios:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.NaoCobrarEncargosMoratarios;
-                        this.Descricao = "Não cobrar encargos moratórios";
+                        this.Descricao = "nao cobrar encargos moratÃ³rios";
                         break;
                     case EnumInstrucoes_BancoNordeste.NaoReceberAposVencimento:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.NaoReceberAposVencimento;
-                        this.Descricao = "Não receber após vencimento";
+                        this.Descricao = "nao receber apÃ³s vencimento";
                         break;
                     case EnumInstrucoes_BancoNordeste.SemInstrucoes:
                         this.Codigo = (int)EnumInstrucoes_BancoNordeste.SemInstrucoes;
-                        this.Descricao = "Sem Instruções – Acata as instruções da Carteira do Cedente";
+                        this.Descricao = "Sem Instrucoes - Acata as instruÃ§Ãµes da Carteira do Cedente";
                         break;
                     default:
                         this.Codigo = 0;

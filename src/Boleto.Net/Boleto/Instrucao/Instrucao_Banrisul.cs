@@ -8,13 +8,13 @@ namespace BoletoNet
 
     public enum EnumInstrucoes_Banrisul
     {
-        NaoDispensarComissaoPermanencia = 1, //01 - Não dispensar comissão de permanência
-        NaoCobrarComissaoPermanencia = 8,    //08 - Não cobrar comissão de permanência 
-        Protestar = 9,                       //09 - Protestar caso impago NN dias após vencimento (posições 370-371 = NN). Obs.: O número de dias para protesto deverá ser igual ou maior do que '03'. 
-        DevolverAposNDias = 15,              //15 - Devolver se impago após NN dias do vencimento (posições 370-371 = NN). Obs.: Para o número de dias igual a '00' será impresso no bloqueto: 'NÃO RECEBER APÓS O VENCIMENTO'.
-        CobrarMultaAposNDias = 18,           //18 - Após NN dias do vencimento, cobrar xx,x% de multa. 
-        CobrarMultaOuFracaoAposNDias = 20,   //20 - Após NN dias do vencimento, cobrar xx,x% de multa ao mês ou fração. 
-        NaoProtestar = 23,                   //23 - Não protestar.
+        NaoDispensarComissaoPermanencia = 1, //01 - nao dispensar comissao de permaNoncia
+        NaoCobrarComissaoPermanencia = 8,    //08 - nao cobrar comissao de permaNoncia 
+        Protestar = 9,                       //09 - Protestar caso impago NN dias apÃ³s vencimento (posicoes 370-371 = NN). Obs.: O numero de dias para protesto devera ser igual ou maior do que '03'. 
+        DevolverAposNDias = 15,              //15 - Devolver se impago apÃ³s NN dias do vencimento (posicoes 370-371 = NN). Obs.: Para o numero de dias igual a '00' sera impresso no bloqueto: 'nao RECEBER APÃ“S O VENCIMENTO'.
+        CobrarMultaAposNDias = 18,           //18 - ApÃ³s NN dias do vencimento, cobrar xx,x% de multa. 
+        CobrarMultaOuFracaoAposNDias = 20,   //20 - ApÃ³s NN dias do vencimento, cobrar xx,x% de multa ao mes ou fraÃ§Ã£o. 
+        NaoProtestar = 23,                   //23 - nao protestar.
     }
 
     #endregion
@@ -71,31 +71,31 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_Banrisul.NaoDispensarComissaoPermanencia:
                         this.Codigo = (int)EnumInstrucoes_Banrisul.NaoDispensarComissaoPermanencia;
-                        this.Descricao = "Não dispensar comissão de permanência"; //01
+                        this.Descricao = "nao dispensar comissao de permaNoncia"; //01
                         break;
                     case EnumInstrucoes_Banrisul.NaoCobrarComissaoPermanencia:
                         this.Codigo = (int)EnumInstrucoes_Banrisul.NaoCobrarComissaoPermanencia;
-                        this.Descricao = "Não cobrar comissão de permanência"; //08
+                        this.Descricao = "nao cobrar comissao de permaNoncia"; //08
                         break;
                     case EnumInstrucoes_Banrisul.Protestar:
                         this.Codigo = (int)EnumInstrucoes_Banrisul.Protestar;
-                        this.Descricao = "Protestar caso impago " + nrDias + " dias após vencimento"; //09
+                        this.Descricao = "Protestar caso impago " + nrDias + " dias apÃ³s vencimento"; //09
                         break;
                     case EnumInstrucoes_Banrisul.DevolverAposNDias:
                         this.Codigo = (int)EnumInstrucoes_Banrisul.DevolverAposNDias;
-                        this.Descricao = "Devolver se impago após " + nrDias + " dias do vencimento"; //15
+                        this.Descricao = "Devolver se impago apÃ³s " + nrDias + " dias do vencimento"; //15
                         break;
                     case EnumInstrucoes_Banrisul.CobrarMultaAposNDias:
                         this.Codigo = (int)EnumInstrucoes_Banrisul.CobrarMultaAposNDias;
-                        this.Descricao = "Após " + nrDias + " dias do vencimento, cobrar " + percentualMultaDia + "% de multa"; //18
+                        this.Descricao = "ApÃ³s " + nrDias + " dias do vencimento, cobrar " + percentualMultaDia + "% de multa"; //18
                         break;
                     case EnumInstrucoes_Banrisul.CobrarMultaOuFracaoAposNDias:
                         this.Codigo = (int)EnumInstrucoes_Banrisul.CobrarMultaOuFracaoAposNDias;
-                        this.Descricao = "Após " + nrDias + " dias do vencimento, cobrar " + percentualMultaDia + "% de multa ao mês ou fração"; //20
+                        this.Descricao = "ApÃ³s " + nrDias + " dias do vencimento, cobrar " + percentualMultaDia + "% de multa ao mes ou fraÃ§Ã£o"; //20
                         break;
                     case EnumInstrucoes_Banrisul.NaoProtestar:
                         this.Codigo = (int)EnumInstrucoes_Banrisul.NaoProtestar;
-                        this.Descricao = "Não protestar"; //23
+                        this.Descricao = "nao protestar"; //23
                         break;
                     default:
                         this.Codigo = 0;

@@ -58,7 +58,7 @@ namespace BoletoNet
                         this.NumeroCarteira = (int)EnumCarteiras_CrediSIS.CobrancaSimples;
                         this.Codigo = "S";
                         this.Tipo = "S";
-                        this.Descricao = "Cobrança simples";
+                        this.Descricao = "Cobranca simples";
                         break;
                     default:
                         this.NumeroCarteira = 0;

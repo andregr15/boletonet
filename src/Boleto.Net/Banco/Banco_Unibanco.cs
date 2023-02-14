@@ -29,19 +29,19 @@ namespace BoletoNet
         #region IBanco Members
 
         /// <summary>
-        /// A linha digitável será composta por cinco campos:
-        ///      1º campo
-        ///          composto pelo código de Banco, código da moeda, as cinco primeiras posições do campo 
-        ///          livre e o dígito verificador deste campo;
-        ///      2º campo
-        ///          composto pelas posições 6ª a 15ª do campo livre e o dígito verificador deste campo;
-        ///      3º campo
-        ///          composto pelas posições 16ª a 25ª do campo livre e o dígito verificador deste campo;
-        ///      4º campo
-        ///          composto pelo dígito verificador do código de barras, ou seja, a 5ª posição do código de 
+        /// A linha digitavel sera composta por cinco campos:
+        ///      1o campo
+        ///          composto pelo codigo de Banco, codigo da moeda, as cinco primeiras posicoes do campo 
+        ///          livre e o Digito verificador deste campo;
+        ///      2o campo
+        ///          composto pelas posicoes 6a a 15a do campo livre e o Digito verificador deste campo;
+        ///      3o campo
+        ///          composto pelas posicoes 16a a 25a do campo livre e o Digito verificador deste campo;
+        ///      4o campo
+        ///          composto pelo Digito verificador do codigo de barras, ou seja, a 5a posicao do codigo de 
         ///          barras;
-        ///      5º campo
-        ///          Composto pelo fator de vencimento com 4(quatro) caracteres e o valor do documento com 10(dez) caracteres, sem separadores e sem edição.
+        ///      5o campo
+        ///          Composto pelo fator de vencimento com 4(quatro) caracteres e o valor do documento com 10(dez) caracteres, sem separadores e sem edicao.
         /// 
         /// </summary>
         public override void FormataLinhaDigitavel(Boleto boleto)
@@ -119,13 +119,13 @@ namespace BoletoNet
         /// 
         ///   *******
         /// 
-        ///	O código de barra para cobrança contém 44 posições dispostas da seguinte forma:
-        ///    01 a 03 -  3 - 409 fixo - Código do banco
-        ///    04 a 04 -  1 - 9 fixo - Código da moeda (R$)
-        ///    05 a 05 –  1 - Dígito verificador do código de barras
+        ///	O codigo de barra para Cobranca contem 44 posicoes dispostas da seguinte forma:
+        ///    01 a 03 -  3 - 409 fixo - Codigo do banco
+        ///    04 a 04 -  1 - 9 fixo - Codigo da moeda (R$)
+        ///    05 a 05 -  1 - Digito verificador do codigo de barras
         ///    06 a 09 -  4 - Fator de vencimento
         ///    10 a 19 - 10 - Valor
-        ///    20 a 44 – 25 - Campo livre
+        ///    20 a 44 - 25 - Campo livre
         /// 
         ///   *******
         /// 
@@ -145,14 +145,14 @@ namespace BoletoNet
 
         ///<summary>
         /// Campo Livre
-        ///    20 a 20 -  1 - 5 fixo - tipo de cobrança (CVT cobrança sem registro - 7744-5)
-        ///    21 a 26 -  6 - Código do cedente
-        ///    27 a 27 -  1 - Dígito verificador do código do cedente
+        ///    20 a 20 -  1 - 5 fixo - tipo de Cobranca (CVT Cobranca sem registro - 7744-5)
+        ///    21 a 26 -  6 - Codigo do cedente
+        ///    27 a 27 -  1 - Digito verificador do codigo do cedente
         ///    28 a 29 -  2 - 00 fixo - vago
-        ///    30 a 43 - 14 - Nosso número
-        ///    44 a 44	- 1 - Dígito do nosso número
+        ///    30 a 43 - 14 - Nosso numero
+        ///    44 a 44	- 1 - Digito do nosso numero
         ///
-        /// PS: Cálculo do dígito do código de barras: usar rotina de módulo 11
+        /// PS: CÃ¡lculo do Digito do codigo de barras: usar rotina de mÃ³dulo 11
         ///</summary>
         public string FormataCampoLivre(Boleto boleto)
         {
@@ -168,7 +168,7 @@ namespace BoletoNet
 
         public override void FormataNumeroDocumento(Boleto boleto)
         {
-            throw new NotImplementedException("Função ainda não implementada.");
+            throw new NotImplementedException("FunÃ§Ã£o ainda nao implementada.");
         }
 
         public override void FormataNossoNumero(Boleto boleto)
@@ -178,46 +178,46 @@ namespace BoletoNet
 
         public override string GerarHeaderRemessa(string numeroConvenio, Cedente cedente, TipoArquivo tipoArquivo, int numeroArquivoRemessa, Boleto boletos)
         {
-            throw new NotImplementedException("Função não implementada.");
+            throw new NotImplementedException("FunÃ§Ã£o nao implementada.");
         }
         public override void ValidaBoleto(Boleto boleto)
         {
-            //Verifica se o nosso número é válido
-            //Verifica se o tamanho para o NossoNumero são 12 dígitos
+            //Verifica se o nosso numero e valido
+            //Verifica se o tamanho para o NossoNumero sao 12 Digitos
             if (Utils.ToString(boleto.NossoNumero) == string.Empty)
-                throw new NotImplementedException("Nosso número inválido");
+                throw new NotImplementedException("Nosso numero invÃ¡lido");
             else if (Convert.ToInt32(boleto.NossoNumero).ToString().Length > 14)
-                throw new NotImplementedException("A quantidade de dígitos do nosso número são 14 números.");
+                throw new NotImplementedException("A quantidade de Digitos do nosso numero sao 14 numeros.");
             else if (Convert.ToInt32(boleto.NossoNumero).ToString().Length < 14)
                 boleto.NossoNumero = Utils.FormatCode(boleto.NossoNumero, 14);
 
             //Verificar se a Agencia esta correta
             if (boleto.Cedente.ContaBancaria.Agencia.Length > 4)
-                throw new NotImplementedException("A quantidade de dígitos da Agência " + boleto.Cedente.ContaBancaria.Agencia + ", são de 4 números.");
+                throw new NotImplementedException("A quantidade de Digitos da Agencia " + boleto.Cedente.ContaBancaria.Agencia + ", sao de 4 numeros.");
             else if (boleto.Cedente.ContaBancaria.Agencia.Length < 4)
                 boleto.Cedente.ContaBancaria.Agencia = Utils.FormatCode(boleto.Cedente.ContaBancaria.Agencia, 4);
 
            //Verificar se a Conta esta correta
             if (boleto.Cedente.ContaBancaria.Conta.Length > 6)
-                throw new NotImplementedException("A quantidade de dígitos da Conta " + boleto.Cedente.ContaBancaria.Conta + ", são de 6 números.");
+                throw new NotImplementedException("A quantidade de Digitos da Conta " + boleto.Cedente.ContaBancaria.Conta + ", sao de 6 numeros.");
             else if (boleto.Cedente.ContaBancaria.Conta.Length < 6)
                 boleto.Cedente.ContaBancaria.Conta = Utils.FormatCode(boleto.Cedente.ContaBancaria.Conta, 6);
 
             //Atribui o nome do banco ao local de pagamento
             boleto.LocalPagamento += Nome;
 
-            //Verifica se data do processamento é valida
+            //Verifica se data do processamento e valida
 			//if (boleto.DataProcessamento.ToString("dd/MM/yyyy") == "01/01/0001")
 			if (boleto.DataProcessamento == DateTime.MinValue) // diegomodolo (diego.ribeiro@nectarnet.com.br)
                 boleto.DataProcessamento = DateTime.Now;
 
-            //Verifica se data do documento é valida
+            //Verifica se data do documento e valida
 			//if (boleto.DataDocumento.ToString("dd/MM/yyyy") == "01/01/0001")
 			if (boleto.DataDocumento == DateTime.MinValue) // diegomodolo (diego.ribeiro@nectarnet.com.br)
                 boleto.DataDocumento = DateTime.Now;
 
             if (boleto.Carteira != "20")
-                throw new NotImplementedException("Carteira não implementada: " + boleto.Carteira + ". Utilize a carteira 20.");
+                throw new NotImplementedException("Carteira nao implementada: " + boleto.Carteira + ". Utilize a carteira 20.");
 
             //Boleto.QuantidadeMoeda = 0;
 
@@ -284,7 +284,7 @@ namespace BoletoNet
 
 
         /// <summary>
-        /// Efetua as Validações dentro da classe Boleto, para garantir a geração da remessa
+        /// Efetua as Validacoes dentro da classe Boleto, para garantir a geracao da remessa
         /// </summary>
         public override bool ValidarRemessa(TipoArquivo tipoArquivo, string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
         {

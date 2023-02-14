@@ -15,19 +15,19 @@ public partial class Bancos_Safra : System.Web.UI.Page
         b.NumeroDocumento = "1008073";
 
         b.Sacado = new Sacado("000.000.000-00", "Nome do seu Cliente ");
-        b.Sacado.Endereco.End = "Endereço do seu Cliente ";
+        b.Sacado.Endereco.End = "EndereÃ§o do seu Cliente ";
         b.Sacado.Endereco.Bairro = "Bairro";
         b.Sacado.Endereco.Cidade = "Cidade";
         b.Sacado.Endereco.CEP = "00000000";
         b.Sacado.Endereco.UF = "UF";
 
-        //b.Instrucoes.Add("Não Receber após o vencimento");
-        //b.Instrucoes.Add("Após o Vencimento pague somente no Bradesco");
-        //b.Instrucoes.Add("Instrução 2");
-        //b.Instrucoes.Add("Instrução 3");
+        //b.Instrucoes.Add("nao Receber apÃ³s o vencimento");
+        //b.Instrucoes.Add("ApÃ³s o Vencimento pague somente no Bradesco");
+        //b.Instrucoes.Add("Instrucao 2");
+        //b.Instrucoes.Add("Instrucao 3");
 
         Instrucao_Safra instrucao = new Instrucao_Safra();
-        instrucao.Descricao = "Instrução 1";
+        instrucao.Descricao = "Instrucao 1";
 
         b.Instrucoes.Add(instrucao);
 

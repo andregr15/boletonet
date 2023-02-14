@@ -7,7 +7,7 @@ namespace BoletoNet
     public interface IBanco
     {
         /// <summary>
-        /// Formata o código de barras
+        /// Formata o codigo de barras
         /// </summary>
         void FormataCodigoBarra(Boleto boleto);
         /// <summary>
@@ -15,15 +15,15 @@ namespace BoletoNet
         /// </summary>
         void FormataLinhaDigitavel(Boleto boleto);
         /// <summary>
-        /// Formata o nosso número
+        /// Formata o nosso numero
         /// </summary>
         void FormataNossoNumero(Boleto boleto);
         /// <summary>
-        /// Formata o número do documento, alguns bancos exige uma formatação. Tipo: 123-4
+        /// Formata o numero do documento, alguns bancos exige uma formataÃ§Ã£o. Tipo: 123-4
         /// </summary>
         void FormataNumeroDocumento(Boleto boleto);        
         /// <summary>
-        /// Responsável pela validação de todos os dados referente ao banco, que serão usados no boleto
+        /// ResponsÃ¡vel pela validaÃ§Ã£o de todos os dados referente ao banco, que serao usados no boleto
         /// </summary>
         void ValidaBoleto(Boleto boleto);
         /// <summary>
@@ -136,7 +136,7 @@ namespace BoletoNet
         string ChaveASBACE { get; set; }
 
         /// <summary>
-        /// Obtém nosso número sem DV e sem código do Convênio.
+        /// Obtem nosso numero sem DV e sem codigo do Convenio.
         /// </summary>
         /// <returns></returns>
         long ObterNossoNumeroSemConvenioOuDigitoVerificador(long convenio, string nossoNumero);

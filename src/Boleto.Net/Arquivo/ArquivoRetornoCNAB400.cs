@@ -32,36 +32,36 @@ namespace BoletoNet
 
         #endregion
 
-        #region M�todos de inst�ncia
+        #region Metodos de instancia
 
         public override void LerArquivoRetorno(IBanco banco, Stream arquivo)
         {
             try
             {
                 StreamReader stream = new StreamReader(arquivo, System.Text.Encoding.UTF8);
-                // Identifica��o do registro detalhe
+                // Identificao do registro detalhe
                 List<string> IdsRegistroDetalhe = new List<string>();
 
                 // Lendo o arquivo
                 string linha = stream.ReadLine();
                 this.HeaderRetorno = banco.LerHeaderRetornoCNAB400(linha);
 
-                // Pr�xima linha (DETALHE)
+                // Proxima linha (DETALHE)
                 linha = stream.ReadLine();
 
-                //tem arquivo de retorno que possui somente cabe�alho
+                //tem arquivo de retorno que possui somente cabecalho
                 if (linha != null)
                 {
                     switch (banco.Codigo)
                     {
-                        // 85 - CECRED - C�digo de registro detalhe 7 para CECRED
+                        // 85 - CECRED - Codigo de registro detalhe 7 para CECRED
                         case (int)Bancos.CECRED:
                             IdsRegistroDetalhe.Add("7");
                             break;
-                        // 1 - Banco do Brasil- C�digo de registro detalhe 7 para conv�nios com 7 posi��es, e detalhe 1 para conv�nios com 6 posi��es(colocado as duas, pois n�o interferem em cada tipo de arquivo)
+                        // 1 - Banco do Brasil- Codigo de registro detalhe 7 para Convenios com 7 posicoes, e detalhe 1 para Convenios com 6 posicoes(colocado as duas, pois nao interferem em cada tipo de arquivo)
                         case (int)Bancos.BancoBrasil:
-                            IdsRegistroDetalhe.Add("1");//Para conv�nios de 6 posi��es
-                            IdsRegistroDetalhe.Add("7");//Para conv�nios de 7 posi��es
+                            IdsRegistroDetalhe.Add("1");//Para convenios de 6 posicoes
+                            IdsRegistroDetalhe.Add("7");//Para convenios de 7 posicoes
                             break;
                         default:
                             IdsRegistroDetalhe.Add("1");

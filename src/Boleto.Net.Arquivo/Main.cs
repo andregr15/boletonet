@@ -417,7 +417,7 @@ namespace BoletoNet.Arquivo
                 b.Sacado = new Sacado("000.000.000-00", "Fulano de Silva");
                 b.Sacado.Endereco.End = "SSS 154 Bloco J Casa 23";
                 b.Sacado.Endereco.Bairro = "Testando";
-                b.Sacado.Endereco.Cidade = "Testel�ndia";
+                b.Sacado.Endereco.Cidade = "Testelândia";
                 b.Sacado.Endereco.CEP = "70000000";
                 b.Sacado.Endereco.UF = "RS";
 
@@ -453,19 +453,19 @@ namespace BoletoNet.Arquivo
 
 			//Instancia de Boleto
 			Boleto objBOLETO = new Boleto();
-			//O nosso-numero deve ser de 11 posi��es
+			//O nosso-numero deve ser de 11 posicoes
 			objBOLETO.EspecieDocumento = new EspecieDocumento(237, "12");
 			objBOLETO.DataVencimento = DateTime.Now.AddDays(10);
 			objBOLETO.ValorBoleto = 90;
 			objBOLETO.Carteira = "09";
 			objBOLETO.NossoNumero = ("00000012345");
 			objBOLETO.Cedente = objCEDENTE;
-			//O num do documento deve ser de 10 posi��es
+			//O num do documento deve ser de 10 posicoes
 			objBOLETO.NumeroDocumento = "1234567890";
 			objBOLETO.NumeroControle = "100";
-			//A data do documento � a data de emiss�o do boleto
+			//A data do documento é a data de emissao do boleto
 			objBOLETO.DataDocumento = DateTime.Now;
-			//A data de processamento � a data em que foi processado o documento, portanto � da data de emissao do boleto
+			//A data de processamento é a data em que foi processado o documento, portanto é a data de emissao do boleto
 			objBOLETO.DataProcessamento = DateTime.Now;
 			objBOLETO.Sacado = new Sacado("12345678000255", "TESTE SACADO");
 			objBOLETO.Sacado.Endereco.End = "END SACADO";

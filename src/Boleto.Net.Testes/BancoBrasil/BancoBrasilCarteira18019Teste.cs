@@ -40,7 +40,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string nossoNumeroValido = "18/16531002852";
 
-            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso número inválido");
+            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso numero invÃ¡lido");
         }
 
         [TestMethod]
@@ -54,7 +54,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string nossoNumeroValido = "18/16532050010028528";
 
-            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso número inválido");
+            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso numero invÃ¡lido");
         }
 
         [TestMethod]
@@ -68,7 +68,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string nossoNumeroValido = "18/16532050010028528";
 
-            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso número inválido");
+            Assert.AreEqual(boletoBancario.Boleto.NossoNumero, nossoNumeroValido, "Nosso numero invÃ¡lido");
         }
 
         [TestMethod]
@@ -82,7 +82,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string linhaDigitavelValida = "00190.00009 01653.205003 10028.528189 2 91880000842000";
 
-            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.LinhaDigitavel, linhaDigitavelValida, "Linha digitável inválida");
+            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.LinhaDigitavel, linhaDigitavelValida, "Linha digitavel invÃ¡lida");
         }
 
         [TestMethod]
@@ -96,7 +96,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string codigoBarraValida = "00192918800008420000000001653205001002852818";
 
-            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.Codigo, codigoBarraValida, "Código de Barra inválido");
+            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.Codigo, codigoBarraValida, "Codigo de Barra invÃ¡lido");
         }
 
         #endregion Carteira 18-019

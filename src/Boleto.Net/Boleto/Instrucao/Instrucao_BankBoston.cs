@@ -58,19 +58,19 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_BankBoston.SemInstrucao:
                         this.Codigo = (int)EnumInstrucoes_BankBoston.SemInstrucao;
-                        this.Descricao = "Sem instrução";
+                        this.Descricao = "Sem instruÃ§Ã£o";
                         break;
                     case EnumInstrucoes_BankBoston.Protestar:
                         this.Codigo = (int)EnumInstrucoes_BankBoston.Protestar;
-                        this.Descricao = "Protestar após 5 dias úteis";
+                        this.Descricao = "Protestar apÃ³s 5 dias Ãºteis";
                         break;
                     case EnumInstrucoes_BankBoston.NaoProtestar:
                         this.Codigo = (int)EnumInstrucoes_BankBoston.NaoProtestar;
-                        this.Descricao = "Não protestar";
+                        this.Descricao = "nao protestar";
                         break;
                     case EnumInstrucoes_BankBoston.Devolver:
                         this.Codigo = (int)EnumInstrucoes_BankBoston.Devolver;
-                        this.Descricao = "Devolver após 5 dias";
+                        this.Descricao = "Devolver apÃ³s 5 dias";
                         break;
                     default:
                         this.Codigo = 99;

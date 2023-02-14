@@ -20,13 +20,13 @@ namespace BoletoNet
         NotaPromissoariaDireta
         //02   DM - DUPLICATA MERCANTIL                 
         //04   DS - DUPLICATA DE SERVICO                
-        //07   LC - LETRA DE CÂMBIO (SOMENTE PARA BANCO 353)
-        //30   LC - LETRA DE CÂMBIO (SOMENTE PARA BANCO 008)
+        //07   LC - LETRA DE CÃ‚MBIO (SOMENTE PARA BANCO 353)
+        //30   LC - LETRA DE CÃ‚MBIO (SOMENTE PARA BANCO 008)
         //12   NP - NOTA PROMISSORIA                    
         //13   NR - NOTA PROMISSORIA RURAL 
         //17   RC - RECIBO                              
-        //20   AP – APOLICE DE SEGURO                   
-        //97   CH – CHEQUE
+        //20   AP - APOLICE DE SEGURO                   
+        //97   CH - CHEQUE
         //98   ND - NOTA PROMISSORIA DIRETA
     }
 
@@ -132,7 +132,7 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Santander.DuplicataServico:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Santander.DuplicataServico);
-                        this.Especie = "Duplicata de Serviço";
+                        this.Especie = "Duplicata de Servico";
                         this.Sigla = "DS";
                         break;
                     case EnumEspecieDocumento_Santander.Recibo:
@@ -142,32 +142,32 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Santander.LetraCambio353:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Santander.LetraCambio353);
-                        this.Especie = "Letra de Câmbio (Somente para o banco 353)";
+                        this.Especie = "Letra de Cambio (Somente para o banco 353)";
                         this.Sigla = "LS";
                         break;
                     case EnumEspecieDocumento_Santander.LetraCambio008:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Santander.LetraCambio008);
-                        this.Especie = "Letra de Câmbio (Somente para o banco 008)";
+                        this.Especie = "Letra de Cambio (Somente para o banco 008)";
                         this.Sigla = "LS";
                         break;
                     case EnumEspecieDocumento_Santander.ApoliceSeguro:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Santander.ApoliceSeguro);
-                        this.Especie = "Apôlice de Seguro";
+                        this.Especie = "ApÃ³lice de Seguro";
                         this.Sigla = "AP";
                         break;
                     case EnumEspecieDocumento_Santander.NotaPromissoariaDireta:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Santander.NotaPromissoariaDireta);
-                        this.Especie = "Nota Promissória Direta";
+                        this.Especie = "Nota PromissÃ³ria Direta";
                         this.Sigla = "ND";
                         break;
                     case EnumEspecieDocumento_Santander.NotaPromissoria:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Santander.NotaPromissoria);
-                        this.Especie = "Nota Promissória";
+                        this.Especie = "Nota PromissÃ³ria";
                         this.Sigla = "NP";
                         break;
                     case EnumEspecieDocumento_Santander.NotaPromissoriaRural:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Santander.NotaPromissoriaRural);
-                        this.Especie = "Nota Promissória Rural";
+                        this.Especie = "Nota PromissÃ³ria Rural";
                         this.Sigla = "NR";
                         break;
                     case EnumEspecieDocumento_Santander.Cheque:

@@ -1,7 +1,7 @@
 namespace BoletoNet
 {
     /// <summary>
-    /// Representa o endereço do Cedente ou Sacado com todas as informações necessárias.
+    /// Representa o endereÃ§o do Cedente ou Sacado com todas as informacoes necessÃ¡rias.
     /// </summary>
     public class Endereco
     {        
@@ -22,15 +22,15 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Define o endereço completo
+        /// Define o endereÃ§o completo
         /// <remarks>
-        /// Exemplo: Barão do Amazonas
+        /// Exemplo: BarÃ£o do Amazonas
         /// </remarks>
         /// </summary>
         public string End { get; set; }
 
         /// <summary>
-        /// Define o Número do endereço
+        /// Define o numero do endereÃ§o
         /// <remarks>
         /// Exemplo: 1025.
         /// </remarks>
@@ -56,7 +56,7 @@ namespace BoletoNet
         /// <summary>
         /// Define o nome da Cidade
         /// <remarks>
-        /// Exemplo: São Paulo
+        /// Exemplo: SÃ£o Paulo
         /// </remarks>
         /// </summary>
         public string Cidade { get; set;}
@@ -65,7 +65,7 @@ namespace BoletoNet
         /// Define o Estado (UF)
         /// <remarks>
         /// Exemplo:
-        /// SP - São Paulo
+        /// SP - SÃ£o Paulo
         /// SC - Santa Catarina
         /// *Utilizar apenas a sigla (UF)
         /// </remarks>
@@ -73,9 +73,9 @@ namespace BoletoNet
         public string UF { get; set;}
 
         /// <summary>
-        /// Define o número do CEP
+        /// Define o numero do CEP
         /// <remarks>
-        /// O número do CEP será formatado automaticamente para remover pontos e traços
+        /// O numero do CEP sera formatado automaticamente para remover pontos e traÃ§os
         /// </remarks>
         /// </summary>
         public string CEP
@@ -85,8 +85,8 @@ namespace BoletoNet
                 return _cep;
             }
             //Flavio(fhlviana@hotmail.com) - o metodo "Set" acontece menos vezes do que o get, por estimativa. Sendo assim, armazenar
-            //sem o "." e o "-" faz com que o código tenda a executar os dois Replace uma vez só.
-            //Consistência para evitar NullPointerException. (MarcielTorres)
+            //sem o "." e o "-" faz com que o codigo tenda a executar os dois Replace uma vez sÃ³.
+            //ConsistÃªncia para evitar NullPointerException. (MarcielTorres)
             set
             {
                 this._cep = !string.IsNullOrEmpty(value) ? value.Replace(".", "").Replace("-", "") : string.Empty;
@@ -96,7 +96,7 @@ namespace BoletoNet
         /// <summary>
         /// Define o E-Mail
         /// <remarks>
-        /// Campo opcional, porém se informado não há consistências para edereços de e-mails válidos
+        /// Campo opcional, porem se informado nao hÃ¡ consistÃªncias para edereÃ§os de e-mails validos
         /// </remarks>
         /// </summary>
         public string Email { get; set; }

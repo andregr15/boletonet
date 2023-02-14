@@ -55,11 +55,11 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_Banestes.Protestar:
                         Codigo = 6;
-                        Descricao = string.Format("Protestar após {0} dias do vencimento", nrDias);
+                        Descricao = string.Format("Protestar apÃ³s {0} dias do vencimento", nrDias);
                         break;
                     case EnumInstrucoes_Banestes.NaoProtestar:
                         Codigo = 7;
-                        Descricao = "Não protestar";
+                        Descricao = "nao protestar";
                         break;
                     default:
                         Codigo = 0;
@@ -84,15 +84,15 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_Banestes.Protestar:
                         Codigo = 6;
-                        Descricao = string.Format("Protestar após {0} dias do vencimento", nrDias);
+                        Descricao = string.Format("Protestar apÃ³s {0} dias do vencimento", nrDias);
                         break;
                     case EnumInstrucoes_Banestes.NaoProtestar:
                         Codigo = 7;
-                        Descricao = "Não protestar";
+                        Descricao = "nao protestar";
                         break;
                     case EnumInstrucoes_Banestes.CobrarTaxaDeMulta:
                         Codigo = (int)EnumInstrucoes_Banestes.CobrarTaxaDeMulta;
-                        Descricao = string.Format("Após vencimento cobrar multa de {0}.", valorDaMulta.ToString("C"));
+                        Descricao = string.Format("ApÃ³s vencimento cobrar multa de {0}.", valorDaMulta.ToString("C"));
                         break;
                     default:
                         Codigo = 0;

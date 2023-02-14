@@ -46,7 +46,7 @@ namespace BoletoNet
             if (correspondentesFebraban.ContainsKey(ocorrencia))
                 return correspondentesFebraban[ocorrencia];
 
-            throw new BoletoNetException("N„o h· um movimento correspondente ao Febraban");
+            throw new BoletoNetException("nao h√° um movimento correspondente ao Febraban");
         }
     }
 }

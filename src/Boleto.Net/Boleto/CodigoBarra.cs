@@ -17,14 +17,14 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Código de Barra
+        /// Codigo de Barra
         /// </summary>
         public string Codigo { get; set; }
 
         public Image Imagem { get; private set; }
 
         /// <summary>
-        /// Retorna a representação numérica do código de barra
+        /// Retorna a representacao numÃ©rica do codigo de barra
         /// </summary>
         public string LinhaDigitavel { get; set; }
 

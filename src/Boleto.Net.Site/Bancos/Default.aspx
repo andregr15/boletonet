@@ -5,10 +5,10 @@
     <h3>
         Bancos</h3>
     <ul>
-        <li>Itaú<br />
+        <li>Itau<br />
             <a href="Itau.aspx">Sem Comprovante de Entrega</a><br />
             <a href="Itau.aspx?show">Com Comprovante de Entrega</a><br />
-            <a href="Itau.aspx?formatocarne">Formato Carnê</a><br />
+            <a href="Itau.aspx?formatocarne">Formato CarnÃª</a><br />
         <a href="Itau.aspx?formatopropaganda">Formato Propaganda</a></li>
         <li>Banestes<br />
             <a href="Banestes.aspx">Sem Comprovante de Entrega</a><br />
@@ -36,27 +36,27 @@
                 <ul>
                     <li>16
                         <ul>
-                            <li>Convênio 6 posições / Nosso Número com 17 posições / Modalidade 21</li>
-                            <li>Nosso Número com 11 posições</li>
+                            <li>Convenio 6 posicoes / Nosso numero com 17 posicoes / Modalidade 21</li>
+                            <li>Nosso numero com 11 posicoes</li>
                         </ul>
                     </li>
                     <li>17
                         <ul>
-                            <li>Nosso Número com 11 posições</li>
+                            <li>Nosso numero com 11 posicoes</li>
                         </ul>
                     </li>
                     <li>18
                         <ul>
-                            <li>Nosso Número com 11 posições</li>
+                            <li>Nosso numero com 11 posicoes</li>
                         </ul>
                     </li>
                     <li>18-019 (Carteiras 18 - Segmento 019)
                         <ul>
-                            <li>Convênio 7 posições / Nosso Número com 17 posições</li>
-                            <li>Convênio 6 posições / Nosso Número com 11 posições</li>
-                            <li>Convênio 6 posições / Nosso Número com 17 posições / Modalidade 21</li>
-                            <li>Convênio 4 posições / Nosso Número com 11 posições</li>
-                            <li>Nosso Número com 11 posições</li>
+                            <li>Convenio 7 posicoes / Nosso numero com 17 posicoes</li>
+                            <li>Convenio 6 posicoes / Nosso numero com 11 posicoes</li>
+                            <li>Convenio 6 posicoes / Nosso numero com 17 posicoes / Modalidade 21</li>
+                            <li>Convenio 4 posicoes / Nosso numero com 11 posicoes</li>
+                            <li>Nosso numero com 11 posicoes</li>
                         </ul>
                     </li>
                 </ul>

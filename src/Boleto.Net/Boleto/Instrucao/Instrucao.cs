@@ -33,7 +33,7 @@ namespace BoletoNet
 
         #endregion
 
-        # region M�todos Privados
+        # region Metodos Privados
 
         private void InstanciaInstrucao(int codigoBanco)
         {
@@ -49,7 +49,7 @@ namespace BoletoNet
                     case 104:
                         _IInstrucao = new Instrucao_Caixa();
                         break;
-                    //341 - Ita�
+                    //341 - Itau
                     case 341:
                         _IInstrucao = new Instrucao_Itau();
                         break;
@@ -128,12 +128,12 @@ namespace BoletoNet
                         _IInstrucao = new Instrucao_Uniprime();
                         break;
                     default:
-                        throw new Exception("C�digo do banco n�o implementando: " + codigoBanco);
+                        throw new Exception("Codigo do banco nao implementando: " + codigoBanco);
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a execu��o da transa��o.", ex);
+                throw new Exception("Erro durante a execução da transação.", ex);
             }
         }
 
@@ -167,7 +167,7 @@ namespace BoletoNet
 
         #endregion
 
-        #region M�todos de interface
+        #region Metodos de interface
 
         public void Valida()
         {
@@ -177,7 +177,7 @@ namespace BoletoNet
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a valida��o dos campos.", ex);
+                throw new Exception("Erro durante a validação dos campos.", ex);
             }
         }
 

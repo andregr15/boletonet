@@ -86,7 +86,7 @@ namespace BoletoNet.Arquivo
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ImpressaoBoleto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Impressão do Boleto";
+            this.Text = "Impressao do Boleto";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -15,7 +15,7 @@ public partial class EnvioEmail : System.Web.UI.Page
     {
         MailMessage mail = new MailMessage();
         mail.To.Add(new MailAddress(TextBox1.Text));
-        mail.Subject = "Teste de envio de Boleto Bancário";
+        mail.Subject = "Teste de envio de Boleto BancÃ¡rio";
         mail.IsBodyHtml = true;
         mail.Priority = MailPriority.High;
         return mail;
@@ -28,7 +28,7 @@ public partial class EnvioEmail : System.Web.UI.Page
         Instrucao_Itau item1 = new Instrucao_Itau(9, 5);
         Instrucao_Itau item2 = new Instrucao_Itau(81, 10);
         Cedente c = new Cedente("00.000.000/0000-00", "Empresa de Atacado", "0542", "13000");
-        //Na carteira 198 o código do Cedente é a conta bancária
+        //Na carteira 198 o codigo do Cedente Ã© a conta bancÃ¡ria
         c.Codigo = "13000";
 
         Boleto b = new Boleto(vencimento, 1642, "198", "92082835", c);
@@ -37,7 +37,7 @@ public partial class EnvioEmail : System.Web.UI.Page
         b.Sacado = new Sacado("000.000.000-00", "Fulano de Silva");
         b.Sacado.Endereco.End = "SSS 154 Bloco J Casa 23";
         b.Sacado.Endereco.Bairro = "Testando";
-        b.Sacado.Endereco.Cidade = "Testelândia";
+        b.Sacado.Endereco.Cidade = "TestelÃ¢ndia";
         b.Sacado.Endereco.CEP = "70000000";
         b.Sacado.Endereco.UF = "DF";
 
@@ -90,14 +90,14 @@ public partial class EnvioEmail : System.Web.UI.Page
 
         // embora estou mandando o mesmo boleto duas vezes, voce pode obviamente mandar boletos distintos
         BoletoBancario[] arrayDeBoletos = new BoletoBancario[] { itau, itau };
-        AlternateView  av = BoletoBancario.GeraHtmlDeVariosBoletosParaEmail("Isto é um email com <b>dois</b> boletos", arrayDeBoletos);
+        AlternateView  av = BoletoBancario.GeraHtmlDeVariosBoletosParaEmail("Isto Ã© um email com <b>dois</b> boletos", arrayDeBoletos);
 
         MailMessage  mail = PreparaMail();
-        mail.Subject += " - Off-Line - Múltiplo";
+        mail.Subject += " - Off-Line - MÃºltiplo";
         mail.AlternateViews.Add(av);
 
         MandaEmail(mail);
-        Label1.Text = "Boleto múltimplo enviado para o email: " + TextBox1.Text;
+        Label1.Text = "Boleto mÃºltiplo enviado para o email: " + TextBox1.Text;
     }
 
 

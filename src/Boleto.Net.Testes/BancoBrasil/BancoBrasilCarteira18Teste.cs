@@ -43,7 +43,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             const string NOSSO_NUMERO_VALIDO = "0001002852";
 
-            Assert.AreEqual(NOSSO_NUMERO_VALIDO, boletoBancario.Boleto.NossoNumero, "Nosso n�mero inv�lido");
+            Assert.AreEqual(NOSSO_NUMERO_VALIDO, boletoBancario.Boleto.NossoNumero, "Nosso numero inválido");
         }
 
         [TestMethod, ExpectedException(typeof(Exception))]
@@ -62,7 +62,7 @@ namespace Boleto.Net.Testes.BancoBrasil
             boletoBancario.Boleto.Valida();
 
             string linhaDigitavelValida = boletoBancario.Boleto.CodigoBarra.LinhaDigitavelFormatada;
-            Assert.AreEqual(linhaDigitavelValida, boletoBancario.Boleto.CodigoBarra.LinhaDigitavel, "Linha digit�vel inv�lida");
+            Assert.AreEqual(linhaDigitavelValida, boletoBancario.Boleto.CodigoBarra.LinhaDigitavel, "Linha digitavel inválida");
         }
 
         [TestMethod]
@@ -82,7 +82,7 @@ namespace Boleto.Net.Testes.BancoBrasil
 
             string codigoBarraValida = "00196882300008420000000001220950001002852818";
 
-            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.Codigo, codigoBarraValida, "C�digo de Barra inv�lido");
+            Assert.AreEqual(boletoBancario.Boleto.CodigoBarra.Codigo, codigoBarraValida, "Codigo de Barra inválido");
         }
     }
 }

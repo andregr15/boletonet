@@ -5,7 +5,7 @@ namespace BoletoNet
     public class HeaderRetorno
     {
 
-        #region Variáveis
+        #region Variaveis
 
         private string _literalRetorno = string.Empty;
         private string _literalServico = string.Empty;
@@ -85,7 +85,7 @@ namespace BoletoNet
 
 
         /// <summary>
-        /// Agência com o Dígito Verificador, quando houver
+        /// Agencia com o Digito Verificador, quando houver
         /// </summary>
         public int Agencia { get; set; }
 
@@ -153,7 +153,7 @@ namespace BoletoNet
 
         #endregion
 
-        #region Métodos de Instância
+        #region Metodos de instancia
 
         public void LerHeaderRetornoCNAB400(string registro)
         {

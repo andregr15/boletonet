@@ -24,7 +24,7 @@ public partial class Bancos_Sicoob : System.Web.UI.Page
         b.NumeroDocumento = "119964";
 
         b.Sacado = new Sacado("000.000.000-00", "Nome do seu Cliente ");
-        b.Sacado.Endereco.End = "Endereço do seu Cliente ";
+        b.Sacado.Endereco.End = "EndereÃ§o do seu Cliente ";
         b.Sacado.Endereco.Bairro = "Bairro";
         b.Sacado.Endereco.Cidade = "Cidade";
         b.Sacado.Endereco.CEP = "00000000";

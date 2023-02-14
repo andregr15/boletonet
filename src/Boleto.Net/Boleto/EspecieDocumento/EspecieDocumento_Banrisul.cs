@@ -180,17 +180,17 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Banrisul.DuplicataMercantilIndicacao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.DuplicataMercantilIndicacao);
-                        this.Especie = "DUPLICATA MERCANTIL P/ INDICAÇÃO";
+                        this.Especie = "DUPLICATA MERCANTIL P/ INDICAÃ‡ÃƒO";
                         this.Sigla = "DMI";
                         break;
                     case EnumEspecieDocumento_Banrisul.DuplicataServico:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.DuplicataServico);
-                        this.Especie = "DUPLICATA DE SERVIÇO";
+                        this.Especie = "DUPLICATA DE SERVIÃ‡O";
                         this.Sigla = "DS";
                         break;
                     case EnumEspecieDocumento_Banrisul.DuplicataServicoIndicacao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.DuplicataServicoIndicacao);
-                        this.Especie = "DUPLICATA DE SERVIÇO P/ INDICAÇÃO";
+                        this.Especie = "DUPLICATA DE SERVIÃ‡O P/ INDICAÃ‡ÃƒO";
                         this.Sigla = "DSI";
                         break;
                     case EnumEspecieDocumento_Banrisul.DuplicataRural:
@@ -205,32 +205,32 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Banrisul.NotaCreditoComercial:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.NotaCreditoComercial);
-                        this.Especie = "NOTA DE CRÉDITO COMERCIAL";
+                        this.Especie = "NOTA DE CRÃ‰DITO COMERCIAL";
                         this.Sigla = "NCC";
                         break;
                     case EnumEspecieDocumento_Banrisul.NotaCreditoExportacao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.NotaCreditoExportacao);
-                        this.Especie = "NOTA DE CRÉDITO A EXPORTAÇÃO";
+                        this.Especie = "NOTA DE CRÃ‰DITO A EXPORTAÃ‡ÃƒO";
                         this.Sigla = "NCE";
                         break;
                     case EnumEspecieDocumento_Banrisul.NotaCreditoIndustrial:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.NotaCreditoIndustrial);
-                        this.Especie = "NOTA DE CRÉDITO INDUSTRIAL";
+                        this.Especie = "NOTA DE CRÃ‰DITO INDUSTRIAL";
                         this.Sigla = "NCI";
                         break;
                     case EnumEspecieDocumento_Banrisul.NotaCreditoRural:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.NotaCreditoRural);
-                        this.Especie = "NOTA DE CRÉDITO RURAL";
+                        this.Especie = "NOTA DE CRÃ‰DITO RURAL";
                         this.Sigla = "NCR";
                         break;
                     case EnumEspecieDocumento_Banrisul.NotaPromissoria:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.NotaPromissoria);
-                        this.Especie = "NOTA PROMISSÓRIA";
+                        this.Especie = "NOTA PROMISSÃ“RIA";
                         this.Sigla = "NP";
                         break;
                     case EnumEspecieDocumento_Banrisul.NotaPromissoriaRural:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.NotaPromissoriaRural);
-                        this.Especie = "NOTA PROMISSÓRIA RURAL";
+                        this.Especie = "NOTA PROMISSÃ“RIA RURAL";
                         this.Sigla = "NPR";
                         break;
                     case EnumEspecieDocumento_Banrisul.TriplicataMercantil:
@@ -240,7 +240,7 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Banrisul.TriplicataServico:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.TriplicataServico);
-                        this.Especie = "TRIPLICATA DE SERVIÇO";
+                        this.Especie = "TRIPLICATA DE SERVIÃ‡O";
                         this.Sigla = "TS";
                         break;
                     case EnumEspecieDocumento_Banrisul.NotaSeguro:
@@ -260,12 +260,12 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Banrisul.NotaDebito:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.NotaDebito);
-                        this.Especie = "NOTA DE DÉBITO";
+                        this.Especie = "NOTA DE DÃ‰BITO";
                         this.Sigla = "ND";
                         break;
                     case EnumEspecieDocumento_Banrisul.ApoliceSeguro:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.ApoliceSeguro);
-                        this.Especie = "APÓLICE DE SEGURO";
+                        this.Especie = "APÃ“LICE DE SEGURO";
                         this.Sigla = "AP";
                         break;
                     case EnumEspecieDocumento_Banrisul.MensalidadeEscolar:
@@ -275,7 +275,7 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Banrisul.ParcelaConsorcio:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Banrisul.ParcelaConsorcio);
-                        this.Especie = "PARCELA DE CONSÓRCIO";
+                        this.Especie = "PARCELA DE CONSÃ“RCIO";
                         this.Sigla = "PC";
                         break;
                     case EnumEspecieDocumento_Banrisul.Outros:

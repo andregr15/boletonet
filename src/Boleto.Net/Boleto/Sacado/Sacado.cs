@@ -12,7 +12,7 @@ namespace BoletoNet
         private string _cpfcnpj = string.Empty;
         private string _nome = string.Empty;
         private Endereco _endereco = new Endereco();
-        private InformacoesSacado _info = new InformacoesSacado();//Flavio(fhlviana@hotmail.com) - lista de todas as informações para serem apresentadas abaixo do nome do sacado
+        private InformacoesSacado _info = new InformacoesSacado();//Flavio(fhlviana@hotmail.com) - lista de todas as informacoes para serem apresentadas abaixo do nome do sacado
         private IList<IInstrucao> _instrucoes = new List<IInstrucao>();
 
         #endregion
@@ -60,7 +60,7 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Retorna as Informações do sacado
+        /// Retorna as InformaÃ§Ãµes do sacado
         /// </summary>
         public InformacoesSacado InformacoesSacado
         {
@@ -81,22 +81,22 @@ namespace BoletoNet
             {
                 if (value == null)
                 {
-                    throw new ArgumentException("Erro. O CPF/CNPJ do cliente não pode ser nulo.");
+                    throw new ArgumentException("Erro. O CPF/CNPJ do cliente nao pode ser nulo.");
                 }
                 string o = value.Trim().Replace(".", "").Replace("-", "").Replace("/", "");
                 
                 //if (o == null || (o.Length != 11 && o.Length != 14))
-                //    throw new ArgumentException("O CPF/CNPJ inválido. Utilize 11 dígitos para CPF ou 14 para CNPJ.");
-                if (o == null || o == string.Empty)//Flavio(fhlviana@hotmail.com) - em razao da adiçao da possibilidade do boleto nao apresentar CPF ou CNPJ na renderização
+                //    throw new ArgumentException("O CPF/CNPJ invÃ¡lido. Utilize 11 Digitos para CPF ou 14 para CNPJ.");
+                if (o == null || o == string.Empty)//Flavio(fhlviana@hotmail.com) - em razao da adiÃ§Ã£o da possibilidade do boleto nao apresentar CPF ou CNPJ na renderizaÃ§Ã£o
                     _cpfcnpj = string.Empty;
                 else if (o.Length != 11 && o.Length != 14)
-                    throw new ArgumentException("O CPF/CNPJ inválido. Utilize 11 dígitos para CPF ou 14 para CNPJ.");
+                    throw new ArgumentException("O CPF/CNPJ invÃ¡lido. Utilize 11 Digitos para CPF ou 14 para CNPJ.");
 
                 //this._cpfcnpj = value;
-                _cpfcnpj = o;//Flavio(fhlviana@hotmail.com) - se existe um conjunto de funções na classe "Utils" para gerar o CPF
-                                  //e o CNPJ, e as mesma já são utilizadas na renderização, não há necessidade de armazenar o ".", "-"
+                _cpfcnpj = o;//Flavio(fhlviana@hotmail.com) - se existe um conjunto de funÃ§Ãµes na classe "Utils" para gerar o CPF
+                                  //e o CNPJ, e as mesma ja sao utilizadas na renderizaÃ§Ã£o, nao hÃ¡ necessidade de armazenar o ".", "-"
                                   //e "/" dos mesmos e toda vez que o metodo "Get" da propriedade for requisitado esses mesmos terem que
-                                  //ser retirados pelo método "Replace". Dessa forma os tres "Replace" sequencias só são executados uma vez.
+                                  //ser retirados pelo mÃ©todo "Replace". Dessa forma os tres "Replace" sequencias sÃ³ sao executados uma vez.
             }
         }
 

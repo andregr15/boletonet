@@ -33,31 +33,31 @@ namespace BoletoNet
 
         public override void ValidaBoleto(Boleto boleto)
         {
-            //Verifica se o nosso número é válido
+            //Verifica se o nosso numero e valido
             if (Utils.ToInt32(boleto.NossoNumero) == 0)
-                throw new NotImplementedException("Nosso número inválido");
+                throw new NotImplementedException("Nosso numero invÃ¡lido");
 
-            //O número da conta corrente são 7 dígitos
+            //O numero da conta corrente sao 7 Digitos
             if (boleto.Cedente.ContaBancaria.Conta.Length != 7)
-                throw new Exception("O número da conta corrente do cedente são 7 números.");
+                throw new Exception("O numero da conta corrente do cedente sao 7 numeros.");
 
             //Verifica se o tamanho para o NossoNumero
-            // 7 para cobrança registrada
-            // 13 para cobrança sem registro
+            // 7 para Cobranca registrada
+            // 13 para Cobranca sem registro
             boleto.NossoNumero = Utils.FormatCode(boleto.NossoNumero, 13);
 
-            // Calcula o digitão de cobrança DAC (Nosso Número/Agência/Conta Corrente)
+            // Calcula o digitÃ£o de Cobranca DAC (Nosso numero/Agencia/Conta Corrente)
             _dacDigitaoCobranca = Mod10(boleto.NossoNumero + boleto.Cedente.ContaBancaria.Agencia + boleto.Cedente.ContaBancaria.Conta);
 
             //Atribui o nome do banco ao local de pagamento
             boleto.LocalPagamento += Nome;
 
-            //Verifica se data do processamento é valida
+            //Verifica se data do processamento e valida
 			//if (boleto.DataProcessamento.ToString("dd/MM/yyyy") == "01/01/0001")
 			if (boleto.DataProcessamento == DateTime.MinValue) // diegomodolo (diego.ribeiro@nectarnet.com.br)
                 boleto.DataProcessamento = DateTime.Now;
 
-            //Verifica se data do documento é valida
+            //Verifica se data do documento e valida
 			//if (boleto.DataDocumento.ToString("dd/MM/yyyy") == "01/01/0001")
 			if (boleto.DataDocumento == DateTime.MinValue) // diegomodolo (diego.ribeiro@nectarnet.com.br)
                 boleto.DataDocumento = DateTime.Now;
@@ -69,38 +69,38 @@ namespace BoletoNet
 
         public override void FormataLinhaDigitavel(Boleto boleto)
         {
-            #region Definições
+            #region DefiniÃ§Ãµes
             /* AAABC.CCCDDX.DDDDD.DEFFFY.FGGGG.GGHHHZ.K.UUUUVVVVVVVVVV
               * ------------------------------------------------------
               * Campo 1
               * AAABC.CCCDX
-              * AAA - Código do Banco
+              * AAA - Codigo do Banco
               * B   - Moeda
-              * CCCC - Agência
-              * D  - 1 primeiro número da Conta Corrente
+              * CCCC - Agencia
+              * D  - 1 primeiro numero da Conta Corrente
               * X   - DAC Campo 1 (AAABC.CCDD) Mod10
               * 
               * Campo 2
               * DDDDD.DEFFFY
               * DDDDD.D - Restante do Conta Corrente
-              * E       - DAC (Nosso Número/Agência/Conta)
-              * FFF     - Três primeiros do Nosso Número
+              * E       - DAC (Nosso numero/Agencia/Conta)
+              * FFF     - TrÃªs primeiros do Nosso numero
               * Y       - DAC Campo 2 (DDDDD.DEFFF) Mod10
               * 
               * Campo 3
               * FFFFF.FFFFZ
-              * FFFFFFFFF- Restante Nosso Número
+              * FFFFFFFFF- Restante Nosso numero
               * Z       - DAC Campo 3
               * 
               * Campo 4
-              * K       - DAC Código de Barras
+              * K       - DAC Codigo de Barras
               * 
               * Campo 5
               * UUUUVVVVVVVVVV
               * UUUU       - Fator Vencimento
-              * VVVVVVVVVV - Valor do Título 
+              * VVVVVVVVVV - Valor do Titulo 
               */
-            #endregion Definições
+            #endregion DefiniÃ§Ãµes
 
             string numeroDocumento = Utils.FormatCode(boleto.NumeroDocumento.ToString(), 7);
             string codigoCedente = Utils.FormatCode(boleto.Cedente.Codigo.ToString(), 5);
@@ -171,8 +171,8 @@ namespace BoletoNet
 
         public override void FormataCodigoBarra(Boleto boleto)
         {
-            // Código de Barras
-            //Código do Banco/Moeda/ DAC /Fator Vencimento/Valor/Agência/Conta + Digitão/Nosso Número
+            // Codigo de Barras
+            //Codigo do Banco/Moeda/ DAC /Fator Vencimento/Valor/Agencia/Conta + DigitÃ£o/Nosso numero
 
             string valorBoleto = boleto.ValorBoleto.ToString("f").Replace(",", "").Replace(".", "");
             valorBoleto = Utils.FormatCode(valorBoleto, 10);
@@ -190,13 +190,13 @@ namespace BoletoNet
 
         public override string GerarHeaderRemessa(string numeroConvenio, Cedente cedente, TipoArquivo tipoArquivo, int numeroArquivoRemessa, Boleto boletos)
         {
-            throw new NotImplementedException("Função não implementada.");
+            throw new NotImplementedException("FunÃ§Ã£o nao implementada.");
         }
         #endregion IBanco Members
 
 
         /// <summary>
-        /// Efetua as Validações dentro da classe Boleto, para garantir a geração da remessa
+        /// Efetua as Validacoes dentro da classe Boleto, para garantir a geracao da remessa
         /// </summary>
         public override bool ValidarRemessa(TipoArquivo tipoArquivo, string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
         {

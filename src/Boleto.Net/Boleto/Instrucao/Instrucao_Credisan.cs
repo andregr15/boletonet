@@ -87,43 +87,43 @@ namespace BoletoNet
                         break;
                     case EnumInstrucoes_Credisan.Protestar3DiasUteis:
                         this.Codigo = (int)EnumInstrucoes_Credisan.Protestar3DiasUteis;
-                        this.Descricao = "Protestar 3 dias úteis após vencimento";
+                        this.Descricao = "Protestar 3 dias Ãºteis apÃ³s vencimento";
                         break;
                     case EnumInstrucoes_Credisan.Protestar4DiasUteis:
                         this.Codigo = (int)EnumInstrucoes_Credisan.Protestar4DiasUteis;
-                        this.Descricao = "Protestar 4 dias úteis após vencimento";
+                        this.Descricao = "Protestar 4 dias Ãºteis apÃ³s vencimento";
                         break;
                     case EnumInstrucoes_Credisan.Protestar5DiasUteis:
                         this.Codigo = (int)EnumInstrucoes_Credisan.Protestar5DiasUteis;
-                        this.Descricao = "Protestar 5 dias úteis após vencimento";
+                        this.Descricao = "Protestar 5 dias Ãºteis apÃ³s vencimento";
                         break;
                     case EnumInstrucoes_Credisan.NaoProtestar:
                         this.Codigo = (int)EnumInstrucoes_Credisan.NaoProtestar;
-                        this.Descricao = "Não protestar";
+                        this.Descricao = "nao protestar";
                         break;
                     case EnumInstrucoes_Credisan.Protestar10DiasUteis:
                         this.Codigo = (int)EnumInstrucoes_Credisan.Protestar10DiasUteis;
-                        this.Descricao = "Protestar 10 dias úteis após vencimento";
+                        this.Descricao = "Protestar 10 dias Ãºteis apÃ³s vencimento";
                         break;
                     case EnumInstrucoes_Credisan.Protestar15DiasUteis:
                         this.Codigo = (int)EnumInstrucoes_Credisan.Protestar15DiasUteis;
-                        this.Descricao = "Protestar 15 dias úteis após vencimento";
+                        this.Descricao = "Protestar 15 dias Ãºteis apÃ³s vencimento";
                         break;
                     case EnumInstrucoes_Credisan.Protestar20DiasUteis:
                         this.Codigo = (int)EnumInstrucoes_Credisan.Protestar20DiasUteis;
-                        this.Descricao = "Protestar 20 dias úteis após vencimento";
+                        this.Descricao = "Protestar 20 dias Ãºteis apÃ³s vencimento";
                         break;
                     case EnumInstrucoes_Credisan.ConcederDescontoApenasAteDataEstipulada:
                         this.Codigo = (int)EnumInstrucoes_Credisan.ConcederDescontoApenasAteDataEstipulada;
-                        this.Descricao = "Conceder desconto só até a data estipulada";
+                        this.Descricao = "Conceder desconto sÃ³ atÃ© a data estipulada";
                         break;
                     case EnumInstrucoes_Credisan.DevolverApos15DiasVencido:
                         this.Codigo = (int)EnumInstrucoes_Credisan.DevolverApos15DiasVencido;
-                        this.Descricao = "Devolver após 15 dias vencido";
+                        this.Descricao = "Devolver apÃ³s 15 dias vencido";
                         break;
                     case EnumInstrucoes_Credisan.DevolverApos30DiasVencido:
                         this.Codigo = (int)EnumInstrucoes_Credisan.DevolverApos30DiasVencido;
-                        this.Descricao = "Devolver após 30 dias vencido";
+                        this.Descricao = "Devolver apÃ³s 30 dias vencido";
                         break;
                     default:
                         this.Codigo = 0;

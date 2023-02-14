@@ -6,7 +6,7 @@ namespace BoletoNet
     public class Boletos : List<Boleto>
     {
 
-        # region Variáveis
+        # region Variaveis
 
 	    # endregion
 
@@ -20,33 +20,33 @@ namespace BoletoNet
 
 	    # endregion
 
-        # region Métodos
+        # region Metodos
 
         /// <summary>
-        /// Verifica se já existe o arquivo relativo a remessa, caso não exista é criado um arquivo ".rem".
+        /// Verifica se ja existe o arquivo relativo a remessa, caso nao exista Ã© criado um arquivo ".rem".
         /// 
-        /// O padrão dos arquivos de Remessa e Retorno, obedece as regras estabelecidas pelo C.N.A.B. (Centro Nacional
-        /// de Automação Bancária) e deverá ser gravado contendo:
-        /// Registro Header : Primeiro registro do Arquivo contendo a identificação da empresa
-        /// Registro Detalhe : Registro contendo as informações de Pagamentos :
-        /// - Inclusão de compromissos
-        /// - Alteração de Compromissos
+        /// O padrao dos arquivos de Remessa e Retorno, obedece as regras estabelecidas pelo C.N.A.B. (Centro Nacional
+        /// de AutomaÃ§Ã£o Bancaria) e devera ser gravado contendo:
+        /// Registro Header : Primeiro registro do Arquivo contendo a identificacao da empresa
+        /// Registro Detalhe : Registro contendo as informacoes de Pagamentos :
+        /// - Inclusao de compromissos
+        /// - alteracao de Compromissos
         /// - Pagamentos Efetuados
         /// - Bloqueios / Desbloqueios
-        /// Registro Trailer : Último registro indicando finalização do Arquivo
-        /// Caracteres obrigatórios = 0D 0A (Final de Registro) 0D 0A 1A (Final de Arquivo)
+        /// Registro Trailer : Ãºltimo registro indicando finalizaÃ§Ã£o do Arquivo
+        /// Caracteres obrigatorios = 0D 0A (Final de Registro) 0D 0A 1A (Final de Arquivo)
         /// </summary>
 
         private new void Add(Boleto item)
         {
             if (item.Banco == null)
-                throw new Exception("Boleto não possui Banco.");
+                throw new Exception("Boleto nao possui Banco.");
 
             if (item.ContaBancaria == null)
-                throw new Exception("Boleto não possui conta bancária.");
+                throw new Exception("Boleto nao possui conta bancÃ¡ria.");
 
             if (item.Cedente == null)
-                throw new Exception("Boleto não possui cedente.");
+                throw new Exception("Boleto nao possui cedente.");
 
             item.Valida();
             this.Add(item);

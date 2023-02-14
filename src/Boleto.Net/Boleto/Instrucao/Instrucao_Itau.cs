@@ -8,12 +8,12 @@ namespace BoletoNet
 
     public enum EnumInstrucoes_Itau
     {
-        Protestar = 9,                      // Emite aviso ao sacado após N dias do vencto, e envia ao cartório após 5 dias úteis
-        NaoProtestar = 10,                  // Inibe protesto, quando houver instrução permanente na conta corrente
+        Protestar = 9,                      // Emite aviso ao sacado apÃ³s N dias do vencto, e envia ao cartÃ³rio apÃ³s 5 dias Ãºteis
+        NaoProtestar = 10,                  // Inibe protesto, quando houver instruÃ§Ã£o permanente na conta corrente
         ImportanciaporDiaDesconto = 30,
         ProtestoFinsFalimentares = 42,
-        ProtestarAposNDiasCorridos = 34, //Jéferson (jefhtavares) em 09/09/14 -- Segundo o manual que eu tenho (v. de maio de 2014) não é 81 este código
-        ProtestarAposNDiasUteis = 35, //Jéferson (jefhtavares) em 09/09/14 -- Segundo o manual que eu tenho (v. de maio de 2014) não é 82 este código
+        ProtestarAposNDiasCorridos = 34, //jaferson (jefhtavares) em 09/09/14 -- Segundo o manual que eu tenho (v. de maio de 2014) nao - 81 este codigo
+        ProtestarAposNDiasUteis = 35, //jaferson (jefhtavares) em 09/09/14 -- Segundo o manual que eu tenho (v. de maio de 2014) nao - 82 este codigo
         NaoReceberAposNDias = 91,
         DevolverAposNDias = 92,
         MultaVencimento = 997,
@@ -73,15 +73,15 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_Itau.Protestar:
                         this.Codigo = (int)EnumInstrucoes_Itau.Protestar;
-                        this.Descricao = "Protestar após 5 dias úteis.";
+                        this.Descricao = "Protestar apÃ³s 5 dias Ãºteis.";
                         break;
                     case EnumInstrucoes_Itau.NaoProtestar:
                         this.Codigo = (int)EnumInstrucoes_Itau.NaoProtestar;
-                        this.Descricao = "Não protestar";
+                        this.Descricao = "nao protestar";
                         break;
                     case EnumInstrucoes_Itau.ImportanciaporDiaDesconto:
                         this.Codigo = (int)EnumInstrucoes_Itau.ImportanciaporDiaDesconto;
-                        this.Descricao = "Importância por dia de desconto.";
+                        this.Descricao = "ImportÃ¢ncia por dia de desconto.";
                         break;
                     case EnumInstrucoes_Itau.ProtestoFinsFalimentares:
                         this.Codigo = (int)EnumInstrucoes_Itau.ProtestoFinsFalimentares;
@@ -89,23 +89,23 @@ namespace BoletoNet
                         break;
                     case EnumInstrucoes_Itau.ProtestarAposNDiasCorridos:
                         this.Codigo = (int)EnumInstrucoes_Itau.ProtestarAposNDiasCorridos;
-                        this.Descricao = "Protestar após " + nrDias + " dias corridos do vencimento";
+                        this.Descricao = "Protestar apÃ³s " + nrDias + " dias corridos do vencimento";
                         break;
                     case EnumInstrucoes_Itau.ProtestarAposNDiasUteis:
                         this.Codigo = (int)EnumInstrucoes_Itau.ProtestarAposNDiasUteis;
-                        this.Descricao = "Protestar após " + nrDias + " dias úteis do vencimento";
+                        this.Descricao = "Protestar apÃ³s " + nrDias + " dias Ãºteis do vencimento";
                         break;
                     case EnumInstrucoes_Itau.NaoReceberAposNDias:
                         this.Codigo = (int)EnumInstrucoes_Itau.NaoReceberAposNDias;
-                        this.Descricao = "Não receber após N dias do vencimento";
+                        this.Descricao = "nao receber apÃ³s N dias do vencimento";
                         break;
                     case EnumInstrucoes_Itau.DevolverAposNDias:
                         this.Codigo = (int)EnumInstrucoes_Itau.DevolverAposNDias;
-                        this.Descricao = "Devolver após N dias do vencimento";
+                        this.Descricao = "Devolver apÃ³s N dias do vencimento";
                         break;                  
                     case EnumInstrucoes_Itau.DescontoporDia:
                         this.Codigo = (int)EnumInstrucoes_Itau.DescontoporDia;
-                        this.Descricao = "Conceder desconto de R$ "; // por dia de antecipação
+                        this.Descricao = "Conceder desconto de R$ "; // por dia de antecipacao
                         break;
                     default:
                         this.Codigo = 0;
@@ -132,13 +132,13 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_Itau.JurosdeMora:
                         this.Codigo = (int)EnumInstrucoes_Itau.JurosdeMora;   
-                        this.Descricao = String.Format("Após vencimento cobrar juros de {0} {1} por dia de atraso",
+                        this.Descricao = String.Format("ApÃ³s vencimento cobrar juros de {0} {1} por dia de atraso",
                             (tipoValor.Equals(EnumTipoValor.Reais) ? "R$ " : valor.ToString("F2")),
                             (tipoValor.Equals(EnumTipoValor.Percentual) ? "%" : valor.ToString("F2")));
                         break;
                     case EnumInstrucoes_Itau.MultaVencimento:
                         this.Codigo = (int)EnumInstrucoes_Itau.MultaVencimento;
-                        this.Descricao = String.Format("Após vencimento cobrar multa de {0} {1}",
+                        this.Descricao = String.Format("ApÃ³s vencimento cobrar multa de {0} {1}",
                             (tipoValor.Equals(EnumTipoValor.Reais) ? "R$ " : valor.ToString("F2")),
                             (tipoValor.Equals(EnumTipoValor.Percentual) ? "%" : valor.ToString("F2")));
                         break;

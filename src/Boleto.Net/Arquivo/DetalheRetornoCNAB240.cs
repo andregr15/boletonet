@@ -7,7 +7,7 @@ namespace BoletoNet
     public class DetalheRetornoCNAB240
     {
 
-        #region Variáveis
+        #region Variaveis
 
         private DetalheSegmentoTRetornoCNAB240 _segmentoT = new DetalheSegmentoTRetornoCNAB240();
         private DetalheSegmentoURetornoCNAB240 _segmentoU = new DetalheSegmentoURetornoCNAB240();
@@ -79,7 +79,7 @@ namespace BoletoNet
 
         #endregion
 
-        #region Métodos de Instância
+        #region Metodos de instancia
 
         #endregion
 

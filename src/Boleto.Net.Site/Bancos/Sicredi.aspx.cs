@@ -23,14 +23,14 @@ public partial class Bancos_Sicredi : System.Web.UI.Page
         b.NumeroDocumento = "00000001";
 
         b.Sacado = new Sacado("000.000.000-00", "Nome do seu Cliente ");
-        b.Sacado.Endereco.End = "Endereço do seu Cliente ";
+        b.Sacado.Endereco.End = "EndereÃ§o do seu Cliente ";
         b.Sacado.Endereco.Bairro = "Bairro";
         b.Sacado.Endereco.Cidade = "Cidade";
         b.Sacado.Endereco.CEP = "00000000";
         b.Sacado.Endereco.UF = "UF";
 
-        // Exemplo de como adicionar mais informações ao sacado
-        b.Sacado.InformacoesSacado.Add(new InfoSacado("TÍTULO: " + "2541245"));
+        // Exemplo de como adicionar mais informacoes ao sacado
+        b.Sacado.InformacoesSacado.Add(new InfoSacado("TITULO: " + "2541245"));
 
         item2.Descricao += " " + item1.QuantidadeDias.ToString() + " dias corridos do vencimento.";
         b.Instrucoes.Add(item1);

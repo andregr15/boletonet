@@ -18,9 +18,9 @@ namespace BoletoNet
 
         #endregion
 
-        #region M�todos de inst�ncia
+        #region Metodos de instancia
         /// <summary>
-        /// M�todo que far� a verifica��o se a classe est� devidamente implementada para a gera��o da Remessa
+        /// Metodo que fara a verificacao se a classe esta devidamente implementada para a geracao da Remessa
         /// </summary>
         public override bool ValidarArquivoRemessa(string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
         {

@@ -4,7 +4,7 @@
 <%@ Register Assembly="Boleto.Net" Namespace="BoletoNet" TagPrefix="boletonet" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
     <p>
-        Para o envio do boleto por email é necessário configurar &lt;system.net&gt; no web.config.
+        Para o envio do boleto por email Ã© necessÃ¡rio configurar &lt;system.net&gt; no web.config.
     </p>
     <div class="boxinfo">
         <span class="info">&lt;system.net&gt;<br />
@@ -17,13 +17,13 @@
             &lt;/system.net&gt; </span>
     </div>
     <p>
-        Se você enviar um boleto &quot;On-Line&quot;, só é possível abri-lo quando o seu site 
-        estiver no ar. Assim sendo, é recomendado que se envie apenas boletos Off-Line, 
-        que sempre irão abrir. Por outro lado, o email do Boleto Off-Line é um pouco 
+        Se vocÃª enviar um boleto &quot;On-Line&quot;, sÃ³ Ã© possÃ­vel abri-lo quando o seu site 
+        estiver no ar. Assim sendo, Ã© recomendado que se envie apenas boletos Off-Line, 
+        que sempre irÃ¡o abrir. Por outro lado, o email do Boleto Off-Line Ã© um pouco 
         maior.</p>
         <p>
-        Você pode enviar apenas um boleto no email ou enviar mais de um boleto no mesmo email. 
-        A segunda opção é interessante quando o cliente comprou algo a prazo.
+        VocÃª pode enviar apenas um boleto no email ou enviar mais de um boleto no mesmo email. 
+        A segunda opÃ§Ã£o Ã© interessante quando o cliente comprou algo a prazo.
         
         </p>
     <p>
@@ -34,7 +34,7 @@
         Email para envio:<br />
         <asp:TextBox ID="TextBox1" runat="server" Width="300px"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" Text="Enviar apenas um boleto" OnClick="Button1_Click" /> 
-        <asp:Button ID="Button2" runat="server" Text="Enviar vários boletos (sempre Off-Line)" OnClick="Button1_Click2" /><br />
+        <asp:Button ID="Button2" runat="server" Text="Enviar vÃ¡rios boletos (sempre Off-Line)" OnClick="Button1_Click2" /><br />
         <asp:Label ID="Label1" runat="server"></asp:Label>
         <br />
         <asp:Panel ID="Panel1" runat="server">

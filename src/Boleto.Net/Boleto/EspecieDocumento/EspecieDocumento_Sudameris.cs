@@ -135,7 +135,7 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Sudameris.NotaPromissoria:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Sudameris.NotaPromissoria);
-                        this.Especie = "Nota promissória";
+                        this.Especie = "Nota promissÃ³ria";
                         this.Sigla = "NP";
                         break;
                     case EnumEspecieDocumento_Sudameris.NotaSeguro:
@@ -165,22 +165,22 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Sudameris.DuplicataServico:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Sudameris.DuplicataServico);
-                        this.Especie = "Duplicata de serviço";
+                        this.Especie = "Duplicata de servico";
                         this.Sigla = "DS";
                         break;
                     case EnumEspecieDocumento_Sudameris.LetraCambio:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Sudameris.LetraCambio);
-                        this.Especie = "Letra de câmbio";
+                        this.Especie = "Letra de cÃ¢mbio";
                         this.Sigla = "LC";
                         break;
                     case EnumEspecieDocumento_Sudameris.NotaDebito:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Sudameris.NotaDebito);
-                        this.Especie = "Nota de débito";
+                        this.Especie = "Nota de debito";
                         this.Sigla = "ND";
                         break;
                     case EnumEspecieDocumento_Sudameris.DocumentoDivida:
                         this.Codigo = ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Sudameris.DocumentoDivida);
-                        this.Especie = "Documento de dívida";
+                        this.Especie = "Documento de dÃ­vida";
                         this.Sigla = "DD";
                         break;
                     case EnumEspecieDocumento_Sudameris.EncargosCondominais:

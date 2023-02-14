@@ -22,16 +22,16 @@ public partial class Bancos_Banrisul : System.Web.UI.Page
         b.Sacado = new Sacado("000.000.000-00", "Fulano de Silva");
         b.Sacado.Endereco.End = "SSS 154 Bloco J Casa 23";
         b.Sacado.Endereco.Bairro = "Testando";
-        b.Sacado.Endereco.Cidade = "Testelândia";
+        b.Sacado.Endereco.Cidade = "TestelÃ¢ndia";
         b.Sacado.Endereco.CEP = "70000000";
         b.Sacado.Endereco.UF = "DF";
 
-        //Adiciona as instruções ao boleto
-        #region Instruções
+        //Adiciona as instruÃ§Ãµes ao boleto
+        #region Instrucoes
         //Protestar
         Instrucao_Banrisul item = new Instrucao_Banrisul(9, 10, 0);
         b.Instrucoes.Add(item);
-        #endregion Instruções
+        #endregion Instrucoes
 
         b.NumeroDocumento = "12345678901";
 

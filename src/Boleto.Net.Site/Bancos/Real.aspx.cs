@@ -7,23 +7,23 @@ public partial class Bancos_Real : System.Web.UI.Page
     {
         DateTime vencimento = DateTime.Now.AddDays(5); 
 
-        Cedente c = new Cedente("00.000.000/0000-00", "Coloque a Razão Social da sua empresa aqui", "1234", "12345");
+        Cedente c = new Cedente("00.000.000/0000-00", "Coloque a RazÃ£o Social da sua empresa aqui", "1234", "12345");
         c.Codigo = "12345";
 
         Boleto b = new Boleto(vencimento, 0.1m, "57", "123456", c, new EspecieDocumento(356, "9"));
         b.NumeroDocumento = "1234567";
 
         b.Sacado = new Sacado("000.000.000-00", "Nome do seu Cliente ");
-        b.Sacado.Endereco.End = "Endereço do seu Cliente ";
+        b.Sacado.Endereco.End = "EndereÃ§o do seu Cliente ";
         b.Sacado.Endereco.Bairro = "Bairro";
         b.Sacado.Endereco.Cidade = "Cidade";
         b.Sacado.Endereco.CEP = "00000000";
         b.Sacado.Endereco.UF = "UF";
 
-        //b.Instrucoes.Add("Não Receber após o vencimento");
-        //b.Instrucoes.Add("Após o Vencimento pague somente no Real");
-        //b.Instrucoes.Add("Instrução 2");
-        //b.Instrucoes.Add("Instrução 3");
+        //b.Instrucoes.Add("nao Receber apÃ³s o vencimento");
+        //b.Instrucoes.Add("ApÃ³s o Vencimento pague somente no Real");
+        //b.Instrucoes.Add("Instrucao 2");
+        //b.Instrucoes.Add("Instrucao 3");
         real.Boleto = b;
 
         EspeciesDocumento ed = EspecieDocumento_Real.CarregaTodas();

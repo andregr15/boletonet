@@ -88,7 +88,7 @@ namespace BoletoNet
 
         public override void FormataCodigoBarra(Boleto boleto)
         {
-            // Código de Barras
+            // Codigo de Barras
             //banco & moeda & fator & valor & carteira & nossonumero & dac_nossonumero & agencia & conta & dac_conta & "000"
 
             string banco = Utils.FormatCode(Codigo.ToString(), 3);
@@ -118,7 +118,7 @@ namespace BoletoNet
         }
         public override string GerarHeaderRemessa(string numeroConvenio, Cedente cedente, TipoArquivo tipoArquivo, int numeroArquivoRemessa, Boleto boletos)
         {
-            throw new NotImplementedException("Função não implementada.");
+            throw new NotImplementedException("FunÃ§Ã£o nao implementada.");
         }
 
         public string FormataCampoLivre(Boleto boleto)
@@ -142,30 +142,30 @@ namespace BoletoNet
         public override void ValidaBoleto(Boleto boleto)
         {
 
-            //Verifica se o nosso número é válido
+            //Verifica se o nosso numero Ã© valido
             if (Utils.ToInt64(boleto.NossoNumero) == 0)
-                throw new NotImplementedException("Nosso número inválido");
+                throw new NotImplementedException("Nosso numero invÃ¡lido");
 
 
-            //Verifica se o tamanho para o NossoNumero são 10 dígitos
+            //Verifica se o tamanho para o NossoNumero sao 10 Digitos
             if (boleto.NossoNumero.Length > 10)
-                throw new NotImplementedException("A quantidade de dígitos do nosso número para a carteira " + boleto.Carteira + ", são 10 números.");
+                throw new NotImplementedException("A quantidade de Digitos do nosso numero para a carteira " + boleto.Carteira + ", sao 10 numeros.");
             else if (boleto.NossoNumero.Length < 10)
                 boleto.NossoNumero = Utils.FormatCode(boleto.NossoNumero, 10);
 
             if (boleto.Carteira != "CNR")
-                throw new NotImplementedException("Carteira não implementada. Utilize a carteira CNR.");
+                throw new NotImplementedException("Carteira nao implementada. Utilize a carteira CNR.");
 
             //Atribui o nome do banco ao local de pagamento
             boleto.LocalPagamento += Nome + "";
 
-            //Verifica se data do processamento é valida
+            //Verifica se data do processamento Ã© valida
 			//if (boleto.DataProcessamento.ToString("dd/MM/yyyy") == "01/01/0001")
 			if (boleto.DataProcessamento == DateTime.MinValue) // diegomodolo (diego.ribeiro@nectarnet.com.br)
                 boleto.DataProcessamento = DateTime.Now;
 
 
-            //Verifica se data do documento é valida
+            //Verifica se data do documento e valida
 			//if (boleto.DataDocumento.ToString("dd/MM/yyyy") == "01/01/0001")
 			if (boleto.DataDocumento == DateTime.MinValue) // diegomodolo (diego.ribeiro@nectarnet.com.br)
                 boleto.DataDocumento = DateTime.Now;
@@ -178,7 +178,7 @@ namespace BoletoNet
         }
         #endregion IBanco Members
 
-        #region Métodos privados
+        #region Metodos privados
 
         private int Mod11_CodigoBarra(string value, int Base)
         {
@@ -229,7 +229,7 @@ namespace BoletoNet
 
 
         /// <summary>
-        /// Efetua as Validações dentro da classe Boleto, para garantir a geração da remessa
+        /// Efetua as Validacoes dentro da classe Boleto, para garantir a geracao da remessa
         /// </summary>
         public override bool ValidarRemessa(TipoArquivo tipoArquivo, string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
         {

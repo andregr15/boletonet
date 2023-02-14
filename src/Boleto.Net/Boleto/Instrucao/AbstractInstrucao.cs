@@ -58,7 +58,7 @@ namespace BoletoNet
 
         public virtual void Valida()
         {
-            throw new NotImplementedException("Função não implementada");
+            throw new NotImplementedException("FunÃ§Ã£o nao implementada");
         }
 
         #endregion

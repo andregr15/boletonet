@@ -22,14 +22,14 @@ public partial class Bancos_Caixa : System.Web.UI.Page
         Boleto b = new Boleto(vencimento, 20.00m, "2", "0123456789", c);
 
         b.Sacado = new Sacado("000.000.000-00", "Nome do seu Cliente ");
-        b.Sacado.Endereco.End = "Endereço do seu Cliente ";
+        b.Sacado.Endereco.End = "EndereÃ§o do seu Cliente ";
         b.Sacado.Endereco.Bairro = "Bairro";
         b.Sacado.Endereco.Cidade = "Cidade";
         b.Sacado.Endereco.CEP = "00000000";
         b.Sacado.Endereco.UF = "UF";
 
-        //Adiciona as instruções ao boleto
-        #region Instruções
+        //Adiciona as instruÃ§Ãµes ao boleto
+        #region Instrucoes
         Instrucao_Caixa item; 
         //ImportanciaporDiaDesconto
         item = new Instrucao_Caixa((int)EnumInstrucoes_Caixa.Multa, Convert.ToDecimal(0.40));
@@ -38,7 +38,7 @@ public partial class Bancos_Caixa : System.Web.UI.Page
         b.Instrucoes.Add(item);
         item = new Instrucao_Caixa((int)EnumInstrucoes_Caixa.NaoReceberAposNDias, 90);
         b.Instrucoes.Add(item);
-        #endregion Instruções
+        #endregion Instrucoes
         EspecieDocumento_Caixa ed = new EspecieDocumento_Caixa();
         b.EspecieDocumento = new EspecieDocumento_Caixa(ed.getCodigoEspecieByEnum(EnumEspecieDocumento_Caixa.DuplicataMercantil));
         b.NumeroDocumento = "00001";

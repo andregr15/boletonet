@@ -65,38 +65,38 @@ namespace BoletoNet
                 {
                     case EnumInstrucoes_Santander.BaixarApos15Dias:
                         this.Codigo = (int)EnumInstrucoes_Santander.BaixarApos15Dias;
-                        this.Descricao = "Baixar ap髎 quinze dias do vencimento";
+                        this.Descricao = "Baixar ap贸s quinze dias do vencimento";
                         break;
                     case EnumInstrucoes_Santander.BaixarApos30Dias:
                         this.Codigo = (int)EnumInstrucoes_Santander.BaixarApos30Dias;
-                        this.Descricao = "Baixar ap髎 30 dias do vencimento";
+                        this.Descricao = "Baixar ap贸s 30 dias do vencimento";
                         break;
                     case EnumInstrucoes_Santander.NaoBaixar:
                         this.Codigo = (int)EnumInstrucoes_Santander.NaoBaixar;
-                        this.Descricao = "N鉶 baixar";
+                        this.Descricao = "nao baixar";
                         break;
                     case EnumInstrucoes_Santander.Protestar:
                         this.Codigo = (int)EnumInstrucoes_Santander.Protestar;
-                        this.Descricao = "Protestar ap髎 "+nrDias+" do vencimento";
+                        this.Descricao = "Protestar ap贸s "+nrDias+" do vencimento";
                         this.QuantidadeDias = nrDias;
                         break;
                     case EnumInstrucoes_Santander.NaoProtestar:
                         this.Codigo = (int)EnumInstrucoes_Santander.NaoProtestar;
-                        this.Descricao = "N鉶 protestar";
+                        this.Descricao = "nao protestar";
                         break;
                     case EnumInstrucoes_Santander.NaoCobrarJurosDeMora:
                         this.Codigo = (int)EnumInstrucoes_Santander.NaoCobrarJurosDeMora;
-                        this.Descricao = "N鉶 cobrar juros de mora";
+                        this.Descricao = "nao cobrar juros de mora";
                         break;
                     case EnumInstrucoes_Santander.JurosAoDia:
                         this.Codigo = 0;
-                        this.Descricao = String.Format("Ap髎 vencimento cobrar juros de {0} {1} por dia de atraso",
+                        this.Descricao = String.Format("Ap贸s vencimento cobrar juros de {0} {1} por dia de atraso",
                             (tipoValor.Equals(EnumTipoValor.Reais) ? "R$ " : valor.ToString("F2")),
                             (tipoValor.Equals(EnumTipoValor.Percentual) ? "%" : valor.ToString("F2")));
                         break;
                     case EnumInstrucoes_Santander.MultaVencimento:
                         this.Codigo = 0;
-                        this.Descricao = String.Format("Ap髎 vencimento cobrar multa de {0} {1}",
+                        this.Descricao = String.Format("Ap贸s vencimento cobrar multa de {0} {1}",
                             (tipoValor.Equals(EnumTipoValor.Reais) ? "R$ " : valor.ToString("F2")),
                             (tipoValor.Equals(EnumTipoValor.Percentual) ? "%" : valor.ToString("F2")));
                         break;

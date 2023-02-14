@@ -8,12 +8,12 @@ namespace BoletoNet
 
     public enum EnumEspecieDocumento_Nordeste
     {
-        DuplicataMercantil = 1, //DM – DUPLICATA MERCANTIL
-        NotaPromissoria = 2, //NP – NOTA PROMISSÓRIA
-        Cheque = 3, //CH – CHEQUE
-        Carne = 4, // – Carne
-        Recibo = 5, //RC – RECIBO
-        DuplicataServico = 6, //DS –  DUPLICATA DE SERVIÇO
+        DuplicataMercantil = 1, //DM - DUPLICATA MERCANTIL
+        NotaPromissoria = 2, //NP - NOTA PROMISSÃ“RIA
+        Cheque = 3, //CH - CHEQUE
+        Carne = 4, // - Carne
+        Recibo = 5, //RC - RECIBO
+        DuplicataServico = 6, //DS -  DUPLICATA DE SERVIÃ‡O
         Outros = 19 //OUTROS
     }
 
@@ -116,12 +116,12 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_Nordeste.DuplicataServico:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Nordeste.DuplicataServico);
-                        this.Especie = "DUPLICATA DE SERVIÇO";
+                        this.Especie = "DUPLICATA DE SERVIÃ‡O";
                         this.Sigla = "DS";
                         break;
                     case EnumEspecieDocumento_Nordeste.NotaPromissoria:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_Nordeste.NotaPromissoria);
-                        this.Especie = "NOTA PROMISSÓRIA";
+                        this.Especie = "NOTA PROMISSÃ“RIA";
                         this.Sigla = "NP";
                         break;
                     case EnumEspecieDocumento_Nordeste.Recibo:

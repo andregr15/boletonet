@@ -116,7 +116,7 @@ namespace BoletoNet
                     case EnumEspecieDocumento_BankBoston.DuplicataServico:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BankBoston.DuplicataServico);
                         this.Sigla = "DS";
-                        this.Especie = "Duplicata de serviço";
+                        this.Especie = "Duplicata de servico";
                         break;
                     case EnumEspecieDocumento_BankBoston.NotaSeguro:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BankBoston.NotaSeguro);
@@ -131,7 +131,7 @@ namespace BoletoNet
                     case EnumEspecieDocumento_BankBoston.ReciboAssociacao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BankBoston.ReciboAssociacao);
                         this.Sigla = "RS";
-                        this.Especie = "Recibo Associação";
+                        this.Especie = "Recibo AssociaÃ§Ã£o";
                         break;
                     case EnumEspecieDocumento_BankBoston.ReciboCondominio:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BankBoston.ReciboCondominio);
@@ -141,7 +141,7 @@ namespace BoletoNet
                     case EnumEspecieDocumento_BankBoston.NotaDebito:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BankBoston.NotaDebito);
                         this.Sigla = "ND";
-                        this.Especie = "Nota débito";
+                        this.Especie = "Nota debito";
                         break;
                     case EnumEspecieDocumento_BankBoston.Outros:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BankBoston.Outros);

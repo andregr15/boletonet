@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BoletoNet
 {
-    // Códigos de tarifas de 1 a 11 associados ao código de movimento 28
+    // Codigos de tarifas de 1 a 11 associados ao codigo de movimento 28
 
     #region Enumerado
 
@@ -66,15 +66,15 @@ namespace BoletoNet
                 {
                     case  EnumCodigoTarifas_BancoBrasil.TarifaDeExtratoDePosicao:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.TarifaDeExtratoDePosicao;
-                        this.Descricao = "Tarifa de extrato de posição";
+                        this.Descricao = "Tarifa de extrato de posicao";
                         break;
                     case EnumCodigoTarifas_BancoBrasil.TarifaDeManutencaoTituloVencido:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.TarifaDeManutencaoTituloVencido;
-                        this.Descricao = "Tarifa de manutenção de título vencido";
+                        this.Descricao = "Tarifa de manuteÃ§Ã£o de titulo vencido";
                         break;
                     case EnumCodigoTarifas_BancoBrasil.TarifaDeSustacao:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.TarifaDeSustacao;
-                        this.Descricao = "Tarifa de sustação";
+                        this.Descricao = "Tarifa de sustaÃ§Ã£o";
                         break;
                     case EnumCodigoTarifas_BancoBrasil.TarifaDeProtesto:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.TarifaDeProtesto;
@@ -82,11 +82,11 @@ namespace BoletoNet
                         break;
                     case EnumCodigoTarifas_BancoBrasil.TarifaDeOutrasInstrucoes:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.TarifaDeOutrasInstrucoes;
-                        this.Descricao = "Tarifa de outras instruções";
+                        this.Descricao = "Tarifa de outras instruÃ§Ãµes";
                         break;
                     case EnumCodigoTarifas_BancoBrasil.TarifaDeOutrasOcorrencias:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.TarifaDeOutrasOcorrencias;
-                        this.Descricao = "Tarifa de outras ocorrências";
+                        this.Descricao = "Tarifa de outras ocorrencias";
                         break;
                     case EnumCodigoTarifas_BancoBrasil.TarifaDeEnvioDeDuplicataAoSacado:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.TarifaDeEnvioDeDuplicataAoSacado;
@@ -98,11 +98,11 @@ namespace BoletoNet
                         break;
                     case EnumCodigoTarifas_BancoBrasil.CustasDeSustacaoDeProtesto:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.CustasDeSustacaoDeProtesto;
-                        this.Descricao = "Custas de sustação de protesto";
+                        this.Descricao = "Custas de sustaÃ§Ã£o de protesto";
                         break;
                     case EnumCodigoTarifas_BancoBrasil.CustasDoCartorioDistribuidor:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.CustasDoCartorioDistribuidor;
-                        this.Descricao = "Custas do cartório distribuidor";
+                        this.Descricao = "Custas do cartÃ³rio distribuidor";
                         break;
                     case EnumCodigoTarifas_BancoBrasil.CustasDeEdital:
                         this.Codigo = (int)EnumCodigoTarifas_BancoBrasil.CustasDeEdital;

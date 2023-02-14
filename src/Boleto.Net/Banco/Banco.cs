@@ -63,7 +63,7 @@ namespace BoletoNet
 
 		#endregion
 
-		#region Métodos Privados
+		#region Metodos Privados
 
 		private void InstanciaBanco(int codigoBanco)
 		{
@@ -75,7 +75,7 @@ namespace BoletoNet
 					case 104:
 						_IBanco = new Banco_Caixa();
 						break;
-					//341 - Itaú
+					//341 - Itau
 					case 341:
 						_IBanco = new Banco_Itau();
 						break;
@@ -183,18 +183,18 @@ namespace BoletoNet
                         _IBanco = new Banco_Maxima();
                         break;
 					default:
-						throw new Exception("Código do banco não implementando: " + codigoBanco);
+						throw new Exception("Codigo do banco nao implementando: " + codigoBanco);
 				}
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a execução da transação.", ex);
+				throw new Exception("Erro durante a execuÃ§Ã£o da transaÃ§Ã£o.", ex);
 			}
 		}
 
 		#endregion
 
-		#region Métodos de Interface
+		#region Metodos de Interface
 
 		public void FormataCodigoBarra(Boleto boleto)
 		{
@@ -204,7 +204,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a formatação do código de barra.", ex);
+				throw new Exception("Erro durante a formataÃ§Ã£o do codigo de barra.", ex);
 			}
 		}
 
@@ -216,7 +216,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a formatação da linha digitável.", ex);
+				throw new Exception("Erro durante a formataÃ§Ã£o da linha digitavel.", ex);
 			}
 		}
 
@@ -228,7 +228,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a formatação do nosso número.", ex);
+				throw new Exception("Erro durante a formataÃ§Ã£o do nosso numero.", ex);
 			}
 		}
 
@@ -240,7 +240,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a formatação do número do documento.", ex);
+				throw new Exception("Erro durante a formataÃ§Ã£o do numero do documento.", ex);
 			}
 		}
 
@@ -252,13 +252,13 @@ namespace BoletoNet
 			//}
 			//catch (Exception ex)
 			//{
-			//    throw new Exception("Erro durante a validação do banco.", ex);
+			//    throw new Exception("Erro durante a validaÃ§Ã£o do banco.", ex);
 			//}
 		}
 
 		#endregion
 
-		#region Métodos de Validação de geração de arquivo
+		#region Metodos de Validacao de geracao de arquivo
 		public bool ValidarRemessa(TipoArquivo tipoArquivo, string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
 		{
 			try
@@ -267,12 +267,12 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a validação do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a validaÃ§Ã£o do arquivo de REMESSA.", ex);
 			}
 		}
 		#endregion
 
-		#region Métodos de geração de arquivo
+		#region Metodos de geracao de arquivo
 
 		public string GerarHeaderRemessa(string numeroConvenio, Cedente cedente, TipoArquivo tipoArquivo, int numeroArquivoRemessa)
 		{
@@ -282,7 +282,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro HEADER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro HEADER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -294,7 +294,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro HEADER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro HEADER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -306,7 +306,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -318,7 +318,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro TRAILER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro TRAILER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -330,7 +330,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro TRAILER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro TRAILER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -342,7 +342,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro HEADER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro HEADER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -354,7 +354,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro HEADER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro HEADER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -366,7 +366,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro HEADER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro HEADER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -378,7 +378,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro HEADER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro HEADER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -390,7 +390,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -402,7 +402,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -414,7 +414,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -426,7 +426,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -438,7 +438,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -450,7 +450,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -462,7 +462,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -474,7 +474,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -486,7 +486,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração dos registros de DETALHE do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao dos registros de DETALHE do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -498,7 +498,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro TRAILER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro TRAILER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -510,7 +510,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro TRAILER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro TRAILER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -522,7 +522,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro TRAILER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro TRAILER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -534,7 +534,7 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro TRAILER do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro TRAILER do arquivo de REMESSA.", ex);
 			}
 		}
 
@@ -546,13 +546,13 @@ namespace BoletoNet
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Erro durante a geração do registro MENSAGEM VARIAVEL do arquivo de REMESSA.", ex);
+				throw new Exception("Erro durante a geracao do registro MENSAGEM VARIAVEL do arquivo de REMESSA.", ex);
 			}
 		}
 
 		#endregion
 
-		#region Métodos de Leitura do arquivo de Retorno
+		#region Metodos de Leitura do arquivo de Retorno
 
 		public DetalheSegmentoTRetornoCNAB240 LerDetalheSegmentoTRetornoCNAB240(string registro)
 		{
@@ -589,14 +589,14 @@ namespace BoletoNet
             return _IBanco.ObterNossoNumeroSemConvenioOuDigitoVerificador(convenio, nossoNumero);
         }
 
-        #endregion Métodos de Leitura do arquivo de Retorno
+        #endregion Metodos de Leitura do arquivo de Retorno
 
 	    /// <summary>
-	    /// Método responsável por gerar o nome do arquivo de remessa, deve ser sobreescrito em cada banco para nomes diferentes
+	    /// Metodo responsavel por gerar o nome do arquivo de remessa, deve ser sobreescrito em cada banco para nomes diferentes
 	    /// </summary>
 	    /// <param name="cedente">Dados do emissor do cupom</param>
 	    /// <param name="cidadeBanco">Cidade do banco</param>
-	    /// <param name="remessa">Número da remessa</param>
+	    /// <param name="remessa">numero da remessa</param>
 	    /// <returns>Retorna o nome do arquivo de remessa</returns>
 	    public string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
 	    {

@@ -5,21 +5,21 @@ namespace BoletoNet
     public class DetalheSegmentoERetornoCNAB240
     {
         /// <summary>
-        /// Código fornecido pelo Banco Central para identificação do Banco que está recebendo ou enviando o arquivo, com o qual se firmou o contrato de prestação de serviços.
+        /// Codigo fornecido pelo Banco Central para identificacao do Banco que esta recebendo ou enviando o arquivo, com o qual se firmou o contrato de prestacao de servicos.
         /// </summary>
         public int CodigoBanco { get; private set; }
 
         /// <summary>
-        /// Número seqüencial para identificar univocamente um lote de serviço. Criado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo.
-        /// Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior acrescido de 1. O número não poderá ser repetido dentro do arquivo.
+        /// numero sequencial para identificar univocamente um lote de servico. Criado e controlado pelo responsavel pela geracao magnetica dos dados contidos no arquivo.
+        /// Preencher com '0001' para o primeiro lote do arquivo. Para os demais: numero do lote anterior acrescido de 1. O numero nao podera ser repetido dentro do arquivo.
         /// Se registro for Header do Arquivo preencher com '0000'
         /// Se registro for Trailer do Arquivo preencher com '9999'
         /// </summary>
         public int LoteServico { get; private set; }
 
         /// <summary>
-        /// Código adotado pela FEBRABAN para identificar o tipo de registro.
-        /// Domínio:
+        /// Codigo adotado pela FEBRABAN para identificar o tipo de registro.
+        /// Dominio:
         /// '0' = Header de Arquivo
         /// '1' = Header de Lote
         /// '2' = Registros Iniciais do Lote
@@ -31,219 +31,219 @@ namespace BoletoNet
         public string TipoRegistro { get; private set; }
 
         /// <summary>
-        /// Número adotado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo, para identificar a seqüência de registros encaminhados no lote.
+        /// numero adotado e controlado pelo responsavel pela geracao magnetica dos dados contidos no arquivo, para identificar a sequencia de registros encaminhados no lote.
         /// Deve ser inicializado sempre em '1', em cada novo lote.
         /// </summary>
         public int NumeroRegistro { get; private set; }
 
         /// <summary>
-        /// Código adotado pela FEBRABAN para identificar o segmento do registro.
+        /// Codigo adotado pela FEBRABAN para identificar o segmento do registro.
         /// </summary>
         public string Segmento { get; private set; }
 
         /// <summary>
-        /// Texto de observações destinado para uso exclusivo da FEBRABAN.
+        /// Texto de observacoes destinado para uso exclusivo da FEBRABAN.
         /// Preencher com Brancos.
         /// </summary>
         public string UsoExclusivoFebrabanCnab { get; private set; }
 
         /// <summary>
-        /// Código que identifica o tipo de inscrição da Empresa ou Pessoa Física perante uma Instituição governamental.Domínio:
-        /// '0' = Isento / Não Informado
+        /// Codigo que identifica o tipo de inscricao da Empresa ou Pessoa Fisica perante uma Instituicao governamental.Dominio:
+        /// '0' = Isento / nao Informado
         /// '1' = CPF
         /// '2' = CGC / CNPJ
         /// '3' = PIS / PASEP
         /// '9' = Outros
-        /// Preenchimento deste campo é obrigatório para DOC e TED (Forma de Lançamento = 03, 41, 43)
-        /// Para pagamento para o SIAPE com crédito em conta, o CPF deverá ser do 1º titular.
+        /// Preenchimento deste campo e obrigatorio para DOC e TED (Forma de Lancamento = 03, 41, 43)
+        /// Para pagamento para o SIAPE com credito em conta, o CPF devera ser do 1o titular.
         /// </summary>
         public TipoInscricao TipoInscricaoCliente { get; private set; }
 
         /// <summary>
-        /// Número de inscrição da Empresa ou Pessoa Física perante uma Instituição governamental.
+        /// numero de inscricao da Empresa ou Pessoa Fisica perante uma Instituicao governamental.
         /// </summary>
         public long NumeroInscricaoCliente { get; private set; }
 
         /// <summary>
-        /// Código adotado pelo Banco para identificar o Contrato entre este e a Empresa Cliente.
+        /// Codigo adotado pelo Banco para identificar o Contrato entre este e a Empresa Cliente.
         /// </summary>
         public string CodigoConvenioBanco { get; private set; }
 
         /// <summary>
-        /// Código adotado pelo Banco responsável pela conta, para identificar a qual unidade está vinculada a conta corrente.
+        /// Codigo adotado pelo Banco responsavel pela conta, para identificar a qual unidade esta vinculada a conta corrente.
         /// </summary>
         public int AgenciaMantenedoraConta { get; private set; }
 
         /// <summary>
-        /// Código adotado pelo Banco responsável pela conta corrente, para verificação da autenticidade do Código da Agência.
+        /// Codigo adotado pelo Banco responsavel pela conta corrente, para verificacao da autenticidade do Codigo da Agencia.
         /// </summary>
         public string DigitoVerificadorAgencia { get; private set; }
 
         /// <summary>
-        /// Número adotado pelo Banco, para identificar univocamente a conta corrente utilizada pelo Cliente.
+        /// numero adotado pelo Banco, para identificar univocamente a conta corrente utilizada pelo Cliente.
         /// </summary>
         public long NumeroContaCorrente { get; private set; }
 
         /// <summary>
-        /// Código adotado pelo responsável pela conta corrente, para verificação da autenticidade do Número da Conta Corrente.
-        /// Para os Bancos que se utilizam de duas posições para o Dígito Verificador do Número da Conta Corrente, preencher este campo com a 1ª posição deste dígito.
+        /// Codigo adotado pelo responsavel pela conta corrente, para verificacao da autenticidade do numero da Conta Corrente.
+        /// Para os Bancos que se utilizam de duas posicoes para o Digito Verificador do numero da Conta Corrente, preencher este campo com a 1o posicao deste Digito.
         /// Exemplo :
-        /// Número C/C = 45981-36
-        /// Neste caso -> Dígito Verificador da Conta = 3
+        /// numero C/C = 45981-36
+        /// Neste caso -> Digito Verificador da Conta = 3
         /// </summary>
         public string DigitoVerificadorConta { get; private set; }
 
         /// <summary>
-        /// Código adotado pelo Banco responsável pela conta corrente, para verificação da autenticidade do par Código da Agência / Número da Conta Corrente.
-        /// Para os Bancos que se utilizam de duas posições para o Dígito Verificador do Número da Conta Corrente, preencher este campo com a 2ª posição deste dígito.
+        /// Codigo adotado pelo Banco responsavel pela conta corrente, para verificacao da autenticidade do par Codigo da Agencia / numero da Conta Corrente.
+        /// Para os Bancos que se utilizam de duas posicoes para o Digito Verificador do numero da Conta Corrente, preencher este campo com a 2o posicao deste Digito.
         /// Exemplo :
-        /// Número C/C = 45981-36
-        /// Neste caso -> Dígito Verificador da Ag/Conta = 6
+        /// numero C/C = 45981-36
+        /// Neste caso -> Digito Verificador da Ag/Conta = 6
         /// </summary>
         public string DigitoVerificadorAgenciaConta { get; private set; }
 
         /// <summary>
-        /// Nome que identifica a pessoa, física ou jurídica, a qual se quer fazer referência.
+        /// Nome que identifica a pessoa, fisica ou juridica, a qual se quer fazer referencia.
         /// </summary>
         public string NomeEmpresa { get; private set; }
 
         /// <summary>
-        /// Texto de observações destinado para uso exclusivo da FEBRABAN.
+        /// Texto de observacoes destinado para uso exclusivo da FEBRABAN.
         /// Preencher com Brancos.
         /// </summary>
         public string   UsoExclusivoFebrabanCnab2 { get; private set; }
 
         /// <summary>
-        /// Identifica se o Lançamento incide sobre valores disponíveis ou bloqueados, possibilitando a recomposição das posições dos saldos.
-        /// Domínio:
-        /// 'DPV' = TIPO DISPONÍVEL
-        /// Lançamento ocorrido em Saldo Disponível
+        /// Identifica se o Lancamento incide sobre valores disponiveis ou bloqueados, possibilitando a recomposicao das posicoes dos saldos.
+        /// Dominio:
+        /// 'DPV' = TIPO DISPONIVEL
+        /// Lancamento ocorrido em Saldo Disponivel
         /// 'SCR' = TIPO VINCULADO
-        /// Lançamento ocorrido em Saldo Disponível ou Vinculado (a critério de cada banco), porém pendente de liberação por regras internas do banco
+        /// Lancamento ocorrido em Saldo Disponivel ou Vinculado (a criterio de cada banco), porem pendente de liberacao por regras internas do banco
         /// 'SSR' = TIPO BLOQUEADO
-        /// Lançamento ocorrido em Saldo Bloqueado
-        /// 'CDS' = COMPOSIÇÃO DE DIVERSOS SALDOS
-        /// Lançamento ocorrido em diversos saldos
-        /// A condição de recurso Disponível, Vinculado ou Bloqueado para os códigos, SCR, SSR e CDS é critério de cada banco.
+        /// Lancamento ocorrido em Saldo Bloqueado
+        /// 'CDS' = COMPOSICAO DE DIVERSOS SALDOS
+        /// Lancamento ocorrido em diversos saldos
+        /// A condicao de recurso Disponivel, Vinculado ou Bloqueado para os codigos, SCR, SSR e CDS a criterio de cada banco.
         /// </summary>
         public string NaturezaLancamento { get; private set; }
 
         /// <summary>
-        /// Código adotado pela FEBRABAN para identificar a padronização a ser utilizada no complemento.
-        /// Domínio:
-        /// '00' = Sem Informação do Complemento do Lançamento
-        /// '01' = Identificação da Origem do Lançamento
+        /// Codigo adotado pela FEBRABAN para identificar a padronizacao a ser utilizada no complemento.
+        /// Dominio:
+        /// '00' = Sem Informacao do Complemento do Lancamento
+        /// '01' = Identificacao da Origem do Lancamento
         /// </summary>
         public TipoComplementoLancamento TipoComplementoLancamento { get; private set; }
 
         /// <summary>
-        /// Texto de informações complementares ao Lançamento.
-        /// Para Tipo do Complemento = 01, o campo complemento terá o seguinte formato:
-        /// Banco Origem Lançamento 114 116 3 Num
-        /// Agência Origem Lançamento 117 121 5 Num
+        /// Texto de informacoes complementares ao Lancamento.
+        /// Para Tipo do Complemento = 01, o campo complemento tera o seguinte formato:
+        /// Banco Origem Lancamento 114 116 3 Num
+        /// Agencia Origem Lancamento 117 121 5 Num
         /// Uso Exclusivo FEBRABAN/ CNAB 122 133 12 Alfa preencher com brancos
         /// </summary>
         public string ComplementoLancamento { get; private set; }
 
         /// <summary>
-        /// Código adotado pela FEBRABAN para identificação de Lançamentos desobrigados de recolhimento do CPMF.
-        /// Domínio:
+        /// Codigo adotado pela FEBRABAN para identificacao de Lancamentos desobrigados de recolhimento do CPMF.
+        /// Dominio:
         /// 'S' = Isento
-        /// 'N' = Não Isento
+        /// 'N' = nao Isento
         /// </summary>
         public IsencaoCpmf IdentificacaoIsencaoCpmf { get; private set; }
 
         /// <summary>
-        /// Data de efetivação do Lançamento.
+        /// Data de efetivacao do Lancamento.
         /// Utilizar o formato DDMMAAAA, onde:
         /// DD = dia
-        /// MM = mês
+        /// MM = mes
         /// AAAA = ano
         /// </summary>
         public DateTime? DataContabil { get; private set; }
 
         /// <summary>
-        /// Data de ocorrência dos fatos, itens, componentes do extrato bancário.
+        /// Data de ocorrencia dos fatos, itens, componentes do extrato bancario.
         /// Utilizar o formato DDMMAAAA, onde:
         /// DD = dia
-        /// MM = mês
+        /// MM = mes
         /// AAAA = ano
         /// </summary>
         public DateTime DataLancamento { get; private set; }
 
         /// <summary>
-        /// Valor do Lançamento efetuado, expresso em moeda corrente.
+        /// Valor do Lancamento efetuado, expresso em moeda corrente.
         /// </summary>
         public decimal ValorLancamento { get; private set; }
 
         /// <summary>
-        /// Código adotado pela FEBRABAN para caracterizar o item que está sendo representado no extrato bancário.
-        /// Domínio:
-        /// 'D' = Débito
-        /// 'C' = Crédito
+        /// Codigo adotado pela FEBRABAN para caracterizar o item que esta sendo representado no extrato bancario.
+        /// Dominio:
+        /// 'D' = Debito
+        /// 'C' = Credito
         /// </summary>
         public TipoLancamento TipoLancamento { get; private set; }
 
         /// <summary>
-        /// Código adotado pela FEBRABAN, para identificar a categoria padrão do Lançamento, para conciliação entre Bancos.
-        /// Domínio:
-        /// Débitos:
+        /// Codigo adotado pela FEBRABAN, para identificar a categoria padrao do Lancamento, para conciliacao entre Bancos.
+        /// Dominio:
+        /// Debitos:
         /// '101' = Cheques
         /// '102' = Encargos
         /// '103' = Estornos
-        /// '104' = Lançamento Avisado
+        /// '104' = Lancamento Avisado
         /// '105' = Tarifas
-        /// '106' = Aplicação
-        /// '107' = Empréstimo / Financiamento
-        /// '108' = Câmbio
+        /// '106' = Aplicacao
+        /// '107' = Emprestimo / Financiamento
+        /// '108' = Cambio
         /// '109' = CPMF
         /// '110' = IOF
         /// '111' = Imposto de Renda
         /// '112' = Pagamento Fornecedores
-        /// '113' = Pagamentos Salário
-        /// '114' = Saque Eletrônico
-        /// '115' = Ações
-        /// '117' = Transferência entre Contas
-        /// '118' = Devolução da Compensação
-        /// '119' = Devolução de Cheque Depositado
-        /// '120' = Transferência Interbancária (DOC, TED)
-        /// '121' = Antecipação a Fornecedores
+        /// '113' = Pagamentos Salario
+        /// '114' = Saque Eletronico
+        /// '115' = Acoes
+        /// '117' = Transferencia entre Contas
+        /// '118' = Devolucao da Compensacao
+        /// '119' = Devolucao de Cheque Depositado
+        /// '120' = Transferencia Interbancaria (DOC, TED)
+        /// '121' = Antecipacao a Fornecedores
         /// '122' = OC / AEROPS
-        /// Créditos:
-        /// '201' = Depósitos
-        /// '202' = Líquido de Cobrança
-        /// '203' = Devolução de Cheques
+        /// Creditos:
+        /// '201' = Depositos
+        /// '202' = Liquido de Cobranca
+        /// '203' = Devolucao de Cheques
         /// '204' = Estornos
-        /// '205' = Lançamento Avisado
-        /// '206' = Resgate de Aplicação
-        /// '207' = Empréstimo / Financiamento
-        /// '208' = Câmbio
-        /// '209' = Transferência Interbancária (DOC, TED)
-        /// '210' = Ações
+        /// '205' = Lancamento Avisado
+        /// '206' = Resgate de Aplicacao
+        /// '207' = Emprestimo / Financiamento
+        /// '208' = Cambio
+        /// '209' = Transferencia Interbancaria (DOC, TED)
+        /// '210' = Acoes
         /// '211' = Dividendos
         /// '212' = Seguro
-        /// '213' = Transferência entre Contas
-        /// '214' = Depósitos Especiais
-        /// '215' = Devolução da Compensação
+        /// '213' = Transferencia entre Contas
+        /// '214' = Depositos Especiais
+        /// '215' = Devolucao da Compensacao
         /// '216' = OCT
         /// '217' = Pagamentos Fornecedores
         /// '218' = Pagamentos Diversos
-        /// '219' = Pagamentos Salários
+        /// '219' = Pagamentos Salarios
         /// </summary>
         public CategoriaLancamento CategoriaLancamento { get; private set; }
 
         /// <summary>
-        /// Código adotado por cada Banco para identificar o descritivo do Lançamento. Observar que no Extrato de Conta Corrente para Conciliação Bancária este campo possui 4 caracteres, enquanto no Extrato para Gestão de Caixa ele possui 5 caracteres.
+        /// Codigo adotado por cada Banco para identificar o descritivo do Lancamento. Observar que no Extrato de Conta Corrente para Conciliacao Bancaria este campo possui 4 caracteres, enquanto no Extrato para Gestao de Caixa ele possui 5 caracteres.
         /// </summary>
         public string CodigoHistorico { get; private set; }
 
         /// <summary>
-        /// Texto descritivo do histórico do Lançamento do extrato bancário.
+        /// Texto descritivo do historico do Lancamento do extrato bancario.
         /// </summary>
         public string HistoricoLancamento { get; private set; }
 
         /// <summary>
-        /// Número que identifica o documento que gerou o Lançamento. Para uso na conciliação automática de Conta Corrente, o número do documento não pode ser maior que 6 posições numéricas. O complemento está limitado de acordo com as restrições de cada banco.
+        /// numero que identifica o documento que gerou o Lancamento. Para uso na conciliacao automatica de Conta Corrente, o numero do documento nao pode ser maior que 6 posicoes numericas. O complemento esta limitado de acordo com as restricoes de cada banco.
         /// </summary>
         public string NumeroDocumentoComplemento { get; private set; }
 
@@ -252,7 +252,7 @@ namespace BoletoNet
             try
             {
                 if (registro.Substring(13, 1) != "E")
-                    throw new Exception("Registro inválido. O detalhe não possuí as características do segmento E.");
+                    throw new Exception("Registro invÃ¡lido. O detalhe nao possui as caracterasticas do segmento E.");
 
                 CodigoBanco = LeitorLinhaPosicao.ExtrairInt32DaPosicao(registro, 1, 3);
                 LoteServico = LeitorLinhaPosicao.ExtrairInt32DaPosicao(registro, 4, 7);

@@ -48,7 +48,7 @@ namespace BoletoNet
         }
         #endregion
 
-        #region Métodos de instância
+        #region Metodos de instancia
 
         public void LerArquivoRetorno(IBanco banco)
         {
@@ -93,7 +93,7 @@ namespace BoletoNet
                                 }
                                 else if (linha.Substring(13, 1) == "T")
                                 {
-                                    //Irá ler o Segmento T e em sequencia o Segmento U
+                                    //Ira ler o Segmento T e em sequencia o Segmento U
                                     detalheRetorno.SegmentoT = banco.LerDetalheSegmentoTRetornoCNAB240(linha);
                                     detalheRetorno.SegmentoT.NumeroInscricao = cnpjEmpresa;
                                     linha = stream.ReadLine();

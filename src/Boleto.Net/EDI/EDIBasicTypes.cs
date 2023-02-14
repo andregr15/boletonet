@@ -4,10 +4,10 @@ using System.Globalization;
 
 namespace BoletoNet
 {
-    //Classes básicas para manipulação de registros para geração/interpretação de EDI
+    //Classes bÃ¡sicas para manipulaÃ§Ã£o de registros para geracao/interpretaÃ§ao de EDI
 
     /// <summary>
-    /// Classe para ordenação pela propriedade Posição no Registro EDI
+    /// Classe para ordenaÃ§Ã£o pela propriedade PosiÃ§Ã£o no Registro EDI
     /// </summary>
     internal class OrdenacaoPorPosEDI : IComparer<TCampoRegistroEDI>
     {
@@ -18,76 +18,76 @@ namespace BoletoNet
     }
 
     /// <summary>
-    /// Representa cada tipo de dado possível em um arquivo EDI.
+    /// Representa cada tipo de dado possÃ­vel em um arquivo EDI.
     /// </summary>
     public enum TTiposDadoEDI
     {
         /// <summary>
-        /// Representa um campo alfanumérico, alinhado à esquerda e com brancos à direita. A propriedade ValorNatural é do tipo String
+        /// Representa um campo alfanumÃ©rico, alinhado Ã  esquerda e com brancos Ã  esquerda. A propriedade ValorNatural Ã© do tipo String
         /// </summary>
         ediAlphaAliEsquerda_____,
         /// <summary>
-        /// Representa um campo alfanumérico, alinhado à direita e com brancos à esquerda. A propriedade ValorNatural é do tipo String
+        /// Representa um campo alfanumÃ©rico, alinhado Ã  esquerda e com brancos Ã  esquerda. A propriedade ValorNatural Ã© do tipo String
         /// </summary>
         ediAlphaAliDireita______,
         /// <summary>
-        /// Representa um campo numérico inteiro alinhado à direita com zeros à esquerda. A propriedade ValorNatural é do tipo Int ou derivados
+        /// Representa um campo numÃ©rico inteiro alinhado Ã  esquerda com zeros Ã  esquerda. A propriedade ValorNatural Ã© do tipo Int ou derivados
         /// </summary>
         ediInteiro______________,
         /// <summary>
-        /// Representa um campo numérico com decimais, sem o separador de decimal. A propriedade ValorNatural é do tipo Double
+        /// Representa um campo numÃ©rico com decimais, sem o separador de decimal. A propriedade ValorNatural Ã© do tipo Double
         /// </summary>
         ediNumericoSemSeparador_,
         /// <summary>
-        /// Representa um campo numérico com decimais, com o caracter ponto (.) como separador decimal,
-        /// alinhado à direita com zeros à esquerda. A propriedade ValorNatural é do tipo Double
+        /// Representa um campo numÃ©rico com decimais, com o caracter ponto (.) como separador decimal,
+        /// alinhado Ã  esquerda com zeros Ã  esquerda. A propriedade ValorNatural Ã© do tipo Double
         /// </summary>
         ediNumericoComPonto_____,
         /// <summary>
-        /// Representa um campo numérico com decimais, com o caracter vírgula (,) como separador decimal,
-        /// alinhado à direita com zeros à esquerda. A propriedade ValorNatural é do tipo Double
+        /// Representa um campo numÃ©rico com decimais, com o caracter vÃ­rgula (,) como separador decimal,
+        /// alinhado Ã  esquerda com zeros Ã  esquerda. A propriedade ValorNatural Ã© do tipo Double
         /// </summary>
         ediNumericoComVirgula___,
         /// <summary>
-        /// Representa um campo de data no formato ddm/mm/aaaa. A propriedade ValorNatural é do tipo DateTime
+        /// Representa um campo de data no formato ddm/mm/aaaa. A propriedade ValorNatural Ã© do tipo DateTime
         /// </summary>
         ediDataDDMMAAAA_________,
         /// <summary>
-        /// Representa um campo de data no formato aaaa/mm/dd. A propriedade ValorNatural é do tipo DateTime
+        /// Representa um campo de data no formato aaaa/mm/dd. A propriedade ValorNatural Ã© do tipo DateTime
         /// </summary>
         ediDataAAAAMMDD_________,
         /// <summary>
-        /// Representa um campo de data no formato dd/mm. A propriedade ValorNatural é do tipo DateTime, com o ano igual a 1900
+        /// Representa um campo de data no formato dd/mm. A propriedade ValorNatural Ã© do tipo DateTime, com o ano igual a 1900
         /// </summary>
         ediDataDDMM_____________,
         /// <summary>
-        /// Representa um campo de data no formato mm/aaaa. A propriedade ValorNatural é do tipo DateTime, com o dia igual a 01
+        /// Representa um campo de data no formato mm/aaaa. A propriedade ValorNatural Ã© do tipo DateTime, com o dia igual a 01
         /// </summary>
         ediDataMMAAAA___________,
         /// <summary>
-        /// Representa um campo de data no formato mm/dd. A propriedade ValorNatural é do tipo DateTime com o ano igual a 1900
+        /// Representa um campo de data no formato mm/dd. A propriedade ValorNatural Ã© do tipo DateTime com o ano igual a 1900
         /// </summary>
         ediDataMMDD_____________,
         /// <summary>
-        /// Representa um campo de hora no formato HH:MM. A propriedade ValorNatural é do tipo DateTime, com a data igual a 01/01/1900
+        /// Representa um campo de hora no formato HH:MM. A propriedade ValorNatural Ã© do tipo DateTime, com a data igual a 01/01/1900
         /// </summary>
         ediHoraHHMM_____________,
         /// <summary>
-        /// Representa um campo de hora no formato HH:MM:SS. A propriedade ValorNatural é do tipo DateTime, com a data igual a 01/01/1900
+        /// Representa um campo de hora no formato HH:MM:SS. A propriedade ValorNatural Ã© do tipo DateTime, com a data igual a 01/01/1900
         /// </summary>
         ediHoraHHMMSS___________,
         /// <summary>
-        /// Representa um campo de data no formato DD/MM/AAAA. A propriedade ValorNatural é do tipo DateTime.
+        /// Representa um campo de data no formato DD/MM/AAAA. A propriedade ValorNatural Ã© do tipo DateTime.
         /// </summary>
         ediDataDDMMAA___________,
         /// <summary>
-        /// Representa um campo de data no formato DD/MM/AAAA, porém colocando zeros no lugar de espaços no ValorFormatado. A propriedade
-        /// ValorNatural é do tipo DateTime, e este deve ser nulo caso queira que a data seja zero.
+        /// Representa um campo de data no formato DD/MM/AAAA, porem colocando zeros no lugar de espaÃ§os no ValorFormatado. A propriedade
+        /// ValorNatural Ã© do tipo DateTime, e este deve ser nulo caso queira que a data seja zero.
         /// </summary>
         ediDataDDMMAAAAWithZeros,
         /// <summary>
-        /// Representa um campo de data no formato AAAA/MM/DD, porém colocando zeros no lugar de espaços no ValorFormatado. A propriedade
-        /// ValorNatural é do tipo DateTime, e este deve ser nulo caso queira que a data seja zero.
+        /// Representa um campo de data no formato AAAA/MM/DD, porem colocando zeros no lugar de espaÃ§os no ValorFormatado. A propriedade
+        /// ValorNatural Ã© do tipo DateTime, e este deve ser nulo caso queira que a data seja zero.
         /// </summary>
         ediDataAAAAMMDDWithZeros
     }
@@ -95,7 +95,7 @@ namespace BoletoNet
 
     public class TCampoRegistroEDI
     {
-        #region Variáveis Privadas
+        #region Variaveis Privadas
         private string _DescricaoCampo;
         private TTiposDadoEDI _TipoCampo;
         private int _TamanhoCampo;
@@ -112,7 +112,7 @@ namespace BoletoNet
 
         #region Propriedades
         /// <summary>
-        /// Descrição do campo no registro EDI (meramente descritivo)
+        /// DescriÃ§Ã£o do campo no registro EDI (meramente descritivo)
         /// </summary>
         public string DescricaoCampo
         {
@@ -121,7 +121,7 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Tipo de dado de ORIGEM das informações do campo EDI.
+        /// Tipo de dado de ORIGEM das informacoes do campo EDI.
         /// </summary>
         public TTiposDadoEDI TipoCampo
         {
@@ -139,8 +139,8 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Quantidade de casas decimais do campo, caso ele seja do tipo numérico sem decimais. Caso
-        /// não se aplique ao tipo de dado, o valor da propriedade será ignorado nas funções de formatação.
+        /// Quantidade de casas decimais do campo, caso ele seja do tipo numÃ©rico sem decimais. Caso
+        /// nao se aplique ao tipo de dado, o valor da propriedade sera ignorado nas funÃ§Ãµes de formataÃ§Ã£o.
         /// </summary>
         public int QtdDecimais
         {
@@ -149,7 +149,7 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Valor de ORIGEM do campo, sem formatação, no tipo de dado adequado ao campo. O valor deve ser atribuido
+        /// Valor de ORIGEM do campo, sem formataÃ§Ã£o, no tipo de dado adequado ao campo. O valor deve ser atribuido
         /// com o tipo de dado adequado ao seu proposto, por exemplo, Double para representar valor, DateTime para
         /// representar datas e/ou horas, etc.
         /// </summary>
@@ -160,10 +160,10 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Valor formatado do campo, pronto para ser utilizado no arquivo EDI. A formatação será de acordo
-        /// com a especificada na propriedade TipoCampo, com numéricos alinhados à direita e zeros à esquerda
-        /// e campos alfanuméricos alinhados à esquerda e com brancos à direita.
-        /// Também pode receber o valor vindo do arquivo EDI, para ser decodificado e o resultado da decodificação na propriedade
+        /// Valor formatado do campo, pronto para ser utilizado no arquivo EDI. A formataÃ§Ã£o sera de acordo
+        /// com a especificada na propriedade TipoCampo, com numÃ©ricos alinhados Ã  esquerda e zeros Ã  esquerda
+        /// e campos alfanumÃ©ricos alinhados Ã  esquerda e com brancos Ã  esquerda.
+        /// TambÃ©m pode receber o valor vindo do arquivo EDI, para ser decodificado e o resultado da decodificaÃ§Ã£o na propriedade
         /// ValorNatural
         /// </summary>
         public string ValorFormatado
@@ -173,7 +173,7 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Número de ordem do campo no registro EDI
+        /// numero de ordem do campo no registro EDI
         /// </summary>
         public int OrdemNoRegistroEDI
         {
@@ -183,7 +183,7 @@ namespace BoletoNet
 
         /// <summary>
         /// Caractere separador dos elementos de campos com o tipo DATA. Colocar null caso esta propriedade
-        /// não se aplique ao tipo de dado.
+        /// nao se aplique ao tipo de dado.
         /// </summary>
         public string SeparadorDatas
         {
@@ -193,7 +193,7 @@ namespace BoletoNet
 
         /// <summary>
         /// Caractere separador dos elementos de campos com o tipo HORA. Colocar null caso esta propriedade
-        /// não se aplique ao tipo de dado.
+        /// nao se aplique ao tipo de dado.
         /// </summary>
         public string SeparadorHora
         {
@@ -202,7 +202,7 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Posição do caracter inicial do campo no arquivo EDI
+        /// PosiÃ§Ã£o do caracter inicial do campo no arquivo EDI
         /// </summary>
         public int PosicaoInicial
         {
@@ -216,7 +216,7 @@ namespace BoletoNet
             set { _PosicaoFinal = value; }
         }
         /// <summary>
-        /// Caractere de Preenchimento do campo da posição inicial até a posição final
+        /// Caractere de Preenchimento do campo da posicao inicial atÃ© a posicao final
         /// </summary>
         public char Preenchimento
         {
@@ -234,16 +234,16 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Cria um objeto do tipo TCampoRegistroEDI inicializando as propriedades básicas.
+        /// Cria um objeto do tipo TCampoRegistroEDI inicializando as propriedades bÃ¡sicas.
         /// </summary>
         /// <param name="pTipoCampo">Tipo de dado de origem dos dados</param>
-        /// <param name="pPosicaoInicial">Posição Inicial do Campo no Arquivo</param>
+        /// <param name="pPosicaoInicial">PosiÃ§Ã£o Inicial do Campo no Arquivo</param>
         /// <param name="pTamanho">Tamanho em caracteres do campo (destino)</param>
         /// <param name="pDecimais">Quantidade de decimais do campo (destino)</param>
-        /// <param name="pValor">Valor do campo (Origem), no tipo de dado adequado ao propósito do campo</param>
-        /// <param name="pPreenchimento">Caractere de Preenchimento do campo caso o valor não ocupe todo o tamanho</param>
-        /// <param name="pSeparadorHora">Separador de hora padrão; null para sem separador</param>
-        /// <param name="pSeparadorData">Separador de data padrão; null para sem separador</param>
+        /// <param name="pValor">Valor do campo (Origem), no tipo de dado adequado ao propÃ³sito do campo</param>
+        /// <param name="pPreenchimento">Caractere de Preenchimento do campo caso o valor nao ocupe todo o tamanho</param>
+        /// <param name="pSeparadorHora">Separador de hora padrao; null para sem separador</param>
+        /// <param name="pSeparadorData">Separador de data padrao; null para sem separador</param>
         public TCampoRegistroEDI(TTiposDadoEDI pTipoCampo, int pPosicaoInicial, int pTamanho, int pDecimais, object pValor, char pPreenchimento, string pSeparadorHora, string pSeparadorData)
         {
             this._TipoCampo = pTipoCampo;
@@ -254,19 +254,19 @@ namespace BoletoNet
             this._SeparadorDatas = pSeparadorData;
             this._OrdemNoRegistroEDI = 0;
             this._DescricaoCampo = "";
-            this._PosicaoInicial = pPosicaoInicial - 1; //Compensa a indexação com base em zero
+            this._PosicaoInicial = pPosicaoInicial - 1; //Compensa a indexaÃ§ao com base em zero
             this._PosicaoFinal = pPosicaoInicial + this._TamanhoCampo;
             this._Preenchimento = pPreenchimento;
         }
         /// <summary>
-        /// Cria um objeto do tipo TCampoRegistroEDI inicializando as propriedades básicas.
+        /// Cria um objeto do tipo TCampoRegistroEDI inicializando as propriedades bÃ¡sicas.
         /// </summary>
         /// <param name="pTipoCampo">Tipo de dado de origem dos dados</param>
-        /// <param name="pPosicaoInicial">Posição Inicial do Campo no Arquivo</param>
+        /// <param name="pPosicaoInicial">PosiÃ§Ã£o Inicial do Campo no Arquivo</param>
         /// <param name="pTamanho">Tamanho em caracteres do campo (destino)</param>
         /// <param name="pDecimais">Quantidade de decimais do campo (destino)</param>
-        /// <param name="pValor">Valor do campo (Origem), no tipo de dado adequado ao propósito do campo</param>
-        /// <param name="pPreenchimento">Caractere de Preenchimento do campo caso o valor não ocupe todo o tamanho</param>
+        /// <param name="pValor">Valor do campo (Origem), no tipo de dado adequado ao propÃ³sito do campo</param>
+        /// <param name="pPreenchimento">Caractere de Preenchimento do campo caso o valor nao ocupe todo o tamanho</param>
         public TCampoRegistroEDI(TTiposDadoEDI pTipoCampo, int pPosicaoInicial, int pTamanho, int pDecimais, object pValor, char pPreenchimento)
         {
             this._TipoCampo = pTipoCampo;
@@ -277,15 +277,15 @@ namespace BoletoNet
             this._SeparadorDatas = null;
             this._OrdemNoRegistroEDI = 0;
             this._DescricaoCampo = "";
-            this._PosicaoInicial = pPosicaoInicial - 1; //Compensa a indexação com base em zero
+            this._PosicaoInicial = pPosicaoInicial - 1; //Compensa a indexaÃ§ao com base em zero
             this._PosicaoFinal = pPosicaoInicial + this._TamanhoCampo;
             this._Preenchimento = pPreenchimento;
         }
         #endregion
 
-        #region Métodos Públicos
+        #region Metodos PÃºblicos
         /// <summary>
-        /// Aplica formatação ao valor do campo em ValorNatural, colocando o resultado na propriedade ValorFormatado
+        /// Aplica formataÃ§Ã£o ao valor do campo em ValorNatural, colocando o resultado na propriedade ValorFormatado
         /// </summary>
         public void CodificarNaturalParaEDI()
         {
@@ -327,7 +327,7 @@ namespace BoletoNet
                         if (this._ValorNatural == null)
                         {
                             string aux = "";
-                            this._ValorFormatado = aux.Trim().PadLeft(this._TamanhoCampo, ' ');//Se o Número for NULL, preenche com espaços em branco
+                            this._ValorFormatado = aux.Trim().PadLeft(this._TamanhoCampo, ' ');//Se o numero for NULL, preenche com espaÃ§os em branco
                         }
                         else
                         {
@@ -729,7 +729,7 @@ namespace BoletoNet
 
         #endregion
 
-        #region Métodos Privados e Protegidos
+        #region Metodos Privados e Protegidos
 
         #endregion
 
@@ -737,7 +737,7 @@ namespace BoletoNet
     }
 
     /// <summary>
-    /// Indica os tipos de registro possíveis em um arquivo EDI
+    /// Indica os tipos de registro possÃ­veis em um arquivo EDI
     /// </summary>
     public enum TTipoRegistroEDI
     {
@@ -754,7 +754,7 @@ namespace BoletoNet
         /// </summary>
         treTrailler,
         /// <summary>
-        /// Indica um registro sem definições, utilizado para transmissão socket ou similar
+        /// Indica um registro sem definiÃ§Ãµes, utilizado para transmissao socket ou similar
         /// </summary>
         treLinhaUnica
     }
@@ -764,7 +764,7 @@ namespace BoletoNet
     /// </summary>
     public class TRegistroEDI
     {
-        #region Variáveis Privadas e Protegidas
+        #region Variaveis Privadas e Protegidas
         protected TTipoRegistroEDI _TipoRegistro;
         protected int _TamanhoMaximo = 0;
         protected char _CaracterPreenchimento = ' ';
@@ -782,8 +782,8 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Seta a linha do registro para a decodificação nos campos;
-        /// Obtém a linha decodificada a partir dos campos.
+        /// Seta a linha do registro para a decodificaÃ§Ã£o nos campos;
+        /// Obtem a linha decodificada a partir dos campos.
         /// </summary>
         public string LinhaRegistro
         {
@@ -792,7 +792,7 @@ namespace BoletoNet
         }
 
         /// <summary>
-        /// Coleção dos campos do registro EDI
+        /// ColeÃ§Ã£o dos campos do registro EDI
         /// </summary>
         public List<TCampoRegistroEDI> CamposEDI
         {
@@ -801,12 +801,12 @@ namespace BoletoNet
         }
         #endregion
 
-        #region Métodos Privados e Protegidos
+        #region Metodos Privados e Protegidos
         #endregion
 
-        #region Métodos Públicos
+        #region Metodos PÃºblicos
         /// <summary>
-        /// Codifica uma linha a partir dos campos; o resultado irá na propriedade LinhaRegistro
+        /// Codifica uma linha a partir dos campos; o resultado irÃ¡ na propriedade LinhaRegistro
         /// </summary>
         public virtual void CodificarLinha()
         {

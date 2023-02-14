@@ -8,11 +8,11 @@ namespace BoletoNet
 
     public enum EnumEspecieDocumento_CrediSIS
     {
-        DuplicataMercantilIndicacao = 3, //DMI – DUPLICATA MERCANTIL P/ INDICAÇÃO
-        DuplicataServicoIndicacao = 5, //DSI –  DUPLICATA DE SERVIÇO P/ INDICAÇÃO
-        NotaPromissoria = 12, //NP – NOTA PROMISSÓRIA
-        Recibo = 17, //RC – RECIBO
-        MensalidadeEscolar = 21, //ME – MENSALIDADE ESCOLAR
+        DuplicataMercantilIndicacao = 3, //DMI - DUPLICATA MERCANTIL P/ INDICAÃ‡ÃƒO
+        DuplicataServicoIndicacao = 5, //DSI -  DUPLICATA DE SERVIÃ‡O P/ INDICAÃ‡ÃƒO
+        NotaPromissoria = 12, //NP - NOTA PROMISSÃ“RIA
+        Recibo = 17, //RC - RECIBO
+        MensalidadeEscolar = 21, //ME - MENSALIDADE ESCOLAR
         NotaFiscal = 23 //Nota Fiscal
     }
 
@@ -102,17 +102,17 @@ namespace BoletoNet
                 {
                     case EnumEspecieDocumento_CrediSIS.DuplicataMercantilIndicacao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_CrediSIS.DuplicataMercantilIndicacao);
-                        this.Especie = "DUPLICATA MERCANTIL P/ INDICAÇÃO";
+                        this.Especie = "DUPLICATA MERCANTIL P/ INDICAÃ‡ÃƒO";
                         this.Sigla = "DMI";
                         break;
                     case EnumEspecieDocumento_CrediSIS.DuplicataServicoIndicacao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_CrediSIS.DuplicataServicoIndicacao);
-                        this.Especie = "DUPLICATA DE SERVIÇO P/ INDICAÇÃO";
+                        this.Especie = "DUPLICATA DE SERVIÃ‡O P/ INDICAÃ‡ÃƒO";
                         this.Sigla = "DSI";
                         break;
                     case EnumEspecieDocumento_CrediSIS.NotaPromissoria:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_CrediSIS.NotaPromissoria);
-                        this.Especie = "NOTA PROMISSÓRIA";
+                        this.Especie = "NOTA PROMISSÃ“RIA";
                         this.Sigla = "NP";
                         break;
                     case EnumEspecieDocumento_CrediSIS.Recibo:

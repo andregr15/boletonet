@@ -61,25 +61,25 @@ namespace BoletoNet
                         this.NumeroCarteira = (int)EnumCarteiras_Caixa.CobrancaSimples;
                         this.Codigo = "CS";
                         this.Tipo = "CS";
-                        this.Descricao = "Cobrança simples";
+                        this.Descricao = "Cobranca simples";
                         break;
                     case EnumCarteiras_Caixa.CobrancaRegistrada:
                         this.NumeroCarteira = (int)EnumCarteiras_Caixa.CobrancaRegistrada;
                         this.Codigo = "RG";
                         this.Tipo = "RG";
-                        this.Descricao = "Cobrança rápida registrada";
+                        this.Descricao = "Cobranca rÃ¡pida registrada";
                         break;
                     case EnumCarteiras_Caixa.CobrancaSemRegistro:
                         this.NumeroCarteira = (int)EnumCarteiras_Caixa.CobrancaSemRegistro;
                         this.Codigo = "SR";
                         this.Tipo = "SR";
-                        this.Descricao = "Cobrança rápida sem registro";
+                        this.Descricao = "Cobranca rÃ¡pida sem registro";
                         break;
                     case EnumCarteiras_Caixa.CobrancaDescontada:
                         this.NumeroCarteira = (int)EnumCarteiras_Caixa.CobrancaDescontada;
                         this.Codigo = "DE";
                         this.Tipo = "DE";
-                        this.Descricao = "Cobrança descontada";
+                        this.Descricao = "Cobranca descontada";
                         break;                   
                     default:
                         this.NumeroCarteira = 0;

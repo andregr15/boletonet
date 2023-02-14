@@ -8,32 +8,32 @@ namespace BoletoNet
 
     public enum EnumEspecieDocumento_BancoBrasil
     {
-        Cheque = 1, //CH ñ CHEQUE
-        DuplicataMercantil = 2, //DM ñ DUPLICATA MERCANTIL
-        DuplicataMercantilIndicacao = 3, //DMI ñ DUPLICATA MERCANTIL P/ INDICA«√O
-        DuplicataServico = 4, //DS ñ  DUPLICATA DE SERVI«O
-        DuplicataServicoIndicacao = 5, //DSI ñ  DUPLICATA DE SERVI«O P/ INDICA«√O
-        DuplicataRural = 6, //DR ñ DUPLICATA RURAL
-        LetraCambio = 7, //LC ñ LETRA DE CAMBIO
-        NotaCreditoComercial = 8, //NCC ñ NOTA DE CR…DITO COMERCIAL
-        NotaCreditoExportacao = 9, //NCE ñ NOTA DE CR…DITO A EXPORTA«√O
-        NotaCreditoIndustrial = 10, //NCI ñ NOTA DE CR…DITO INDUSTRIAL
-        NotaCreditoRural = 11, //NCR ñ NOTA DE CR…DITO RURAL
-        NotaPromissoria = 12, //NP ñ NOTA PROMISS”RIA
-        NotaPromissoriaRural = 13, //NPR ñNOTA PROMISS”RIA RURAL
-        TriplicataMercantil = 14, //TM ñ TRIPLICATA MERCANTIL
-        TriplicataServico = 15, //TS ñ  TRIPLICATA DE SERVI«O
-        NotaSeguro = 16, //NS ñ NOTA DE SEGURO
-        Recibo = 17, //RC ñ RECIBO
-        Fatura = 18, //FAT ñ FATURA
-        NotaDebito = 19, //ND ñ  NOTA DE D…BITO
-        ApoliceSeguro = 20, //AP ñ  AP”LICE DE SEGURO
-        MensalidadeEscolar = 21, //ME ñ MENSALIDADE ESCOLAR
-        ParcelaConsorcio = 22, //PC ñ  PARCELA DE CONS”RCIO
+        Cheque = 1, //CH - CHEQUE
+        DuplicataMercantil = 2, //DM - DUPLICATA MERCANTIL
+        DuplicataMercantilIndicacao = 3, //DMI - DUPLICATA MERCANTIL P/ INDICA√á√ÉO
+        DuplicataServico = 4, //DS -  DUPLICATA DE SERVI√áO
+        DuplicataServicoIndicacao = 5, //DSI -  DUPLICATA DE SERVI√áO P/ INDICA√á√ÉO
+        DuplicataRural = 6, //DR - DUPLICATA RURAL
+        LetraCambio = 7, //LC - LETRA DE CAMBIO
+        NotaCreditoComercial = 8, //NCC - NOTA DE CR√âDITO COMERCIAL
+        NotaCreditoExportacao = 9, //NCE - NOTA DE CR√âDITO A EXPORTA√á√ÉO
+        NotaCreditoIndustrial = 10, //NCI - NOTA DE CR√âDITO INDUSTRIAL
+        NotaCreditoRural = 11, //NCR - NOTA DE CR√âDITO RURAL
+        NotaPromissoria = 12, //NP - NOTA PROMISS√ìRIA
+        NotaPromissoriaRural = 13, //NPR - NOTA PROMISS√ìRIA RURAL
+        TriplicataMercantil = 14, //TM - TRIPLICATA MERCANTIL
+        TriplicataServico = 15, //TS -  TRIPLICATA DE SERVI√áO
+        NotaSeguro = 16, //NS - NOTA DE SEGURO
+        Recibo = 17, //RC - RECIBO
+        Fatura = 18, //FAT - FATURA
+        NotaDebito = 19, //ND -  NOTA DE D√âBITO
+        ApoliceSeguro = 20, //AP -  AP√ìLICE DE SEGURO
+        MensalidadeEscolar = 21, //ME - MENSALIDADE ESCOLAR
+        ParcelaConsorcio = 22, //PC -  PARCELA DE CONS√ìRCIO
         Outros = 23, //OUTROS                
-        DividaAtivaEstadual = 27, //DAE - DÕVIDA ATIVA DO ESTADO
-        DividaAtivaMunicipio = 28, //DAM - DÕVIDA ATIVA DO MUNICIPIO
-        DividaAtivaUniao = 29 //DAU - DÕVIDA ATIVA DA UNI√O
+        DividaAtivaEstadual = 27, //DAE - D√çVIDA ATIVA DO ESTADO
+        DividaAtivaMunicipio = 28, //DAM - D√çVIDA ATIVA DO MUNICIPIO
+        DividaAtivaUniao = 29 //DAU - D√çVIDA ATIVA DA UNI√ÉO
     }
 
     #endregion
@@ -191,17 +191,17 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_BancoBrasil.DuplicataMercantilIndicacao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.DuplicataMercantilIndicacao);
-                        this.Especie = "DUPLICATA MERCANTIL P/ INDICA«√O";
+                        this.Especie = "DUPLICATA MERCANTIL P/ INDICA√á√ÉO";
                         this.Sigla = "DMI";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.DuplicataServico:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.DuplicataServico);
-                        this.Especie = "DUPLICATA DE SERVI«O";
+                        this.Especie = "DUPLICATA DE SERVI√áO";
                         this.Sigla = "DS";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.DuplicataServicoIndicacao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.DuplicataServicoIndicacao);
-                        this.Especie = "DUPLICATA DE SERVI«O P/ INDICA«√O";
+                        this.Especie = "DUPLICATA DE SERVI√áO P/ INDICA√á√ÉO";
                         this.Sigla = "DSI";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.DuplicataRural:
@@ -216,32 +216,32 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_BancoBrasil.NotaCreditoComercial:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.NotaCreditoComercial);
-                        this.Especie = "NOTA DE CR…DITO COMERCIAL";
+                        this.Especie = "NOTA DE CR√âDITO COMERCIAL";
                         this.Sigla = "NCC";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.NotaCreditoExportacao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.NotaCreditoExportacao);
-                        this.Especie = "NOTA DE CR…DITO A EXPORTA«√O";
+                        this.Especie = "NOTA DE CR√âDITO A EXPORTA√á√ÉO";
                         this.Sigla = "NCE";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.NotaCreditoIndustrial:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.NotaCreditoIndustrial);
-                        this.Especie = "NOTA DE CR…DITO INDUSTRIAL";
+                        this.Especie = "NOTA DE CR√âDITO INDUSTRIAL";
                         this.Sigla = "NCI";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.NotaCreditoRural:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.NotaCreditoRural);
-                        this.Especie = "NOTA DE CR…DITO RURAL";
+                        this.Especie = "NOTA DE CR√âDITO RURAL";
                         this.Sigla = "NCR";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.NotaPromissoria:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.NotaPromissoria);
-                        this.Especie = "NOTA PROMISS”RIA";
+                        this.Especie = "NOTA PROMISS√ìRIA";
                         this.Sigla = "NP";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.NotaPromissoriaRural:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.NotaPromissoriaRural);
-                        this.Especie = "NOTA PROMISS”RIA RURAL";
+                        this.Especie = "NOTA PROMISS√ìRIA RURAL";
                         this.Sigla = "NPR";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.TriplicataMercantil:
@@ -251,7 +251,7 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_BancoBrasil.TriplicataServico:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.TriplicataServico);
-                        this.Especie = "TRIPLICATA DE SERVI«O";
+                        this.Especie = "TRIPLICATA DE SERVI√áO";
                         this.Sigla = "TS";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.NotaSeguro:
@@ -271,12 +271,12 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_BancoBrasil.NotaDebito:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.NotaDebito);
-                        this.Especie = "NOTA DE D…BITO";
+                        this.Especie = "NOTA DE D√âBITO";
                         this.Sigla = "ND";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.ApoliceSeguro:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.ApoliceSeguro);
-                        this.Especie = "AP”LICE DE SEGURO";
+                        this.Especie = "AP√ìLICE DE SEGURO";
                         this.Sigla = "AP";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.MensalidadeEscolar:
@@ -286,7 +286,7 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_BancoBrasil.ParcelaConsorcio:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.ParcelaConsorcio);
-                        this.Especie = "PARCELA DE CONS”RCIO";
+                        this.Especie = "PARCELA DE CONS√ìRCIO";
                         this.Sigla = "PC";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.Outros:
@@ -296,17 +296,17 @@ namespace BoletoNet
                         break;
                     case EnumEspecieDocumento_BancoBrasil.DividaAtivaEstadual:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.DividaAtivaEstadual);
-                        this.Especie = "DÕVIDA ATIVA DO ESTADO";
+                        this.Especie = "D√çVIDA ATIVA DO ESTADO";
                         this.Sigla = "DAE";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.DividaAtivaMunicipio:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.DividaAtivaMunicipio);
-                        this.Especie = "DÕVIDA ATIVA DO MUNICIPIO";
+                        this.Especie = "D√çVIDA ATIVA DO MUNICIPIO";
                         this.Sigla = "DAM";
                         break;
                     case EnumEspecieDocumento_BancoBrasil.DividaAtivaUniao:
                         this.Codigo = getCodigoEspecieByEnum(EnumEspecieDocumento_BancoBrasil.DividaAtivaUniao);
-                        this.Especie = "DÕVIDA ATIVA DA UNI√O";
+                        this.Especie = "D√çVIDA ATIVA DA UNI√ÉO";
                         this.Sigla = "DAU";
                         break;
                     default:
