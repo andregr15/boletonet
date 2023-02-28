@@ -66,7 +66,7 @@ namespace BoletoNet
                 (!codigoCedente.StartsWith(boleto.Cedente.ContaBancaria.Agencia) ||
                  !(codigoCedente.EndsWith(conta) || codigoCedente.EndsWith(conta.Substring(0, conta.Length - 1)))))
                 //throw new BoletoNetException("Codigo do cedente deve estar no " + infoFormatoCodigoCedente);
-                boleto.Cedente.Codigo = string.Format("{0}{1}{2}", boleto.Cedente.ContaBancaria.Agencia, boleto.Cedente.ContaBancaria.OperacaConta, Utils.Right((boleto.Cedente.Codigo + boleto.Cedente.DigitoCedente), 5, '0', true));
+                boleto.Cedente.Codigo = string.Format("{0}{1}{2}", boleto.Cedente.ContaBancaria.Agencia, boleto.Cedente.ContaBancaria.OperacaConta, Utils.Right((boleto.Cedente.Codigo), 5, '0', true));
 
             if (string.IsNullOrEmpty(boleto.Carteira))
                 throw new BoletoNetException("Tipo de carteira é obrigatorio. " + ObterInformacoesCarteirasDisponiveis());
@@ -75,7 +75,8 @@ namespace BoletoNet
                 throw new BoletoNetException("Carteira informada é inválida. Informe " + ObterInformacoesCarteirasDisponiveis());
 
             //Verifica se o nosso numero e valido
-            boleto.NossoNumero = boleto.NossoNumero.PadLeft(6, '0');
+            boleto.NossoNumero = boleto.NossoNumero.PadLeft(5, '0');
+            boleto.NossoNumero = "2" + boleto.NossoNumero;
             var Length_NN = boleto.NossoNumero.Length;
             switch (Length_NN)
             {
@@ -102,7 +103,22 @@ namespace BoletoNet
                 throw new BoletoNetException("Codigo de barras é inválido");
 
             FormataLinhaDigitavel(boleto);
-            FormataNossoNumero(boleto);
+
+            string nossoNumero = boleto.NossoNumero;
+
+            if (nossoNumero == null || nossoNumero.Length != 9)
+            {
+                throw new Exception("Erro ao tentar formatar nosso numero, verifique o tamanho do campo");
+            }
+
+            try
+            {
+                boleto.NossoNumero = string.Format("{0}/{1}-{2}", nossoNumero.Substring(0, 2), nossoNumero.Substring(2, 6), nossoNumero.Substring(8));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao formatar nosso numero", ex);
+            }
         }
 
         private string ObterInformacoesCarteirasDisponiveis()
@@ -122,22 +138,23 @@ namespace BoletoNet
 
         public override void FormataNossoNumero(Boleto boleto)
         {
-            boleto.NossoNumero = boleto.NossoNumero.PadLeft(6, '0');
+            boleto.NossoNumero = boleto.NossoNumero.PadLeft(5, '0');
+            boleto.NossoNumero = "2" + boleto.NossoNumero;
             var Length_NN = boleto.NossoNumero.Length;
             switch (Length_NN)
             {
                 case 9:
                     boleto.NossoNumero = boleto.NossoNumero.Substring(0, Length_NN - 1);
-                    boleto.DigitoNossoNumero = DigNossoNumeroSicredi(boleto);
+                    boleto.DigitoNossoNumero = DigNossoNumeroSicredi(boleto, true);
                     boleto.NossoNumero += boleto.DigitoNossoNumero;
                     break;
                 case 8:
-                    boleto.DigitoNossoNumero = DigNossoNumeroSicredi(boleto);
+                    boleto.DigitoNossoNumero = DigNossoNumeroSicredi(boleto, true);
                     boleto.NossoNumero += boleto.DigitoNossoNumero;
                     break;
                 case 6:
                     boleto.NossoNumero = DateTime.Now.ToString("yy") + boleto.NossoNumero;
-                    boleto.DigitoNossoNumero = DigNossoNumeroSicredi(boleto);
+                    boleto.DigitoNossoNumero = DigNossoNumeroSicredi(boleto, true);
                     boleto.NossoNumero += boleto.DigitoNossoNumero;
                     break;
                 default:
@@ -624,10 +641,7 @@ namespace BoletoNet
                 this.FormataNossoNumero(boleto);
                 boleto.NossoNumero = boleto.NossoNumero.Replace("/", string.Empty).Replace("-", string.Empty);
 
-                var nossoNumero = $"{boleto.NossoNumero.Substring(0, 2)}" +
-                                  $"2" +
-                                  $"{boleto.NossoNumero.Substring(2, boleto.NossoNumero.Length - 2)}" +
-                                  $"{" ".PadLeft(10, ' ')}";
+                var nossoNumero = boleto.NossoNumero.PadRight(20, ' ');
 
                 detalhe += nossoNumero;  //Posição 038 a 057 Nosso Número
 
@@ -749,9 +763,12 @@ namespace BoletoNet
                 detalhe += Utils.FormatCode(boleto.Sacado.Endereco.CEP, 8);    //CEP (5, N) + Sufixo do CEP (3, N) Total (8, N)
                 detalhe += Utils.FormatCode(boleto.Sacado.Endereco.Cidade, " ", 15);                     // Cidade 
                 detalhe += boleto.Sacado.Endereco.UF;                                                  // Unidade da Federação
-                detalhe += (boleto.Cedente.CPFCNPJ.Length == 11 ? "1" : "2");                             // Tipo de Inscrição Sacador avalista
-                detalhe += Utils.FormatCode(boleto.Cedente.CPFCNPJ, "0", 15, true);                             // Número de Inscrição / Sacador avalista
-                detalhe += Utils.FormatCode(boleto.Cedente.Nome, " ", 40);                                // Nome / Sacador avalista
+                //detalhe += (boleto.Cedente.CPFCNPJ.Length == 11 ? "1" : "2");                             // Tipo de Inscrição Sacador avalista
+                //detalhe += Utils.FormatCode(boleto.Cedente.CPFCNPJ, "0", 15, true);                             // Número de Inscrição / Sacador avalista
+                //detalhe += Utils.FormatCode(boleto.Cedente.Nome, " ", 40);                                // Nome / Sacador avalista
+                detalhe += "0";                             // Tipo de Inscrição Sacador avalista
+                detalhe += Utils.FormatCode("", "0", 15, true);                             // Número de Inscrição / Sacador avalista
+                detalhe += Utils.FormatCode("", " ", 40);   
                 detalhe += "000";                                                                         // Código Bco. Corresp. na Compensação
                 detalhe += Utils.FormatCode("", " ", 20);                                                 //213 - Nosso N° no Banco Correspondente "1323739"
                 detalhe += Utils.FormatCode("", " ", 8);                                                  // Uso Exclusivo FEBRABAN/CNAB
@@ -1013,7 +1030,7 @@ namespace BoletoNet
                 if (string.IsNullOrEmpty(boleto.Cedente.ContaBancaria.OperacaConta))
                     throw new Exception("O codigo do posto beneficiário nao foi informado.");
 
-                codigoCedente = string.Concat(boleto.Cedente.ContaBancaria.Agencia, boleto.Cedente.ContaBancaria.OperacaConta, boleto.Cedente.Codigo); 
+                codigoCedente = string.Concat(boleto.Cedente.ContaBancaria.Agencia, boleto.Cedente.ContaBancaria.OperacaConta, Utils.Right((boleto.Cedente.Codigo), 5, '0', true)); 
             }
             else
                 codigoCedente = boleto.Cedente.Codigo;
@@ -1043,6 +1060,7 @@ namespace BoletoNet
             d = 11 - (s % 11);//Calcula o Modulo 11;
             if (d > 9)
                 d = 0;
+
             return d.ToString();
         }
 
