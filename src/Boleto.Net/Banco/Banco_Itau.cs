@@ -1664,6 +1664,8 @@ namespace BoletoNet
                 detalhe.Especie = Utils.ToInt32(registro.Substring(173, 2));
                 decimal tarifaCobranca = Convert.ToUInt64(registro.Substring(175, 13));
                 detalhe.TarifaCobranca = tarifaCobranca / 100;
+                detalhe.ValorDespesa = detalhe.TarifaCobranca;
+
                 // 26 brancos
                 decimal iof = Convert.ToUInt64(registro.Substring(214, 13));
                 detalhe.IOF = iof / 100;
@@ -1712,7 +1714,9 @@ namespace BoletoNet
 
                 detalhe.CodigoLiquidacao = registro.Substring(392, 2);
                 detalhe.NumeroSequencial = Utils.ToInt32(registro.Substring(394, 6));
-                detalhe.ValorPago = detalhe.ValorPrincipal;
+                
+                // Alteração feita para atender a loja, antes de atualizar o Gauchão fazer testes
+                detalhe.ValorPago = detalhe.ValorPrincipal + detalhe.TarifaCobranca;
 
                 // A correspond�ncia de Valor Pago no RETORNO ITA� � o Valor Principal (Valor laNoado em Conta Corrente - Conforme Manual)
                 // A determina��o se Debito ou Credito devera ser feita nos aplicativos por se tratar de personaliza��o.
@@ -1887,7 +1891,8 @@ namespace BoletoNet
 
         public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
         {
-            return $"REM_{cedente.ContaBancaria.Agencia}{cidadeBanco}_TER_{cedente.Codigo}{cedente.DigitoCedente}_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}_C400.txt";
+            //return $"REM_{cedente.ContaBancaria.Conta}_{cedente.ContaBancaria.DigitoConta}_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}_C400.txt";
+            return $"R_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}.txt";
         }
     }
 }

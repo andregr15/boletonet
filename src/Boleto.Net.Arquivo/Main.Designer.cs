@@ -212,7 +212,7 @@ namespace BoletoNet.Arquivo
             this.impressaoToolStripMenuItem.Name = "impressaoToolStripMenuItem";
             this.impressaoToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.impressaoToolStripMenuItem.Text = "&Impressao";
-            this.impressaoToolStripMenuItem.Click += new System.EventHandler(this.impressaoToolStripMenuItem_Click);
+            //this.impressaoToolStripMenuItem.Click += new System.EventHandler(this.impressaoToolStripMenuItem_Click);
             // 
             // groupBoxBancos
             // 

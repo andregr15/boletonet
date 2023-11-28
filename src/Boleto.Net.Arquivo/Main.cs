@@ -739,15 +739,15 @@ namespace BoletoNet.Arquivo
                     GeraDadosSicredi();
                 else if (radioButtonBNB.Checked)
                     GeraDadosBancoDoNordeste();
-<<<<<<< HEAD
+
                 else if (radioButtonSico.Checked)
                     GeraDadosBancoSicoob();
             }
-=======
-				else if (radioButtonBradesco.Checked)
-					GeraDadosBradesco(TipoArquivo.CNAB400);
+
+			else if (radioButtonBradesco.Checked) { 
+				GeraDadosBradesco(TipoArquivo.CNAB400);
 			}
->>>>>>> 26194e35e39e7105d8d4ffcc3a218116b4b4665a
+
             else if (radioButtonCNAB240.Checked)
             {
                 if (radioButtonItau.Checked)

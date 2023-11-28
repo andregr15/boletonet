@@ -827,10 +827,13 @@ namespace BoletoNet
                 valorBoleto = Utils.FormatCode(valorBoleto, 15);
                 detalhe += valorBoleto;   //Posição 75 - 89 - Valor/Percentual a Ser Aplicado Ex: 0000000000220 = 2,20 %; Ex: 0000000001040 = 10,40 %
 
-                detalhe += Utils.FormatCode("0", 10); //Posição 90 a 99 Informação ao Pagador: Brancos
+                //detalhe += Utils.FormatCode("0", 10); //Posição 90 a 99 Informação ao Pagador: Brancos
+                detalhe += Utils.FormatCode(" "," ", 10); //Posição 90 a 99 Informação ao Pagador: Brancos
                 detalhe += Utils.FormatCode("0", 40); //Posição 100 a 139 Informação ao Pagador: Brancos
                 detalhe += Utils.FormatCode("0", 40); //Posição 140 a 179 Informação ao Pagador: Brancos
-                detalhe += Utils.FormatCode("0", 20); //Posição 180 a 199 Uso Exclusivo FEBRABAN/CNAB: Brancos
+                
+                //detalhe += Utils.FormatCode("0", 20); //Posição 180 a 199 Uso Exclusivo FEBRABAN/CNAB: Brancos
+                detalhe += Utils.FormatCode(" ", " ", 20); //Posição 180 a 199 Uso Exclusivo FEBRABAN/CNAB: Brancos
                 detalhe += Utils.FormatCode("0", "0", 8, true);  //Posição 200 a 207  Cód. Ocor. do Pagador: "00000000"
                 detalhe += Utils.FormatCode("0", "0", 3, true);  //Posição 208 a 210  Cód. do Banco na Conta do Débito: "000"
                 detalhe += Utils.FormatCode("0", "0", 5, true);  //Posição 211 a 215  Código da Agência do Débito: "00000"

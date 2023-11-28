@@ -891,68 +891,129 @@ namespace BoletoNet
         #endregion
 
         #region Metodos de Leitura do Arquivo de Retorno
-        /*
-         * Substituido Metodo de Leitura do Retorno pelo Interpretador de EDI;
-        public override DetalheRetorno LerDetalheRetornoCNAB400(string registro)
+        
+        public override DetalheSegmentoTRetornoCNAB240 LerDetalheSegmentoTRetornoCNAB240(string registro)
         {
             try
             {
-                DetalheRetorno detalhe = new DetalheRetorno(registro);
+                DetalheSegmentoTRetornoCNAB240 detalhe = new DetalheSegmentoTRetornoCNAB240(registro);
 
-                int idRegistro = Utils.ToInt32(registro.Substring(0, 1));
-                detalhe.IdentificacaoDoRegistro = idRegistro;
+                if (registro.Substring(13, 1) != "T")
+                    throw new Exception("Registro inválido. O detalhe não possuí as características do segmento T.");
 
-                detalhe.NossoNumero = registro.Substring(47, 15);
+                detalhe.CodigoBanco = Convert.ToInt32(registro.Substring(0, 3));
+                detalhe.idCodigoMovimento = Convert.ToInt32(registro.Substring(15, 2));
+                detalhe.Agencia = Convert.ToInt32(registro.Substring(17, 5));
+                detalhe.DigitoAgencia = registro.Substring(22, 1);
+                detalhe.Conta = Convert.ToInt32(registro.Substring(23, 12));
+                detalhe.DigitoConta = registro.Substring(35, 1);
+                detalhe.NossoNumero = registro.Substring(37, 10);
 
-                int codigoOcorrencia = Utils.ToInt32(registro.Substring(108, 2));
-                detalhe.CodigoOcorrencia = codigoOcorrencia;
+                detalhe.NossoNumero = detalhe.NossoNumero.Substring(3, 5);
+                detalhe.NossoNumero = detalhe.NossoNumero.Insert(detalhe.NossoNumero.Length, "0").PadLeft(10, '0');
 
-                //Data Ocorrencia no Banco
-                int dataOcorrencia = Utils.ToInt32(registro.Substring(110, 6));
-                detalhe.DataOcorrencia = Utils.ToDateTime(dataOcorrencia.ToString("##-##-##"));
-
-                detalhe.SeuNumero = registro.Substring(116, 10);
-
-                int dataVencimento = Utils.ToInt32(registro.Substring(146, 6));
-                detalhe.DataVencimento = Utils.ToDateTime(dataVencimento.ToString("##-##-##"));
-
-                decimal valorTitulo = Convert.ToUInt64(registro.Substring(152, 13));
+                detalhe.CodigoCarteira = Convert.ToInt32(registro.Substring(57, 1));
+                //detalhe.NumeroDocumento = registro.Substring(58, 15);
+                //sera utilizado para agrupar os registros
+                detalhe.NumeroDocumento = registro.Substring(37, 10);
+                int dataVencimento = Convert.ToInt32(registro.Substring(73, 8));
+                detalhe.DataVencimento = Convert.ToDateTime(dataVencimento.ToString("##-##-####"));
+                decimal valorTitulo = Convert.ToInt64(registro.Substring(81, 15));
                 detalhe.ValorTitulo = valorTitulo / 100;
+                detalhe.IdentificacaoTituloEmpresa = registro.Substring(105, 25);
+                detalhe.TipoInscricao = Convert.ToInt32(registro.Substring(132, 1));
+                detalhe.NumeroInscricao = registro.Substring(133, 15);
+                detalhe.NomeSacado = registro.Substring(148, 40);
+                decimal valorTarifas = Convert.ToUInt64(registro.Substring(198, 15));
+                detalhe.ValorTarifas = valorTarifas / 100;
 
-                detalhe.EspecieTitulo = registro.Substring(174, 1);
-
-                decimal despeasaDeCobranca = Convert.ToUInt64(registro.Substring(175, 13));
-                detalhe.DespeasaDeCobranca = despeasaDeCobranca / 100;
-
-                decimal outrasDespesas = Convert.ToUInt64(registro.Substring(188, 13));
-                detalhe.OutrasDespesas = outrasDespesas / 100;
-
-                decimal abatimentoConcedido = Convert.ToUInt64(registro.Substring(227, 13));
-                detalhe.Abatimentos = abatimentoConcedido / 100;
-
-                decimal descontoConcedido = Convert.ToUInt64(registro.Substring(240, 13));
-                detalhe.Descontos = descontoConcedido / 100;
-
-                decimal valorPago = Convert.ToUInt64(registro.Substring(253, 13));
-                detalhe.ValorPago = valorPago / 100;
-
-                decimal jurosMora = Convert.ToUInt64(registro.Substring(266, 13));
-                detalhe.JurosMora = jurosMora / 100;
-
-                int dataCredito = Utils.ToInt32(registro.Substring(328, 8));
-                detalhe.DataCredito = Utils.ToDateTime(dataCredito.ToString("####-##-##"));
-
-                detalhe.MotivosRejeicao = registro.Substring(318, 10);
-
-                detalhe.NomeSacado = registro.Substring(19, 5);
                 return detalhe;
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao ler detalhe do arquivo de RETORNO / CNAB 400.", ex);
+                throw new Exception("Erro ao processar arquivo de RETORNO - SEGMENTO T.", ex);
             }
         }
-        */
+
+        public override DetalheSegmentoURetornoCNAB240 LerDetalheSegmentoURetornoCNAB240(string registro)
+        {
+            try
+            {
+                DetalheSegmentoURetornoCNAB240 detalhe = new DetalheSegmentoURetornoCNAB240(registro);
+
+                int aux;
+                long aux1;
+
+                if (registro.Substring(13, 1) != "U")
+                    throw new Exception("Registro inválido. O detalhe não possuí as características do segmento U.");
+
+                detalhe.CodigoOcorrenciaSacado = registro.Substring(15, 2);
+
+                int.TryParse(registro.Substring(137, 8), out aux);
+                int DataOcorrencia = aux;
+                if (DataOcorrencia > 0)
+                    detalhe.DataOcorrencia = Convert.ToDateTime(DataOcorrencia.ToString("##-##-####"));
+
+                //TODO verify code
+                // int DataCredito = Convert.ToInt32(registro.Substring(145, 8));
+                // detalhe.DataCredito = (DataCredito > 0) ? Convert.ToDateTime(DataCredito.ToString("##-##-####")) : new DateTime();
+                // int DataOcorrencia = Convert.ToInt32(registro.Substring(137, 8));
+                // detalhe.DataOcorrencia = (DataOcorrencia > 0) ? Convert.ToDateTime(DataOcorrencia.ToString("##-##-####")) : new DateTime();
+
+                int.TryParse(registro.Substring(157, 8), out aux);
+                int DataOcorrenciaSacado = aux;
+                if (DataOcorrenciaSacado > 0)
+                    detalhe.DataOcorrenciaSacado = Convert.ToDateTime(DataOcorrenciaSacado.ToString("##-##-####"));
+                else
+                    detalhe.DataOcorrenciaSacado = DateTime.Now;
+
+                int.TryParse(registro.Substring(145, 8), out aux);
+                int DataCredito = aux;
+                if (DataCredito > 0)
+                    detalhe.DataCredito = Convert.ToDateTime(DataCredito.ToString("##-##-####"));
+                else
+                    detalhe.DataCredito = detalhe.DataOcorrencia;
+
+                long.TryParse(registro.Substring(17, 15), out aux1);
+                decimal JurosMultaEncargos = aux1;
+                detalhe.JurosMultaEncargos = JurosMultaEncargos / 100;
+
+                long.TryParse(registro.Substring(32, 15), out aux1);
+                decimal ValorDescontoConcedido = aux1;
+                detalhe.ValorDescontoConcedido = ValorDescontoConcedido / 100;
+
+                long.TryParse(registro.Substring(47, 15), out aux1);
+                decimal ValorAbatimentoConcedido = aux1;
+                detalhe.ValorAbatimentoConcedido = ValorAbatimentoConcedido / 100;
+
+                long.TryParse(registro.Substring(62, 15), out aux1);
+                decimal ValorIOFRecolhido = aux1;
+                detalhe.ValorIOFRecolhido = ValorIOFRecolhido / 100;
+
+                long.TryParse(registro.Substring(77, 15), out aux1);
+                decimal ValorPagoPeloSacado = aux1;
+                detalhe.ValorPagoPeloSacado = ValorPagoPeloSacado / 100;
+
+                long.TryParse(registro.Substring(92, 15), out aux1);
+                decimal ValorLiquidoASerCreditado = aux1;
+                detalhe.ValorLiquidoASerCreditado = ValorLiquidoASerCreditado / 100;
+
+                long.TryParse(registro.Substring(107, 15), out aux1);
+                decimal ValorOutrasDespesas = aux1;
+                detalhe.ValorOutrasDespesas = ValorOutrasDespesas / 100;
+
+                long.TryParse(registro.Substring(122, 15), out aux1);
+                decimal ValorOutrosCreditos = aux1;
+                detalhe.ValorOutrosCreditos = ValorOutrosCreditos / 100;
+
+                return detalhe;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao processar arquivo de RETORNO - SEGMENTO U.", ex);
+            }
+        }
+
         #endregion Metodos de Leitura do Arquivo de Retorno
 
         public int Mod10Sicredi(string seq)

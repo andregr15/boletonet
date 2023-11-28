@@ -91,6 +91,10 @@ namespace BoletoNet
                                     detalheRetorno.SegmentoE = new DetalheSegmentoERetornoCNAB240();
                                     detalheRetorno.SegmentoE.LerDetalheSegmentoERetornoCNAB240(linha);
                                 }
+                                else if (linha.Substring(13, 1) == "Y")
+                                {
+                                    break;
+                                }
                                 else if (linha.Substring(13, 1) == "T")
                                 {
                                     //Ira ler o Segmento T e em sequencia o Segmento U
@@ -100,7 +104,6 @@ namespace BoletoNet
                                     detalheRetorno.SegmentoU = banco.LerDetalheSegmentoURetornoCNAB240(linha);
 
                                     OnLinhaLida(detalheRetorno, linha, EnumTipodeLinhaLida.DetalheSegmentoU);                                    
-
                                 }
                                 ListaDetalhes.Add(detalheRetorno);
                                 break;
@@ -139,7 +142,6 @@ namespace BoletoNet
         {
             return new DetalheRetorno
             {
-
                 CodigoInscricao = det.SegmentoT.TipoInscricao,
                 NumeroInscricao = det.SegmentoT.NumeroInscricao,
 
