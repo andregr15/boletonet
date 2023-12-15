@@ -1634,6 +1634,8 @@ namespace BoletoNet
 
                 DetalheRetorno detalhe = new DetalheRetorno(registro);
 
+                
+
                 detalhe.CodigoInscricao = Utils.ToInt32(registro.Substring(1, 2));
                 detalhe.NumeroInscricao = registro.Substring(3, 14);
                 detalhe.Agencia = Utils.ToInt32(registro.Substring(17, 4));
@@ -1653,6 +1655,7 @@ namespace BoletoNet
                 detalhe.DescricaoOcorrencia = this.Ocorrencia(registro.Substring(108, 2));
 
                 detalhe.DataOcorrencia = Utils.ToDateTime(dataOcorrencia.ToString("##-##-##"));
+                detalhe.DataLiquidacao = detalhe.DataOcorrencia;
                 detalhe.NumeroDocumento = registro.Substring(116, 10);
                 //
                 detalhe.DataVencimento = Utils.ToDateTime(dataVencimento.ToString("##-##-##"));
