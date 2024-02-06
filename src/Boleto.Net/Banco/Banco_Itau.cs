@@ -1655,8 +1655,9 @@ namespace BoletoNet
                 detalhe.DescricaoOcorrencia = this.Ocorrencia(registro.Substring(108, 2));
 
                 detalhe.DataOcorrencia = Utils.ToDateTime(dataOcorrencia.ToString("##-##-##"));
-                detalhe.DataLiquidacao = detalhe.DataOcorrencia;
+                detalhe.DataLiquidacao = Utils.ToDateTime(dataOcorrencia.ToString("##-##-##"));
                 detalhe.NumeroDocumento = registro.Substring(116, 10);
+                
                 //
                 detalhe.DataVencimento = Utils.ToDateTime(dataVencimento.ToString("##-##-##"));
                 decimal valorTitulo = Convert.ToInt64(registro.Substring(152, 13));
