@@ -274,9 +274,13 @@ namespace BoletoNet
 
             // Atribui o nome do banco ao local de pagamento
             if (string.IsNullOrEmpty(boleto.LocalPagamento))
-                boleto.LocalPagamento = "PAGÁVEL PREFERENCIALMENTE NAS AGÊNCIAS DO BRADESCO";
+                boleto.LocalPagamento = "Pagável preferencialmente na Rede Bradesco ou Bradesco Expresso";
             else if (boleto.LocalPagamento == "Até o vencimento, preferencialmente no ")
                 boleto.LocalPagamento += Nome;
+
+            var item1 = new Instrucao(237);
+            item1.Descricao = "Pagável preferencialmente na Rede Bradesco ou Bradesco Expresso";
+            boleto.Instrucoes.Insert(6, item1);
 
             // Calcula o DAC do Nosso Número
             _dacNossoNumero = CalcularDigitoNossoNumero(boleto);
@@ -1077,26 +1081,26 @@ namespace BoletoNet
                             vInstrucao1 = "06";
                             vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
                             break;
-                        //case EnumInstrucoes_Bradesco.ProtestoFinsFalimentares:
-                        //    vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
-                        //    vInstrucao2 = "00";
-                        //    break;
-                        //case EnumInstrucoes_Bradesco.ProtestarAposNDiasCorridos:
-                        //    vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
-                        //    vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
-                        //    break;
-                        //case EnumInstrucoes_Bradesco.ProtestarAposNDiasUteis:
-                        //    vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
-                        //    vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
-                        //    break;
-                        //case EnumInstrucoes_Bradesco.NaoReceberAposNDias:
-                        //    vInstrucao1 = "00";
-                        //    vInstrucao2 = "00";
-                        //    break;
-                        //case EnumInstrucoes_Bradesco.DevolverAposNDias:
-                        //    vInstrucao1 = "00";
-                        //    vInstrucao2 = "00";
-                        //    break;
+                            //case EnumInstrucoes_Bradesco.ProtestoFinsFalimentares:
+                            //    vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                            //    vInstrucao2 = "00";
+                            //    break;
+                            //case EnumInstrucoes_Bradesco.ProtestarAposNDiasCorridos:
+                            //    vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                            //    vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
+                            //    break;
+                            //case EnumInstrucoes_Bradesco.ProtestarAposNDiasUteis:
+                            //    vInstrucao1 = "06"; //Indicar o código “06” - (Protesto)
+                            //    vInstrucao2 = Utils.FitStringLength(instrucao.QuantidadeDias.ToString(), 2, 2, '0', 0, true, true, true);
+                            //    break;
+                            //case EnumInstrucoes_Bradesco.NaoReceberAposNDias:
+                            //    vInstrucao1 = "00";
+                            //    vInstrucao2 = "00";
+                            //    break;
+                            //case EnumInstrucoes_Bradesco.DevolverAposNDias:
+                            //    vInstrucao1 = "00";
+                            //    vInstrucao2 = "00";
+                            //    break;
                     }
                     instrucao.Descricao = string.IsNullOrEmpty(instrucao.Descricao)
                         ? string.Empty
@@ -1355,6 +1359,12 @@ namespace BoletoNet
             _detalhe += Utils.FitStringLength(numeroRegistro.ToString(), 6, 6, '0', 0, true, true, true); // 395 a 400
             //Retorno
             return Utils.SubstituiCaracteresEspeciais(_detalhe);
+        }
+
+        public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
+        {
+            //return $"REM_{cedente.ContaBancaria.Conta}_{cedente.ContaBancaria.DigitoConta}_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}_C400.txt";
+            return $"CB{DateTime.Now.ToString("ddMM")}{new Random().Next(0, 99)}.TST";
         }
     }
 }
