@@ -273,14 +273,15 @@ namespace BoletoNet
             boleto.QuantidadeMoeda = 0;
 
             // Atribui o nome do banco ao local de pagamento
-            if (string.IsNullOrEmpty(boleto.LocalPagamento))
-                boleto.LocalPagamento = "Pagável preferencialmente na Rede Bradesco ou Bradesco Expresso";
-            else if (boleto.LocalPagamento == "Até o vencimento, preferencialmente no ")
-                boleto.LocalPagamento += Nome;
+            //if (string.IsNullOrEmpty(boleto.LocalPagamento))
+            //    boleto.LocalPagamento = "Pagável preferencialmente na Rede Bradesco ou Bradesco Expresso";
+            //else if (boleto.LocalPagamento == "Até o vencimento, preferencialmente no ")
+            //    boleto.LocalPagamento += Nome;
+            boleto.LocalPagamento = "Pagável preferencialmente na Rede Bradesco ou Bradesco Expresso";
 
-            var item1 = new Instrucao(237);
-            item1.Descricao = "Pagável preferencialmente na Rede Bradesco ou Bradesco Expresso";
-            boleto.Instrucoes.Insert(6, item1);
+            //var item1 = new Instrucao(237);
+            //item1.Descricao = "Pagável preferencialmente na Rede Bradesco ou Bradesco Expresso";
+            //boleto.Instrucoes.Insert(6, item1);
 
             // Calcula o DAC do Nosso Número
             _dacNossoNumero = CalcularDigitoNossoNumero(boleto);
@@ -957,7 +958,7 @@ namespace BoletoNet
                 // 2 = Cliente emite e o Banco somente processa
                 //Condição para Emissão da Papeleta de Cobrança(1, N)
                 //_detalhe += boleto.ApenasRegistrar ? "2" : "1";
-                _detalhe += "2";
+                _detalhe += $"{boleto.TipoEmissaoBoleto}";
                 //Ident. se emite papeleta para Débito Automático (1, A)
                 _detalhe += "N";
                 //Identificação da Operação do Banco (10, A) Em Branco
@@ -1364,7 +1365,8 @@ namespace BoletoNet
         public override string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa)
         {
             //return $"REM_{cedente.ContaBancaria.Conta}_{cedente.ContaBancaria.DigitoConta}_{remessa.ToString(CultureInfo.InvariantCulture).PadLeft(6, '0')}_C400.txt";
-            return $"CB{DateTime.Now.ToString("ddMM")}{new Random().Next(0, 99)}.TST";
+            //return $"CB{DateTime.Now.ToString("ddMM")}{new Random().Next(0, 99)}.TST"; // para testes deve ser .rem
+            return $"CB{DateTime.Now.ToString("ddMM")}{new Random().Next(0, 99)}.REM";
         }
     }
 }

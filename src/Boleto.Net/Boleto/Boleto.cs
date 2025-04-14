@@ -628,10 +628,14 @@ namespace BoletoNet
 
         public DateTime? DataDescontoAntecipacao3 { get; set; }
         public decimal? ValorDescontoAntecipacao3 { get; set; }
-        
-        #endregion Properties
 
-        public void Valida()
+		public int TipoEmissaoBoleto { get; set; } = 2;
+
+		public int TipoDistribuicaoBoleto { get; set; } = 2;
+
+		#endregion Properties
+
+		public void Valida()
 		{
 			// Validacoes básicas, caso ainda tenha implementada na classe do banco.ValidaBoleto()
 			if (this.Cedente == null)
