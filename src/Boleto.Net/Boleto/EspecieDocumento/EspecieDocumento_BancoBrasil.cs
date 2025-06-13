@@ -73,8 +73,8 @@ namespace BoletoNet
         {
             switch (especie)
             {
-                case EnumEspecieDocumento_BancoBrasil.Cheque: return "1";
-                case EnumEspecieDocumento_BancoBrasil.DuplicataMercantil: return "2";
+                case EnumEspecieDocumento_BancoBrasil.Cheque: return "10";
+                case EnumEspecieDocumento_BancoBrasil.DuplicataMercantil: return "1";
                 case EnumEspecieDocumento_BancoBrasil.DuplicataMercantilIndicacao: return "3";
                 case EnumEspecieDocumento_BancoBrasil.DuplicataServico: return "4";
                 case EnumEspecieDocumento_BancoBrasil.DuplicataServicoIndicacao: return "5";
@@ -82,7 +82,7 @@ namespace BoletoNet
                 case EnumEspecieDocumento_BancoBrasil.LetraCambio: return "7";
                 case EnumEspecieDocumento_BancoBrasil.NotaCreditoComercial: return "8";
                 case EnumEspecieDocumento_BancoBrasil.NotaCreditoExportacao: return "9";
-                case EnumEspecieDocumento_BancoBrasil.NotaCreditoIndustrial: return "10";
+                case EnumEspecieDocumento_BancoBrasil.NotaCreditoIndustrial: return "24";
                 case EnumEspecieDocumento_BancoBrasil.NotaCreditoRural: return "11";
                 case EnumEspecieDocumento_BancoBrasil.NotaPromissoria: return "12";
                 case EnumEspecieDocumento_BancoBrasil.NotaPromissoriaRural: return "13";
@@ -107,8 +107,8 @@ namespace BoletoNet
         {
             switch (codigo)
             {
-                case "1": return EnumEspecieDocumento_BancoBrasil.Cheque;
-                case "2": return EnumEspecieDocumento_BancoBrasil.DuplicataMercantil;
+                case "10": return EnumEspecieDocumento_BancoBrasil.Cheque;
+                case "1": return EnumEspecieDocumento_BancoBrasil.DuplicataMercantil;
                 case "3": return EnumEspecieDocumento_BancoBrasil.DuplicataMercantilIndicacao;
                 case "4": return EnumEspecieDocumento_BancoBrasil.DuplicataServico;
                 case "5": return EnumEspecieDocumento_BancoBrasil.DuplicataServicoIndicacao;
@@ -116,7 +116,7 @@ namespace BoletoNet
                 case "7": return EnumEspecieDocumento_BancoBrasil.LetraCambio;
                 case "8": return EnumEspecieDocumento_BancoBrasil.NotaCreditoComercial;
                 case "9": return EnumEspecieDocumento_BancoBrasil.NotaCreditoExportacao;
-                case "10": return EnumEspecieDocumento_BancoBrasil.NotaCreditoIndustrial;
+                case "24": return EnumEspecieDocumento_BancoBrasil.NotaCreditoIndustrial;
                 case "11": return EnumEspecieDocumento_BancoBrasil.NotaCreditoRural;
                 case "12": return EnumEspecieDocumento_BancoBrasil.NotaPromissoria;
                 case "13": return EnumEspecieDocumento_BancoBrasil.NotaPromissoriaRural;
@@ -141,8 +141,8 @@ namespace BoletoNet
         {
             switch (sigla)
             {
-                case "CH": return "1";
-                case "DM": return "2";
+                case "CH": return "10";
+                case "DM": return "1";
                 case "DMI": return "3";
                 case "DS": return "4";
                 case "DSI": return "5";
@@ -150,7 +150,7 @@ namespace BoletoNet
                 case "LC": return "7";
                 case "NCC": return "8";
                 case "NCE": return "9";
-                case "NCI" : return "10";
+                case "NCI" : return "24";
                 case "NCR": return "11";
                 case "NP": return "12";
                 case "NPR": return "13";
