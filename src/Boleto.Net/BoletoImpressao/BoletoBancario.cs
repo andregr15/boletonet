@@ -755,7 +755,7 @@ namespace BoletoNet
                         agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}.{Cedente.ContaBancaria.DigitoAgencia}/{Cedente.Codigo.Substring(4, 6)}.{Cedente.Codigo.Substring(10, 1)}.{Cedente.DigitoCedente}";
                         break;
                     case 1:
-                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}-{Cedente.ContaBancaria.DigitoAgencia}/{Utils.FormatCode(Cedente.ContaBancaria.Conta, 6)}-{Cedente.ContaBancaria.DigitoConta}";
+                        agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}-{Cedente.ContaBancaria.DigitoAgencia}/{Cedente.ContaBancaria.Conta.PadLeft(6, '0')}-{Cedente.ContaBancaria.DigitoConta}";
                         break;
                     case 399:
                         agenciaCodigoCedente = $"{Cedente.ContaBancaria.Agencia}/{Utils.FormatCode(Cedente.Codigo + Cedente.DigitoCedente, 7)}";

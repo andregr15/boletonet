@@ -2373,7 +2373,7 @@ namespace BoletoNet
                 {
                     #region DataDesconto
                     string vDataDesconto = "000000";
-                    if (!boleto.DataDesconto.Equals(DateTime.MinValue))
+                    if (!boleto.DataDesconto.Equals(DateTime.MinValue) && boleto.ValorDesconto > 0)
                         vDataDesconto = boleto.DataDesconto.ToString("ddMMyy");
                     #endregion
                     reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0174, 006, 0, vDataDesconto, '0'));                             //174-179                
