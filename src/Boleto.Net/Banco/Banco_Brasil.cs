@@ -2295,7 +2295,7 @@ namespace BoletoNet
 
                 base.GerarDetalheRemessa(boleto, numeroRegistro, tipoArquivo);
 
-                var nossoNumero = boleto.Cedente.Convenio + boleto.NossoNumero.PadLeft(10, '0');
+                var nossoNumero = boleto.NossoNumero.PadLeft(10, '0');
 
                 TRegistroEDI reg = new TRegistroEDI();
                 reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0001, 001, 0, "7", '0'));                                       //001-001
@@ -2458,7 +2458,7 @@ namespace BoletoNet
                 //detalhe. = reg.Identificacao;
                 //detalhe. = reg.Zeros1;
                 //detalhe. = reg.Zeros2;
-                detalhe.Agencia = Utils.ToInt32(string.Concat(reg.PrefixoAgencia, reg.DVPrefixoAgencia));
+                detalhe.Agencia = Utils.ToInt32(reg.PrefixoAgencia);
                 detalhe.Conta = Utils.ToInt32(reg.ContaCorrente);
                 detalhe.DACConta = Utils.ToInt32(reg.DVContaCorrente);
                 //detalhe. = reg.NumeroConvenioCobranca;
