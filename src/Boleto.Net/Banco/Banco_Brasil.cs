@@ -2295,7 +2295,8 @@ namespace BoletoNet
 
                 base.GerarDetalheRemessa(boleto, numeroRegistro, tipoArquivo);
 
-                var nossoNumero = boleto.NossoNumero.PadLeft(10, '0');
+                //var nossoNumero = boleto.NossoNumero.PadLeft(10, '0');
+                var nossoNumero = boleto.Cedente.Convenio + boleto.NossoNumero.PadLeft(10, '0');
 
                 TRegistroEDI reg = new TRegistroEDI();
                 reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0001, 001, 0, "7", '0'));                                       //001-001
