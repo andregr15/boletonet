@@ -2455,6 +2455,7 @@ namespace BoletoNet
 
                 //Passa para o detalhe as propriedades de reg;
                 DetalheRetorno detalhe = new DetalheRetorno(registro);
+                detalhe.BancoCobrador = 1;
                 //
                 //detalhe. = reg.Identificacao;
                 //detalhe. = reg.Zeros1;
