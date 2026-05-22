@@ -142,5 +142,7 @@ namespace BoletoNet
         long ObterNossoNumeroSemConvenioOuDigitoVerificador(long convenio, string nossoNumero);
 
         string GerarNomeRemessa(Cedente cedente, string cidadeBanco, int remessa);
+
+        string GerarDetalheRemessaMulta(Boleto boleto, int numeroRegistro, TipoArquivo tipoArquivo);
     }
 }

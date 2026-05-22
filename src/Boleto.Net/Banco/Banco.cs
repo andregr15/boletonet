@@ -602,5 +602,10 @@ namespace BoletoNet
 	    {
 	        return _IBanco.GerarNomeRemessa(cedente, cidadeBanco, remessa);
 	    }
+
+        public virtual string GerarDetalheRemessaMulta(Boleto boleto, int numeroRegistro, TipoArquivo tipoArquivo)
+        {
+            return _IBanco.GerarDetalheRemessaMulta(boleto, numeroRegistro, tipoArquivo);
+        }
     }
 }

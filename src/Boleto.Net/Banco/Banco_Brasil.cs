@@ -1419,6 +1419,36 @@ namespace BoletoNet
                 throw new Exception("Erro durante a geração do DETALHE arquivo de REMESSA.", ex);
             }
         }
+
+        public override string GerarDetalheRemessaMulta(Boleto boleto, int numeroRegistro, TipoArquivo tipoArquivo)
+        {
+            try
+            {
+                string _detalhe = " ";
+
+                base.GerarDetalheRemessa(boleto, numeroRegistro, tipoArquivo);
+
+                switch (tipoArquivo)
+                {
+                    case TipoArquivo.CNAB240:
+                        //_detalhe = GerarDetalheRemessaCNAB240(boleto, numeroRegistro, tipoArquivo);
+                        break;
+                    case TipoArquivo.CNAB400:
+                        _detalhe = GerarDetalheRemessaMultaCNAB400(boleto, numeroRegistro, tipoArquivo);
+                        break;
+                    case TipoArquivo.Outro:
+                        throw new Exception("Tipo de arquivo inexistente.");
+                }
+
+                return _detalhe;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro durante a geração do DETALHE MULTA arquivo de REMESSA.", ex);
+            }
+        }
+
         public override string GerarDetalheSegmentoPRemessa(Boleto boleto, int numeroRegistro, string numeroConvenio)
         {
             try
@@ -2419,6 +2449,34 @@ namespace BoletoNet
             catch (Exception ex)
             {
                 throw new Exception("Erro ao gerar DETALHE do arquivo CNAB400.", ex);
+            }
+        }
+
+        public string GerarDetalheRemessaMultaCNAB400(Boleto boleto, int numeroRegistro, TipoArquivo tipoArquivo)
+        {
+            try
+            {
+                var ret = string.Empty;
+
+                base.GerarDetalheRemessa(boleto, numeroRegistro, tipoArquivo);
+
+                TRegistroEDI reg = new TRegistroEDI();
+                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0001, 001, 0, "5", '0'));                                       //001-001
+                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0002, 002, 0, "99", '0'));                                      //002-003
+                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0004, 001, 0, "2", '0'));                                       //004-004
+                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediDataDDMMAA___________, 0005, 006, 0, boleto.DataMulta, '0'));                          //005-010
+                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0011, 012, 2, boleto.PercMulta, '0'));                          //011-022
+                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0023, 003, 0, "90", '0'));                                      //023-025
+                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0026, 369, 0, string.Empty, ' '));                              //026-394
+                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0395, 006, 0, numeroRegistro, '0'));                            //395-400
+                reg.CodificarLinha();
+
+                string _detalhe = Utils.SubstituiCaracteresEspeciais(reg.LinhaRegistro);
+                return _detalhe;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao gerar DETALHE Multa do arquivo CNAB400.", ex);
             }
         }
 

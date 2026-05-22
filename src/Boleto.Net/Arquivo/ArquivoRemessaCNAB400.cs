@@ -70,6 +70,14 @@ namespace BoletoNet
                     vltitulostotal += boleto.ValorBoleto;   //Uso apenas no registro TRAILER do banco Santander - jsoda em 09/05/2012 - Add no registro TRAILER do banco Banrisul - sidneiklein em 08/08/2013
                     numeroRegistro++;
 
+                    // multa banco do brasil
+                    if (banco.Codigo == 1)
+                    {
+                        strline = boleto.Banco.GerarDetalheRemessaMulta(boleto, numeroRegistro, TipoArquivo.CNAB400);
+                        incluiLinha.WriteLine(strline);
+                        numeroRegistro++;
+                    }
+
                     // Banco CrediSis - 97
                     if (banco.Codigo == 97)
                     {

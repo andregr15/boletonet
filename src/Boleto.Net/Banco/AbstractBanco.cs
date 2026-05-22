@@ -762,5 +762,11 @@ namespace BoletoNet
         {
             throw new NotImplementedException();
         }
+
+        public virtual string GerarDetalheRemessaMulta(Boleto boleto, int numeroRegistro, TipoArquivo tipoArquivo)
+        {
+            string _remessa = "";
+            return _remessa;
+        }
     }
 }
